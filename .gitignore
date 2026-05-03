@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code working files
+.claude/
+
+# Node / dependency managers (in case anything's added later)
+node_modules/
+.pnpm-store/
+
+# Build artefacts (none yet — placeholder)
+dist/
+build/
+
+# Environment / secrets — never commit
+.env
+.env.local
+.env.*.local
