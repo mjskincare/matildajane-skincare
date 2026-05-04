@@ -167,7 +167,7 @@ a { color: inherit; text-decoration: none; }
   display: flex; align-items: center; justify-content: space-between; padding: 0 40px;
   border-bottom: 1px solid rgba(255,255,255,.07);
 }
-.site-nav .nav-logo { font-family: 'Inter', system-ui, sans-serif; font-weight: 800; font-size: 16px; letter-spacing: .05em; color: var(--white); }
+.site-nav .nav-logo { font-family: 'Manrope', system-ui, sans-serif; font-weight: 800; font-size: 16px; letter-spacing: .05em; color: var(--white); }
 .site-nav .nav-links { display: flex; gap: 24px; list-style: none; }
 .site-nav .nav-links a {
   font-size: 10px; letter-spacing: .15em; text-transform: uppercase;
@@ -239,7 +239,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--navy); margin-bottom: 18px;
 }
 .collection-landing-title {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 800;
   font-size: 44px; line-height: 1; letter-spacing: -.025em;
   color: var(--navy); text-transform: uppercase;
@@ -314,7 +314,7 @@ a { color: inherit; text-decoration: none; }
   background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18) 0%, transparent 55%);
 }
 .collection-circle-name {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 700; font-size: 16px;
   color: var(--navy); margin-bottom: 4px; text-align: center;
 }
@@ -336,7 +336,7 @@ a { color: inherit; text-decoration: none; }
   display: grid; grid-template-columns: 1fr; gap: 40px;
 }
 .find-formula-header h2 {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 800; font-size: 28px; line-height: 1.1;
   color: var(--navy); text-transform: uppercase;
   letter-spacing: -.01em; margin-bottom: 14px;
@@ -366,7 +366,7 @@ a { color: inherit; text-decoration: none; }
   background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 55%);
 }
 .formula-type-text h3 {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 700; font-size: 16px;
   color: var(--navy); margin-bottom: 4px;
 }
@@ -420,7 +420,7 @@ a { color: inherit; text-decoration: none; }
   position: relative; z-index: 1;
 }
 .product-card-name {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 700; font-size: 15px; line-height: 1.2;
   color: var(--navy); margin-bottom: 6px;
 }
@@ -431,7 +431,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 8px;
 }
 .product-card-price {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 600; font-size: 14px; color: var(--navy);
   margin-top: auto;
 }
@@ -478,7 +478,7 @@ a { color: inherit; text-decoration: none; }
 .category-intro p,
 .category-intro-inner p { text-align: center; }
 .category-page-title {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 800;
   font-size: 56px; line-height: 1; letter-spacing: -.03em;
   color: var(--navy); margin-bottom: 24px;
@@ -552,7 +552,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 8px;
 }
 .cp-card-name {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 700; font-size: 17px; line-height: 1.25;
   color: var(--navy); margin-bottom: 8px;
   max-width: 220px;
@@ -564,7 +564,7 @@ a { color: inherit; text-decoration: none; }
   max-width: 220px; margin-bottom: 14px;
 }
 .cp-card-price {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 600; font-size: 14px; color: var(--navy);
 }
 .cp-card-price.unavailable { color: var(--stone); font-weight: 500; }
@@ -600,7 +600,7 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
 }
 .collection-faq-h {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 700;
   font-size: 28px;
   color: var(--navy);
@@ -682,7 +682,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--accent); font-weight: 600; margin-bottom: 24px;
 }
 .collection-h1 {
-  font-family: 'Inter', system-ui, sans-serif; font-weight: 700;
+  font-family: 'Manrope', system-ui, sans-serif; font-weight: 700;
   font-size: 56px; line-height: 1.18; letter-spacing: -.01em;
   margin-bottom: 32px; max-width: 720px;
 }
@@ -839,7 +839,7 @@ a { color: inherit; text-decoration: none; }
 }
 .theme-mens .product-eyebrow { color: var(--accent); }
 .product-name {
-  font-family: 'Inter', system-ui, sans-serif; font-weight: 800;
+  font-family: 'Manrope', system-ui, sans-serif; font-weight: 800;
   font-size: 42px; line-height: 1.22; letter-spacing: -.005em;
 }
 .product-key-actives {
@@ -848,7 +848,7 @@ a { color: inherit; text-decoration: none; }
 }
 .theme-mens .product-key-actives { color: rgba(255,255,255,.88); opacity: 1; }
 .product-price {
-  font-family: 'Inter', system-ui, sans-serif; font-weight: 500;
+  font-family: 'Manrope', system-ui, sans-serif; font-weight: 500;
   font-size: 32px; line-height: 1; letter-spacing: -.01em;
 }
 .product-price span {
@@ -952,7 +952,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--accent); font-weight: 600; margin-bottom: 20px;
 }
 .science-h {
-  font-family: 'Inter', system-ui, sans-serif; font-weight: 700;
+  font-family: 'Manrope', system-ui, sans-serif; font-weight: 700;
   font-size: 32px; line-height: 1.2; max-width: 760px;
   letter-spacing: -.005em;
   margin-bottom: 24px;
@@ -975,7 +975,7 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: 48px; border-bottom: 0.5px solid rgba(255,255,255,.1);
 }
 .footer-brand-block {
-  font-family: 'Inter', system-ui, sans-serif; font-size: 18px; font-weight: 700;
+  font-family: 'Manrope', system-ui, sans-serif; font-size: 18px; font-weight: 700;
   letter-spacing: .04em; line-height: 1.5;
 }
 .footer-brand-block em { font-style: normal; color: var(--accent); }
@@ -1024,7 +1024,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%; background: none; border: none; cursor: pointer;
   display: flex; align-items: center; justify-content: space-between;
   padding: 22px 4px; gap: 24px;
-  font-family: 'Inter', system-ui, sans-serif; font-weight: 600;
+  font-family: 'Manrope', system-ui, sans-serif; font-weight: 600;
   font-size: 17px; color: var(--navy); letter-spacing: 0;
   text-align: left; min-height: 64px;
   transition: color .2s;
@@ -1124,7 +1124,7 @@ a { color: inherit; text-decoration: none; }
 .checker-panel.dark .checker-eyebrow { color: var(--accent); }
 .checker-panel.tint .checker-eyebrow { color: var(--navy); opacity: .72; }
 .checker-h {
-  font-family: 'Inter', system-ui, sans-serif; font-weight: 700;
+  font-family: 'Manrope', system-ui, sans-serif; font-weight: 700;
   font-size: 26px; line-height: 1.25; letter-spacing: -.005em;
   margin-bottom: 4px;
 }
@@ -1306,7 +1306,7 @@ sup.ref {
 .research-list li::before {
   content: counter(ref);
   position: absolute; left: 0; top: 18px;
-  font-family: 'Inter', system-ui, sans-serif; font-weight: 700;
+  font-family: 'Manrope', system-ui, sans-serif; font-weight: 700;
   font-size: 13px; color: var(--accent-deep);
   width: 28px; text-align: left;
 }
