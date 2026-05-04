@@ -7,7 +7,7 @@
 <meta name="description" content="Evidence-based skincare from New Zealand. Clinical-grade actives, barrier-first formulations, every ingredient earns its place.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root {
   --navy: #1a2a3a;
@@ -68,7 +68,7 @@ img { max-width: 100%; display: block; }
   max-width: 1400px; margin: 0 auto;
 }
 .nav-logo {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 800;
   font-size: 18px;
   letter-spacing: .04em;
@@ -190,7 +190,7 @@ img { max-width: 100%; display: block; }
   border-radius: 4px 4px 0 0;
 }
 .hero-bottle-brand {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: 9px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--stone); margin-bottom: 8px; font-weight: 700;
 }
@@ -232,11 +232,11 @@ img { max-width: 100%; display: block; }
   margin-bottom: 14px;
 }
 .section-h2 {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 800;
   font-size: 36px; line-height: 1.05;
   color: var(--navy);
-  letter-spacing: -.015em;
+  letter-spacing: -.02em;
   margin-bottom: 14px;
 }
 .section-sub {
@@ -295,10 +295,10 @@ img { max-width: 100%; display: block; }
   border-radius: 2px 2px 0 0;
 }
 .coll-tile-name {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 700; font-size: 22px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 800; font-size: 22px;
   color: var(--navy);
-  letter-spacing: -.005em;
+  letter-spacing: -.01em;
   margin-bottom: 8px;
   display: inline-flex; align-items: center; gap: 6px;
 }
@@ -353,11 +353,11 @@ img { max-width: 100%; display: block; }
   margin-bottom: 14px;
 }
 .spotlight-h {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 800;
   font-size: 36px; line-height: 1.05;
   color: var(--navy);
-  letter-spacing: -.015em;
+  letter-spacing: -.025em;
   margin-bottom: 14px;
 }
 .spotlight-blurb {
@@ -412,7 +412,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 10px;
 }
 .newest-card-name {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 700; font-size: 18px;
   color: var(--navy);
   margin-bottom: 6px;
@@ -423,7 +423,7 @@ img { max-width: 100%; display: block; }
   max-width: 280px; margin: 0 auto 14px;
 }
 .newest-card-price {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 600; font-size: 16px; color: var(--navy);
   margin-bottom: 16px;
 }
@@ -462,66 +462,177 @@ img { max-width: 100%; display: block; }
   background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), transparent 55%);
 }
 .shop-cat-name {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 700; font-size: 14px;
   color: var(--navy);
   letter-spacing: .005em;
 }
 
-/* === BUILD YOUR ROUTINE === */
-.routine {
-  padding: 72px 24px 80px;
+/* === BUILD YOUR ROUTINE — interactive picker === */
+.routine-builder {
+  padding: 72px 24px 88px;
   background: var(--white);
 }
-.routine-header {
-  text-align: center; max-width: 700px; margin: 0 auto 40px;
+.routine-builder-header {
+  text-align: center; max-width: 720px; margin: 0 auto 48px;
 }
-.routine-grid {
-  max-width: 1100px; margin: 0 auto;
+.routine-steps {
+  max-width: 1200px; margin: 0 auto 56px;
   display: grid; grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 28px;
 }
-.routine-step {
+.routine-step-col {
   background: var(--ivory);
-  border-radius: 16px;
-  padding: 32px 24px;
-  text-align: center;
+  border-radius: 18px;
+  padding: 28px 22px;
+}
+.routine-step-label {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(26,42,58,.08);
 }
 .routine-step-num {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 800; font-size: 13px; letter-spacing: .2em;
-  color: var(--peach-deep); text-transform: uppercase;
-  margin-bottom: 10px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 800; font-size: 12px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--peach-deep);
 }
 .routine-step-name {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 700; font-size: 22px;
-  color: var(--navy); margin-bottom: 18px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 800; font-size: 22px;
+  color: var(--navy); letter-spacing: -.01em;
 }
-.routine-step-circle {
-  width: 130px; height: 130px;
+.routine-options {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.routine-option {
+  display: flex; align-items: center; gap: 14px;
+  width: 100%; background: var(--white);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 14px 16px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+  position: relative;
+}
+.routine-option:hover:not([aria-disabled="true"]) {
+  border-color: rgba(196,112,94,.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+}
+.routine-option[aria-pressed="true"] {
+  border-color: var(--peach-deep);
+  background: #fff5f0;
+}
+.routine-option[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: .55;
+}
+.routine-option-circle {
+  width: 48px; height: 48px; flex-shrink: 0;
   border-radius: 50%;
-  background: linear-gradient(160deg, var(--c-shopall), #b8b0a4);
-  margin: 0 auto 18px;
   position: relative; overflow: hidden;
 }
-.routine-step-circle.has { background: linear-gradient(160deg, var(--c-renew), var(--peach-deep)); }
-.routine-step-circle::after {
+.routine-option-circle::after {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.20), transparent 55%);
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.25), transparent 55%);
 }
-.routine-step-product {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 13px; color: var(--navy); font-weight: 600;
-  margin-bottom: 16px;
+.routine-option-circle.c-hydrate  { background: linear-gradient(160deg, var(--c-hydrate), #3d6b8a); }
+.routine-option-circle.c-calm     { background: linear-gradient(160deg, var(--c-calm), #6f60ad); }
+.routine-option-circle.c-clarify  { background: linear-gradient(160deg, var(--c-clarify), #0a8c80); }
+.routine-option-circle.c-renew    { background: linear-gradient(160deg, var(--c-renew), var(--peach-deep)); }
+.routine-option-circle.c-brighten { background: linear-gradient(160deg, #eac67a, var(--c-brighten)); }
+.routine-option-circle.c-mens     { background: linear-gradient(160deg, #4a5560, var(--c-mens)); }
+.routine-option-info {
+  flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0;
 }
-.routine-step-cta {
+.routine-option-name {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700; font-size: 14px;
+  color: var(--navy);
+  line-height: 1.25;
+}
+.routine-option-meta {
   font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
-  font-weight: 600;
-  color: var(--peach-deep);
-  border-bottom: 1px solid var(--peach);
-  padding-bottom: 2px;
+  font-size: 12px; color: var(--body);
+  letter-spacing: .01em;
+}
+.routine-option-check {
+  width: 24px; height: 24px; flex-shrink: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(26,42,58,.18);
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s, border-color .2s;
+}
+.routine-option[aria-pressed="true"] .routine-option-check {
+  background: var(--peach-deep);
+  border-color: var(--peach-deep);
+}
+.routine-option[aria-pressed="true"] .routine-option-check::after {
+  content: '';
+  width: 10px; height: 6px;
+  border-left: 2px solid white; border-bottom: 2px solid white;
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.routine-summary {
+  max-width: 720px; margin: 0 auto;
+  background: var(--ivory);
+  border-radius: 18px;
+  padding: 32px 28px;
+}
+.routine-summary-eyebrow {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 13px; font-weight: 700; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--peach-deep);
+  margin-bottom: 22px;
+}
+.routine-summary-rows {
+  display: flex; flex-direction: column; gap: 12px;
+  margin-bottom: 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(26,42,58,.10);
+}
+.routine-summary-row {
+  display: grid; grid-template-columns: 90px 1fr auto; gap: 12px;
+  align-items: baseline;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 14px; line-height: 1.4;
+}
+.routine-summary-step {
+  font-weight: 700; color: var(--navy);
+  letter-spacing: .04em;
+}
+.routine-summary-product {
+  color: var(--body);
+}
+.routine-summary-row.filled .routine-summary-product {
+  color: var(--navy); font-weight: 500;
+}
+.routine-summary-price {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700; color: var(--navy);
+}
+.routine-summary-total {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 24px;
+}
+.routine-total-amount { font-size: 22px; }
+.routine-cta {
+  width: 100%; padding: 18px;
+  font-size: 13px;
+}
+.routine-cta:disabled {
+  background: rgba(26,42,58,.18);
+  cursor: not-allowed;
+}
+.routine-cta:disabled:hover {
+  background: rgba(26,42,58,.18);
 }
 
 /* === BRAND STATEMENT PANEL === */
@@ -566,7 +677,7 @@ img { max-width: 100%; display: block; }
   gap: 32px;
 }
 .longform h3 {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 700; font-size: 17px;
   color: var(--navy);
   margin-bottom: 12px;
@@ -633,7 +744,7 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 .footer-brand-col {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: 18px; font-weight: 700;
   letter-spacing: .04em; line-height: 1.5;
   color: var(--white);
@@ -688,9 +799,10 @@ img { max-width: 100%; display: block; }
   .spotlight-inner { grid-template-columns: 1fr 1fr; gap: 56px; }
   .newest-grid { grid-template-columns: repeat(2, 1fr); }
   .shop-cats-grid { grid-template-columns: repeat(6, 1fr); gap: 20px; }
-  .routine-grid { grid-template-columns: repeat(3, 1fr); }
+  .routine-steps { grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .longform-inner { grid-template-columns: repeat(3, 1fr); }
   .footer-cols { grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; }
+  .routine-summary-row { grid-template-columns: 110px 1fr auto; }
 }
 @media (min-width: 1024px) {
   .hero-h1 { font-size: 80px; }
@@ -905,35 +1017,145 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- BUILD YOUR ROUTINE -->
-<section class="routine">
-  <div class="routine-header">
+<!-- BUILD YOUR ROUTINE — interactive picker -->
+<section class="routine-builder" id="routine-builder">
+  <div class="routine-builder-header">
     <div class="section-eyebrow fu">Build Your Routine</div>
-    <h2 class="section-h2 fu">Three steps. One philosophy.</h2>
-    <p class="section-sub fu">Cleanse, treat, and moisturise — formulated to work alone, designed to work together.</p>
+    <h2 class="section-h2 fu">Build a routine that actually works.</h2>
+    <p class="section-sub fu">Pick one product per step. Save 15% on the bundle when you're done.</p>
   </div>
-  <div class="routine-grid">
-    <div class="routine-step fu">
-      <div class="routine-step-num">Step 01</div>
-      <div class="routine-step-circle"></div>
-      <div class="routine-step-name">Cleanse</div>
-      <div class="routine-step-product">Coming Soon</div>
-      <a href="products/categories/cleansers.html" class="routine-step-cta">Browse Cleansers ›</a>
+
+  <div class="routine-steps fu">
+
+    <div class="routine-step-col" data-step="cleanse">
+      <div class="routine-step-label">
+        <span class="routine-step-num">Step 01</span>
+        <span class="routine-step-name">Cleanse</span>
+      </div>
+      <div class="routine-options">
+        <button class="routine-option" type="button" aria-pressed="false" aria-disabled="true" tabindex="-1">
+          <span class="routine-option-circle c-calm"></span>
+          <span class="routine-option-info">
+            <span class="routine-option-name">Calming Cream Cleanser</span>
+            <span class="routine-option-meta">Calm Collection · Coming Soon</span>
+          </span>
+          <span class="routine-option-check"></span>
+        </button>
+        <button class="routine-option" type="button" aria-pressed="false" aria-disabled="true" tabindex="-1">
+          <span class="routine-option-circle c-clarify"></span>
+          <span class="routine-option-info">
+            <span class="routine-option-name">Clarifying Foam Cleanser</span>
+            <span class="routine-option-meta">Clarify Collection · Coming Soon</span>
+          </span>
+          <span class="routine-option-check"></span>
+        </button>
+        <button class="routine-option" type="button" aria-pressed="false" aria-disabled="true" tabindex="-1">
+          <span class="routine-option-circle c-hydrate"></span>
+          <span class="routine-option-info">
+            <span class="routine-option-name">Hydrating Milk Cleanser</span>
+            <span class="routine-option-meta">Hydrate Collection · Coming Soon</span>
+          </span>
+          <span class="routine-option-check"></span>
+        </button>
+      </div>
     </div>
-    <div class="routine-step fu">
-      <div class="routine-step-num">Step 02</div>
-      <div class="routine-step-circle has"></div>
-      <div class="routine-step-name">Treat</div>
-      <div class="routine-step-product">Coffee Bean Eye Cream — $48</div>
-      <a href="products/brighten/eye-cream.html" class="routine-step-cta">Shop Now ›</a>
+
+    <div class="routine-step-col" data-step="treat">
+      <div class="routine-step-label">
+        <span class="routine-step-num">Step 02</span>
+        <span class="routine-step-name">Treat</span>
+      </div>
+      <div class="routine-options">
+        <button class="routine-option" type="button" aria-pressed="false"
+                data-name="Coffee Bean Eye Cream" data-price="48" data-href="products/brighten/eye-cream.html">
+          <span class="routine-option-circle c-brighten"></span>
+          <span class="routine-option-info">
+            <span class="routine-option-name">Coffee Bean Eye Cream</span>
+            <span class="routine-option-meta">Brighten · $48 NZD</span>
+          </span>
+          <span class="routine-option-check"></span>
+        </button>
+        <button class="routine-option" type="button" aria-pressed="false" aria-disabled="true" tabindex="-1">
+          <span class="routine-option-circle c-renew"></span>
+          <span class="routine-option-info">
+            <span class="routine-option-name">Renewing AHA Toner</span>
+            <span class="routine-option-meta">Renew Collection · Coming Soon</span>
+          </span>
+          <span class="routine-option-check"></span>
+        </button>
+        <button class="routine-option" type="button" aria-pressed="false" aria-disabled="true" tabindex="-1">
+          <span class="routine-option-circle c-brighten"></span>
+          <span class="routine-option-info">
+            <span class="routine-option-name">Vitamin C Serum</span>
+            <span class="routine-option-meta">Brighten Collection · Coming Soon</span>
+          </span>
+          <span class="routine-option-check"></span>
+        </button>
+      </div>
     </div>
-    <div class="routine-step fu">
-      <div class="routine-step-num">Step 03</div>
-      <div class="routine-step-circle has"></div>
-      <div class="routine-step-name">Moisturise</div>
-      <div class="routine-step-product">Neuro-Restore Crème — $65</div>
-      <a href="products/renew/neuro-restore-creme.html" class="routine-step-cta">Shop Now ›</a>
+
+    <div class="routine-step-col" data-step="moisturise">
+      <div class="routine-step-label">
+        <span class="routine-step-num">Step 03</span>
+        <span class="routine-step-name">Moisturise</span>
+      </div>
+      <div class="routine-options">
+        <button class="routine-option" type="button" aria-pressed="false"
+                data-name="Neuro-Restore Face Crème" data-price="65" data-href="products/renew/neuro-restore-creme.html">
+          <span class="routine-option-circle c-renew"></span>
+          <span class="routine-option-info">
+            <span class="routine-option-name">Neuro-Restore Face Crème</span>
+            <span class="routine-option-meta">Renew · $65 NZD</span>
+          </span>
+          <span class="routine-option-check"></span>
+        </button>
+        <button class="routine-option" type="button" aria-pressed="false" aria-disabled="true" tabindex="-1">
+          <span class="routine-option-circle c-calm"></span>
+          <span class="routine-option-info">
+            <span class="routine-option-name">Calming Barrier Cream</span>
+            <span class="routine-option-meta">Calm Collection · Coming Soon</span>
+          </span>
+          <span class="routine-option-check"></span>
+        </button>
+        <button class="routine-option" type="button" aria-pressed="false" aria-disabled="true" tabindex="-1">
+          <span class="routine-option-circle c-mens"></span>
+          <span class="routine-option-info">
+            <span class="routine-option-name">Daily Defence Cream</span>
+            <span class="routine-option-meta">Men's Collection · Coming Soon</span>
+          </span>
+          <span class="routine-option-check"></span>
+        </button>
+      </div>
     </div>
+
+  </div>
+
+  <div class="routine-summary fu" id="routine-summary">
+    <div class="routine-summary-eyebrow">Your Routine</div>
+    <div class="routine-summary-rows">
+      <div class="routine-summary-row" data-row="cleanse">
+        <span class="routine-summary-step">Cleanse</span>
+        <span class="routine-summary-product">— pick one above —</span>
+        <span class="routine-summary-price">—</span>
+      </div>
+      <div class="routine-summary-row" data-row="treat">
+        <span class="routine-summary-step">Treat</span>
+        <span class="routine-summary-product">— pick one above —</span>
+        <span class="routine-summary-price">—</span>
+      </div>
+      <div class="routine-summary-row" data-row="moisturise">
+        <span class="routine-summary-step">Moisturise</span>
+        <span class="routine-summary-product">— pick one above —</span>
+        <span class="routine-summary-price">—</span>
+      </div>
+    </div>
+    <div class="routine-summary-total">
+      <span>Total</span>
+      <span class="routine-total-amount">$0.00 NZD</span>
+    </div>
+    <button class="btn btn-primary routine-cta" id="routine-add-to-cart" disabled>
+      Add Routine to Cart
+    </button>
   </div>
 </section>
 
@@ -1027,8 +1249,78 @@ img { max-width: 100%; display: block; }
 </footer>
 
 <script>
+  // Fade-up observer
   const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } }), { threshold: 0.1 });
   document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+
+  // Routine builder — interactive picker
+  (function () {
+    const state = { cleanse: null, treat: null, moisturise: null };
+    const stepCols = document.querySelectorAll('.routine-step-col');
+    const summary = document.getElementById('routine-summary');
+    const cta = document.getElementById('routine-add-to-cart');
+    if (!stepCols.length || !summary || !cta) return;
+
+    function renderSummary() {
+      let total = 0;
+      let pickedCount = 0;
+      Object.keys(state).forEach(stepKey => {
+        const row = summary.querySelector('[data-row="' + stepKey + '"]');
+        if (!row) return;
+        const productEl = row.querySelector('.routine-summary-product');
+        const priceEl = row.querySelector('.routine-summary-price');
+        if (state[stepKey]) {
+          row.classList.add('filled');
+          productEl.textContent = state[stepKey].name;
+          priceEl.textContent = '$' + state[stepKey].price.toFixed(2);
+          total += state[stepKey].price;
+          pickedCount++;
+        } else {
+          row.classList.remove('filled');
+          productEl.textContent = '— pick one above —';
+          priceEl.textContent = '—';
+        }
+      });
+      summary.querySelector('.routine-total-amount').textContent = '$' + total.toFixed(2) + ' NZD';
+      cta.disabled = pickedCount === 0;
+      cta.textContent = pickedCount === 0
+        ? 'Pick at least one product'
+        : 'Add Routine to Cart (' + pickedCount + ')';
+    }
+
+    stepCols.forEach(col => {
+      const stepKey = col.dataset.step;
+      const options = col.querySelectorAll('.routine-option');
+      options.forEach(opt => {
+        if (opt.getAttribute('aria-disabled') === 'true') return;
+        opt.addEventListener('click', () => {
+          const isCurrentlySelected = opt.getAttribute('aria-pressed') === 'true';
+          options.forEach(o => o.setAttribute('aria-pressed', 'false'));
+          if (isCurrentlySelected) {
+            state[stepKey] = null;
+          } else {
+            opt.setAttribute('aria-pressed', 'true');
+            state[stepKey] = {
+              name: opt.dataset.name,
+              price: parseFloat(opt.dataset.price),
+              href: opt.dataset.href
+            };
+          }
+          renderSummary();
+        });
+      });
+    });
+
+    cta.addEventListener('click', () => {
+      const picked = Object.values(state).filter(Boolean);
+      if (!picked.length) return;
+      const list = picked.map(p => '· ' + p.name + ' — $' + p.price.toFixed(2)).join('\n');
+      const total = picked.reduce((s, p) => s + p.price, 0);
+      alert('Coming soon — add-to-cart launching with the next product release.\n\nYour routine:\n' + list + '\n\nTotal: $' + total.toFixed(2) + ' NZD');
+    });
+
+    renderSummary();
+  })();
 </script>
 
 </body>
