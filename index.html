@@ -8,1320 +8,443 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/product.css">
 <style>
 :root {
-  --navy: #1a2a3a;
-  --navy-deep: #111c27;
-  --ivory: #faf8f5;
-  --white: #ffffff;
-  --stone: #9a9085;
-  --body: #4a4a4a;
-  --peach: #f4a896;
-  --peach-deep: #c4705e;
-
-  /* Per-collection accent colours mirrored from product.css themes */
-  --c-hydrate: #6b9bb8;
-  --c-calm: #9989d4;
-  --c-clarify: #1ad6c5;
-  --c-renew: #ffb19c;
+  --c-hydrate:  #6b9bb8;
+  --c-calm:     #9989d4;
+  --c-clarify:  #1ad6c5;
+  --c-renew:    #ffb19c;
   --c-brighten: #c89311;
-  --c-mens: #233237;
+  --c-mens:     #233237;
   --c-targeted: #b0a0c0;
-  --c-shopall: #d8d0c4;
 }
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-weight: 400;
-  background: var(--white);
-  color: var(--navy);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
-
-/* === PROMO STRIP === */
-.promo-strip {
-  background: var(--navy-deep);
-  color: var(--white);
-  text-align: center;
-  padding: 10px 16px;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 12px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-.promo-strip strong { color: var(--peach); font-weight: 600; }
-
-/* === SITE NAV === */
-.site-nav {
-  background: var(--white);
-  border-bottom: 1px solid rgba(26,42,58,.08);
-}
-.site-nav-top {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 24px;
-  max-width: 1400px; margin: 0 auto;
-}
-.nav-logo {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  letter-spacing: .04em;
-  color: var(--navy);
-}
-.nav-actions {
-  display: flex; align-items: center; gap: 22px;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 13px; font-weight: 500;
-  color: var(--navy);
-}
-.nav-actions a, .nav-actions span { cursor: pointer; }
-
-.site-nav-sub {
-  border-top: 1px solid rgba(26,42,58,.06);
-  padding: 14px 24px;
-  display: flex; justify-content: center; gap: 48px;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 14px; font-weight: 600;
-  color: var(--navy);
-  letter-spacing: .01em;
-}
-.site-nav-sub a {
-  position: relative;
-  padding-bottom: 4px;
-  transition: color .2s;
-}
-.site-nav-sub a:hover { color: var(--peach-deep); }
-.site-nav-sub a::after {
-  content: '';
-  position: absolute; left: 0; right: 0; bottom: -2px;
-  height: 2px; background: var(--peach-deep);
-  transform: scaleX(0); transform-origin: center;
-  transition: transform .25s ease;
-}
-.site-nav-sub a:hover::after { transform: scaleX(1); }
-
-/* === HERO === */
-.hero {
+.home-hero {
   background: var(--ivory);
-  padding: 56px 24px 64px;
+  padding: 96px 24px 80px;
+  text-align: center;
 }
-.hero-inner {
-  max-width: 1400px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr;
-  gap: 48px; align-items: center;
-}
-.hero-eyebrow {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 13px; letter-spacing: .28em; text-transform: uppercase;
-  color: var(--peach-deep); font-weight: 600;
-  margin-bottom: 20px;
-}
-.hero-h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  font-size: 48px; line-height: 1.05;
-  color: var(--navy);
-  letter-spacing: -.005em;
-  margin-bottom: 24px;
-}
-.hero-h1 em {
-  font-style: italic; color: var(--peach-deep);
-}
-.hero-sub {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 16px; line-height: 1.65;
-  color: var(--body);
-  max-width: 520px;
-  margin-bottom: 32px;
-}
-.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 16px 28px;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
-  border: none; cursor: pointer; transition: all .25s ease;
-  text-decoration: none;
-}
-.btn-primary { background: var(--navy-deep); color: var(--white); }
-.btn-primary:hover { background: var(--peach-deep); }
-.btn-secondary {
-  background: transparent; color: var(--navy);
-  border: 1.5px solid var(--navy);
-}
-.btn-secondary:hover { background: var(--navy); color: var(--white); }
-
-.hero-visual {
-  display: flex; align-items: center; justify-content: center;
-  min-height: 360px;
-  position: relative;
-}
-.hero-circle {
-  width: 100%; max-width: 460px; aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  background: linear-gradient(160deg, var(--c-renew) 0%, var(--peach-deep) 100%);
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0,0,0,.10);
-}
-.hero-circle::after {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.25), transparent 55%);
-}
-.hero-bottle {
-  width: 130px; height: 220px;
-  background: linear-gradient(180deg, #f8f4f0, #ede8e2 60%, #d8d0c8);
-  border-radius: 6px;
-  position: relative; z-index: 1;
-  box-shadow: 0 24px 48px rgba(0,0,0,.22);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 14px;
-}
-.hero-bottle::before {
-  content: ''; position: absolute; top: -16px; left: 50%; transform: translateX(-50%);
-  width: 60px; height: 16px;
-  background: linear-gradient(180deg, #c8c0b8, #a09890);
-  border-radius: 4px 4px 0 0;
-}
-.hero-bottle-brand {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-size: 9px; letter-spacing: .22em; text-transform: uppercase;
-  color: var(--stone); margin-bottom: 8px; font-weight: 700;
-}
-.hero-bottle-bar {
-  width: 32px; height: .5px; background: var(--peach-deep); margin-bottom: 8px;
-}
-.hero-bottle-name {
-  font-family: 'Cormorant Garamond', serif; font-size: 14px;
-  color: var(--navy); line-height: 1.3; font-weight: 500;
-}
-
-/* === VALUE STRIP === */
-.value-strip {
-  background: var(--navy);
-  color: var(--white);
-  padding: 22px 16px;
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 32px;
-}
-.value-item {
-  display: flex; align-items: center; gap: 10px;
+.home-hero-eyebrow {
   font-family: 'DM Sans', system-ui, sans-serif;
   font-size: 13px; font-weight: 600;
-  letter-spacing: .12em; text-transform: uppercase;
+  letter-spacing: .28em; text-transform: uppercase;
+  color: var(--peach-deep, #c4705e);
+  margin-bottom: 24px;
 }
-.value-item svg { width: 18px; height: 18px; color: var(--peach); }
+.home-hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500; font-style: italic;
+  font-size: 44px; line-height: 1.1;
+  color: var(--navy);
+  letter-spacing: -.005em;
+  margin-bottom: 22px;
+  max-width: 760px; margin-left: auto; margin-right: auto;
+}
+.home-hero-h1 em { font-style: italic; color: var(--peach-deep, #c4705e); }
+.home-hero-sub {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 17px; line-height: 1.65;
+  color: var(--body-col, #4a4a4a);
+  max-width: 580px; margin: 0 auto 36px;
+}
+.home-hero-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 18px 36px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 13px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  background: var(--navy-deep, #111c27); color: var(--white);
+  border: none; cursor: pointer;
+  text-decoration: none;
+  transition: background .25s ease, transform .25s ease;
+}
+.home-hero-cta:hover {
+  background: var(--peach-deep, #c4705e);
+  transform: translateY(-2px);
+}
 
-/* === COLLECTIONS GRID (Paula's-style) === */
-.collections {
-  padding: 72px 24px 80px;
+/* === Section 2: Shop by Collection === */
+.home-collections {
+  padding: 96px 24px 80px;
   background: var(--white);
 }
-.collections-header {
-  max-width: 720px; margin: 0 auto 48px; text-align: center;
-}
-.section-eyebrow {
+.home-section-eyebrow {
   font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 13px; letter-spacing: .28em; text-transform: uppercase;
-  color: var(--peach-deep); font-weight: 600;
-  margin-bottom: 14px;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: .28em; text-transform: uppercase;
+  color: var(--peach-deep, #c4705e);
+  margin-bottom: 16px;
+  text-align: center;
 }
-.section-h2 {
+.home-section-h2 {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 800;
-  font-size: 36px; line-height: 1.05;
+  font-weight: 800; font-size: 40px; line-height: 1.05;
   color: var(--navy);
   letter-spacing: -.02em;
-  margin-bottom: 14px;
-}
-.section-sub {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 15px; line-height: 1.6;
-  color: var(--body);
-}
-
-.coll-grid {
-  max-width: 1300px; margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px 20px;
-}
-.coll-tile {
-  display: flex; flex-direction: column; align-items: center;
   text-align: center;
-  text-decoration: none;
-  padding: 24px 16px;
+  margin-bottom: 56px;
+}
+.home-coll-grid {
+  display: grid; grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 1200px; margin: 0 auto;
+}
+.home-coll-tile {
+  display: flex; flex-direction: column; align-items: center;
+  text-decoration: none; text-align: center;
   transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1);
 }
-.coll-tile:hover { transform: translateY(-4px); }
-.coll-circle {
-  width: 220px; height: 220px;
+.home-coll-tile:hover { transform: translateY(-4px); }
+.home-coll-circle {
+  width: 200px; height: 200px;
   border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden;
   margin-bottom: 22px;
   transition: transform .4s cubic-bezier(0.32, 0.72, 0, 1);
 }
-.coll-tile:hover .coll-circle { transform: scale(1.04); }
-.coll-circle::after {
+.home-coll-tile:hover .home-coll-circle { transform: scale(1.04); }
+.home-coll-circle::after {
   content: ''; position: absolute; inset: 0;
   background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.20), transparent 55%);
 }
-.coll-circle.c-hydrate  { background: linear-gradient(160deg, var(--c-hydrate),  #3d6b8a); }
-.coll-circle.c-calm     { background: linear-gradient(160deg, var(--c-calm),     #6f60ad); }
-.coll-circle.c-clarify  { background: linear-gradient(160deg, var(--c-clarify),  #0a8c80); }
-.coll-circle.c-renew    { background: linear-gradient(160deg, var(--c-renew),    var(--peach-deep)); }
-.coll-circle.c-brighten { background: linear-gradient(160deg, #eac67a,           var(--c-brighten)); }
-.coll-circle.c-mens     { background: linear-gradient(160deg, #4a5560,           var(--c-mens)); }
-.coll-circle.c-targeted { background: linear-gradient(160deg, var(--c-targeted), #6e5c8e); }
-.coll-circle.c-shopall  { background: linear-gradient(160deg, #f0ebe3,           var(--c-shopall)); }
-
-.coll-mini-bottle {
-  width: 70px; height: 110px;
-  background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.78));
-  border-radius: 4px;
-  position: relative; z-index: 1;
-  box-shadow: 0 12px 24px rgba(0,0,0,.18);
-}
-.coll-mini-bottle::before {
-  content: ''; position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
-  width: 28px; height: 8px;
-  background: rgba(255,255,255,.85);
-  border-radius: 2px 2px 0 0;
-}
-.coll-tile-name {
+.home-coll-circle.c-hydrate  { background: linear-gradient(160deg, var(--c-hydrate), #3d6b8a); }
+.home-coll-circle.c-calm     { background: linear-gradient(160deg, var(--c-calm), #6f60ad); }
+.home-coll-circle.c-clarify  { background: linear-gradient(160deg, var(--c-clarify), #0a8c80); }
+.home-coll-circle.c-renew    { background: linear-gradient(160deg, var(--c-renew), var(--peach-deep, #c4705e)); }
+.home-coll-circle.c-brighten { background: linear-gradient(160deg, #eac67a, var(--c-brighten)); }
+.home-coll-circle.c-mens     { background: linear-gradient(160deg, #4a5560, var(--c-mens)); }
+.home-coll-circle.c-targeted { background: linear-gradient(160deg, var(--c-targeted), #6e5c8e); }
+.home-coll-name {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 800; font-size: 22px;
+  font-weight: 800; font-size: 22px; letter-spacing: -.005em;
   color: var(--navy);
-  letter-spacing: -.01em;
-  margin-bottom: 8px;
   display: inline-flex; align-items: center; gap: 6px;
 }
-.coll-tile-name::after {
+.home-coll-name::after {
   content: '›'; font-size: 22px; font-weight: 500;
   transition: transform .25s ease;
 }
-.coll-tile:hover .coll-tile-name::after { transform: translateX(4px); }
-.coll-tile-tag {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 13px; line-height: 1.5;
-  color: var(--body);
-  margin-bottom: 14px;
-  max-width: 220px;
-}
-.coll-tile-cta {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 12px; font-weight: 600;
-  color: var(--navy);
-  letter-spacing: .04em;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
-  transition: border-color .2s;
-}
-.coll-tile:hover .coll-tile-cta { border-bottom-color: var(--navy); }
+.home-coll-tile:hover .home-coll-name::after { transform: translateX(4px); }
 
-/* === SPOTLIGHT BAND === */
-.spotlight {
+/* === Section 3: Concerns === */
+.home-concerns {
   background: var(--ivory);
-  padding: 56px 24px;
+  padding: 96px 24px;
 }
-.spotlight-inner {
-  max-width: 1200px; margin: 0 auto;
+.home-concern-grid {
   display: grid; grid-template-columns: 1fr;
-  gap: 32px; align-items: center;
-}
-.spotlight-visual {
-  background: linear-gradient(160deg, var(--c-brighten) 0%, #8a6200 100%);
-  border-radius: 16px;
-  aspect-ratio: 16 / 10;
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-}
-.spotlight-visual::after {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 55%);
-}
-.spotlight-eyebrow {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
-  color: var(--peach-deep); font-weight: 700;
-  margin-bottom: 14px;
-}
-.spotlight-h {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 800;
-  font-size: 36px; line-height: 1.05;
-  color: var(--navy);
-  letter-spacing: -.025em;
-  margin-bottom: 14px;
-}
-.spotlight-blurb {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 16px; line-height: 1.6; color: var(--body);
-  margin-bottom: 22px; max-width: 440px;
-}
-
-/* === MEET OUR NEWEST === */
-.newest {
-  padding: 72px 24px 80px;
-  background: var(--white);
-}
-.newest-grid {
+  gap: 16px;
   max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr;
-  gap: 32px;
 }
-.newest-card {
-  display: flex; flex-direction: column; align-items: center;
-  text-align: center; text-decoration: none;
-  background: var(--ivory);
-  border-radius: 16px;
-  padding: 32px 24px;
-  transition: transform .25s ease;
-}
-.newest-card:hover { transform: translateY(-4px); }
-.newest-card-img {
-  width: 100%; aspect-ratio: 4 / 3;
-  border-radius: 8px;
-  background: linear-gradient(160deg, var(--c-renew) 0%, var(--peach-deep) 100%);
-  margin-bottom: 22px;
-  position: relative; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-}
-.newest-card-img.brighten {
-  background: linear-gradient(160deg, #eac67a 0%, var(--c-brighten) 100%);
-}
-.newest-card-img::after {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.20), transparent 55%);
-}
-.newest-card-img img {
-  width: 70%; height: 70%; object-fit: contain;
-  filter: drop-shadow(0 12px 24px rgba(0,0,0,.20));
-  position: relative; z-index: 1;
-}
-.newest-card-tag {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
-  color: var(--peach-deep); font-weight: 700;
-  margin-bottom: 10px;
-}
-.newest-card-name {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 700; font-size: 18px;
-  color: var(--navy);
-  margin-bottom: 6px;
-}
-.newest-card-blurb {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 14px; line-height: 1.5; color: var(--body);
-  max-width: 280px; margin: 0 auto 14px;
-}
-.newest-card-price {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 600; font-size: 16px; color: var(--navy);
-  margin-bottom: 16px;
-}
-
-/* === SHOP BY CATEGORY === */
-.shop-cats {
-  background: var(--ivory);
-  padding: 72px 24px;
-}
-.shop-cats-header {
-  text-align: center; max-width: 600px; margin: 0 auto 40px;
-}
-.shop-cats-grid {
-  max-width: 1200px; margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px 24px;
-}
-.shop-cat-tile {
-  display: flex; flex-direction: column; align-items: center;
-  text-decoration: none; text-align: center;
-  transition: transform .25s ease;
-}
-.shop-cat-tile:hover { transform: translateY(-3px); }
-.shop-cat-circle {
-  width: 130px; height: 130px;
-  border-radius: 50%;
-  background: linear-gradient(160deg, var(--c-shopall), #b8b0a4);
-  margin-bottom: 14px;
-  position: relative; overflow: hidden;
-  transition: transform .35s ease;
-}
-.shop-cat-tile:hover .shop-cat-circle { transform: scale(1.05); }
-.shop-cat-circle::after {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), transparent 55%);
-}
-.shop-cat-name {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 700; font-size: 14px;
-  color: var(--navy);
-  letter-spacing: .005em;
-}
-
-/* === BUILD YOUR ROUTINE — interactive picker === */
-.routine-builder {
-  padding: 72px 24px 88px;
+.home-concern-tile {
   background: var(--white);
-}
-.routine-builder-header {
-  text-align: center; max-width: 720px; margin: 0 auto 48px;
-}
-.routine-steps {
-  max-width: 1200px; margin: 0 auto 56px;
-  display: grid; grid-template-columns: 1fr;
-  gap: 28px;
-}
-.routine-step-col {
-  background: var(--ivory);
-  border-radius: 18px;
-  padding: 28px 22px;
-}
-.routine-step-label {
-  display: flex; align-items: baseline; gap: 12px;
-  margin-bottom: 22px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(26,42,58,.08);
-}
-.routine-step-num {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 800; font-size: 12px; letter-spacing: .2em;
-  text-transform: uppercase; color: var(--peach-deep);
-}
-.routine-step-name {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 800; font-size: 22px;
-  color: var(--navy); letter-spacing: -.01em;
-}
-.routine-options {
-  display: flex; flex-direction: column; gap: 10px;
-}
-.routine-option {
-  display: flex; align-items: center; gap: 14px;
-  width: 100%; background: var(--white);
-  border: 2px solid transparent;
   border-radius: 14px;
-  padding: 14px 16px;
-  cursor: pointer;
-  text-align: left;
-  font-family: inherit;
-  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
-  position: relative;
+  padding: 28px 24px;
+  text-decoration: none;
+  display: flex; align-items: center; gap: 18px;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-.routine-option:hover:not([aria-disabled="true"]) {
-  border-color: rgba(196,112,94,.4);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+.home-concern-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0,0,0,.06);
 }
-.routine-option[aria-pressed="true"] {
-  border-color: var(--peach-deep);
-  background: #fff5f0;
+.home-concern-icon {
+  width: 44px; height: 44px; flex-shrink: 0;
+  color: var(--peach-deep, #c4705e);
 }
-.routine-option[aria-disabled="true"] {
-  cursor: not-allowed;
-  opacity: .55;
-}
-.routine-option-circle {
-  width: 48px; height: 48px; flex-shrink: 0;
-  border-radius: 50%;
-  position: relative; overflow: hidden;
-}
-.routine-option-circle::after {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.25), transparent 55%);
-}
-.routine-option-circle.c-hydrate  { background: linear-gradient(160deg, var(--c-hydrate), #3d6b8a); }
-.routine-option-circle.c-calm     { background: linear-gradient(160deg, var(--c-calm), #6f60ad); }
-.routine-option-circle.c-clarify  { background: linear-gradient(160deg, var(--c-clarify), #0a8c80); }
-.routine-option-circle.c-renew    { background: linear-gradient(160deg, var(--c-renew), var(--peach-deep)); }
-.routine-option-circle.c-brighten { background: linear-gradient(160deg, #eac67a, var(--c-brighten)); }
-.routine-option-circle.c-mens     { background: linear-gradient(160deg, #4a5560, var(--c-mens)); }
-.routine-option-info {
-  flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0;
-}
-.routine-option-name {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 700; font-size: 14px;
-  color: var(--navy);
-  line-height: 1.25;
-}
-.routine-option-meta {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 12px; color: var(--body);
-  letter-spacing: .01em;
-}
-.routine-option-check {
-  width: 24px; height: 24px; flex-shrink: 0;
-  border-radius: 50%;
-  border: 1.5px solid rgba(26,42,58,.18);
-  display: flex; align-items: center; justify-content: center;
-  transition: background .2s, border-color .2s;
-}
-.routine-option[aria-pressed="true"] .routine-option-check {
-  background: var(--peach-deep);
-  border-color: var(--peach-deep);
-}
-.routine-option[aria-pressed="true"] .routine-option-check::after {
-  content: '';
-  width: 10px; height: 6px;
-  border-left: 2px solid white; border-bottom: 2px solid white;
-  transform: rotate(-45deg) translate(1px, -1px);
-}
-
-.routine-summary {
-  max-width: 720px; margin: 0 auto;
-  background: var(--ivory);
-  border-radius: 18px;
-  padding: 32px 28px;
-}
-.routine-summary-eyebrow {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 13px; font-weight: 700; letter-spacing: .22em;
-  text-transform: uppercase; color: var(--peach-deep);
-  margin-bottom: 22px;
-}
-.routine-summary-rows {
-  display: flex; flex-direction: column; gap: 12px;
-  margin-bottom: 22px;
-  padding-bottom: 22px;
-  border-bottom: 1px solid rgba(26,42,58,.10);
-}
-.routine-summary-row {
-  display: grid; grid-template-columns: 90px 1fr auto; gap: 12px;
-  align-items: baseline;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 14px; line-height: 1.4;
-}
-.routine-summary-step {
-  font-weight: 700; color: var(--navy);
-  letter-spacing: .04em;
-}
-.routine-summary-product {
-  color: var(--body);
-}
-.routine-summary-row.filled .routine-summary-product {
-  color: var(--navy); font-weight: 500;
-}
-.routine-summary-price {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 700; color: var(--navy);
-}
-.routine-summary-total {
-  display: flex; justify-content: space-between; align-items: baseline;
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-size: 18px; font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 24px;
-}
-.routine-total-amount { font-size: 22px; }
-.routine-cta {
-  width: 100%; padding: 18px;
-  font-size: 13px;
-}
-.routine-cta:disabled {
-  background: rgba(26,42,58,.18);
-  cursor: not-allowed;
-}
-.routine-cta:disabled:hover {
-  background: rgba(26,42,58,.18);
-}
-
-/* === BRAND STATEMENT PANEL === */
-.manifesto {
-  background: var(--navy-deep);
-  color: var(--white);
-  padding: 80px 24px;
-  text-align: center;
-}
-.manifesto-inner {
-  max-width: 880px; margin: 0 auto;
-}
-.manifesto-eyebrow {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 13px; letter-spacing: .28em; text-transform: uppercase;
-  color: var(--peach); font-weight: 600;
-  margin-bottom: 24px;
-}
-.manifesto-h {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500; font-size: 40px; line-height: 1.15;
-  color: var(--white);
-  letter-spacing: -.005em;
-  margin-bottom: 28px;
-}
-.manifesto-h em { color: var(--peach); font-style: italic; }
-.manifesto-body {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 17px; line-height: 1.7;
-  color: rgba(255,255,255,.85);
-}
-.manifesto-body p + p { margin-top: 16px; }
-
-/* === LONG-FORM SEO === */
-.longform {
-  background: var(--ivory);
-  padding: 72px 24px;
-}
-.longform-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr;
-  gap: 32px;
-}
-.longform h3 {
+.home-concern-text { flex: 1; min-width: 0; }
+.home-concern-name {
   font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 700; font-size: 17px;
   color: var(--navy);
-  margin-bottom: 12px;
-  letter-spacing: -.005em;
+  margin-bottom: 4px;
 }
-.longform p {
+.home-concern-tag {
   font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 15px; line-height: 1.7;
-  color: var(--body);
+  font-size: 14px; line-height: 1.4;
+  color: var(--body-col, #4a4a4a);
 }
+.home-concern-arrow {
+  font-size: 22px; color: var(--navy);
+  transition: transform .25s ease;
+  flex-shrink: 0;
+}
+.home-concern-tile:hover .home-concern-arrow { transform: translateX(4px); }
 
-/* === FOOTER === */
-.site-footer {
-  background: var(--navy-deep);
+/* === Section 4: Brand Statement === */
+.home-brand {
+  background: var(--navy-deep, #111c27);
   color: var(--white);
-  padding: 64px 24px 32px;
-}
-.footer-newsletter {
-  max-width: 1300px; margin: 0 auto 56px;
+  padding: 112px 24px;
   text-align: center;
-  padding-bottom: 48px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
 }
-.footer-newsletter h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500; font-style: italic;
-  font-size: 28px; color: var(--white);
-  margin-bottom: 10px;
-}
-.footer-newsletter p {
+.home-brand-inner { max-width: 760px; margin: 0 auto; }
+.home-brand-eyebrow {
   font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 14px; color: rgba(255,255,255,.7);
-  margin-bottom: 22px;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: .28em; text-transform: uppercase;
+  color: var(--peach, #f4a896);
+  margin-bottom: 28px;
 }
-.footer-newsletter form {
-  display: flex; max-width: 440px; margin: 0 auto;
-  gap: 8px;
-}
-.footer-newsletter input {
-  flex: 1; padding: 14px 18px;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 14px;
-  background: rgba(255,255,255,.08); color: var(--white);
-  border: 1px solid rgba(255,255,255,.16); border-radius: 4px;
-  outline: none;
-}
-.footer-newsletter input::placeholder { color: rgba(255,255,255,.5); }
-.footer-newsletter button {
-  padding: 14px 22px;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
-  background: var(--peach-deep); color: var(--white);
-  border: none; cursor: pointer;
-  border-radius: 4px;
-  transition: background .2s;
-}
-.footer-newsletter button:hover { background: var(--peach); color: var(--navy); }
-
-.footer-cols {
-  max-width: 1300px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr;
-  gap: 36px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-.footer-brand-col {
+.home-brand-h2 {
   font-family: 'Manrope', system-ui, sans-serif;
-  font-size: 18px; font-weight: 700;
-  letter-spacing: .04em; line-height: 1.5;
+  font-weight: 800; font-size: 44px; line-height: 1.1;
   color: var(--white);
+  letter-spacing: -.02em;
+  margin-bottom: 28px;
 }
-.footer-brand-col em { font-style: normal; color: var(--peach); }
-.footer-tagline {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400; font-style: italic;
-  font-size: 14px; color: rgba(255,255,255,.7);
-  margin-top: 14px; line-height: 1.6;
-}
-.footer-col h4 {
+.home-brand-body {
   font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 12px; font-weight: 600;
-  letter-spacing: .22em; text-transform: uppercase;
-  color: var(--peach); margin-bottom: 14px;
+  font-size: 17px; line-height: 1.75;
+  color: rgba(255,255,255,.85);
 }
-.footer-col ul { list-style: none; }
-.footer-col li { margin-bottom: 8px; }
-.footer-col a {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 14px; color: rgba(255,255,255,.75);
-  transition: color .2s;
+.home-brand-body strong { color: var(--white); font-weight: 600; }
+
+/* Tablet */
+@media (min-width: 720px) {
+  .home-hero { padding: 128px 32px 96px; }
+  .home-hero-h1 { font-size: 64px; }
+  .home-section-h2, .home-brand-h2 { font-size: 56px; }
+  .home-coll-grid { grid-template-columns: repeat(3, 1fr); gap: 40px 24px; }
+  .home-concern-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
 }
-.footer-col a:hover { color: var(--peach); }
-.footer-bottom {
-  max-width: 1300px; margin: 0 auto;
-  padding-top: 24px;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 12px; color: rgba(255,255,255,.5);
-  text-align: center;
+/* Desktop */
+@media (min-width: 1024px) {
+  .home-hero-h1 { font-size: 80px; }
+  .home-section-h2, .home-brand-h2 { font-size: 64px; }
+  .home-coll-grid { grid-template-columns: repeat(4, 1fr); gap: 48px 24px; }
+  .home-concern-grid { grid-template-columns: repeat(3, 1fr); }
+  .home-coll-circle { width: 220px; height: 220px; }
 }
 
-/* === FADE-UP === */
 .fu { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 .fu.vis { opacity: 1; transform: translateY(0); }
-
-/* === RESPONSIVE === */
-@media (min-width: 480px) {
-  .coll-grid { grid-template-columns: repeat(2, 1fr); }
-  .shop-cats-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (min-width: 720px) {
-  .promo-strip { padding: 12px 24px; }
-  .hero { padding: 80px 32px 96px; }
-  .hero-inner { grid-template-columns: 1.1fr 1fr; gap: 64px; }
-  .hero-h1 { font-size: 64px; }
-  .hero-sub { font-size: 17px; }
-  .section-h2 { font-size: 44px; }
-  .spotlight-h { font-size: 44px; }
-  .manifesto-h { font-size: 52px; }
-  .spotlight-inner { grid-template-columns: 1fr 1fr; gap: 56px; }
-  .newest-grid { grid-template-columns: repeat(2, 1fr); }
-  .shop-cats-grid { grid-template-columns: repeat(6, 1fr); gap: 20px; }
-  .routine-steps { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .longform-inner { grid-template-columns: repeat(3, 1fr); }
-  .footer-cols { grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; }
-  .routine-summary-row { grid-template-columns: 110px 1fr auto; }
-}
-@media (min-width: 1024px) {
-  .hero-h1 { font-size: 80px; }
-  .section-h2 { font-size: 52px; }
-  .spotlight-h { font-size: 52px; }
-  .manifesto-h { font-size: 64px; }
-  .coll-grid { grid-template-columns: repeat(4, 1fr); }
-  .coll-circle { width: 240px; height: 240px; }
-}
 </style>
 </head>
 <body>
 
-<!-- PROMO STRIP -->
-<div class="promo-strip">
-  Evidence-based skincare. Clinical concentrations. <strong>Made in New Zealand.</strong>
-</div>
-
-<!-- SITE NAV -->
-<nav class="site-nav">
-  <div class="site-nav-top">
+<!-- SHARED NAV -->
+<nav class="site-nav-v2">
+  <div class="site-nav-v2-inner">
     <a class="nav-logo" href="index.html">Matilda Jane</a>
-    <div class="nav-actions">
-      <span>Search</span>
-      <span>Account</span>
-      <span>Cart (0)</span>
+    <ul class="nav-v2-links">
+      <li><a class="nav-v2-link" href="start-here.html">Start Here</a></li>
+      <li>
+        <button class="nav-v2-trigger" type="button">Collections <span class="chev">▾</span></button>
+        <ul class="nav-v2-dropdown">
+          <li><a href="products/hydrate.html">Hydrate</a></li>
+          <li><a href="products/calming-barrier.html">Calm</a></li>
+          <li><a href="products/clarifying-bha.html">Clarify</a></li>
+          <li><a href="products/neuro-restore.html">Renew</a></li>
+          <li><a href="products/brightening-vitamin-c.html">Brighten</a></li>
+          <li><a href="products/daily-defence.html">Men's</a></li>
+          <li><a href="products/targeted.html">Targeted Treatments</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="nav-v2-trigger" type="button">Concerns <span class="chev">▾</span></button>
+        <ul class="nav-v2-dropdown">
+          <li><a href="concerns/dryness-and-dehydration.html">Dryness &amp; Dehydration</a></li>
+          <li><a href="concerns/redness-and-reactivity.html">Redness &amp; Reactivity</a></li>
+          <li><a href="concerns/blemishes-and-congestion.html">Blemishes &amp; Congestion</a></li>
+          <li><a href="concerns/dullness-and-uneven-tone.html">Dullness &amp; Uneven Tone</a></li>
+          <li><a href="concerns/ageing-and-loss-of-firmness.html">Ageing &amp; Loss of Firmness</a></li>
+          <li><a href="concerns/compromised-barrier.html">Compromised Barrier</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-v2-actions">
+      <span class="nav-v2-cart">Cart (0)</span>
+      <button class="nav-v2-hamburger" type="button" aria-label="Open menu" id="mj-hamburger"><span></span></button>
     </div>
-  </div>
-  <div class="site-nav-sub">
-    <a href="#categories">Categories</a>
-    <a href="#collections">Collections</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div>
-      <div class="hero-eyebrow fu">Matilda Jane Skincare</div>
-      <h1 class="hero-h1 fu">The best of nature, <em>refined.</em></h1>
-      <p class="hero-sub fu">Evidence-based formulations. Clinical concentrations. Every active is chosen for what it does — not how it sounds. Every ingredient earns its place. Every product respects your skin barrier.</p>
-      <div class="hero-ctas fu">
-        <a href="#collections" class="btn btn-primary">Explore the Range</a>
-        <a href="products/renew/neuro-restore-creme.html" class="btn btn-secondary">Featured Product</a>
-      </div>
-    </div>
-    <div class="hero-visual fu">
-      <div class="hero-circle">
-        <div class="hero-bottle">
-          <div class="hero-bottle-brand">Matilda Jane</div>
-          <div class="hero-bottle-bar"></div>
-          <div class="hero-bottle-name">Neuro-Restore<br>Face Crème</div>
-        </div>
-      </div>
-    </div>
+<!-- MOBILE NAV PANEL -->
+<div class="nav-v2-mobile-overlay" id="mj-mobile-overlay"></div>
+<aside class="nav-v2-mobile" id="mj-mobile-nav" aria-hidden="true">
+  <button class="nav-v2-mobile-close" type="button" id="mj-mobile-close" aria-label="Close menu">×</button>
+  <div class="nav-v2-mobile-section">
+    <a href="start-here.html">Start Here</a>
   </div>
+  <div class="nav-v2-mobile-section">
+    <span class="label">Collections</span>
+    <ul class="nav-v2-mobile-sublist">
+      <li><a href="products/hydrate.html">Hydrate</a></li>
+      <li><a href="products/calming-barrier.html">Calm</a></li>
+      <li><a href="products/clarifying-bha.html">Clarify</a></li>
+      <li><a href="products/neuro-restore.html">Renew</a></li>
+      <li><a href="products/brightening-vitamin-c.html">Brighten</a></li>
+      <li><a href="products/daily-defence.html">Men's</a></li>
+      <li><a href="products/targeted.html">Targeted Treatments</a></li>
+    </ul>
+  </div>
+  <div class="nav-v2-mobile-section">
+    <span class="label">Concerns</span>
+    <ul class="nav-v2-mobile-sublist">
+      <li><a href="concerns/dryness-and-dehydration.html">Dryness &amp; Dehydration</a></li>
+      <li><a href="concerns/redness-and-reactivity.html">Redness &amp; Reactivity</a></li>
+      <li><a href="concerns/blemishes-and-congestion.html">Blemishes &amp; Congestion</a></li>
+      <li><a href="concerns/dullness-and-uneven-tone.html">Dullness &amp; Uneven Tone</a></li>
+      <li><a href="concerns/ageing-and-loss-of-firmness.html">Ageing &amp; Loss of Firmness</a></li>
+      <li><a href="concerns/compromised-barrier.html">Compromised Barrier</a></li>
+    </ul>
+  </div>
+</aside>
+
+<!-- SECTION 1 — HERO -->
+<section class="home-hero">
+  <div class="home-hero-eyebrow fu">Matilda Jane Skincare</div>
+  <h1 class="home-hero-h1 fu">The best of nature, <em>refined.</em></h1>
+  <p class="home-hero-sub fu">Evidence-based formulations. Clinical concentrations. Every active is chosen for what it does — not how it sounds.</p>
+  <a href="start-here.html" class="home-hero-cta fu">Start Here</a>
 </section>
 
-<!-- VALUE STRIP -->
-<div class="value-strip">
-  <div class="value-item">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-    <span>Clinical Concentrations</span>
-  </div>
-  <div class="value-item">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M9 9h6v6H9z"/></svg>
-    <span>Barrier-First</span>
-  </div>
-  <div class="value-item">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-    <span>Made in NZ</span>
-  </div>
-  <div class="value-item">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s-7 8-7 13a7 7 0 0 0 14 0c0-5-7-13-7-13z"/></svg>
-    <span>Cruelty Free</span>
-  </div>
-</div>
-
-<!-- COLLECTIONS GRID -->
-<section class="collections" id="collections">
-  <div class="collections-header">
-    <div class="section-eyebrow fu">The Range</div>
-    <h2 class="section-h2 fu">Seven collections.<br>One philosophy.</h2>
-    <p class="section-sub fu">Each collection is built around a specific concern — formulated to work alone, designed to work together.</p>
-  </div>
-
-  <div class="coll-grid">
-    <a class="coll-tile fu" href="#">
-      <div class="coll-circle c-hydrate"><div class="coll-mini-bottle"></div></div>
-      <div class="coll-tile-name">Hydrate</div>
-      <p class="coll-tile-tag">Deep hydration for dry, dehydrated skin.</p>
-      <span class="coll-tile-cta">Explore Collection ›</span>
+<!-- SECTION 2 — SHOP BY COLLECTION -->
+<section class="home-collections" id="collections">
+  <div class="home-section-eyebrow fu">The Collections</div>
+  <h2 class="home-section-h2 fu">Shop by Collection</h2>
+  <div class="home-coll-grid">
+    <a class="home-coll-tile fu" href="products/hydrate.html">
+      <div class="home-coll-circle c-hydrate"></div>
+      <div class="home-coll-name">Hydrate</div>
     </a>
-    <a class="coll-tile fu" href="products/calming-barrier.html">
-      <div class="coll-circle c-calm"><div class="coll-mini-bottle"></div></div>
-      <div class="coll-tile-name">Calm</div>
-      <p class="coll-tile-tag">Soothing actives for reactive, sensitive skin.</p>
-      <span class="coll-tile-cta">Explore Collection ›</span>
+    <a class="home-coll-tile fu" href="products/calming-barrier.html">
+      <div class="home-coll-circle c-calm"></div>
+      <div class="home-coll-name">Calm</div>
     </a>
-    <a class="coll-tile fu" href="products/clarifying-bha.html">
-      <div class="coll-circle c-clarify"><div class="coll-mini-bottle"></div></div>
-      <div class="coll-tile-name">Clarify</div>
-      <p class="coll-tile-tag">For congested, blemish-prone skin.</p>
-      <span class="coll-tile-cta">Explore Collection ›</span>
+    <a class="home-coll-tile fu" href="products/clarifying-bha.html">
+      <div class="home-coll-circle c-clarify"></div>
+      <div class="home-coll-name">Clarify</div>
     </a>
-    <a class="coll-tile fu" href="products/neuro-restore.html">
-      <div class="coll-circle c-renew"><div class="coll-mini-bottle"></div></div>
-      <div class="coll-tile-name">Renew</div>
-      <p class="coll-tile-tag">For visible aging.</p>
-      <span class="coll-tile-cta">Explore Collection ›</span>
+    <a class="home-coll-tile fu" href="products/neuro-restore.html">
+      <div class="home-coll-circle c-renew"></div>
+      <div class="home-coll-name">Renew</div>
     </a>
-    <a class="coll-tile fu" href="products/brightening-vitamin-c.html">
-      <div class="coll-circle c-brighten"><div class="coll-mini-bottle"></div></div>
-      <div class="coll-tile-name">Brighten</div>
-      <p class="coll-tile-tag">Tone-evening for hyperpigmentation and dullness.</p>
-      <span class="coll-tile-cta">Explore Collection ›</span>
+    <a class="home-coll-tile fu" href="products/brightening-vitamin-c.html">
+      <div class="home-coll-circle c-brighten"></div>
+      <div class="home-coll-name">Brighten</div>
     </a>
-    <a class="coll-tile fu" href="products/daily-defence.html">
-      <div class="coll-circle c-mens"><div class="coll-mini-bottle"></div></div>
-      <div class="coll-tile-name">Men's</div>
-      <p class="coll-tile-tag">Engineered for men's skin.</p>
-      <span class="coll-tile-cta">Explore Collection ›</span>
+    <a class="home-coll-tile fu" href="products/daily-defence.html">
+      <div class="home-coll-circle c-mens"></div>
+      <div class="home-coll-name">Men's</div>
     </a>
-    <a class="coll-tile fu" href="#">
-      <div class="coll-circle c-targeted"><div class="coll-mini-bottle"></div></div>
-      <div class="coll-tile-name">Targeted</div>
-      <p class="coll-tile-tag">Specific actives. Specific concerns.</p>
-      <span class="coll-tile-cta">Explore Collection ›</span>
-    </a>
-    <a class="coll-tile fu" href="#collections">
-      <div class="coll-circle c-shopall"><div class="coll-mini-bottle"></div></div>
-      <div class="coll-tile-name">Shop All</div>
-      <p class="coll-tile-tag">Browse every product across every collection.</p>
-      <span class="coll-tile-cta">View All ›</span>
+    <a class="home-coll-tile fu" href="products/targeted.html">
+      <div class="home-coll-circle c-targeted"></div>
+      <div class="home-coll-name">Targeted</div>
     </a>
   </div>
 </section>
 
-<!-- SPOTLIGHT BAND -->
-<section class="spotlight">
-  <div class="spotlight-inner">
-    <a href="products/brighten/eye-cream.html" class="spotlight-visual">
-      <img src="assets/images/cream-application.jpg" alt="Coffee Bean Eye Cream" style="width:55%; height:auto; max-width:340px; border-radius:8px; position:relative; z-index:1; box-shadow:0 24px 48px rgba(0,0,0,.22);">
+<!-- SECTION 3 — WHAT'S YOUR CONCERN? -->
+<section class="home-concerns" id="concerns">
+  <div class="home-section-eyebrow fu">Shop by Concern</div>
+  <h2 class="home-section-h2 fu">What's your concern?</h2>
+  <div class="home-concern-grid">
+    <a class="home-concern-tile fu" href="concerns/dryness-and-dehydration.html">
+      <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s-7 8-7 13a7 7 0 0 0 14 0c0-5-7-13-7-13z"/></svg>
+      <div class="home-concern-text">
+        <div class="home-concern-name">Dryness &amp; Dehydration</div>
+        <div class="home-concern-tag">Lasting hydration. Replenished barrier.</div>
+      </div>
+      <span class="home-concern-arrow">›</span>
     </a>
-    <div>
-      <div class="spotlight-eyebrow fu">Now Available</div>
-      <h2 class="spotlight-h fu">Coffee Bean<br>Eye Cream.</h2>
-      <p class="spotlight-blurb fu">A light, fast-absorbing cream for the skin around the eyes. Hydrates and softens the look of dark circles, puffiness, and fine lines.</p>
-      <a href="products/brighten/eye-cream.html" class="btn btn-primary fu">Shop the Eye Cream</a>
-    </div>
-  </div>
-</section>
-
-<!-- MEET OUR NEWEST -->
-<section class="newest">
-  <div class="collections-header">
-    <div class="section-eyebrow fu">Meet Our Newest</div>
-    <h2 class="section-h2 fu">Designed for results.</h2>
-    <p class="section-sub fu">Two products. Both formulated to clinical concentrations. Both barrier-first.</p>
-  </div>
-  <div class="newest-grid">
-    <a class="newest-card fu" href="products/renew/neuro-restore-creme.html">
-      <div class="newest-card-img"><img src="assets/images/product-main.jpg" alt="Neuro-Restore Face Crème"></div>
-      <div class="newest-card-tag">Renew Collection</div>
-      <div class="newest-card-name">Neuro-Restore Face Crème</div>
-      <p class="newest-card-blurb">Bakuchiol, Neurophroline™ and Cacay Oil. Retinol-equivalent results without sensitisation.</p>
-      <div class="newest-card-price">$65.00 NZD</div>
-      <span class="btn btn-secondary" style="padding:12px 22px;">Shop Now</span>
+    <a class="home-concern-tile fu" href="concerns/redness-and-reactivity.html">
+      <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12h6"/></svg>
+      <div class="home-concern-text">
+        <div class="home-concern-name">Redness &amp; Reactivity</div>
+        <div class="home-concern-tag">Soothing actives for sensitised skin.</div>
+      </div>
+      <span class="home-concern-arrow">›</span>
     </a>
-    <a class="newest-card fu" href="products/brighten/eye-cream.html">
-      <div class="newest-card-img brighten"><img src="assets/images/cream-application.jpg" alt="Coffee Bean Eye Cream"></div>
-      <div class="newest-card-tag">Brighten Collection</div>
-      <div class="newest-card-name">Coffee Bean Eye Cream</div>
-      <p class="newest-card-blurb">Caffeine, Niacinamide and Vitamin C. Hydrates, de-puffs and brightens the eye area.</p>
-      <div class="newest-card-price">$48.00 NZD</div>
-      <span class="btn btn-secondary" style="padding:12px 22px;">Shop Now</span>
+    <a class="home-concern-tile fu" href="concerns/blemishes-and-congestion.html">
+      <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1"/><circle cx="14" cy="13" r="1"/><circle cx="11" cy="15" r="1"/></svg>
+      <div class="home-concern-text">
+        <div class="home-concern-name">Blemishes &amp; Congestion</div>
+        <div class="home-concern-tag">Clear pores without stripping the skin.</div>
+      </div>
+      <span class="home-concern-arrow">›</span>
     </a>
-  </div>
-</section>
-
-<!-- SHOP BY CATEGORY -->
-<section class="shop-cats" id="categories">
-  <div class="shop-cats-header">
-    <div class="section-eyebrow fu">Shop by Category</div>
-    <h2 class="section-h2 fu" style="font-size: 36px;">Find what you need.</h2>
-  </div>
-  <div class="shop-cats-grid">
-    <a class="shop-cat-tile fu" href="products/categories/cleansers.html">
-      <div class="shop-cat-circle"></div>
-      <div class="shop-cat-name">Cleansers</div>
+    <a class="home-concern-tile fu" href="concerns/dullness-and-uneven-tone.html">
+      <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
+      <div class="home-concern-text">
+        <div class="home-concern-name">Dullness &amp; Uneven Tone</div>
+        <div class="home-concern-tag">Tone-evening for visible radiance.</div>
+      </div>
+      <span class="home-concern-arrow">›</span>
     </a>
-    <a class="shop-cat-tile fu" href="products/categories/toners.html">
-      <div class="shop-cat-circle"></div>
-      <div class="shop-cat-name">Toners</div>
+    <a class="home-concern-tile fu" href="concerns/ageing-and-loss-of-firmness.html">
+      <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l7-7 7 7M5 19l7-7 7 7"/></svg>
+      <div class="home-concern-text">
+        <div class="home-concern-name">Ageing &amp; Loss of Firmness</div>
+        <div class="home-concern-tag">Renewal without sensitisation.</div>
+      </div>
+      <span class="home-concern-arrow">›</span>
     </a>
-    <a class="shop-cat-tile fu" href="products/categories/exfoliants.html">
-      <div class="shop-cat-circle"></div>
-      <div class="shop-cat-name">Exfoliants</div>
-    </a>
-    <a class="shop-cat-tile fu" href="products/categories/targeted-treatments.html">
-      <div class="shop-cat-circle"></div>
-      <div class="shop-cat-name">Targeted Treatments</div>
-    </a>
-    <a class="shop-cat-tile fu" href="products/categories/moisturisers.html">
-      <div class="shop-cat-circle"></div>
-      <div class="shop-cat-name">Moisturisers</div>
-    </a>
-    <a class="shop-cat-tile fu" href="products/categories/body-care.html">
-      <div class="shop-cat-circle"></div>
-      <div class="shop-cat-name">Body Care</div>
+    <a class="home-concern-tile fu" href="concerns/compromised-barrier.html">
+      <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M9 9h6v6H9z"/></svg>
+      <div class="home-concern-text">
+        <div class="home-concern-name">Compromised Barrier</div>
+        <div class="home-concern-tag">Lipid-replenishing barrier repair.</div>
+      </div>
+      <span class="home-concern-arrow">›</span>
     </a>
   </div>
 </section>
 
-<!-- BUILD YOUR ROUTINE — interactive picker -->
-<section class="routine-builder" id="routine-builder">
-  <div class="routine-builder-header">
-    <div class="section-eyebrow fu">Build Your Routine</div>
-    <h2 class="section-h2 fu">Build a routine that actually works.</h2>
-    <p class="section-sub fu">Pick one product per step. Save 15% on the bundle when you're done.</p>
-  </div>
-
-  <div class="routine-steps fu">
-
-    <div class="routine-step-col" data-step="cleanse">
-      <div class="routine-step-label">
-        <span class="routine-step-num">Step 01</span>
-        <span class="routine-step-name">Cleanse</span>
-      </div>
-      <div class="routine-options">
-        <button class="routine-option" type="button" aria-pressed="false" aria-disabled="true" tabindex="-1">
-          <span class="routine-option-circle c-calm"></span>
-          <span class="routine-option-info">
-            <span class="routine-option-name">Calming Cream Cleanser</span>
-            <span class="routine-option-meta">Calm Collection · Coming Soon</span>
-          </span>
-          <span class="routine-option-check"></span>
-        </button>
-        <button class="routine-option" type="button" aria-pressed="false" aria-disabled="true" tabindex="-1">
-          <span class="routine-option-circle c-clarify"></span>
-          <span class="routine-option-info">
-            <span class="routine-option-name">Clarifying Foam Cleanser</span>
-            <span class="routine-option-meta">Clarify Collection · Coming Soon</span>
-          </span>
-          <span class="routine-option-check"></span>
-        </button>
-        <button class="routine-option" type="button" aria-pressed="false" aria-disabled="true" tabindex="-1">
-          <span class="routine-option-circle c-hydrate"></span>
-          <span class="routine-option-info">
-            <span class="routine-option-name">Hydrating Milk Cleanser</span>
-            <span class="routine-option-meta">Hydrate Collection · Coming Soon</span>
-          </span>
-          <span class="routine-option-check"></span>
-        </button>
-      </div>
-    </div>
-
-    <div class="routine-step-col" data-step="treat">
-      <div class="routine-step-label">
-        <span class="routine-step-num">Step 02</span>
-        <span class="routine-step-name">Treat</span>
-      </div>
-      <div class="routine-options">
-        <button class="routine-option" type="button" aria-pressed="false"
-                data-name="Coffee Bean Eye Cream" data-price="48" data-href="products/brighten/eye-cream.html">
-          <span class="routine-option-circle c-brighten"></span>
-          <span class="routine-option-info">
-            <span class="routine-option-name">Coffee Bean Eye Cream</span>
-            <span class="routine-option-meta">Brighten · $48 NZD</span>
-          </span>
-          <span class="routine-option-check"></span>
-        </button>
-        <button class="routine-option" type="button" aria-pressed="false" aria-disabled="true" tabindex="-1">
-          <span class="routine-option-circle c-renew"></span>
-          <span class="routine-option-info">
-            <span class="routine-option-name">Renewing AHA Toner</span>
-            <span class="routine-option-meta">Renew Collection · Coming Soon</span>
-          </span>
-          <span class="routine-option-check"></span>
-        </button>
-        <button class="routine-option" type="button" aria-pressed="false" aria-disabled="true" tabindex="-1">
-          <span class="routine-option-circle c-brighten"></span>
-          <span class="routine-option-info">
-            <span class="routine-option-name">Vitamin C Serum</span>
-            <span class="routine-option-meta">Brighten Collection · Coming Soon</span>
-          </span>
-          <span class="routine-option-check"></span>
-        </button>
-      </div>
-    </div>
-
-    <div class="routine-step-col" data-step="moisturise">
-      <div class="routine-step-label">
-        <span class="routine-step-num">Step 03</span>
-        <span class="routine-step-name">Moisturise</span>
-      </div>
-      <div class="routine-options">
-        <button class="routine-option" type="button" aria-pressed="false"
-                data-name="Neuro-Restore Face Crème" data-price="65" data-href="products/renew/neuro-restore-creme.html">
-          <span class="routine-option-circle c-renew"></span>
-          <span class="routine-option-info">
-            <span class="routine-option-name">Neuro-Restore Face Crème</span>
-            <span class="routine-option-meta">Renew · $65 NZD</span>
-          </span>
-          <span class="routine-option-check"></span>
-        </button>
-        <button class="routine-option" type="button" aria-pressed="false" aria-disabled="true" tabindex="-1">
-          <span class="routine-option-circle c-calm"></span>
-          <span class="routine-option-info">
-            <span class="routine-option-name">Calming Barrier Cream</span>
-            <span class="routine-option-meta">Calm Collection · Coming Soon</span>
-          </span>
-          <span class="routine-option-check"></span>
-        </button>
-        <button class="routine-option" type="button" aria-pressed="false" aria-disabled="true" tabindex="-1">
-          <span class="routine-option-circle c-mens"></span>
-          <span class="routine-option-info">
-            <span class="routine-option-name">Daily Defence Cream</span>
-            <span class="routine-option-meta">Men's Collection · Coming Soon</span>
-          </span>
-          <span class="routine-option-check"></span>
-        </button>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="routine-summary fu" id="routine-summary">
-    <div class="routine-summary-eyebrow">Your Routine</div>
-    <div class="routine-summary-rows">
-      <div class="routine-summary-row" data-row="cleanse">
-        <span class="routine-summary-step">Cleanse</span>
-        <span class="routine-summary-product">— pick one above —</span>
-        <span class="routine-summary-price">—</span>
-      </div>
-      <div class="routine-summary-row" data-row="treat">
-        <span class="routine-summary-step">Treat</span>
-        <span class="routine-summary-product">— pick one above —</span>
-        <span class="routine-summary-price">—</span>
-      </div>
-      <div class="routine-summary-row" data-row="moisturise">
-        <span class="routine-summary-step">Moisturise</span>
-        <span class="routine-summary-product">— pick one above —</span>
-        <span class="routine-summary-price">—</span>
-      </div>
-    </div>
-    <div class="routine-summary-total">
-      <span>Total</span>
-      <span class="routine-total-amount">$0.00 NZD</span>
-    </div>
-    <button class="btn btn-primary routine-cta" id="routine-add-to-cart" disabled>
-      Add Routine to Cart
-    </button>
-  </div>
-</section>
-
-<!-- BRAND STATEMENT PANEL -->
-<section class="manifesto">
-  <div class="manifesto-inner">
-    <div class="manifesto-eyebrow fu">The Philosophy</div>
-    <h2 class="manifesto-h fu">Skincare that works <em>because</em> the science is real.</h2>
-    <div class="manifesto-body fu">
-      <p>Most skincare is built around a hero ingredient and a marketing story. Matilda Jane is built differently — every formulation begins with a question: <em>what actually changes the skin?</em></p>
-      <p>Peer-reviewed research. Actives at the concentrations shown to work in published trials. Barrier respected at every step. Products that earn results — not promise them.</p>
-    </div>
-  </div>
-</section>
-
-<!-- LONG-FORM SEO -->
-<section class="longform">
-  <div class="longform-inner">
-    <div class="fu">
-      <h3>Made in New Zealand</h3>
-      <p>Formulated and produced in New Zealand using globally sourced clinical-grade actives. Clinical concentrations, evidence-based decisions, and a barrier-first philosophy in every product. The best of nature — refined.</p>
-    </div>
-    <div class="fu">
-      <h3>Built on Evidence</h3>
-      <p>Every active is dosed at the concentration shown to work in published, peer-reviewed clinical trials. Bakuchiol at 1%. Neurophroline™ at 2%. Cacay Oil at 5%. Real science, real percentages — not marketing claims.</p>
-    </div>
-    <div class="fu">
-      <h3>Personal Formulations</h3>
-      <p>Skin is personal. If you'd like something built around specific concerns, get in touch directly with Laura — the founder formulates personal concerns alongside the core range. Email <a href="mailto:laura@matildajanenz.com" style="color:var(--peach-deep); border-bottom:1px solid var(--peach);">laura@matildajanenz.com</a>.</p>
-    </div>
+<!-- SECTION 4 — BRAND STATEMENT -->
+<section class="home-brand">
+  <div class="home-brand-inner">
+    <div class="home-brand-eyebrow fu">Formulation Philosophy</div>
+    <h2 class="home-brand-h2 fu">The science is in the formula.</h2>
+    <p class="home-brand-body fu">Misleading marketing claims are everywhere in skincare. Hero ingredients listed at percentages too low to do anything meaningful for the skin. Every Matilda Jane formula is built differently — <strong>science-led, quality ingredients at effective percentages</strong>. Natural where possible. What's on the label is in the bottle. No marketing spin. Just results.</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-newsletter">
-    <h3>Stay in the loop.</h3>
-    <p>New products, formulation notes, and skincare science — direct to your inbox.</p>
-    <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed';">
-      <input type="email" placeholder="Your email address" aria-label="Email address" required>
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-  <div class="footer-cols">
-    <div class="footer-brand-col">
+  <div class="footer-inner">
+    <div class="footer-brand-block">
       Matilda Jane <em>Skincare</em>
-      <div class="footer-tagline">Evidence-based formulations.<br>Clinical concentrations.<br>The best of nature, refined.</div>
+      <div class="footer-tagline">Evidence-based formulations.<br>Clinical concentrations.</div>
+      <div class="footer-slogan">Matilda Jane Skincare —<br>The best of nature, refined.</div>
     </div>
     <div class="footer-col">
-      <h4>Shop</h4>
+      <h4>Collections</h4>
       <ul>
-        <li><a href="#collections">All Collections</a></li>
-        <li><a href="products/renew/neuro-restore-creme.html">Neuro-Restore Crème</a></li>
-        <li><a href="products/brighten/eye-cream.html">Coffee Bean Eye Cream</a></li>
-        <li><a href="#collections">Bestsellers</a></li>
+        <li><a href="products/hydrate.html">Hydrate</a></li>
+        <li><a href="products/calming-barrier.html">Calm</a></li>
+        <li><a href="products/clarifying-bha.html">Clarify</a></li>
+        <li><a href="products/neuro-restore.html">Renew</a></li>
+        <li><a href="products/brightening-vitamin-c.html">Brighten</a></li>
+        <li><a href="products/daily-defence.html">Men's</a></li>
+        <li><a href="products/targeted.html">Targeted Treatments</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Categories</h4>
+      <h4>Concerns</h4>
       <ul>
-        <li><a href="products/categories/moisturisers.html">Moisturisers</a></li>
-        <li><a href="products/categories/cleansers.html">Cleansers</a></li>
-        <li><a href="products/categories/toners.html">Toners</a></li>
-        <li><a href="products/categories/exfoliants.html">Exfoliants</a></li>
-        <li><a href="products/categories/targeted-treatments.html">Targeted Treatments</a></li>
-        <li><a href="products/categories/body-care.html">Body Care</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Brand</h4>
-      <ul>
-        <li><a href="#">Our Story</a></li>
-        <li><a href="#">Philosophy</a></li>
-        <li><a href="#">The Science</a></li>
-        <li><a href="#">Sustainability</a></li>
+        <li><a href="concerns/dryness-and-dehydration.html">Dryness &amp; Dehydration</a></li>
+        <li><a href="concerns/redness-and-reactivity.html">Redness &amp; Reactivity</a></li>
+        <li><a href="concerns/blemishes-and-congestion.html">Blemishes &amp; Congestion</a></li>
+        <li><a href="concerns/dullness-and-uneven-tone.html">Dullness &amp; Uneven Tone</a></li>
+        <li><a href="concerns/ageing-and-loss-of-firmness.html">Ageing &amp; Loss of Firmness</a></li>
+        <li><a href="concerns/compromised-barrier.html">Compromised Barrier</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Support</h4>
       <ul>
+        <li><a href="start-here.html">Start Here</a></li>
         <li><a href="mailto:laura@matildajanenz.com">Contact</a></li>
-        <li><a href="#">Personal Formulations</a></li>
         <li><a href="#">FAQ</a></li>
-        <li><a href="#">Shipping</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    © 2026 Matilda Jane Skincare. All rights reserved.
+    <span>© 2026 Matilda Jane Skincare. All rights reserved.</span>
   </div>
 </footer>
 
-<script>
-  // Fade-up observer
-  const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } }), { threshold: 0.1 });
-  document.querySelectorAll('.fu').forEach(el => obs.observe(el));
-
-  // Routine builder — interactive picker
-  (function () {
-    const state = { cleanse: null, treat: null, moisturise: null };
-    const stepCols = document.querySelectorAll('.routine-step-col');
-    const summary = document.getElementById('routine-summary');
-    const cta = document.getElementById('routine-add-to-cart');
-    if (!stepCols.length || !summary || !cta) return;
-
-    function renderSummary() {
-      let total = 0;
-      let pickedCount = 0;
-      Object.keys(state).forEach(stepKey => {
-        const row = summary.querySelector('[data-row="' + stepKey + '"]');
-        if (!row) return;
-        const productEl = row.querySelector('.routine-summary-product');
-        const priceEl = row.querySelector('.routine-summary-price');
-        if (state[stepKey]) {
-          row.classList.add('filled');
-          productEl.textContent = state[stepKey].name;
-          priceEl.textContent = '$' + state[stepKey].price.toFixed(2);
-          total += state[stepKey].price;
-          pickedCount++;
-        } else {
-          row.classList.remove('filled');
-          productEl.textContent = '— pick one above —';
-          priceEl.textContent = '—';
-        }
-      });
-      summary.querySelector('.routine-total-amount').textContent = '$' + total.toFixed(2) + ' NZD';
-      cta.disabled = pickedCount === 0;
-      cta.textContent = pickedCount === 0
-        ? 'Pick at least one product'
-        : 'Add Routine to Cart (' + pickedCount + ')';
-    }
-
-    stepCols.forEach(col => {
-      const stepKey = col.dataset.step;
-      const options = col.querySelectorAll('.routine-option');
-      options.forEach(opt => {
-        if (opt.getAttribute('aria-disabled') === 'true') return;
-        opt.addEventListener('click', () => {
-          const isCurrentlySelected = opt.getAttribute('aria-pressed') === 'true';
-          options.forEach(o => o.setAttribute('aria-pressed', 'false'));
-          if (isCurrentlySelected) {
-            state[stepKey] = null;
-          } else {
-            opt.setAttribute('aria-pressed', 'true');
-            state[stepKey] = {
-              name: opt.dataset.name,
-              price: parseFloat(opt.dataset.price),
-              href: opt.dataset.href
-            };
-          }
-          renderSummary();
-        });
-      });
-    });
-
-    cta.addEventListener('click', () => {
-      const picked = Object.values(state).filter(Boolean);
-      if (!picked.length) return;
-      const list = picked.map(p => '· ' + p.name + ' — $' + p.price.toFixed(2)).join('\n');
-      const total = picked.reduce((s, p) => s + p.price, 0);
-      alert('Coming soon — add-to-cart launching with the next product release.\n\nYour routine:\n' + list + '\n\nTotal: $' + total.toFixed(2) + ' NZD');
-    });
-
-    renderSummary();
-  })();
-</script>
-
+<script src="assets/product.js"></script>
 </body>
 </html>
