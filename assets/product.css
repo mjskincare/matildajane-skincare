@@ -154,7 +154,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'DM Sans', system-ui, sans-serif; font-weight: 300;
+  font-family: 'Outfit', system-ui, sans-serif; font-weight: 300;
   background: var(--ivory); color: var(--navy);
   overflow-x: hidden;
 }
@@ -167,7 +167,7 @@ a { color: inherit; text-decoration: none; }
   display: flex; align-items: center; justify-content: space-between; padding: 0 40px;
   border-bottom: 1px solid rgba(255,255,255,.07);
 }
-.site-nav .nav-logo { font-family: 'Manrope', system-ui, sans-serif; font-weight: 800; font-size: 16px; letter-spacing: .05em; color: var(--white); }
+.site-nav .nav-logo { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 800; font-size: 16px; letter-spacing: .05em; color: var(--white); }
 .site-nav .nav-links { display: flex; gap: 24px; list-style: none; }
 .site-nav .nav-links a {
   font-size: 10px; letter-spacing: .15em; text-transform: uppercase;
@@ -233,26 +233,26 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
 }
 .collection-landing-eyebrow {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 13px; font-weight: 600;
   letter-spacing: .28em; text-transform: uppercase;
   color: var(--navy); margin-bottom: 18px;
 }
 .collection-landing-title {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 800;
-  font-size: 56px; line-height: 1; letter-spacing: 0;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 48px; line-height: 1.05; letter-spacing: .06em;
   color: var(--navy); text-transform: uppercase;
   margin-bottom: 16px;
 }
 @media (min-width: 720px) {
-  .collection-landing-title { font-size: 80px; letter-spacing: .005em; }
+  .collection-landing-title { font-size: 72px; }
 }
 @media (min-width: 1024px) {
-  .collection-landing-title { font-size: 110px; letter-spacing: .005em; }
+  .collection-landing-title { font-size: 96px; }
 }
 .collection-landing-sub {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 16px; line-height: 1.5;
   color: var(--body-col);
   max-width: 480px; margin: 0 auto 36px;
@@ -272,12 +272,12 @@ a { color: inherit; text-decoration: none; }
   color: var(--navy); stroke-width: 1.5;
 }
 .collection-benefit-title {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 15px; font-weight: 700;
   color: var(--navy);
 }
 .collection-benefit-sub {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 13px; line-height: 1.5;
   color: var(--body-col);
 }
@@ -320,12 +320,12 @@ a { color: inherit; text-decoration: none; }
   background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18) 0%, transparent 55%);
 }
 .collection-circle-name {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 700; font-size: 16px;
   color: var(--navy); margin-bottom: 4px; text-align: center;
 }
 .collection-circle-meta {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
   color: var(--accent-deep); font-weight: 600;
   text-align: center;
@@ -342,13 +342,13 @@ a { color: inherit; text-decoration: none; }
   display: grid; grid-template-columns: 1fr; gap: 40px;
 }
 .find-formula-header h2 {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 800; font-size: 28px; line-height: 1.1;
   color: var(--navy); text-transform: uppercase;
   letter-spacing: -.01em; margin-bottom: 14px;
 }
 .find-formula-intro {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 15px; line-height: 1.6; color: var(--body-col);
   margin-bottom: 28px;
 }
@@ -372,12 +372,12 @@ a { color: inherit; text-decoration: none; }
   background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 55%);
 }
 .formula-type-text h3 {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 700; font-size: 16px;
   color: var(--navy); margin-bottom: 4px;
 }
 .formula-type-text p {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 14px; line-height: 1.5; color: var(--body-col);
 }
 
@@ -398,7 +398,7 @@ a { color: inherit; text-decoration: none; }
 .product-card:hover { transform: translateY(-3px); }
 .product-card-tag {
   position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
   color: var(--accent-deep); font-weight: 700;
   background: var(--white); padding: 4px 10px; border-radius: 999px;
@@ -426,18 +426,18 @@ a { color: inherit; text-decoration: none; }
   position: relative; z-index: 1;
 }
 .product-card-name {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 700; font-size: 15px; line-height: 1.2;
   color: var(--navy); margin-bottom: 6px;
 }
 .product-card-type {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
   color: var(--stone); font-weight: 600;
   margin-bottom: 8px;
 }
 .product-card-price {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 600; font-size: 14px; color: var(--navy);
   margin-top: auto;
 }
@@ -482,13 +482,13 @@ a { color: inherit; text-decoration: none; }
 .category-intro p,
 .category-intro-inner p { text-align: center; }
 .category-page-title {
-  font-family: 'Manrope', system-ui, sans-serif;
-  font-weight: 800;
-  font-size: 56px; line-height: 1; letter-spacing: -.03em;
-  color: var(--navy); margin-bottom: 24px;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 48px; line-height: 1.05; letter-spacing: .06em;
+  color: var(--navy); text-transform: uppercase; margin-bottom: 24px;
 }
 .category-page-blurb {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 16px; line-height: 1.55;
   color: var(--body-col);
   max-width: 620px; margin: 0 auto;
@@ -514,7 +514,7 @@ a { color: inherit; text-decoration: none; }
 }
 .cp-card:hover { transform: translateY(-4px); }
 .cp-card-tag {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
   color: var(--navy); font-weight: 700;
   margin-bottom: 16px; min-height: 14px;
@@ -550,25 +550,25 @@ a { color: inherit; text-decoration: none; }
   filter: drop-shadow(0 12px 20px rgba(0,0,0,.18));
 }
 .cp-card-collection {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
   color: var(--accent-deep); font-weight: 600;
   margin-bottom: 8px;
 }
 .cp-card-name {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 700; font-size: 17px; line-height: 1.25;
   color: var(--navy); margin-bottom: 8px;
   max-width: 220px;
 }
 .cp-card-blurb {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 13px; line-height: 1.5;
   color: var(--body-col);
   max-width: 220px; margin-bottom: 14px;
 }
 .cp-card-price {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 600; font-size: 14px; color: var(--navy);
 }
 .cp-card-price.unavailable { color: var(--stone); font-weight: 500; }
@@ -582,7 +582,7 @@ a { color: inherit; text-decoration: none; }
   }
 }
 @media (min-width: 1024px) {
-  .category-page-title { font-size: 120px; letter-spacing: -.04em; }
+  .category-page-title { font-size: 120px; }
   .category-products-inner {
     grid-template-columns: repeat(5, 1fr); gap: 24px;
   }
@@ -604,7 +604,7 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
 }
 .collection-faq-h {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 700;
   font-size: 28px;
   color: var(--navy);
@@ -612,7 +612,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -.005em;
 }
 .collection-faq-sub {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 15px;
   line-height: 1.6;
   color: var(--body-col);
@@ -650,7 +650,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
 }
 .site-nav-v2 .nav-logo {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 800;
   font-size: 18px;
   letter-spacing: .04em;
@@ -664,7 +664,7 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-v2-links > li { position: relative; }
 .nav-v2-link, .nav-v2-trigger {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 14px; font-weight: 600;
   color: var(--navy);
   background: none; border: none;
@@ -720,7 +720,7 @@ a { color: inherit; text-decoration: none; }
 .nav-v2-dropdown a {
   display: block;
   padding: 10px 22px;
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 14px; font-weight: 500;
   color: var(--navy);
   white-space: nowrap;
@@ -740,7 +740,7 @@ a { color: inherit; text-decoration: none; }
 
 .nav-v2-actions {
   display: flex; align-items: center; gap: 18px;
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 13px; font-weight: 500;
   color: var(--navy);
 }
@@ -799,7 +799,7 @@ a { color: inherit; text-decoration: none; }
 .nav-v2-mobile-section:last-child { border-bottom: 0; }
 .nav-v2-mobile-section > a, .nav-v2-mobile-section > .label {
   display: block;
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 700; font-size: 18px;
   color: var(--navy);
   padding: 12px 0;
@@ -811,7 +811,7 @@ a { color: inherit; text-decoration: none; }
 .nav-v2-mobile-sublist li { list-style: none; }
 .nav-v2-mobile-sublist a {
   display: block;
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 14px; font-weight: 500;
   color: var(--body-col, #4a4a4a);
   padding: 8px 0;
@@ -838,7 +838,7 @@ a { color: inherit; text-decoration: none; }
 .product-card-img.has-hover .pc-overlay {
   position: absolute; left: 50%; bottom: 22%;
   transform: translateX(-50%) translateY(8px);
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 700; font-size: 14px; letter-spacing: .04em;
   text-transform: uppercase;
   color: var(--white);
@@ -851,7 +851,7 @@ a { color: inherit; text-decoration: none; }
 .product-card-img.has-hover .pc-add {
   position: absolute; left: 50%; bottom: 6%;
   transform: translateX(-50%) translateY(8px);
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 12px; font-weight: 600; letter-spacing: .14em;
   text-transform: uppercase; color: var(--white);
   background: var(--navy); border: none; cursor: pointer;
@@ -883,9 +883,9 @@ a { color: inherit; text-decoration: none; }
 }
 .shop-all-inner { max-width: 1200px; margin: 0 auto; }
 .shop-all-heading {
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 800;
-  font-size: 36px; line-height: 1; letter-spacing: -.025em;
+  font-size: 36px; line-height: 1.1; letter-spacing: .04em;
   color: var(--navy); text-transform: uppercase;
   margin-bottom: 32px;
 }
@@ -894,7 +894,7 @@ a { color: inherit; text-decoration: none; }
   .shop-all-section { padding: 80px 32px 96px; }
 }
 @media (min-width: 1024px) {
-  .shop-all-heading { font-size: 72px; letter-spacing: -.035em; }
+  .shop-all-heading { font-size: 72px; }
 }
 
 /* === BREADCRUMB === */
@@ -902,7 +902,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--ivory);
   padding: 18px 60px 0;
   margin-top: 56px;
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
 }
 .breadcrumb-link {
   display: inline-flex; align-items: center; gap: 8px;
@@ -946,7 +946,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--accent); font-weight: 600; margin-bottom: 24px;
 }
 .collection-h1 {
-  font-family: 'Manrope', system-ui, sans-serif; font-weight: 700;
+  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700;
   font-size: 56px; line-height: 1.18; letter-spacing: -.01em;
   margin-bottom: 32px; max-width: 720px;
 }
@@ -1103,8 +1103,9 @@ a { color: inherit; text-decoration: none; }
 }
 .theme-mens .product-eyebrow { color: var(--accent); }
 .product-name {
-  font-family: 'Manrope', system-ui, sans-serif; font-weight: 800;
-  font-size: 42px; line-height: 1.22; letter-spacing: -.005em;
+  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 800;
+  font-size: 42px; line-height: 1.1; letter-spacing: .04em;
+  text-transform: uppercase;
 }
 .product-key-actives {
   font-size: 16px; letter-spacing: .14em; text-transform: uppercase;
@@ -1112,7 +1113,7 @@ a { color: inherit; text-decoration: none; }
 }
 .theme-mens .product-key-actives { color: rgba(255,255,255,.88); opacity: 1; }
 .product-price {
-  font-family: 'Manrope', system-ui, sans-serif; font-weight: 500;
+  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 500;
   font-size: 32px; line-height: 1; letter-spacing: -.01em;
 }
 .product-price span {
@@ -1132,7 +1133,7 @@ a { color: inherit; text-decoration: none; }
 .size-btn {
   padding: 10px 24px;
   font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
-  font-family: 'DM Sans', system-ui, sans-serif; font-weight: 500;
+  font-family: 'Outfit', system-ui, sans-serif; font-weight: 500;
   cursor: pointer; border: none; transition: all .2s;
   background: var(--ivory); color: var(--stone);
   border: 0.5px solid rgba(0,0,0,.12);
@@ -1155,7 +1156,7 @@ a { color: inherit; text-decoration: none; }
   padding: 18px 24px; width: 100%;
   background: var(--cta-bg); color: var(--cta-text);
   font-size: 12px; letter-spacing: .2em; text-transform: uppercase;
-  font-family: 'DM Sans', system-ui, sans-serif; font-weight: 500;
+  font-family: 'Outfit', system-ui, sans-serif; font-weight: 500;
   border: none; cursor: pointer; transition: all .2s;
 }
 .add-to-cart:hover { background: var(--accent-deep); filter: brightness(1.05); }
@@ -1216,7 +1217,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--accent); font-weight: 600; margin-bottom: 20px;
 }
 .science-h {
-  font-family: 'Manrope', system-ui, sans-serif; font-weight: 700;
+  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700;
   font-size: 32px; line-height: 1.2; max-width: 760px;
   letter-spacing: -.005em;
   margin-bottom: 24px;
@@ -1239,7 +1240,7 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: 48px; border-bottom: 0.5px solid rgba(255,255,255,.1);
 }
 .footer-brand-block {
-  font-family: 'Manrope', system-ui, sans-serif; font-size: 18px; font-weight: 700;
+  font-family: 'Montserrat', system-ui, sans-serif; font-size: 18px; font-weight: 700;
   letter-spacing: .04em; line-height: 1.5;
 }
 .footer-brand-block em { font-style: normal; color: var(--accent); }
@@ -1288,7 +1289,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%; background: none; border: none; cursor: pointer;
   display: flex; align-items: center; justify-content: space-between;
   padding: 22px 4px; gap: 24px;
-  font-family: 'Manrope', system-ui, sans-serif; font-weight: 600;
+  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 600;
   font-size: 17px; color: var(--navy); letter-spacing: 0;
   text-align: left; min-height: 64px;
   transition: color .2s;
@@ -1326,7 +1327,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%; background: none; border: none; cursor: pointer;
   display: flex; align-items: center; justify-content: space-between;
   padding: 16px 4px; gap: 20px;
-  font-family: 'DM Sans', system-ui, sans-serif; font-weight: 500;
+  font-family: 'Outfit', system-ui, sans-serif; font-weight: 500;
   font-size: 15px; color: var(--navy); text-align: left;
   min-height: 52px; transition: color .2s;
 }
@@ -1388,7 +1389,7 @@ a { color: inherit; text-decoration: none; }
 .checker-panel.dark .checker-eyebrow { color: var(--accent); }
 .checker-panel.tint .checker-eyebrow { color: var(--navy); opacity: .72; }
 .checker-h {
-  font-family: 'Manrope', system-ui, sans-serif; font-weight: 700;
+  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700;
   font-size: 26px; line-height: 1.25; letter-spacing: -.005em;
   margin-bottom: 4px;
 }
@@ -1414,7 +1415,7 @@ a { color: inherit; text-decoration: none; }
 .checker-img::after {
   content: attr(data-label);
   position: relative; z-index: 1;
-  font-family: 'DM Sans', system-ui, sans-serif; font-size: 11px; letter-spacing: .28em;
+  font-family: 'Outfit', system-ui, sans-serif; font-size: 11px; letter-spacing: .28em;
   text-transform: uppercase; color: var(--stone); opacity: .55;
 }
 .checker-img.dark { background: linear-gradient(135deg, var(--hero-bg) 0%, var(--accent-deep) 100%); }
@@ -1570,7 +1571,7 @@ sup.ref {
 .research-list li::before {
   content: counter(ref);
   position: absolute; left: 0; top: 18px;
-  font-family: 'Manrope', system-ui, sans-serif; font-weight: 700;
+  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700;
   font-size: 13px; color: var(--accent-deep);
   width: 28px; text-align: left;
 }
