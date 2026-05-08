@@ -1693,18 +1693,24 @@ body.concern-page .collection-landing-title {
   .checker-row { max-height: 480px; }
 }
 
-/* Banners: mobile spec — image + panel both visible, uniform height, alternation by DOM order */
+/* Banners: mobile spec — fixed 280px row height, tightened text to fit alongside image */
 @media (max-width: 720px) {
-  .checker-row { min-height: 320px; }
-  /* Drop fixed aspect-ratio on photo banners on mobile so image fills the row height */
+  /* Fixed height so image + panel are guaranteed equal */
+  .checker-row { height: 280px; min-height: 280px; max-height: 280px; }
   .checker-row .checker-img { aspect-ratio: auto; }
-  .checker-row .checker-img.has-photo { aspect-ratio: auto; height: 100%; min-height: 320px; }
-  .checker-row .checker-panel { padding: 20px 16px; gap: 4px; }
-  .checker-eyebrow { font-size: 9px; letter-spacing: .18em; }
+  .checker-row .checker-img.has-photo { aspect-ratio: auto; height: 100%; min-height: 0; }
+  /* Panel: tighter padding, vertical-centred content */
+  .checker-row .checker-panel {
+    padding: 16px 14px; gap: 2px;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .checker-eyebrow { font-size: 9px; letter-spacing: .18em; line-height: 1.4; }
   /* 22px keeps NEUROPHROLINE™ 2% on one line at common mobile widths */
-  .checker-hero { font-size: 22px; line-height: 1.05; margin: 2px 0 6px; word-break: keep-all; }
-  .checker-h { font-size: 16px; line-height: 1.25; }
-  .checker-body { font-size: 13px; line-height: 1.5; }
+  .checker-hero { font-size: 22px; line-height: 1.05; margin: 2px 0 4px; word-break: keep-all; }
+  .checker-h { font-size: 15px; line-height: 1.3; margin-bottom: 2px; }
+  .checker-body { font-size: 12px; line-height: 1.4; }
+  .checker-body p + p { margin-top: 4px; }
 }
 
 .ingredient-spotlight {
