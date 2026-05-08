@@ -1578,7 +1578,7 @@ body.concern-page .collection-landing-title {
   right/left/right at every breakpoint. Image: 35% mobile, 40% tablet, 50% desktop.
 */
 .checker-row {
-  display: flex; flex-direction: row;
+  display: flex; flex-direction: row !important;
   align-items: stretch; min-height: 0;
 }
 .checker-row > .checker-img,
