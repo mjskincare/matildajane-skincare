@@ -1372,6 +1372,41 @@ body.concern-page .collection-landing-title {
 .science-body strong { color: var(--hero-text); font-weight: 500; }
 .science-body em { color: var(--accent); font-style: normal; font-weight: 500; }
 
+/* "The Science Behind the Formula" — 6-block formula grid */
+.science-h + .science-sub {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 17px; line-height: 1.6; font-weight: 500;
+  color: var(--hero-sub); max-width: 720px;
+  margin-top: -8px; margin-bottom: 40px;
+}
+.formula-grid {
+  display: grid; grid-template-columns: 1fr;
+  gap: 32px 40px;
+  max-width: 1000px;
+}
+@media (min-width: 720px) {
+  .formula-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 48px; }
+}
+@media (min-width: 1024px) {
+  .formula-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.formula-block { display: flex; flex-direction: column; gap: 8px; }
+.formula-h {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800; font-size: 16px; line-height: 1.3;
+  letter-spacing: .01em;
+  color: var(--accent);
+  margin: 0;
+}
+.formula-body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 15px; line-height: 1.65; font-weight: 500;
+  color: var(--hero-sub);
+  margin: 0;
+}
+/* Hero/banner-style bold — weight only, no colour shift */
+.formula-body strong { color: var(--hero-text); font-weight: 700; }
+
 /* === FOOTER === */
 .site-footer {
   background: var(--footer-bg);
