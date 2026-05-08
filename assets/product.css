@@ -1165,13 +1165,13 @@ body.concern-page .collection-landing-title {
 /* Checkerboard with real images */
 .checker-img.has-photo {
   background: var(--ivory); aspect-ratio: 4 / 3;
-  min-height: 0;
+  min-height: 0; height: 100%; align-self: stretch;
+  position: relative; overflow: hidden;
 }
 .checker-img.has-photo::before, .checker-img.has-photo::after { display: none; }
 .checker-img.has-photo img {
   animation: bannerSlowZoom 8s ease-in-out infinite alternate;
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
 }
 .checker-row:has(.checker-img.has-photo) { min-height: 0; }
 
@@ -1536,12 +1536,13 @@ body.concern-page .collection-landing-title {
 /* === CHECKERBOARD (alternating image/panel — DOM order drives which side) === */
 .checker-section { background: var(--ivory); }
 /*
-  Use flex (not grid) so flex-basis on each child sizes by type, regardless
-  of DOM order. DOM order: panel-image, image-panel, panel-image → image
-  alternates right/left/right. Image always 35% on mobile, 40% tablet, 50% desktop.
+  Flex (not grid) so flex-basis sizes children by type regardless of DOM order.
+  DOM order: panel-image, image-panel, panel-image → image alternates
+  right/left/right at every breakpoint. Image: 35% mobile, 40% tablet, 50% desktop.
 */
 .checker-row {
-  display: flex; min-height: 0;
+  display: flex; flex-direction: row;
+  align-items: stretch; min-height: 0;
 }
 .checker-row > .checker-img,
 .checker-row > .checker-panel { flex: 1 1 50%; }
@@ -1593,8 +1594,9 @@ body.concern-page .collection-landing-title {
   color: var(--accent);
   margin: 4px 0 8px;
 }
-.checker-panel.tint .checker-hero { color: var(--accent-deep); }
-.checker-panel.light .checker-hero { color: var(--accent-deep); }
+/* Light + tint backgrounds need dark hero text for AA contrast (peach-on-peach was unreadable) */
+.checker-panel.tint .checker-hero { color: var(--navy); }
+.checker-panel.light .checker-hero { color: var(--navy); }
 .checker-h {
   font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700;
   font-size: 22px; line-height: 1.25; letter-spacing: -.005em;
@@ -1637,18 +1639,21 @@ body.concern-page .collection-landing-title {
   .checker-img.has-photo img { animation: none; }
 }
 
-/* Banner heights: cap so banners don't dominate the page */
-.checker-row { max-height: 480px; }
+/* Banner heights: cap so banners don't dominate the page on desktop */
+@media (min-width: 1024px) {
+  .checker-row { max-height: 480px; }
+}
 
-/* Banners: mobile spec (image AND panel both visible — alternation preserved by DOM order) */
+/* Banners: mobile spec — image + panel both visible, uniform height, alternation by DOM order */
 @media (max-width: 720px) {
-  .checker-row { max-height: 280px; }
+  .checker-row { min-height: 320px; }
   /* Drop fixed aspect-ratio on photo banners on mobile so image fills the row height */
   .checker-row .checker-img { aspect-ratio: auto; }
-  .checker-row .checker-img.has-photo { aspect-ratio: auto; height: 100%; }
+  .checker-row .checker-img.has-photo { aspect-ratio: auto; height: 100%; min-height: 320px; }
   .checker-row .checker-panel { padding: 20px 16px; gap: 4px; }
   .checker-eyebrow { font-size: 9px; letter-spacing: .18em; }
-  .checker-hero { font-size: 26px; line-height: 1; margin: 2px 0 6px; }
+  /* 22px keeps NEUROPHROLINE™ 2% on one line at common mobile widths */
+  .checker-hero { font-size: 22px; line-height: 1.05; margin: 2px 0 6px; word-break: keep-all; }
   .checker-h { font-size: 16px; line-height: 1.25; }
   .checker-body { font-size: 13px; line-height: 1.5; }
 }
