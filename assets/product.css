@@ -364,7 +364,7 @@ body.concern-page .collection-landing-title {
 .collection-circle .circle-overlay {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
-  background: color-mix(in srgb, var(--accent-deep) 75%, transparent);
+  background: color-mix(in srgb, var(--accent) 75%, transparent);
   color: #fff;
   font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 700; font-size: 18px; letter-spacing: .04em;
@@ -1261,10 +1261,22 @@ body.concern-page .collection-landing-title {
   max-width: 640px;
 }
 .details-body p + p { margin-top: 14px; }
+/* Body / details bold — per-collection accent colour + heavier weight */
 .details-body strong,
-.accordion-content strong,
-.faq-content strong {
-  color: var(--accent-deep); font-weight: 700;
+.acc-body-inner strong,
+.faq-content strong,
+.collection-descriptor strong,
+.home-coll-descriptor strong,
+.home-brand-body strong {
+  color: var(--accent); font-weight: 700;
+}
+/* Hero / banner / dark-section bold — weight only, no colour shift */
+.hero-section strong,
+.science-section strong,
+.product-banner strong,
+.collection-landing-hero strong,
+.home-hero strong {
+  color: inherit; font-weight: 700;
 }
 
 /* === SCIENCE SECTION === */
@@ -1450,14 +1462,25 @@ body.concern-page .collection-landing-title {
 .checker-panel.tint .checker-body { color: var(--navy); }
 .checker-panel.tint .checker-body strong { color: var(--navy); font-weight: 700; }
 .checker-eyebrow {
-  font-size: 15px; letter-spacing: .3em; text-transform: uppercase;
-  color: var(--accent-deep); font-weight: 600;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--accent-deep); font-weight: 500;
 }
 .checker-panel.dark .checker-eyebrow { color: var(--accent); }
 .checker-panel.tint .checker-eyebrow { color: var(--navy); opacity: .72; }
+.checker-hero {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 48px; line-height: 1; letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 4px 0 8px;
+}
+.checker-panel.tint .checker-hero { color: var(--accent-deep); }
+.checker-panel.light .checker-hero { color: var(--accent-deep); }
 .checker-h {
   font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700;
-  font-size: 26px; line-height: 1.25; letter-spacing: -.005em;
+  font-size: 22px; line-height: 1.25; letter-spacing: -.005em;
   margin-bottom: 4px;
 }
 .checker-body {
@@ -1487,6 +1510,18 @@ body.concern-page .collection-landing-title {
 }
 .checker-img.dark { background: linear-gradient(135deg, var(--hero-bg) 0%, var(--accent-deep) 100%); }
 .checker-img.dark::after { color: rgba(255,255,255,.45); }
+
+/* Banners: 35/65 split on mobile (image left 35%, content 65%) — do NOT stack */
+@media (max-width: 720px) {
+  .checker-row { grid-template-columns: 35% 65%; min-height: 0; }
+  /* Image always sits in column 1 (left), panel in column 2 (right) on mobile */
+  .checker-row .checker-img { grid-column: 1; grid-row: 1; aspect-ratio: auto; }
+  .checker-row .checker-panel { grid-column: 2; grid-row: 1; padding: 24px 20px; gap: 6px; }
+  .checker-eyebrow { font-size: 9px; letter-spacing: .18em; }
+  .checker-hero { font-size: 28px; line-height: 1; margin: 2px 0 6px; }
+  .checker-h { font-size: 15px; line-height: 1.25; }
+  .checker-body { font-size: 13px; line-height: 1.5; }
+}
 
 .ingredient-spotlight {
   padding: 80px 40px;
