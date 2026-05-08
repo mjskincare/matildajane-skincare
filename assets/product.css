@@ -379,6 +379,8 @@ body.concern-page .collection-landing-title {
   z-index: 2;
 }
 .collection-circle-card:hover .circle-overlay { opacity: 1; }
+/* Hover overlay bold = weight only, white stays white */
+.circle-overlay strong { color: inherit; font-weight: 700; }
 .collection-circle.empty {
   background: linear-gradient(135deg, var(--card-bg) 0%, var(--accent-deep) 100%);
   opacity: .7;
