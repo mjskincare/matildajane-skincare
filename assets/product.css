@@ -1189,9 +1189,14 @@ body.concern-page .collection-landing-title {
   width: 100%; height: 100%; object-fit: cover; object-position: center;
   display: block;
 }
-/* Subjects we don't want cropped — letterbox-style with matching bg behind */
+/* Subjects we don't want cropped — letterbox-style with matching panel bg behind.
+   mix-blend-mode: multiply blends the image's white background into the peach panel
+   so there's no visible white halo around the subject. */
 .checker-img.has-photo.contain-fit { background: var(--card-bg); }
-.checker-img.has-photo.contain-fit img { object-fit: contain; }
+.checker-img.has-photo.contain-fit img {
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
 .checker-row:has(.checker-img.has-photo) { min-height: 0; }
 
 .product-bottle-wrap {
@@ -1679,38 +1684,39 @@ body.concern-page .collection-landing-title {
 .checker-img.dark { background: linear-gradient(135deg, var(--hero-bg) 0%, var(--accent-deep) 100%); }
 .checker-img.dark::after { color: rgba(255,255,255,.45); }
 
-/* Slow Ken Burns zoom on banner images */
+/* Slow Ken Burns zoom on banner images — runs at every breakpoint */
 @keyframes bannerSlowZoom {
   0%   { transform: scale(1.0); }
   100% { transform: scale(1.05); }
 }
-@media (prefers-reduced-motion: reduce) {
-  .checker-img.has-photo img { animation: none; }
-}
 
-/* Banner heights: cap so banners don't dominate the page on desktop */
+/* Desktop banner cap — kept lean so banners don't dominate the page */
 @media (min-width: 1024px) {
-  .checker-row { max-height: 480px; }
+  .checker-row { max-height: 380px; }
 }
 
-/* Banners: mobile spec — fixed 280px row height, tightened text to fit alongside image */
+/* Banners: mobile spec — fixed 240px row height, tightened text to fit alongside image */
 @media (max-width: 720px) {
   /* Fixed height so image + panel are guaranteed equal */
-  .checker-row { height: 280px; min-height: 280px; max-height: 280px; }
+  .checker-row { height: 240px; min-height: 240px; max-height: 240px; }
   .checker-row .checker-img { aspect-ratio: auto; }
   .checker-row .checker-img.has-photo { aspect-ratio: auto; height: 100%; min-height: 0; }
   /* Panel: tighter padding, vertical-centred content */
   .checker-row .checker-panel {
-    padding: 16px 14px; gap: 2px;
+    padding: 14px 14px; gap: 2px;
     justify-content: center;
     overflow: hidden;
   }
   .checker-eyebrow { font-size: 9px; letter-spacing: .18em; line-height: 1.4; }
   /* 22px keeps NEUROPHROLINE™ 2% on one line at common mobile widths */
   .checker-hero { font-size: 22px; line-height: 1.05; margin: 2px 0 4px; word-break: keep-all; }
-  .checker-h { font-size: 15px; line-height: 1.3; margin-bottom: 2px; }
-  .checker-body { font-size: 12px; line-height: 1.4; }
+  .checker-h { font-size: 14px; line-height: 1.3; margin-bottom: 2px; }
+  .checker-body { font-size: 12px; line-height: 1.5; }
   .checker-body p + p { margin-top: 4px; }
+}
+/* Desktop body text spec */
+@media (min-width: 720px) {
+  .checker-body { font-size: 14px; line-height: 1.5; }
 }
 
 .ingredient-spotlight {
@@ -1781,18 +1787,19 @@ body.concern-page .collection-landing-title {
 .spotlight-card.tap-active .spotlight-img-wrap img { transform: scale(1.08); }
 .spotlight-card:nth-child(2) { transition-delay: 0.15s; }
 .spotlight-card:nth-child(3) { transition-delay: 0.3s; }
+/* Mobile-first: small round image, contain-fit so subjects aren't cropped */
 .spotlight-img-wrap {
-  width: calc(100% + 56px);
-  height: 220px;
-  margin: -36px -28px 24px;
-  border-radius: 16px 16px 0 0;
+  width: 120px; height: 120px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
   overflow: hidden;
   background: #eee;
+  display: flex; align-items: center; justify-content: center;
 }
 .spotlight-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%; height: 100%;
+  object-fit: contain; object-position: center;
+  padding: 8px;
 }
 /* fallback tints if an image fails to load */
 .spotlight-card:nth-child(1) .spotlight-img-wrap { background: #d4c5a9; }
@@ -1800,8 +1807,8 @@ body.concern-page .collection-landing-title {
 .spotlight-card:nth-child(3) .spotlight-img-wrap { background: #c8c8c8; }
 .spotlight-card:nth-child(4) .spotlight-img-wrap { background: #e6dfd2; }
 .spotlight-card { overflow: hidden; }
-@media (max-width: 720px) {
-  .spotlight-img-wrap { height: 200px; }
+@media (min-width: 720px) {
+  .spotlight-img-wrap { width: 180px; height: 180px; margin-bottom: 24px; }
 }
 .spotlight-percent {
   display: block;
