@@ -1347,91 +1347,91 @@ body.concern-page .collection-landing-title {
   color: inherit; font-weight: 700;
 }
 
-/* === SCIENCE SECTION === */
+/* === SCIENCE SECTION — light cream "Ivory Stem" with charcoal text === */
 .science-section {
-  background: var(--hero-bg); color: var(--hero-text);
-  padding: 96px 60px;
+  background: #F5F0E8; color: #2C2C2C;
+  padding: 80px 64px;
   position: relative; overflow: hidden;
 }
-.science-section::before {
-  content: ''; position: absolute; top: -100px; left: -80px;
-  width: 320px; height: 320px; border-radius: 50%;
-  background: var(--decor-2);
-}
+.science-section::before { display: none; }
 .science-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
 .science-eyebrow {
-  font-size: 15px; letter-spacing: .3em; text-transform: uppercase;
-  color: var(--accent); font-weight: 600; margin-bottom: 20px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+  color: #c4705e; font-weight: 500; margin-bottom: 16px;
 }
 .science-h {
-  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700;
-  font-size: 32px; line-height: 1.2; max-width: 760px;
-  letter-spacing: -.005em;
-  margin-bottom: 24px;
+  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 800;
+  font-size: 36px; line-height: 1.2; max-width: 760px;
+  letter-spacing: 0;
+  color: #2C2C2C;
+  margin-bottom: 12px;
 }
 .science-body {
   font-size: 18px; line-height: 1.75; max-width: 720px;
-  color: var(--hero-sub);
+  color: #2C2C2C;
 }
-.science-body strong { color: var(--hero-text); font-weight: 500; }
-.science-body em { color: var(--accent); font-style: normal; font-weight: 500; }
+.science-body strong { color: #2C2C2C; font-weight: 700; }
+.science-body em { color: #c4705e; font-style: normal; font-weight: 500; }
 
-/* "The Science Behind the Formula" — 6-block formula grid */
+/* Sub-line */
 .science-h + .science-sub {
   font-family: 'Outfit', system-ui, sans-serif;
-  font-size: 17px; line-height: 1.6; font-weight: 500;
-  color: var(--hero-sub); max-width: 720px;
-  margin-top: -8px; margin-bottom: 40px;
+  font-size: 16px; line-height: 1.6; font-weight: 500;
+  color: rgba(44,44,44,.8); max-width: 720px;
+  margin: 0 0 48px;
 }
+
+/* "The Science Behind the Formula" — 2-column grid (3 rows) with row dividers */
 .formula-grid {
   display: grid; grid-template-columns: 1fr;
-  gap: 32px 40px;
+  gap: 32px;
   max-width: 1000px;
 }
 @media (min-width: 720px) {
-  .formula-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 48px; }
+  .formula-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 56px; row-gap: 40px;
+  }
 }
-@media (min-width: 1024px) {
-  .formula-grid { grid-template-columns: repeat(3, 1fr); }
+.formula-block {
+  display: flex; flex-direction: column; gap: 10px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(44,44,44,.10);
 }
-.formula-block { display: flex; flex-direction: column; gap: 8px; }
+/* Last row: no bottom border */
+.formula-grid > .formula-block:last-child { border-bottom: 0; padding-bottom: 0; }
+@media (min-width: 720px) {
+  /* 2-col: last 2 blocks form the bottom row → no border on either */
+  .formula-grid > .formula-block:nth-last-child(-n+2) { border-bottom: 0; padding-bottom: 0; }
+}
+/* Accent rule above each heading */
+.formula-rule {
+  display: block;
+  width: 32px; height: 4px;
+  background: #c4705e;
+  margin-bottom: 4px;
+}
 .formula-h {
   font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 800; font-size: 16px; line-height: 1.3;
-  letter-spacing: .01em;
-  color: var(--accent);
+  font-weight: 700; font-size: 18px; line-height: 1.3;
+  letter-spacing: .04em; text-transform: uppercase;
+  color: #2C2C2C;
   margin: 0;
 }
 .formula-body {
   font-family: 'Outfit', system-ui, sans-serif;
-  font-size: 15px; line-height: 1.65; font-weight: 500;
-  color: var(--hero-sub);
+  font-size: 14px; line-height: 1.7; font-weight: 500;
+  color: #2C2C2C;
   margin: 0;
 }
-/* Hero/banner-style bold — weight only, no colour shift */
-.formula-body strong { color: var(--hero-text); font-weight: 700; }
+/* Bold inside formula body — weight only, charcoal stays charcoal */
+.formula-body strong { color: #2C2C2C; font-weight: 700; }
 
-/* Science section accordion — light text on dark hero-bg */
-.science-section .science-acc { border-top-color: rgba(255,255,255,.16); margin-top: 8px; max-width: 1000px; }
-.science-section .science-acc .acc-item { border-bottom-color: rgba(255,255,255,.16); }
-.science-section .science-acc .acc-trigger {
-  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700;
-  font-size: 28px; line-height: 1.2; letter-spacing: -.005em;
-  color: var(--hero-text);
-  padding: 28px 4px;
-}
-.science-section .science-acc .acc-trigger:hover { color: var(--accent); }
-.science-section .science-acc .acc-trigger:focus-visible { outline-color: var(--accent); }
-.science-section .science-acc .acc-chevron { color: var(--hero-text); }
-.science-section .science-acc .acc-item.open .acc-chevron { color: var(--accent); }
-.science-section .science-acc .acc-body-inner {
-  max-width: none; padding: 8px 4px 36px;
-}
-.science-section .science-acc .science-sub {
-  margin-top: 0;
-}
+/* Mobile padding for science section */
 @media (max-width: 720px) {
-  .science-section .science-acc .acc-trigger { font-size: 22px; padding: 22px 4px; }
+  .science-section { padding: 48px 24px; }
+  .science-h { font-size: 26px; }
 }
 
 /* === FOOTER === */
@@ -1871,9 +1871,8 @@ sup.ref {
   .size-label { font-size: 12px; }
   .size-btn { padding: 12px 22px; font-size: 12px; min-height: 44px; }
   .add-to-cart { padding: 18px 24px; min-height: 52px; font-size: 13px; }
-  .details-section, .science-section { padding: 64px 28px; }
+  .details-section { padding: 64px 28px; }
   .details-h { font-size: 28px; }
-  .science-h { font-size: 24px; }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
   .acc-section { padding: 56px 24px; }
   .acc-section-title { font-size: 26px; }
