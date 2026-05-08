@@ -89,6 +89,7 @@
   --hero-sub: rgba(255,255,255,.85);
   --accent: #ffd966;
   --accent-deep: #b04a14;
+  --circle-hover: #F28500;
   --highlight-bg: #1a1a1a;
   --highlight-text: #ffd966;
   --card-bg: #faf0d8;
@@ -140,6 +141,7 @@
   --footer-bg: #170c20;
   --accent: #b0a0c0;
   --accent-deep: #6e5c8e;
+  --circle-hover: #2C2C2C;
   --highlight-bg: #b0a0c0;
   --highlight-text: #2a1a3a;
   --card-bg: #d8cde0;
@@ -360,15 +362,16 @@ body.concern-page .collection-landing-title {
   width: 100%; height: 100%; object-fit: cover; display: block;
   border-radius: 50%;
 }
-/* Hover overlay: 75% accent + white centred product name */
+/* Hover overlay: solid collection hover colour (no opacity) + white centred product description */
 .collection-circle .circle-overlay {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
-  background: color-mix(in srgb, var(--accent) 75%, transparent);
+  background: var(--circle-hover, var(--accent-deep));
   color: #fff;
-  font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 700; font-size: 18px; letter-spacing: .04em;
-  text-align: center; padding: 0 16px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 500; font-size: 14px; line-height: 1.45;
+  letter-spacing: .01em;
+  text-align: center; padding: 0 22px;
   opacity: 0;
   transition: opacity .3s ease;
   border-radius: 50%;
