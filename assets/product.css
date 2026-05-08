@@ -1071,7 +1071,7 @@ body.concern-page .collection-landing-title {
 }
 .thumb:hover { border-color: rgba(26,42,58,.4); }
 .thumb:focus-visible { outline: 2px solid var(--cta-bg); outline-offset: 2px; }
-.thumb.active { border-color: var(--cta-bg); border-width: 2px; padding: 5.5px; }
+.thumb.active { border-color: var(--accent); border-width: 2px; padding: 5.5px; }
 .thumb-mini {
   width: 100%; height: 100%; border-radius: 2px; display: block;
   background: linear-gradient(160deg, #f8f4f0 0%, #ede8e2 60%, #d8d0c8 100%);
@@ -1094,6 +1094,70 @@ body.concern-page .collection-landing-title {
   transition: opacity .35s ease;
 }
 .product-image-main.swapping img { opacity: 0; }
+
+/* === Ingredient annotation overlay (only visible when image-with-annotations is active) === */
+.ingredient-annotations {
+  position: absolute; inset: 0; pointer-events: none;
+  opacity: 0; transition: opacity .3s ease;
+}
+.product-image-main.show-annotations .ingredient-annotations { opacity: 1; }
+.annotation {
+  position: absolute;
+  background: rgba(255,255,255,.95);
+  padding: 8px 12px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  max-width: 180px;
+  font-family: 'Outfit', system-ui, sans-serif;
+}
+.annotation-name {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 700; font-size: 11px;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--accent-deep);
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+.annotation-body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 500; font-size: 10px;
+  text-transform: lowercase;
+  color: var(--navy);
+  line-height: 1.3;
+}
+.annotation-dot {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 1px var(--accent-deep);
+}
+.annotation-line {
+  position: absolute;
+  border-top: 1px dashed var(--accent-deep);
+  height: 1px;
+}
+/* Position annotations + connector lines/dots — top-left, middle-right, bottom-left */
+.annotation-1 { top: 8%; left: 4%; }
+.annotation-1 .annotation-line { top: 50%; right: -42px; width: 42px; transform: rotate(20deg); transform-origin: left; }
+.annotation-1 .annotation-dot { top: calc(50% + 14px); right: -50px; }
+
+.annotation-2 { top: 42%; right: 4%; }
+.annotation-2 .annotation-line { top: 50%; left: -42px; width: 42px; }
+.annotation-2 .annotation-dot { top: calc(50% - 4px); left: -50px; }
+
+.annotation-3 { bottom: 10%; left: 4%; }
+.annotation-3 .annotation-line { top: 50%; right: -42px; width: 42px; transform: rotate(-15deg); transform-origin: left; }
+.annotation-3 .annotation-dot { top: calc(50% - 14px); right: -50px; }
+
+@media (max-width: 720px) {
+  .annotation { max-width: 130px; padding: 5px 8px; }
+  .annotation-name { font-size: 9px; }
+  .annotation-body { font-size: 9px; }
+  .annotation-line { display: none; }
+  .annotation-dot { display: none; }
+}
 
 /* Checkerboard with real images */
 .checker-img.has-photo {

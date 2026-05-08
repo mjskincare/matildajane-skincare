@@ -109,13 +109,17 @@
       const main = wrap.querySelector('.product-image-main');
       if (src && main) {
         const mainImg = main.querySelector('img');
+        const showAnnotations = t.dataset.annotations === 'true';
         if (mainImg && mainImg.src.indexOf(src.split('/').pop()) === -1) {
           main.classList.add('swapping');
           setTimeout(function () {
             mainImg.src = src;
             mainImg.alt = t.getAttribute('aria-label') || '';
             main.classList.remove('swapping');
+            main.classList.toggle('show-annotations', showAnnotations);
           }, 180);
+        } else {
+          main.classList.toggle('show-annotations', showAnnotations);
         }
         return;
       }

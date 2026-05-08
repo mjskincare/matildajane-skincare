@@ -110,14 +110,35 @@
 <section class="product-hero">
   <div class="product-image-side">
     <div class="product-thumbs">
-      <button class="thumb active" data-src="../../assets/images/product-main.jpg" aria-label="Open jar with botanicals" aria-selected="true"><span class="thumb-mini" style="background-image:url('../../assets/images/product-main.jpg')"></span></button>
-      <button class="thumb" data-view="1" aria-label="View 2" aria-selected="false"><span class="thumb-mini view-1"></span></button>
-      <button class="thumb" data-view="2" aria-label="View 3" aria-selected="false"><span class="thumb-mini view-2"></span></button>
-      <button class="thumb" data-view="3" aria-label="View 4" aria-selected="false"><span class="thumb-mini view-3"></span></button>
+      <button class="thumb active" data-src="../../assets/images/product-main.jpg" data-annotations="false" aria-label="Open jar with botanicals" aria-selected="true"><span class="thumb-mini" style="background-image:url('../../assets/images/product-main.jpg')"></span></button>
+      <button class="thumb" data-src="../../assets/images/smeared-moisturiser.jpg" data-annotations="true" aria-label="Cream smudge with ingredient annotations" aria-selected="false"><span class="thumb-mini" style="background-image:url('../../assets/images/smeared-moisturiser.jpg')"></span></button>
+      <button class="thumb" data-src="../../assets/images/cream-swirl.jpg" data-annotations="false" aria-label="Cream texture close-up" aria-selected="false"><span class="thumb-mini" style="background-image:url('../../assets/images/cream-swirl.jpg')"></span></button>
+      <button class="thumb" data-src="../../assets/images/cream-application.jpg" data-annotations="false" aria-label="Lifestyle application" aria-selected="false"><span class="thumb-mini" style="background-image:url('../../assets/images/cream-application.jpg')"></span></button>
     </div>
     <div class="product-bottle-wrap">
       <div class="product-image-main">
         <img src="../../assets/images/product-main.jpg" alt="Neuro-Restore Face Crème — open jar with botanicals">
+        <!-- Ingredient annotation overlay (visible only when image 2 is active) -->
+        <div class="ingredient-annotations" aria-hidden="true">
+          <div class="annotation annotation-1">
+            <div class="annotation-name">BAKUCHIOL 1%</div>
+            <div class="annotation-body">smooths texture, reduces fine lines</div>
+            <span class="annotation-line"></span>
+            <span class="annotation-dot"></span>
+          </div>
+          <div class="annotation annotation-2">
+            <div class="annotation-name">NEUROPHROLINE™ 2%</div>
+            <div class="annotation-body">blocks cortisol, prevents collagen loss</div>
+            <span class="annotation-line"></span>
+            <span class="annotation-dot"></span>
+          </div>
+          <div class="annotation annotation-3">
+            <div class="annotation-name">CACAY OIL 5%</div>
+            <div class="annotation-body">3× retinol of rosehip</div>
+            <span class="annotation-line"></span>
+            <span class="annotation-dot"></span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
