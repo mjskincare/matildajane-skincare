@@ -1411,6 +1411,29 @@ body.concern-page .collection-landing-title {
 /* Hero/banner-style bold — weight only, no colour shift */
 .formula-body strong { color: var(--hero-text); font-weight: 700; }
 
+/* Science section accordion — light text on dark hero-bg */
+.science-section .science-acc { border-top-color: rgba(255,255,255,.16); margin-top: 8px; max-width: 1000px; }
+.science-section .science-acc .acc-item { border-bottom-color: rgba(255,255,255,.16); }
+.science-section .science-acc .acc-trigger {
+  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700;
+  font-size: 28px; line-height: 1.2; letter-spacing: -.005em;
+  color: var(--hero-text);
+  padding: 28px 4px;
+}
+.science-section .science-acc .acc-trigger:hover { color: var(--accent); }
+.science-section .science-acc .acc-trigger:focus-visible { outline-color: var(--accent); }
+.science-section .science-acc .acc-chevron { color: var(--hero-text); }
+.science-section .science-acc .acc-item.open .acc-chevron { color: var(--accent); }
+.science-section .science-acc .acc-body-inner {
+  max-width: none; padding: 8px 4px 36px;
+}
+.science-section .science-acc .science-sub {
+  margin-top: 0;
+}
+@media (max-width: 720px) {
+  .science-section .science-acc .acc-trigger { font-size: 22px; padding: 22px 4px; }
+}
+
 /* === FOOTER === */
 .site-footer {
   background: var(--footer-bg);
