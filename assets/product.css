@@ -1533,11 +1533,25 @@ body.concern-page .collection-landing-title {
 .faq-item.open .faq-body-inner { opacity: 1; }
 .faq-body-inner p + p { margin-top: 10px; }
 
-/* === CHECKERBOARD (Murad-style alternating panels) === */
+/* === CHECKERBOARD (alternating image/panel — DOM order drives which side) === */
 .checker-section { background: var(--ivory); }
+/*
+  Use flex (not grid) so flex-basis on each child sizes by type, regardless
+  of DOM order. DOM order: panel-image, image-panel, panel-image → image
+  alternates right/left/right. Image always 35% on mobile, 40% tablet, 50% desktop.
+*/
 .checker-row {
-  display: grid; grid-template-columns: 1fr 1fr;
-  min-height: 0;
+  display: flex; min-height: 0;
+}
+.checker-row > .checker-img,
+.checker-row > .checker-panel { flex: 1 1 50%; }
+@media (max-width: 1023px) {
+  .checker-row > .checker-img { flex: 0 0 40%; }
+  .checker-row > .checker-panel { flex: 1 1 60%; }
+}
+@media (max-width: 720px) {
+  .checker-row > .checker-img { flex: 0 0 35%; }
+  .checker-row > .checker-panel { flex: 1 1 65%; }
 }
 /* Scroll-trigger animation for checkerboard rows */
 .checker-row .checker-panel,
@@ -1626,16 +1640,16 @@ body.concern-page .collection-landing-title {
 /* Banner heights: cap so banners don't dominate the page */
 .checker-row { max-height: 480px; }
 
-/* Banners: 35/65 split on mobile (image left 35%, content 65%) — do NOT stack */
+/* Banners: mobile spec (image AND panel both visible — alternation preserved by DOM order) */
 @media (max-width: 720px) {
-  .checker-row { grid-template-columns: 35% 65%; min-height: 0; max-height: 280px; }
-  /* Image always sits in column 1 (left), panel in column 2 (right) on mobile */
-  .checker-row .checker-img { grid-column: 1; grid-row: 1; aspect-ratio: auto; }
+  .checker-row { max-height: 280px; }
+  /* Drop fixed aspect-ratio on photo banners on mobile so image fills the row height */
+  .checker-row .checker-img { aspect-ratio: auto; }
   .checker-row .checker-img.has-photo { aspect-ratio: auto; height: 100%; }
-  .checker-row .checker-panel { grid-column: 2; grid-row: 1; padding: 20px 16px; gap: 4px; }
+  .checker-row .checker-panel { padding: 20px 16px; gap: 4px; }
   .checker-eyebrow { font-size: 9px; letter-spacing: .18em; }
   .checker-hero { font-size: 26px; line-height: 1; margin: 2px 0 6px; }
-  .checker-h { font-size: 14px; line-height: 1.25; }
+  .checker-h { font-size: 16px; line-height: 1.25; }
   .checker-body { font-size: 13px; line-height: 1.5; }
 }
 
