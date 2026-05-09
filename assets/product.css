@@ -37,6 +37,7 @@
   --footer-bg: #111c27;
   --accent: #f4a896;
   --accent-deep: #c4705e;
+  --circle-hover: #c4705e;
   --highlight-bg: #f4a896;
   --highlight-text: #1a2a3a;
   --card-bg: #ffb19c;
@@ -54,6 +55,7 @@
   --footer-bg: #14172e;
   --accent: #9989d4;
   --accent-deep: #6f60ad;
+  --circle-hover: #6f60ad;
   --highlight-bg: #b3a7e0;
   --highlight-text: #1a1d3a;
   --card-bg: #e8e2f5;
@@ -68,6 +70,7 @@
   --footer-bg: #062623;
   --accent: #1ad6c5;
   --accent-deep: #0a8c80;
+  --circle-hover: #0a8c80;
   --highlight-bg: #1ad6c5;
   --highlight-text: #0d3d3a;
   --card-bg: #c8e8e2;
@@ -111,6 +114,7 @@
   --footer-bg: #18121e;
   --accent: #eac67a;
   --accent-deep: #7a3a33;
+  --circle-hover: #7a3a33;
   --highlight-bg: #7a3a33;
   --highlight-text: #ffffff;
   --card-bg: #eac67a;
@@ -127,6 +131,7 @@
   --footer-bg: #102a3a;
   --accent: #6b9bb8;
   --accent-deep: #3d6b8a;
+  --circle-hover: #3d6b8a;
   --highlight-bg: #6b9bb8;
   --highlight-text: #1d3d52;
   --card-bg: #c8dceb;
@@ -369,7 +374,8 @@ body.concern-page .collection-landing-title {
   background: var(--circle-hover, var(--accent-deep));
   color: #fff;
   font-family: 'Outfit', system-ui, sans-serif;
-  font-weight: 500; font-size: 14px; line-height: 1.45;
+  /* Weight 400 regular vs 800 bold for strong thick/thin contrast */
+  font-weight: 400; font-size: 14px; line-height: 1.45;
   letter-spacing: .01em;
   text-align: center; padding: 0 22px;
   opacity: 0;
@@ -388,10 +394,10 @@ body.concern-page .collection-landing-title {
   padding: 0;
   max-width: 100%;
 }
-/* Hover overlay bold = weight only, white stays white, inline flow */
+/* Hover overlay bold = strong 800 weight on top of regular 400 = clear thick/thin contrast */
 .circle-overlay strong,
 .circle-overlay b {
-  display: inline; color: inherit; font-weight: 700;
+  display: inline; color: inherit; font-weight: 800;
 }
 .collection-circle.empty {
   background: linear-gradient(135deg, var(--card-bg) 0%, var(--accent-deep) 100%);
