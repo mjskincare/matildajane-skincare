@@ -1197,11 +1197,14 @@ body.concern-page .collection-landing-title {
 }
 /* Subjects we don't want cropped — letterbox-style with matching panel bg behind.
    mix-blend-mode: multiply blends the image's white background into the peach panel
-   so there's no visible white halo around the subject. */
+   so there's no visible white halo around the subject.
+   Animation OFF here because the slow zoom was clipping the contain-fit drop. */
 .checker-img.has-photo.contain-fit { background: var(--card-bg); }
 .checker-img.has-photo.contain-fit img {
   object-fit: contain;
   mix-blend-mode: multiply;
+  animation: none;
+  padding: 24px;
 }
 .checker-row:has(.checker-img.has-photo) { min-height: 0; }
 
@@ -1480,13 +1483,13 @@ body.concern-page .collection-landing-title {
 }
 .footer-brand-block em { font-style: normal; color: var(--accent); }
 .footer-tagline {
-  font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic;
-  font-size: 14px; opacity: .75; margin-top: 12px; line-height: 1.6;
+  font-family: 'Cormorant Garamond', serif; font-weight: 500; font-style: italic;
+  font-size: 17px; opacity: .9; margin-top: 14px; line-height: 1.6;
 }
 .footer-slogan {
-  font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic;
-  font-size: 15px; line-height: 1.5; margin-top: 14px;
-  color: var(--accent); opacity: .92;
+  font-family: 'Cormorant Garamond', serif; font-weight: 500; font-style: italic;
+  font-size: 18px; line-height: 1.5; margin-top: 16px;
+  color: var(--accent); opacity: 1;
 }
 .footer-col h4 {
   font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
