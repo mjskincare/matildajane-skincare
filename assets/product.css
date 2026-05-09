@@ -1789,12 +1789,15 @@ body.concern-page .collection-landing-title {
   position: relative;
   transition: transform 0.6s cubic-bezier(0.32, 0.72, 0, 1);
 }
-.spotlight-img-wrap img {
-  transition: transform 0.6s cubic-bezier(0.32, 0.72, 0, 1);
+/* Ingredient Spotlight — Murad-style slow zoom (1.5s in + 1.5s out) */
+.ingredient-spotlight img {
+  transform: scale(1);
+  transition: transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform;
   transform-origin: center;
 }
-.spotlight-card:hover .spotlight-img-wrap img,
-.spotlight-card.tap-active .spotlight-img-wrap img { transform: scale(1.08); }
+.ingredient-spotlight .spotlight-card:hover img,
+.ingredient-spotlight .spotlight-card.tap-active img { transform: scale(1.15); }
 .spotlight-card:nth-child(2) { transition-delay: 0.15s; }
 .spotlight-card:nth-child(3) { transition-delay: 0.3s; }
 /* Mobile-first: small round image, contain-fit so subjects aren't cropped */
