@@ -56,7 +56,8 @@
   --footer-bg: #14172e;
   --accent: #9989d4;
   --accent-deep: #6f60ad;
-  --circle-hover: #6f60ad;
+  --circle-hover: #9989d4;
+  --circle-overlay-text: #ffffff;
   --highlight-bg: #b3a7e0;
   --highlight-text: #1a1d3a;
   --card-bg: #e8e2f5;
@@ -71,7 +72,8 @@
   --footer-bg: #062623;
   --accent: #1ad6c5;
   --accent-deep: #0a8c80;
-  --circle-hover: #0a8c80;
+  --circle-hover: #1ad6c5;
+  --circle-overlay-text: #1a2a3a;
   --highlight-bg: #1ad6c5;
   --highlight-text: #0d3d3a;
   --card-bg: #c8e8e2;
@@ -132,7 +134,8 @@
   --footer-bg: #102a3a;
   --accent: #6b9bb8;
   --accent-deep: #3d6b8a;
-  --circle-hover: #3d6b8a;
+  --circle-hover: #6b9bb8;
+  --circle-overlay-text: #ffffff;
   --highlight-bg: #6b9bb8;
   --highlight-text: #1d3d52;
   --card-bg: #c8dceb;
