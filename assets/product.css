@@ -1695,6 +1695,8 @@ body.concern-page .collection-landing-title {
 .checker-panel.tint { background: var(--card-bg); color: var(--navy); }
 /* New: peach panel variant — locked to #f4a896 (Renew accent) */
 .checker-panel.peach { background: #f4a896; color: #1a2a3a; }
+/* Dark peach panel — Renew accent-deep #c4705e, white text */
+.checker-panel.peach-deep { background: #c4705e; color: #ffffff; }
 /* Tint panels: heading + strong use navy for guaranteed AA contrast on every theme */
 .checker-panel.tint .checker-h { color: var(--navy); }
 .checker-panel.tint .checker-body { color: var(--navy); }
@@ -1710,6 +1712,7 @@ body.concern-page .collection-landing-title {
 .checker-panel.dark .checker-eyebrow { color: var(--accent); }
 .checker-panel.tint .checker-eyebrow { color: var(--navy); opacity: .72; }
 .checker-panel.peach .checker-eyebrow { color: #5c2418; opacity: 1; }
+.checker-panel.peach-deep .checker-eyebrow { color: #f4a896; opacity: 1; }
 
 /* Big benefit statement — the hero element of each banner */
 .checker-statement {
