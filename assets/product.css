@@ -1693,28 +1693,54 @@ body.concern-page .collection-landing-title {
 .checker-panel.dark { background: var(--hero-bg); color: var(--hero-text); }
 .checker-panel.light { background: var(--ivory); color: var(--navy); }
 .checker-panel.tint { background: var(--card-bg); color: var(--navy); }
+/* New: peach panel variant — locked to #f4a896 (Renew accent) */
+.checker-panel.peach { background: #f4a896; color: #1a2a3a; }
 /* Tint panels: heading + strong use navy for guaranteed AA contrast on every theme */
 .checker-panel.tint .checker-h { color: var(--navy); }
 .checker-panel.tint .checker-body { color: var(--navy); }
 .checker-panel.tint .checker-body strong { color: var(--navy); font-weight: 700; }
+
+/* === Banner type hierarchy (mobile-first, statement = hero) === */
 .checker-eyebrow {
   font-family: 'Outfit', system-ui, sans-serif;
-  font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+  font-size: 9px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--accent-deep); font-weight: 500;
+  margin-bottom: 6px;
 }
 .checker-panel.dark .checker-eyebrow { color: var(--accent); }
 .checker-panel.tint .checker-eyebrow { color: var(--navy); opacity: .72; }
-.checker-hero {
+.checker-panel.peach .checker-eyebrow { color: #5c2418; opacity: 1; }
+
+/* Big benefit statement — the hero element of each banner */
+.checker-statement {
   font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 900;
-  font-size: 48px; line-height: 1; letter-spacing: .02em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 4px 0 8px;
+  font-size: 28px; line-height: 1.0; letter-spacing: -.005em;
+  margin: 0 0 10px;
+  color: inherit;
 }
-/* Light + tint backgrounds need dark hero text for AA contrast (peach-on-peach was unreadable) */
-.checker-panel.tint .checker-hero { color: var(--navy); }
-.checker-panel.light .checker-hero { color: var(--navy); }
+.checker-panel.peach .checker-statement { color: #1a2a3a; }
+.checker-panel.tint .checker-statement,
+.checker-panel.light .checker-statement { color: var(--navy); }
+
+/* Ingredient credit — small label under the statement */
+.checker-credit {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  margin-bottom: 8px;
+  opacity: .8;
+  color: inherit;
+}
+.checker-panel.peach .checker-credit { color: #5c2418; opacity: 1; }
+
+@media (min-width: 720px) {
+  .checker-eyebrow { font-size: 11px; margin-bottom: 8px; }
+  .checker-statement { font-size: 38px; margin-bottom: 12px; }
+  .checker-credit { font-size: 13px; }
+}
+
+/* Legacy .checker-h kept as a no-op so older banners on other pages still render */
 .checker-h {
   font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700;
   font-size: 22px; line-height: 1.25; letter-spacing: -.005em;
@@ -1772,16 +1798,13 @@ body.concern-page .collection-landing-title {
 @media (max-width: 720px) {
   .checker-row .checker-img { aspect-ratio: auto; }
   .checker-row .checker-img.has-photo { aspect-ratio: auto; min-height: 0; }
-  .checker-row .checker-panel { padding: 16px 14px; gap: 4px; overflow: hidden; }
-  .checker-eyebrow { font-size: 9px; letter-spacing: .18em; line-height: 1.4; }
-  .checker-hero { font-size: 22px; line-height: 1.05; margin: 2px 0 4px; word-break: keep-all; }
-  .checker-h { font-size: 14px; line-height: 1.3; margin-bottom: 2px; }
-  .checker-body { font-size: 12px; line-height: 1.5; }
-  .checker-body p + p { margin-top: 4px; }
+  .checker-row .checker-panel { padding: 16px 14px; gap: 2px; overflow: hidden; }
+  .checker-body { font-size: 11px; line-height: 1.4; }
+  .checker-body p + p { margin-top: 2px; }
 }
 /* Desktop body text spec */
 @media (min-width: 720px) {
-  .checker-body { font-size: 14px; line-height: 1.5; }
+  .checker-body { font-size: 12px; line-height: 1.5; }
 }
 
 .ingredient-spotlight {
