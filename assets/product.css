@@ -38,6 +38,7 @@
   --accent: #f4a896;
   --accent-deep: #c4705e;
   --circle-hover: #f4a896;
+  --circle-overlay-text: #1a2a3a;
   --highlight-bg: #f4a896;
   --highlight-text: #1a2a3a;
   --card-bg: #ffb19c;
@@ -367,12 +368,12 @@ body.concern-page .collection-landing-title {
   width: 100%; height: 100%; object-fit: cover; display: block;
   border-radius: 50%;
 }
-/* Hover overlay: solid collection hover colour (no opacity) + white centred product description */
+/* Hover overlay: solid collection hover colour + theme-aware text colour */
 .collection-circle .circle-overlay {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
   background: var(--circle-hover, var(--accent-deep));
-  color: #fff;
+  color: var(--circle-overlay-text, #fff);
   font-family: 'Outfit', system-ui, sans-serif;
   /* Weight 400 regular vs 800 bold for strong thick/thin contrast */
   font-weight: 400; font-size: 14px; line-height: 1.45;
