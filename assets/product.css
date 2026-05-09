@@ -1653,15 +1653,12 @@ body.concern-page .collection-landing-title {
 }
 .checker-section .checker-row:nth-of-type(odd)  { flex-direction: row !important; }
 .checker-section .checker-row:nth-of-type(even) { flex-direction: row-reverse !important; }
-.checker-row > .checker-img,
-.checker-row > .checker-panel { flex: 1 1 50%; min-width: 0; }
-@media (max-width: 1023px) {
-  .checker-row > .checker-img { flex: 0 0 40%; }
-  .checker-row > .checker-panel { flex: 1 1 60%; }
-}
-@media (max-width: 720px) {
-  .checker-row > .checker-img { flex: 0 0 35%; }
-  .checker-row > .checker-panel { flex: 1 1 65%; }
+/* Mobile-first: panel gets 60% to support poster headline; desktop expands to 55% panel / 45% image */
+.checker-row > .checker-img { flex: 0 0 40%; min-width: 0; }
+.checker-row > .checker-panel { flex: 1 1 60%; min-width: 0; }
+@media (min-width: 1024px) {
+  .checker-row > .checker-img { flex: 0 0 45%; }
+  .checker-row > .checker-panel { flex: 1 1 55%; }
 }
 /* Scroll-trigger animation for checkerboard rows — slow 1.6s slide-in */
 .checker-row .checker-panel,
@@ -1685,10 +1682,13 @@ body.concern-page .collection-landing-title {
 .checker-row > * { min-width: 0; }
 .checker-panel {
   display: flex; flex-direction: column; justify-content: center;
-  padding: 20px 20px; gap: 8px;
+  padding: 28px 24px; gap: 0;
 }
 @media (min-width: 720px) {
-  .checker-panel { padding: 32px 40px; gap: 10px; }
+  .checker-panel { padding: 48px 48px; }
+}
+@media (min-width: 1024px) {
+  .checker-panel { padding: 64px 72px; }
 }
 .checker-panel.dark { background: var(--hero-bg); color: var(--hero-text); }
 .checker-panel.light { background: var(--ivory); color: var(--navy); }
@@ -1714,13 +1714,15 @@ body.concern-page .collection-landing-title {
 .checker-panel.peach .checker-eyebrow { color: #5c2418; opacity: 1; }
 .checker-panel.peach-deep .checker-eyebrow { color: #f4a896; opacity: 1; }
 
-/* Big benefit statement — the hero element of each banner */
+/* Big benefit statement — the hero element, takes up ~70% of panel vertical space */
 .checker-statement {
   font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 900;
-  font-size: 28px; line-height: 1.0; letter-spacing: -.005em;
+  font-size: 40px; line-height: 1.0; letter-spacing: -.01em;
   margin: 0 0 10px;
   color: inherit;
+  flex: 1 1 auto;
+  display: flex; align-items: center;
 }
 .checker-panel.peach .checker-statement { color: #1a2a3a; }
 .checker-panel.tint .checker-statement,
@@ -1731,16 +1733,19 @@ body.concern-page .collection-landing-title {
   font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 700;
   font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   opacity: .8;
   color: inherit;
 }
 .checker-panel.peach .checker-credit { color: #5c2418; opacity: 1; }
 
 @media (min-width: 720px) {
-  .checker-eyebrow { font-size: 11px; margin-bottom: 8px; }
-  .checker-statement { font-size: 38px; margin-bottom: 12px; }
-  .checker-credit { font-size: 13px; }
+  .checker-eyebrow { font-size: 11px; margin-bottom: 10px; }
+  .checker-statement { font-size: 56px; margin-bottom: 14px; }
+  .checker-credit { font-size: 13px; margin-bottom: 8px; }
+}
+@media (min-width: 1024px) {
+  .checker-statement { font-size: 72px; }
 }
 
 /* Legacy .checker-h kept as a no-op so older banners on other pages still render */
@@ -1783,31 +1788,33 @@ body.concern-page .collection-landing-title {
   100% { transform: scale(1.08); }
 }
 
-/* Banners: fixed height per breakpoint with overflow hidden so image + panel always match.
-   Mobile-first: 240px base, 360px from tablet up. */
+/* Banners: poster-grade height to give headline 70%+ of vertical space.
+   Mobile-first: 320px base, 480px tablet, 580px desktop. */
 .checker-row {
-  height: 240px; max-height: 240px;
+  min-height: 320px;
   overflow: hidden;
 }
 .checker-row > .checker-panel,
 .checker-row > .checker-img {
-  height: 100%; max-height: inherit;
+  align-self: stretch;
 }
 @media (min-width: 720px) {
-  .checker-row { height: 360px; max-height: 360px; }
+  .checker-row { min-height: 480px; }
+}
+@media (min-width: 1024px) {
+  .checker-row { min-height: 580px; }
 }
 
-/* Mobile banner type sizing — fits within 240px row height */
+/* Body proof line — small note under the credit */
+.checker-body { font-size: 11px; line-height: 1.45; }
+.checker-body p + p { margin-top: 2px; }
+@media (min-width: 720px) {
+  .checker-body { font-size: 12px; line-height: 1.5; }
+}
+/* Mobile-only: drop fixed aspect-ratio on photo banners so image fills the row */
 @media (max-width: 720px) {
   .checker-row .checker-img { aspect-ratio: auto; }
   .checker-row .checker-img.has-photo { aspect-ratio: auto; min-height: 0; }
-  .checker-row .checker-panel { padding: 16px 14px; gap: 2px; overflow: hidden; }
-  .checker-body { font-size: 11px; line-height: 1.4; }
-  .checker-body p + p { margin-top: 2px; }
-}
-/* Desktop body text spec */
-@media (min-width: 720px) {
-  .checker-body { font-size: 12px; line-height: 1.5; }
 }
 
 .ingredient-spotlight {
