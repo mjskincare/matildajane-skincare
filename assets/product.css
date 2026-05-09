@@ -1786,10 +1786,11 @@ body.concern-page .collection-landing-title {
   padding: 36px 28px;
   opacity: 0;
   transform: translateY(30px);
+  /* All hover/visible transitions share one slow ease so nothing clashes */
   transition:
-    opacity 0.6s ease,
-    transform 0.6s cubic-bezier(0.32, 0.72, 0, 1),
-    box-shadow 0.4s ease;
+    opacity 1.2s cubic-bezier(0.25, 0.1, 0.25, 1),
+    transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1),
+    box-shadow 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -1797,13 +1798,12 @@ body.concern-page .collection-landing-title {
 .spotlight-card.visible { opacity: 1; transform: translateY(0); }
 .spotlight-card.visible:hover,
 .spotlight-card.visible.tap-active {
-  transform: scale(1.06) translateY(-4px);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.14);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
   z-index: 2;
 }
 .spotlight-img-wrap {
   position: relative;
-  transition: transform 0.6s cubic-bezier(0.32, 0.72, 0, 1);
 }
 /* Ingredient Spotlight — Murad-style slow zoom (1.5s in + 1.5s out) */
 .ingredient-spotlight img {
@@ -1813,9 +1813,12 @@ body.concern-page .collection-landing-title {
   transform-origin: center;
 }
 .ingredient-spotlight .spotlight-card:hover img,
-.ingredient-spotlight .spotlight-card.tap-active img { transform: scale(1.15); }
+.ingredient-spotlight .spotlight-card.tap-active img { transform: scale(1.10); }
+/* Entry stagger — reset to 0 on hover so cards 2+3 don't lag when hovered */
 .spotlight-card:nth-child(2) { transition-delay: 0.15s; }
 .spotlight-card:nth-child(3) { transition-delay: 0.3s; }
+.spotlight-card.visible:hover,
+.spotlight-card.visible.tap-active { transition-delay: 0s; }
 /* Mobile-first: small round image, contain-fit so subjects aren't cropped */
 .spotlight-img-wrap {
   width: 120px; height: 120px;
