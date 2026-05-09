@@ -1510,12 +1510,12 @@ body.concern-page .collection-landing-title {
 .footer-tagline {
   font-family: 'Outfit', system-ui, sans-serif; font-weight: 500; font-style: normal;
   font-size: 15px; color: rgba(255,255,255,.92);
-  margin-top: 14px; line-height: 1.6; letter-spacing: .01em;
+  margin-top: 14px; line-height: 1.7; letter-spacing: .08em;
 }
 .footer-slogan {
   font-family: 'Outfit', system-ui, sans-serif; font-weight: 500; font-style: normal;
-  font-size: 15px; line-height: 1.55; margin-top: 16px;
-  color: var(--accent); opacity: 1; letter-spacing: .01em;
+  font-size: 15px; line-height: 1.65; margin-top: 16px;
+  color: var(--accent); opacity: 1; letter-spacing: .08em;
 }
 .footer-col h4 {
   font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
