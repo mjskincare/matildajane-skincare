@@ -1191,7 +1191,7 @@ body.concern-page .collection-landing-title {
 }
 .checker-img.has-photo::before, .checker-img.has-photo::after { display: none; }
 .checker-img.has-photo img {
-  animation: bannerSlowZoom 8s ease-in-out infinite alternate;
+  animation: bannerSlowZoom 12s ease-in-out infinite alternate;
   width: 100%; height: 100%; object-fit: cover; object-position: center;
   display: block;
 }
@@ -1617,23 +1617,32 @@ body.concern-page .collection-landing-title {
   .checker-row > .checker-img { flex: 0 0 35%; }
   .checker-row > .checker-panel { flex: 1 1 65%; }
 }
-/* Scroll-trigger animation for checkerboard rows */
+/* Scroll-trigger animation for checkerboard rows — slow 1.2s slide-in */
 .checker-row .checker-panel,
 .checker-row .checker-img {
   opacity: 0;
-  transition: opacity .8s ease, transform .8s cubic-bezier(0.32, 0.72, 0, 1);
+  transform: translateY(40px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 }
-.checker-row .checker-panel { transform: translateX(-32px); }
-.checker-row .checker-img { transform: translateX(32px) scale(1.04); }
 .checker-row.in-view .checker-panel,
 .checker-row.in-view .checker-img {
-  opacity: 1; transform: translateX(0) scale(1);
+  opacity: 1; transform: translateY(0);
 }
-.checker-row.in-view .checker-img { transition-delay: .1s; }
+.checker-row.in-view .checker-img { transition-delay: .15s; }
+/* Stagger consecutive banners 0.2s apart for a flowing reveal */
+.checker-section .checker-row:nth-of-type(2).in-view .checker-panel,
+.checker-section .checker-row:nth-of-type(2).in-view .checker-img { transition-delay: .2s; }
+.checker-section .checker-row:nth-of-type(2).in-view .checker-img { transition-delay: .35s; }
+.checker-section .checker-row:nth-of-type(3).in-view .checker-panel,
+.checker-section .checker-row:nth-of-type(3).in-view .checker-img { transition-delay: .4s; }
+.checker-section .checker-row:nth-of-type(3).in-view .checker-img { transition-delay: .55s; }
 .checker-row > * { min-width: 0; }
 .checker-panel {
   display: flex; flex-direction: column; justify-content: center;
-  padding: 56px 56px; gap: 14px;
+  padding: 20px 20px; gap: 8px;
+}
+@media (min-width: 720px) {
+  .checker-panel { padding: 32px 40px; gap: 10px; }
 }
 .checker-panel.dark { background: var(--hero-bg); color: var(--hero-text); }
 .checker-panel.light { background: var(--ivory); color: var(--navy); }
@@ -1693,29 +1702,20 @@ body.concern-page .collection-landing-title {
 .checker-img.dark { background: linear-gradient(135deg, var(--hero-bg) 0%, var(--accent-deep) 100%); }
 .checker-img.dark::after { color: rgba(255,255,255,.45); }
 
-/* Slow Ken Burns zoom on banner images — runs at every breakpoint */
+/* Slow Ken Burns zoom on banner images — 12s, barely perceptible */
 @keyframes bannerSlowZoom {
   0%   { transform: scale(1.0); }
-  100% { transform: scale(1.05); }
+  100% { transform: scale(1.08); }
 }
 
-/* Desktop banner cap — kept lean so banners don't dominate the page */
-@media (min-width: 1024px) {
-  .checker-row { max-height: 380px; }
-}
+/* Banners size to content — no fixed min/max height */
+.checker-row { min-height: auto; }
 
-/* Banners: mobile spec — fixed 240px row height, tightened text to fit alongside image */
+/* Mobile banner type sizing — height now driven by content + 20px padding */
 @media (max-width: 720px) {
-  /* Fixed height so image + panel are guaranteed equal */
-  .checker-row { height: 240px; min-height: 240px; max-height: 240px; }
   .checker-row .checker-img { aspect-ratio: auto; }
   .checker-row .checker-img.has-photo { aspect-ratio: auto; height: 100%; min-height: 0; }
-  /* Panel: tighter padding, vertical-centred content */
-  .checker-row .checker-panel {
-    padding: 14px 14px; gap: 2px;
-    justify-content: center;
-    overflow: hidden;
-  }
+  .checker-row .checker-panel { padding: 20px 16px; gap: 4px; }
   .checker-eyebrow { font-size: 9px; letter-spacing: .18em; line-height: 1.4; }
   /* 22px keeps NEUROPHROLINE™ 2% on one line at common mobile widths */
   .checker-hero { font-size: 22px; line-height: 1.05; margin: 2px 0 4px; word-break: keep-all; }
