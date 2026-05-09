@@ -1847,6 +1847,8 @@ body.concern-page .collection-landing-title {
 .spotlight-img-wrap img {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center center;
+  /* Mirror parent border-radius so the slow-zoom transform doesn't escape the clip */
+  border-radius: 50%;
 }
 /* fallback tints if an image fails to load */
 .spotlight-card:nth-child(1) .spotlight-img-wrap { background: #d4c5a9; }
