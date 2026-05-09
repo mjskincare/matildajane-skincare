@@ -201,9 +201,9 @@ a { color: inherit; text-decoration: none; }
   color: var(--accent-deep); font-weight: 600; margin-bottom: 18px;
 }
 .skin-type-h {
-  font-family: 'Cormorant Garamond', serif; font-weight: 600;
+  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 800;
   font-size: 32px; line-height: 1.25; color: var(--navy);
-  letter-spacing: .005em; margin-bottom: 22px;
+  letter-spacing: .04em; margin-bottom: 22px;
 }
 .skin-type-intro {
   font-size: 18px; line-height: 1.7; color: var(--body-col);
@@ -1343,9 +1343,9 @@ body.concern-page .collection-landing-title {
   color: var(--accent-deep); font-weight: 600; margin-bottom: 20px;
 }
 .details-h {
-  font-family: 'Cormorant Garamond', serif; font-weight: 600;
+  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 800;
   font-size: 36px; line-height: 1.25; color: var(--navy);
-  letter-spacing: .005em;
+  letter-spacing: .04em;
   margin-bottom: 24px;
 }
 .details-body {
@@ -1507,9 +1507,9 @@ body.concern-page .collection-landing-title {
   color: var(--accent-deep); font-weight: 600; margin-bottom: 18px;
 }
 .acc-section-title {
-  font-family: 'Cormorant Garamond', serif; font-weight: 600;
+  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 800;
   font-size: 34px; line-height: 1.25; color: var(--navy);
-  letter-spacing: .005em;
+  letter-spacing: .04em;
   margin-bottom: 32px;
 }
 .acc-list { border-top: 1px solid rgba(26,42,58,.14); }
@@ -1724,8 +1724,9 @@ body.concern-page .collection-landing-title {
   background: #f4f1ec;
 }
 .ingredient-spotlight h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: .04em;
   font-size: 2.4rem;
   color: #2C2C2C;
   letter-spacing: .005em;
@@ -1798,8 +1799,7 @@ body.concern-page .collection-landing-title {
 }
 .spotlight-img-wrap img {
   width: 100%; height: 100%;
-  object-fit: contain; object-position: center;
-  padding: 8px;
+  object-fit: cover; object-position: center center;
 }
 /* fallback tints if an image fails to load */
 .spotlight-card:nth-child(1) .spotlight-img-wrap { background: #d4c5a9; }
@@ -1851,9 +1851,9 @@ sup.ref {
   color: var(--accent-deep); font-weight: 600; margin-bottom: 18px;
 }
 .research-h {
-  font-family: 'Cormorant Garamond', serif; font-weight: 600;
+  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 800;
   font-size: 32px; line-height: 1.25; color: var(--navy);
-  letter-spacing: .005em;
+  letter-spacing: .04em;
   margin-bottom: 32px;
 }
 .research-list {
