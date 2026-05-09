@@ -1876,15 +1876,21 @@ body.concern-page .collection-landing-title {
   width: 120px; height: 120px;
   margin: 0 auto 18px;
   border-radius: 50%;
+  /* clip-path is a stronger clip than overflow:hidden when child has transform/will-change */
+  clip-path: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
   overflow: hidden;
   background: #eee;
   display: flex; align-items: center; justify-content: center;
+  isolation: isolate;
 }
 .spotlight-img-wrap img {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center center;
-  /* Mirror parent border-radius so the slow-zoom transform doesn't escape the clip */
+  /* Belt-and-braces: image itself is a circle too */
   border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
 }
 /* fallback tints if an image fails to load */
 .spotlight-card:nth-child(1) .spotlight-img-wrap { background: #d4c5a9; }
