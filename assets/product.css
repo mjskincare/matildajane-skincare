@@ -1398,9 +1398,9 @@ body.concern-page .collection-landing-title {
   color: inherit; font-weight: 700;
 }
 
-/* === SCIENCE SECTION — light cream "Ivory Stem" with charcoal text === */
+/* === SCIENCE SECTION — Ivory Stem with navy editorial type === */
 .science-section {
-  background: #F5F0E8; color: #2C2C2C;
+  background: #F5F0E8; color: #1a2a3a;
   padding: 80px 64px;
   position: relative; overflow: hidden;
 }
@@ -1413,71 +1413,75 @@ body.concern-page .collection-landing-title {
 }
 .science-h {
   font-family: 'Montserrat', system-ui, sans-serif; font-weight: 800;
-  font-size: 36px; line-height: 1.2; max-width: 760px;
+  font-size: 32px; line-height: 1.2; max-width: 760px;
   letter-spacing: 0;
-  color: #2C2C2C;
+  color: #1a2a3a;
   margin-bottom: 12px;
 }
 .science-body {
   font-size: 18px; line-height: 1.75; max-width: 720px;
-  color: #2C2C2C;
+  color: #1a2a3a;
 }
-.science-body strong { color: #2C2C2C; font-weight: 700; }
+.science-body strong { color: #1a2a3a; font-weight: 700; }
 .science-body em { color: #c4705e; font-style: normal; font-weight: 500; }
 
 /* Sub-line */
 .science-h + .science-sub {
   font-family: 'Outfit', system-ui, sans-serif;
-  font-size: 16px; line-height: 1.6; font-weight: 500;
-  color: rgba(44,44,44,.8); max-width: 720px;
+  font-size: 15px; line-height: 1.6; font-weight: 500;
+  color: rgba(26,42,58,.7); max-width: 720px;
   margin: 0 0 48px;
 }
 
-/* "The Science Behind the Formula" — 2-column grid (3 rows) with row dividers */
-.formula-grid {
+/* "The Science Behind the Formula" — editorial numbered-pillar grid */
+.pillar-grid {
   display: grid; grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 40px;
   max-width: 1000px;
 }
 @media (min-width: 720px) {
-  .formula-grid {
+  .pillar-grid {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 56px; row-gap: 40px;
+    column-gap: 64px; row-gap: 56px;
   }
+  .pillar-grid > .pillar-wide { grid-column: 1 / -1; }
 }
-.formula-block {
-  display: flex; flex-direction: column; gap: 10px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid rgba(44,44,44,.10);
+.pillar {
+  display: flex; flex-direction: column; gap: 8px;
 }
-/* Last row: no bottom border */
-.formula-grid > .formula-block:last-child { border-bottom: 0; padding-bottom: 0; }
-@media (min-width: 720px) {
-  /* 2-col: last 2 blocks form the bottom row → no border on either */
-  .formula-grid > .formula-block:nth-last-child(-n+2) { border-bottom: 0; padding-bottom: 0; }
-}
-/* Accent rule above each heading */
-.formula-rule {
+.pillar-rule {
   display: block;
-  width: 32px; height: 4px;
+  width: 40px; height: 2px;
   background: #c4705e;
+  margin-bottom: 8px;
+}
+.pillar-num {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 28px; line-height: 1;
+  letter-spacing: .04em;
+  color: #c4705e;
   margin-bottom: 4px;
 }
-.formula-h {
+.pillar-h {
   font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 700; font-size: 18px; line-height: 1.3;
-  letter-spacing: .04em; text-transform: uppercase;
-  color: #2C2C2C;
+  font-weight: 800;
+  font-size: 14px; line-height: 1.3;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: #1a2a3a;
   margin: 0;
 }
-.formula-body {
+.pillar-body {
   font-family: 'Outfit', system-ui, sans-serif;
   font-size: 14px; line-height: 1.7; font-weight: 500;
-  color: #2C2C2C;
+  color: #1a2a3a;
   margin: 0;
 }
-/* Bold inside formula body — weight only, charcoal stays charcoal */
-.formula-body strong { color: #2C2C2C; font-weight: 700; }
+/* Bold inside pillar body — weight only, navy stays navy */
+.pillar-body strong { color: #1a2a3a; font-weight: 700; }
+@media (min-width: 720px) {
+  .pillar-num { font-size: 36px; }
+}
 
 /* Mobile padding for science section */
 @media (max-width: 720px) {
