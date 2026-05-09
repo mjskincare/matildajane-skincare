@@ -1508,13 +1508,14 @@ body.concern-page .collection-landing-title {
 }
 .footer-brand-block em { font-style: normal; color: var(--accent); }
 .footer-tagline {
-  font-family: 'Cormorant Garamond', serif; font-weight: 500; font-style: italic;
-  font-size: 17px; opacity: .9; margin-top: 14px; line-height: 1.6;
+  font-family: 'Outfit', system-ui, sans-serif; font-weight: 500; font-style: normal;
+  font-size: 15px; color: rgba(255,255,255,.92);
+  margin-top: 14px; line-height: 1.6; letter-spacing: .01em;
 }
 .footer-slogan {
-  font-family: 'Cormorant Garamond', serif; font-weight: 500; font-style: italic;
-  font-size: 18px; line-height: 1.5; margin-top: 16px;
-  color: var(--accent); opacity: 1;
+  font-family: 'Outfit', system-ui, sans-serif; font-weight: 500; font-style: normal;
+  font-size: 15px; line-height: 1.55; margin-top: 16px;
+  color: var(--accent); opacity: 1; letter-spacing: .01em;
 }
 .footer-col h4 {
   font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
