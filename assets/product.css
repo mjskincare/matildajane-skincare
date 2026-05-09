@@ -264,27 +264,6 @@ a { color: inherit; text-decoration: none; }
   color: var(--navy); text-transform: uppercase;
   margin-bottom: 16px;
 }
-/* "COLLECTION NAME | Descriptor" pattern parts */
-.collection-landing-title .ct-name { display: inline; }
-.collection-landing-title .ct-pipe,
-.collection-landing-title .ct-desc {
-  font-family: 'Outfit', system-ui, sans-serif;
-  font-weight: 500;
-  font-size: 0.46em; /* 22px on mobile (48px H1), scales with H1 */
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--navy);
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 0.18em;
-  opacity: .85;
-}
-.collection-landing-title .ct-pipe { font-weight: 400; opacity: .55; margin: 0 0.1em 0 0.18em; }
-@media (max-width: 720px) {
-  /* Stack the descriptor below on mobile so the H1 isn't cramped */
-  .collection-landing-title .ct-pipe { display: none; }
-  .collection-landing-title .ct-desc { display: block; margin: 6px 0 0; font-size: 13px; }
-}
 /* Concern pages — title case, NOT uppercase, slightly looser tracking */
 body.concern-page .collection-landing-title {
   font-weight: 800;
