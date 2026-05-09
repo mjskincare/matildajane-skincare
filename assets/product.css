@@ -1718,22 +1718,26 @@ body.concern-page .collection-landing-title {
   100% { transform: scale(1.08); }
 }
 
-/* Banners: content-driven on mobile, fixed taller min-height on desktop */
-.checker-row { min-height: auto; }
-@media (min-width: 720px) {
-  .checker-row { min-height: 380px; }
+/* Banners: fixed height per breakpoint with overflow hidden so image + panel always match.
+   Mobile-first: 240px base, 360px from tablet up. */
+.checker-row {
+  height: 240px; max-height: 240px;
+  overflow: hidden;
 }
-@media (min-width: 1024px) {
-  .checker-row { min-height: 460px; }
+.checker-row > .checker-panel,
+.checker-row > .checker-img {
+  height: 100%; max-height: inherit;
+}
+@media (min-width: 720px) {
+  .checker-row { height: 360px; max-height: 360px; }
 }
 
-/* Mobile banner type sizing — height now driven by content + 20px padding */
+/* Mobile banner type sizing — fits within 240px row height */
 @media (max-width: 720px) {
   .checker-row .checker-img { aspect-ratio: auto; }
-  .checker-row .checker-img.has-photo { aspect-ratio: auto; height: 100%; min-height: 0; }
-  .checker-row .checker-panel { padding: 20px 16px; gap: 4px; }
+  .checker-row .checker-img.has-photo { aspect-ratio: auto; min-height: 0; }
+  .checker-row .checker-panel { padding: 16px 14px; gap: 4px; overflow: hidden; }
   .checker-eyebrow { font-size: 9px; letter-spacing: .18em; line-height: 1.4; }
-  /* 22px keeps NEUROPHROLINE™ 2% on one line at common mobile widths */
   .checker-hero { font-size: 22px; line-height: 1.05; margin: 2px 0 4px; word-break: keep-all; }
   .checker-h { font-size: 14px; line-height: 1.3; margin-bottom: 2px; }
   .checker-body { font-size: 12px; line-height: 1.5; }
