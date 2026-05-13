@@ -7,24 +7,76 @@
 <meta name="description" content="Clinically backed actives at proven concentrations. Targeted treatments from Matilda Jane Skincare.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Outfit:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/product.css">
 </head>
 <body class="theme-targeted">
 
-<nav class="site-nav">
-  <a class="nav-logo" href="../../index.html">Matilda Jane</a>
-  <ul class="nav-links">
-    <li><a href="#">Hydrate</a></li>
-    <li><a href="../calming-barrier.html">Calm</a></li>
-    <li><a href="../clarifying-bha.html">Clarify</a></li>
-    <li><a href="../neuro-restore.html">Renew</a></li>
-    <li><a href="../brightening-vitamin-c.html">Brighten</a></li>
-    <li><a href="../daily-defence.html">Men's</a></li>
-    <li><a href="#">Targeted</a></li>
-  </ul>
-  <div class="nav-cart">Cart (0)</div>
+<nav class="site-nav-v2">
+  <div class="site-nav-v2-inner">
+    <a class="nav-logo" href="../../index.html">Matilda Jane</a>
+    <ul class="nav-v2-links">
+      <li><a class="nav-v2-link" href="../../start-here.html">Start Here</a></li>
+      <li>
+        <button class="nav-v2-trigger " type="button">Collections <span class="chev">▾</span></button>
+        <ul class="nav-v2-dropdown">
+          <li><a href="../hydrate.html">Hydrate</a></li>
+          <li><a href="../calming-barrier.html">Calm</a></li>
+          <li><a href="../clear.html">Clear</a></li>
+          <li><a href="../neuro-restore.html">Renew</a></li>
+          <li><a href="../brightening-vitamin-c.html">Brighten</a></li>
+          <li><a href="../daily-defence.html">Men&#39;s</a></li>
+          <li><a href="../targeted.html">Targeted Treatments</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="nav-v2-trigger" type="button">Concerns <span class="chev">▾</span></button>
+        <ul class="nav-v2-dropdown">
+          <li><a href="../../concerns/dryness-and-dehydration.html">Dryness &amp; Dehydration</a></li>
+          <li><a href="../../concerns/redness-and-reactivity.html">Sensitive Skin</a></li>
+          <li><a href="../../concerns/blemishes-and-congestion.html">Acne-Prone</a></li>
+          <li><a href="../../concerns/dullness.html">Dullness</a></li>
+          <li><a href="../../concerns/uneven-skin-tone.html">Uneven Skin Tone</a></li>
+          <li><a href="../../concerns/ageing-and-loss-of-firmness.html">Ageing Skin</a></li>
+          <li><a href="../../concerns/dark-circles.html">Dark Circles</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-v2-actions">
+      <span class="nav-v2-cart">Cart (0)</span>
+      <button class="nav-v2-hamburger" type="button" aria-label="Open menu" id="mj-hamburger"><span></span></button>
+    </div>
+  </div>
 </nav>
+<div class="nav-v2-mobile-overlay" id="mj-mobile-overlay"></div>
+<aside class="nav-v2-mobile" id="mj-mobile-nav" aria-hidden="true">
+  <button class="nav-v2-mobile-close" type="button" id="mj-mobile-close" aria-label="Close menu">×</button>
+  <div class="nav-v2-mobile-section"><a href="../../start-here.html">Start Here</a></div>
+  <div class="nav-v2-mobile-section">
+    <span class="label">Collections</span>
+    <ul class="nav-v2-mobile-sublist">
+      <li><a href="../hydrate.html">Hydrate</a></li>
+      <li><a href="../calming-barrier.html">Calm</a></li>
+      <li><a href="../clear.html">Clear</a></li>
+      <li><a href="../neuro-restore.html">Renew</a></li>
+      <li><a href="../brightening-vitamin-c.html">Brighten</a></li>
+      <li><a href="../daily-defence.html">Men&#39;s</a></li>
+      <li><a href="../targeted.html">Targeted Treatments</a></li>
+    </ul>
+  </div>
+  <div class="nav-v2-mobile-section">
+    <span class="label">Concerns</span>
+    <ul class="nav-v2-mobile-sublist">
+      <li><a href="../../concerns/dryness-and-dehydration.html">Dryness &amp; Dehydration</a></li>
+      <li><a href="../../concerns/redness-and-reactivity.html">Sensitive Skin</a></li>
+      <li><a href="../../concerns/blemishes-and-congestion.html">Acne-Prone</a></li>
+      <li><a href="../../concerns/dullness.html">Dullness</a></li>
+          <li><a href="../../concerns/uneven-skin-tone.html">Uneven Skin Tone</a></li>
+      <li><a href="../../concerns/ageing-and-loss-of-firmness.html">Ageing Skin</a></li>
+      <li><a href="../../concerns/dark-circles.html">Dark Circles</a></li>
+    </ul>
+  </div>
+</aside>
 
 <div class="breadcrumb">
   <a class="breadcrumb-link" href="../../index.html">
@@ -53,7 +105,6 @@
     <div class="product-grid">
 
       <a class="product-card fu" href="../brighten/eye-cream.html">
-        <span class="product-card-tag">Available</span>
         <div class="product-card-img">
           <img src="../../assets/images/cream-application.jpg" alt="Coffee Bean Eye Cream">
         </div>
@@ -63,15 +114,13 @@
       </a>
 
       <div class="product-card fu" style="cursor: default;">
-        <span class="product-card-tag coming">Coming Soon</span>
         <div class="product-card-img"></div>
-        <div class="product-card-type">Clarify Collection</div>
+        <div class="product-card-type">Clear Collection</div>
         <div class="product-card-name">Blemish Spot Treatment</div>
         <div class="product-card-price unavailable">Coming soon</div>
       </div>
 
       <div class="product-card fu" style="cursor: default;">
-        <span class="product-card-tag coming">Coming Soon</span>
         <div class="product-card-img"></div>
         <div class="product-card-type">Renew Collection</div>
         <div class="product-card-name">Neck &amp; Décolletage Cream</div>
@@ -79,7 +128,6 @@
       </div>
 
       <div class="product-card fu" style="cursor: default;">
-        <span class="product-card-tag coming">Coming Soon</span>
         <div class="product-card-img"></div>
         <div class="product-card-type">Brighten Collection</div>
         <div class="product-card-name">Pigmentation Corrector</div>

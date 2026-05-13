@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start Here — Matilda Jane Skincare</title>
+<meta name="description" content="Find the right Matilda Jane routine for your skin. Shop by concern or by collection.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Outfit:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/product.css">
+<style>
+.start-hero {
+  background: var(--ivory);
+  padding: 96px 24px 64px;
+  text-align: center;
+}
+.start-eyebrow {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: .28em; text-transform: uppercase;
+  color: var(--peach-deep, #c4705e);
+  margin-bottom: 22px;
+}
+.start-h1 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 900; font-size: 48px; line-height: 1.05; letter-spacing: .06em;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.start-sub {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 17px; line-height: 1.6;
+  color: var(--body-col, #4a4a4a);
+  max-width: 540px; margin: 0 auto 40px;
+}
+.start-entry-buttons {
+  display: flex; flex-direction: column; gap: 14px;
+  align-items: center; max-width: 360px; margin: 0 auto;
+}
+.start-entry-btn {
+  width: 100%;
+  padding: 18px 28px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 13px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  text-decoration: none; text-align: center;
+  border: 1.5px solid var(--navy);
+  background: transparent; color: var(--navy);
+  transition: background .25s ease, color .25s ease;
+}
+.start-entry-btn:hover {
+  background: var(--navy); color: var(--white);
+}
+.start-entry-btn.primary {
+  background: var(--navy-deep, #111c27);
+  color: var(--white);
+  border-color: var(--navy-deep, #111c27);
+}
+.start-entry-btn.primary:hover { background: var(--peach-deep, #c4705e); border-color: var(--peach-deep, #c4705e); }
+
+.start-pathways {
+  background: var(--white);
+  padding: 80px 24px 96px;
+}
+.start-pathways-header {
+  text-align: center; max-width: 600px; margin: 0 auto 48px;
+}
+.start-pathways-h2 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800; font-size: 28px; line-height: 1.1; letter-spacing: .04em;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.start-pathways-sub {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--body-col, #4a4a4a);
+}
+.start-pathway-grid {
+  display: grid; grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 920px; margin: 0 auto;
+}
+.start-pathway-tile {
+  display: flex; align-items: center; justify-content: space-between;
+  text-decoration: none;
+  padding: 28px 28px;
+  background: var(--ivory);
+  border-radius: 14px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.start-pathway-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.06);
+}
+.start-pathway-skin {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 16px; font-weight: 500; color: var(--body-col, #4a4a4a);
+}
+.start-pathway-arrow {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 14px; color: var(--peach-deep, #c4705e); margin: 0 14px;
+  letter-spacing: .14em; font-weight: 600;
+}
+.start-pathway-collection {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 700; font-size: 16px; letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--navy);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.start-pathway-collection::after {
+  content: '›'; font-size: 22px; font-weight: 500;
+  transition: transform .25s ease;
+}
+.start-pathway-tile:hover .start-pathway-collection::after { transform: translateX(4px); }
+
+@media (min-width: 720px) {
+  .start-hero { padding: 128px 32px 80px; }
+  .start-h1 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 900; font-size: 48px; line-height: 1.05; letter-spacing: .06em;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+  .start-pathways-h2 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800; font-size: 28px; line-height: 1.1; letter-spacing: .04em;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+  .start-entry-buttons { flex-direction: row; max-width: 600px; }
+  .start-pathway-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+}
+@media (min-width: 1024px) {
+  .start-h1 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 900; font-size: 48px; line-height: 1.05; letter-spacing: .06em;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+}
+
+.fu { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.fu.vis { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- SHARED NAV -->
+<nav class="site-nav-v2">
+  <div class="site-nav-v2-inner">
+    <a class="nav-logo" href="index.html">Matilda Jane</a>
+    <ul class="nav-v2-links">
+      <li><a class="nav-v2-link active" href="start-here.html">Start Here</a></li>
+      <li>
+        <button class="nav-v2-trigger" type="button">Collections <span class="chev">▾</span></button>
+        <ul class="nav-v2-dropdown">
+          <li><a href="products/hydrate.html">Hydrate</a></li>
+          <li><a href="products/calming-barrier.html">Calm</a></li>
+          <li><a href="products/clear.html">Clear</a></li>
+          <li><a href="products/neuro-restore.html">Renew</a></li>
+          <li><a href="products/brightening-vitamin-c.html">Brighten</a></li>
+          <li><a href="products/daily-defence.html">Men's</a></li>
+          <li><a href="products/targeted.html">Targeted Treatments</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="nav-v2-trigger" type="button">Concerns <span class="chev">▾</span></button>
+        <ul class="nav-v2-dropdown">
+          <li><a href="concerns/dryness-and-dehydration.html">Dryness &amp; Dehydration</a></li>
+          <li><a href="concerns/redness-and-reactivity.html">Sensitive Skin</a></li>
+          <li><a href="concerns/blemishes-and-congestion.html">Acne-Prone</a></li>
+          <li><a href="concerns/dullness.html">Dullness</a></li>
+          <li><a href="concerns/uneven-skin-tone.html">Uneven Skin Tone</a></li>
+          <li><a href="concerns/ageing-and-loss-of-firmness.html">Ageing Skin</a></li>
+          <li><a href="concerns/dark-circles.html">Dark Circles</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-v2-actions">
+      <span class="nav-v2-cart">Cart (0)</span>
+      <button class="nav-v2-hamburger" type="button" aria-label="Open menu" id="mj-hamburger"><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="nav-v2-mobile-overlay" id="mj-mobile-overlay"></div>
+<aside class="nav-v2-mobile" id="mj-mobile-nav" aria-hidden="true">
+  <button class="nav-v2-mobile-close" type="button" id="mj-mobile-close" aria-label="Close menu">×</button>
+  <div class="nav-v2-mobile-section"><a href="start-here.html">Start Here</a></div>
+  <div class="nav-v2-mobile-section">
+    <span class="label">Collections</span>
+    <ul class="nav-v2-mobile-sublist">
+      <li><a href="products/hydrate.html">Hydrate</a></li>
+      <li><a href="products/calming-barrier.html">Calm</a></li>
+      <li><a href="products/clear.html">Clear</a></li>
+      <li><a href="products/neuro-restore.html">Renew</a></li>
+      <li><a href="products/brightening-vitamin-c.html">Brighten</a></li>
+      <li><a href="products/daily-defence.html">Men's</a></li>
+      <li><a href="products/targeted.html">Targeted Treatments</a></li>
+    </ul>
+  </div>
+  <div class="nav-v2-mobile-section">
+    <span class="label">Concerns</span>
+    <ul class="nav-v2-mobile-sublist">
+      <li><a href="concerns/dryness-and-dehydration.html">Dryness &amp; Dehydration</a></li>
+      <li><a href="concerns/redness-and-reactivity.html">Sensitive Skin</a></li>
+      <li><a href="concerns/blemishes-and-congestion.html">Acne-Prone</a></li>
+      <li><a href="concerns/dullness.html">Dullness</a></li>
+          <li><a href="concerns/uneven-skin-tone.html">Uneven Skin Tone</a></li>
+      <li><a href="concerns/ageing-and-loss-of-firmness.html">Ageing Skin</a></li>
+      <li><a href="concerns/dark-circles.html">Dark Circles</a></li>
+    </ul>
+  </div>
+</aside>
+
+<!-- HERO -->
+<section class="start-hero">
+  <div class="start-eyebrow fu">Find Your Routine</div>
+  <h1 class="start-h1 fu">Start Here</h1>
+  <p class="start-sub fu">Two ways in: by what your skin needs, or by formula family. Pick whichever feels right — both lead to the same evidence-led range.</p>
+  <div class="start-entry-buttons">
+    <a href="index.html#concerns" class="start-entry-btn primary fu">Shop by Concern</a>
+    <a href="index.html#collections" class="start-entry-btn fu">Shop by Collection</a>
+  </div>
+</section>
+
+<!-- PATHWAYS -->
+<section class="start-pathways">
+  <div class="start-pathways-header">
+    <h2 class="start-pathways-h2 fu">Match your skin to a starting point.</h2>
+    <p class="start-pathways-sub fu">Four common skin profiles. Four collections built around them.</p>
+  </div>
+  <div class="start-pathway-grid">
+    <a class="start-pathway-tile fu" href="products/hydrate.html">
+      <span class="start-pathway-skin">Dry or dehydrated</span>
+      <span class="start-pathway-arrow">→</span>
+      <span class="start-pathway-collection">Hydrate</span>
+    </a>
+    <a class="start-pathway-tile fu" href="products/calming-barrier.html">
+      <span class="start-pathway-skin">Reactive or barrier-compromised</span>
+      <span class="start-pathway-arrow">→</span>
+      <span class="start-pathway-collection">Calm</span>
+    </a>
+    <a class="start-pathway-tile fu" href="products/clear.html">
+      <span class="start-pathway-skin">Blemish-prone</span>
+      <span class="start-pathway-arrow">→</span>
+      <span class="start-pathway-collection">Clear</span>
+    </a>
+    <a class="start-pathway-tile fu" href="products/neuro-restore.html">
+      <span class="start-pathway-skin">Early signs of ageing</span>
+      <span class="start-pathway-arrow">→</span>
+      <span class="start-pathway-collection">Renew</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand-block">
+      Matilda Jane <em>Skincare</em>
+      <div class="footer-tagline">Evidence-based formulations.<br>Clinical concentrations.</div>
+      <div class="footer-slogan">Matilda Jane Skincare —<br>The best of nature, refined.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Collections</h4>
+      <ul>
+        <li><a href="products/hydrate.html">Hydrate</a></li>
+        <li><a href="products/calming-barrier.html">Calm</a></li>
+        <li><a href="products/clear.html">Clear</a></li>
+        <li><a href="products/neuro-restore.html">Renew</a></li>
+        <li><a href="products/brightening-vitamin-c.html">Brighten</a></li>
+        <li><a href="products/daily-defence.html">Men's</a></li>
+        <li><a href="products/targeted.html">Targeted Treatments</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Concerns</h4>
+      <ul>
+        <li><a href="concerns/dryness-and-dehydration.html">Dryness &amp; Dehydration</a></li>
+        <li><a href="concerns/redness-and-reactivity.html">Sensitive Skin</a></li>
+        <li><a href="concerns/blemishes-and-congestion.html">Acne-Prone</a></li>
+        <li><a href="concerns/dullness.html">Dullness</a></li>
+          <li><a href="concerns/uneven-skin-tone.html">Uneven Skin Tone</a></li>
+        <li><a href="concerns/ageing-and-loss-of-firmness.html">Ageing Skin</a></li>
+        <li><a href="concerns/dark-circles.html">Dark Circles</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="start-here.html">Start Here</a></li>
+        <li><a href="mailto:laura@matildajanenz.com">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Matilda Jane Skincare. All rights reserved.</span></div>
+</footer>
+
+<script src="assets/product.js"></script>
+</body>
+</html>

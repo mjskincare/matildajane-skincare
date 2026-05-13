@@ -109,13 +109,17 @@
       const main = wrap.querySelector('.product-image-main');
       if (src && main) {
         const mainImg = main.querySelector('img');
+        const showAnnotations = t.dataset.annotations === 'true';
         if (mainImg && mainImg.src.indexOf(src.split('/').pop()) === -1) {
           main.classList.add('swapping');
           setTimeout(function () {
             mainImg.src = src;
             mainImg.alt = t.getAttribute('aria-label') || '';
             main.classList.remove('swapping');
+            main.classList.toggle('show-annotations', showAnnotations);
           }, 180);
+        } else {
+          main.classList.toggle('show-annotations', showAnnotations);
         }
         return;
       }
@@ -141,6 +145,32 @@
   });
   document.addEventListener('click', function () {
     spotCards.forEach(function (c) { c.classList.remove('tap-active'); });
+  });
+
+  /* === Mobile nav hamburger toggle === */
+  const hamburger = document.getElementById('mj-hamburger');
+  const mobileNav = document.getElementById('mj-mobile-nav');
+  const mobileOverlay = document.getElementById('mj-mobile-overlay');
+  const mobileClose = document.getElementById('mj-mobile-close');
+  function openMobileNav() {
+    if (!mobileNav || !mobileOverlay) return;
+    mobileNav.classList.add('open');
+    mobileOverlay.classList.add('open');
+    mobileNav.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileNav() {
+    if (!mobileNav || !mobileOverlay) return;
+    mobileNav.classList.remove('open');
+    mobileOverlay.classList.remove('open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  if (hamburger) hamburger.addEventListener('click', openMobileNav);
+  if (mobileClose) mobileClose.addEventListener('click', closeMobileNav);
+  if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileNav);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMobileNav();
   });
 
   /* === Recalculate heights on resize === */

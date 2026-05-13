@@ -3,28 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Men's Collection — Matilda Jane</title>
-<meta name="description" content="Research-backed formulas engineered for men's skin. The Men's Collection from Matilda Jane Skincare.">
+<title>Men's Collection — Matilda Jane Skincare</title>
+<meta name="description" content="Niacinamide, Kānuka, Caffeine. Engineered for men&#39;s skin and shaving routines.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Outfit:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/product.css">
 </head>
 <body class="theme-mens">
 
-<nav class="site-nav">
-  <a class="nav-logo" href="../index.html">Matilda Jane</a>
-  <ul class="nav-links">
-    <li><a href="#">Hydrate</a></li>
-    <li><a href="calming-barrier.html">Calm</a></li>
-    <li><a href="clarifying-bha.html">Clarify</a></li>
-    <li><a href="neuro-restore.html">Renew</a></li>
-    <li><a href="brightening-vitamin-c.html">Brighten</a></li>
-    <li><a href="daily-defence.html" class="active">Men's</a></li>
-    <li><a href="#">Targeted</a></li>
-  </ul>
-  <div class="nav-cart">Cart (0)</div>
+<nav class="site-nav-v2">
+  <div class="site-nav-v2-inner">
+    <a class="nav-logo" href="../index.html">Matilda Jane</a>
+    <ul class="nav-v2-links">
+      <li><a class="nav-v2-link" href="../start-here.html">Start Here</a></li>
+      <li>
+        <button class="nav-v2-trigger active" type="button">Collections <span class="chev">▾</span></button>
+        <ul class="nav-v2-dropdown">
+          <li><a href="hydrate.html">Hydrate</a></li>
+          <li><a href="calming-barrier.html">Calm</a></li>
+          <li><a href="clear.html">Clear</a></li>
+          <li><a href="neuro-restore.html">Renew</a></li>
+          <li><a href="brightening-vitamin-c.html">Brighten</a></li>
+          <li><a href="daily-defence.html" class="current">Men&#39;s</a></li>
+          <li><a href="targeted.html">Targeted Treatments</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="nav-v2-trigger" type="button">Concerns <span class="chev">▾</span></button>
+        <ul class="nav-v2-dropdown">
+          <li><a href="../concerns/dryness-and-dehydration.html">Dryness &amp; Dehydration</a></li>
+          <li><a href="../concerns/redness-and-reactivity.html">Sensitive Skin</a></li>
+          <li><a href="../concerns/blemishes-and-congestion.html">Acne-Prone</a></li>
+          <li><a href="../concerns/dullness.html">Dullness</a></li>
+          <li><a href="../concerns/uneven-skin-tone.html">Uneven Skin Tone</a></li>
+          <li><a href="../concerns/ageing-and-loss-of-firmness.html">Ageing Skin</a></li>
+          <li><a href="../concerns/dark-circles.html">Dark Circles</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-v2-actions">
+      <span class="nav-v2-cart">Cart (0)</span>
+      <button class="nav-v2-hamburger" type="button" aria-label="Open menu" id="mj-hamburger"><span></span></button>
+    </div>
+  </div>
 </nav>
+<div class="nav-v2-mobile-overlay" id="mj-mobile-overlay"></div>
+<aside class="nav-v2-mobile" id="mj-mobile-nav" aria-hidden="true">
+  <button class="nav-v2-mobile-close" type="button" id="mj-mobile-close" aria-label="Close menu">×</button>
+  <div class="nav-v2-mobile-section"><a href="../start-here.html">Start Here</a></div>
+  <div class="nav-v2-mobile-section">
+    <span class="label">Collections</span>
+    <ul class="nav-v2-mobile-sublist">
+      <li><a href="hydrate.html">Hydrate</a></li>
+      <li><a href="calming-barrier.html">Calm</a></li>
+      <li><a href="clear.html">Clear</a></li>
+      <li><a href="neuro-restore.html">Renew</a></li>
+      <li><a href="brightening-vitamin-c.html">Brighten</a></li>
+      <li><a href="daily-defence.html">Men&#39;s</a></li>
+      <li><a href="targeted.html">Targeted Treatments</a></li>
+    </ul>
+  </div>
+  <div class="nav-v2-mobile-section">
+    <span class="label">Concerns</span>
+    <ul class="nav-v2-mobile-sublist">
+      <li><a href="../concerns/dryness-and-dehydration.html">Dryness &amp; Dehydration</a></li>
+      <li><a href="../concerns/redness-and-reactivity.html">Sensitive Skin</a></li>
+      <li><a href="../concerns/blemishes-and-congestion.html">Acne-Prone</a></li>
+      <li><a href="../concerns/dullness.html">Dullness</a></li>
+          <li><a href="../concerns/uneven-skin-tone.html">Uneven Skin Tone</a></li>
+      <li><a href="../concerns/ageing-and-loss-of-firmness.html">Ageing Skin</a></li>
+      <li><a href="../concerns/dark-circles.html">Dark Circles</a></li>
+    </ul>
+  </div>
+</aside>
 
 <div class="breadcrumb">
   <a class="breadcrumb-link" href="../index.html#collections">
@@ -33,85 +85,63 @@
   </a>
 </div>
 
-<!-- HERO -->
 <section class="collection-landing-hero">
   <div class="collection-landing-eyebrow fu">Collections</div>
-  <h1 class="collection-landing-title fu">Men's</h1>
-  <p class="collection-landing-sub fu">Built differently.</p>
-</section>
-
-<!-- INTRO BLURB -->
-<section class="category-intro">
-  <div class="category-intro-inner">
-    <p class="fu">Men's skin is biologically different.</p>
-    <p class="fu">Thicker, oilier, with testosterone-driven enlarged pores — compromised further every time you shave. Heavy scrubs feel like the answer. They're not.</p>
-    <p class="fu">Abrasive scrubs damage the skin surface, trigger more inflammation, and cause the skin to produce even more oil — the opposite of what you want.</p>
-    <p class="fu"><strong>Research-backed formulas. Engineered for men's skin.</strong></p>
+  <h1 class="collection-landing-title fu">MEN&#39;S</h1>
+  <div class="collection-benefits">
+    <div class="collection-benefit fu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5 3.5 9.4 8 10 4.5-.6 8-5 8-10V6l-8-4z"/></svg>
+      <div class="collection-benefit-title">Protects</div>
+      <div class="collection-benefit-sub">Defends against daily stressors</div>
+    </div>
+    <div class="collection-benefit fu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l7-7 7 7"/><path d="M5 19l7-7 7 7"/></svg>
+      <div class="collection-benefit-title">Strengthens</div>
+      <div class="collection-benefit-sub">Restores post-shave barrier</div>
+    </div>
+    <div class="collection-benefit fu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s-7 8-7 13a7 7 0 0 0 14 0c0-5-7-13-7-13z"/></svg>
+      <div class="collection-benefit-title">Hydrates</div>
+      <div class="collection-benefit-sub">Lightweight, fast-absorbing</div>
+    </div>
   </div>
 </section>
 
-<!-- THREE PRODUCT CIRCLES -->
 <section class="collection-circles">
   <div class="collection-circles-inner">
-
-    <div class="collection-circle-card fu" style="cursor: default;">
-      <div class="collection-circle empty"></div>
-      <div class="collection-circle-name">Daily Defence Moisturiser</div>
-      <div class="collection-circle-meta muted">Coming Soon</div>
-    </div>
-
-    <div class="collection-circle-card fu" style="cursor: default;">
-      <div class="collection-circle empty"></div>
-      <div class="collection-circle-name">Post-Shave Calming Lotion</div>
-      <div class="collection-circle-meta muted">Coming Soon</div>
-    </div>
-
-    <div class="collection-circle-card fu" style="cursor: default;">
-      <div class="collection-circle empty"></div>
-      <div class="collection-circle-name">Beard &amp; Skin Cleanser</div>
-      <div class="collection-circle-meta muted">Coming Soon</div>
-    </div>
-
   </div>
 </section>
 
-<!-- PRODUCT GRID -->
-<section class="find-formula">
-  <div class="find-formula-inner" style="grid-template-columns: 1fr;">
+<section class="shop-all-section">
+  <div class="shop-all-inner">
     <div class="product-grid">
-
-      <div class="product-card fu" style="cursor: default;">
-        <span class="product-card-tag coming">Coming Soon</span>
+      <div class="product-card fu" data-status="coming-soon" style="cursor: default;">
         <div class="product-card-img"></div>
         <div class="product-card-type">Moisturiser</div>
         <div class="product-card-name">Daily Defence Moisturiser</div>
         <div class="product-card-price unavailable">Coming soon</div>
       </div>
 
-      <div class="product-card fu" style="cursor: default;">
-        <span class="product-card-tag coming">Coming Soon</span>
+      <div class="product-card fu" data-status="coming-soon" style="cursor: default;">
         <div class="product-card-img"></div>
-        <div class="product-card-type">Targeted Treatment</div>
+        <div class="product-card-type">Treatment</div>
         <div class="product-card-name">Post-Shave Calming Lotion</div>
         <div class="product-card-price unavailable">Coming soon</div>
       </div>
 
-      <div class="product-card fu" style="cursor: default;">
-        <span class="product-card-tag coming">Coming Soon</span>
+      <div class="product-card fu" data-status="coming-soon" style="cursor: default;">
         <div class="product-card-img"></div>
         <div class="product-card-type">Cleanser</div>
         <div class="product-card-name">Beard &amp; Skin Cleanser</div>
         <div class="product-card-price unavailable">Coming soon</div>
       </div>
 
-      <div class="product-card fu" style="cursor: default;">
-        <span class="product-card-tag coming">Coming Soon</span>
+      <div class="product-card fu" data-status="coming-soon" style="cursor: default;">
         <div class="product-card-img"></div>
-        <div class="product-card-type">Treatment</div>
+        <div class="product-card-type">Serum</div>
         <div class="product-card-name">Pore Refining Serum</div>
         <div class="product-card-price unavailable">Coming soon</div>
       </div>
-
     </div>
   </div>
 </section>
@@ -124,36 +154,38 @@
       <div class="footer-slogan">Matilda Jane Skincare —<br>The best of nature, refined.</div>
     </div>
     <div class="footer-col">
-      <h4>Shop</h4>
+      <h4>Collections</h4>
       <ul>
-        <li><a href="../index.html#collections">All Collections</a></li>
-        <li><a href="daily-defence.html">Men's</a></li>
-        <li><a href="neuro-restore.html">Renew</a></li>
+        <li><a href="hydrate.html">Hydrate</a></li>
         <li><a href="calming-barrier.html">Calm</a></li>
+        <li><a href="clear.html">Clear</a></li>
+        <li><a href="neuro-restore.html">Renew</a></li>
+        <li><a href="brightening-vitamin-c.html">Brighten</a></li>
+        <li><a href="daily-defence.html">Men&#39;s</a></li>
+        <li><a href="targeted.html">Targeted Treatments</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Categories</h4>
+      <h4>Concerns</h4>
       <ul>
-        <li><a href="categories/moisturisers.html">Moisturisers</a></li>
-        <li><a href="categories/targeted-treatments.html">Targeted Treatments</a></li>
-        <li><a href="categories/toners.html">Toners</a></li>
-        <li><a href="categories/cleansers.html">Cleansers</a></li>
-        <li><a href="categories/exfoliants.html">Exfoliants</a></li>
+        <li><a href="../concerns/dryness-and-dehydration.html">Dryness &amp; Dehydration</a></li>
+        <li><a href="../concerns/redness-and-reactivity.html">Sensitive Skin</a></li>
+        <li><a href="../concerns/blemishes-and-congestion.html">Acne-Prone</a></li>
+        <li><a href="../concerns/dullness.html">Dullness</a></li>
+          <li><a href="../concerns/uneven-skin-tone.html">Uneven Skin Tone</a></li>
+        <li><a href="../concerns/ageing-and-loss-of-firmness.html">Ageing Skin</a></li>
+        <li><a href="../concerns/dark-circles.html">Dark Circles</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Support</h4>
       <ul>
+        <li><a href="../start-here.html">Start Here</a></li>
         <li><a href="mailto:laura@matildajanenz.com">Contact</a></li>
-        <li><a href="#">Personal Formulations</a></li>
-        <li><a href="#">FAQ</a></li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 Matilda Jane Skincare. All rights reserved.</span>
-  </div>
+  <div class="footer-bottom"><span>© 2026 Matilda Jane Skincare. All rights reserved.</span></div>
 </footer>
 
 <script src="../assets/product.js"></script>
