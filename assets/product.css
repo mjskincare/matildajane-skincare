@@ -380,15 +380,22 @@ body.concern-page .collection-landing-title {
   background: var(--circle-hover, var(--accent-deep));
   color: var(--circle-overlay-text, #fff);
   font-family: 'Outfit', system-ui, sans-serif;
-  /* Weight 400 regular vs 800 bold for strong thick/thin contrast */
-  font-weight: 400; font-size: 14px; line-height: 1.45;
-  letter-spacing: .01em;
-  text-align: center; padding: 0 22px;
+  /* Poster-style: heavy weight, uppercase, tight line-height, generous letter-spacing
+     for clear thick/thin contrast and confident advertising rhythm */
+  font-weight: 800; font-size: 22px; line-height: 1.05;
+  letter-spacing: .02em; text-transform: uppercase;
+  text-align: center; padding: 0 28px;
   opacity: 0;
   transition: opacity .3s ease;
   border-radius: 50%;
   pointer-events: none;
   z-index: 2;
+}
+@media (min-width: 720px) {
+  .collection-circle .circle-overlay { font-size: 28px; padding: 0 36px; }
+}
+@media (min-width: 1024px) {
+  .collection-circle .circle-overlay { font-size: 34px; padding: 0 44px; }
 }
 .collection-circle-card:hover .circle-overlay { opacity: 1; }
 /* Inner block so the flex parent only centres one child — text inside flows
@@ -928,7 +935,9 @@ body.concern-page .collection-landing-title {
 .product-card-img.has-hover .img-default,
 .product-card-img.has-hover .img-hover {
   position: absolute; inset: 0;
-  width: 100%; height: 100%; object-fit: cover;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  z-index: 0;
   transition: opacity .45s cubic-bezier(0.32, 0.72, 0, 1);
 }
 .product-card-img.has-hover .img-hover { opacity: 0; }
@@ -972,6 +981,43 @@ body.concern-page .collection-landing-title {
 .product-card[data-status="coming-soon"] .product-card-img.has-hover .img-hover,
 .product-card[data-status="coming-soon"] .product-card-img.has-hover .pc-overlay,
 .product-card[data-status="coming-soon"] .product-card-img.has-hover .pc-add { display: none; }
+
+/* Hover hook — on live product cards, hover swaps to cream-texture + benefit copy.
+   Container (.product-card-img) already centres children via flex. The text
+   wrapper is a normal flow child (NOT absolute) so flex handles centring on
+   both axes. Images are absolute siblings at z-index 0; text sits at z-index 2.
+   Text uses clamp() font sizing and a subtle text-shadow for legibility on cream. */
+.product-card-img.has-hover .pc-hook {
+  position: relative; z-index: 2;
+  max-width: 80%;
+  padding: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease .05s;
+  pointer-events: none;
+}
+.product-card:hover .product-card-img.has-hover .pc-hook,
+.product-card.tap-active .product-card-img.has-hover .pc-hook { opacity: 1; }
+.pc-hook-headline {
+  display: block;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 3.6vw, 2rem);
+  line-height: 1.2; letter-spacing: 0.02em;
+  color: var(--navy); text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(255,255,255,.55);
+}
+.pc-hook-sub {
+  display: block;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.75rem, 1.4vw, 0.9rem);
+  line-height: 1.4; letter-spacing: 0.02em;
+  color: var(--navy);
+  margin-top: 0.6rem;
+  text-shadow: 0 1px 6px rgba(255,255,255,.55);
+}
+.pc-hook-sub strong { font-weight: 600; }
 
 /* === SHOP ALL [COLLECTION] heading === */
 .shop-all-section {
@@ -1631,6 +1677,15 @@ body.concern-page .collection-landing-title {
   display: flex; align-items: stretch; min-height: 0;
   gap: 0;
 }
+/* Banner-style rhythm: image side enforces a landscape aspect ratio so square
+   photos crop to a wide banner. Panel matches via align-items: stretch.
+   Result = every row reads as one horizontal advertising banner, no dead space. */
+@media (min-width: 720px) {
+  .checker-row > .checker-img { aspect-ratio: 5 / 3; }
+}
+@media (min-width: 1024px) {
+  .checker-row > .checker-img { aspect-ratio: 16 / 9; }
+}
 .checker-section .checker-row:nth-of-type(odd)  { flex-direction: row !important; }
 .checker-section .checker-row:nth-of-type(even) { flex-direction: row-reverse !important; }
 /* Mobile-first: panel gets 60% to support poster headline; desktop expands to 55% panel / 45% image */
@@ -1665,10 +1720,10 @@ body.concern-page .collection-landing-title {
   padding: 28px 24px; gap: 0;
 }
 @media (min-width: 720px) {
-  .checker-panel { padding: 48px 48px; }
+  .checker-panel { padding: 32px 40px; }
 }
 @media (min-width: 1024px) {
-  .checker-panel { padding: 64px 72px; }
+  .checker-panel { padding: 40px 56px; }
 }
 .checker-panel.dark { background: var(--hero-bg); color: var(--hero-text); }
 .checker-panel.light { background: var(--ivory); color: var(--navy); }
@@ -1892,6 +1947,16 @@ body.concern-page .collection-landing-title {
   border-radius: 50%;
   clip-path: circle(50% at 50% 50%);
   -webkit-clip-path: circle(50% at 50% 50%);
+}
+/* Niacinamide image has a small bowl centred on a vast white background — zoom in
+   so the bowl fills the circle and matches the visual weight of the other spotlight images */
+.ingredient-spotlight .spotlight-img-wrap img[src*="niacinamide"] {
+  transform: scale(1.9);
+  transform-origin: center 52%;
+}
+.ingredient-spotlight .spotlight-card:hover img[src*="niacinamide"],
+.ingredient-spotlight .spotlight-card.tap-active img[src*="niacinamide"] {
+  transform: scale(2.1);
 }
 /* fallback tints if an image fails to load */
 .spotlight-card:nth-child(1) .spotlight-img-wrap { background: #d4c5a9; }
