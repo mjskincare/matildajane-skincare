@@ -1677,14 +1677,15 @@ body.concern-page .collection-landing-title {
   display: flex; align-items: stretch; min-height: 0;
   gap: 0;
 }
-/* Banner-style rhythm: image side enforces a landscape aspect ratio so square
-   photos crop to a wide banner. Panel matches via align-items: stretch.
-   Result = every row reads as one horizontal advertising banner, no dead space. */
+/* Banner-style rhythm — mobile-first: image side enforces a landscape aspect ratio
+   so square photos crop to a wide banner. Panel matches via align-items: stretch.
+   Heights are HALVED vs the previous version so banners stay phone-friendly. */
+.checker-row > .checker-img { aspect-ratio: 5 / 4; }      /* mobile default — phone-tight */
 @media (min-width: 720px) {
-  .checker-row > .checker-img { aspect-ratio: 5 / 3; }
+  .checker-row > .checker-img { aspect-ratio: 16 / 9; }   /* tablet — wider banner */
 }
 @media (min-width: 1024px) {
-  .checker-row > .checker-img { aspect-ratio: 16 / 9; }
+  .checker-row > .checker-img { aspect-ratio: 21 / 9; }   /* desktop — cinematic banner */
 }
 .checker-section .checker-row:nth-of-type(odd)  { flex-direction: row !important; }
 .checker-section .checker-row:nth-of-type(even) { flex-direction: row-reverse !important; }
@@ -1720,10 +1721,10 @@ body.concern-page .collection-landing-title {
   padding: 28px 24px; gap: 0;
 }
 @media (min-width: 720px) {
-  .checker-panel { padding: 32px 40px; }
+  .checker-panel { padding: 24px 32px; }
 }
 @media (min-width: 1024px) {
-  .checker-panel { padding: 40px 56px; }
+  .checker-panel { padding: 32px 48px; }
 }
 .checker-panel.dark { background: var(--hero-bg); color: var(--hero-text); }
 .checker-panel.light { background: var(--ivory); color: var(--navy); }
