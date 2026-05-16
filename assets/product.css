@@ -83,27 +83,31 @@
   --decor-1: rgba(26,214,197,.18);
   --decor-2: rgba(26,214,197,.26);
 }
-/* BRIGHTEN — DEEPER AMBER FOR WHITE-TEXT CONTRAST
-   Original sunny-yellow values preserved for one-step undo:
-   hero-bg #fbc724 / hero-text #1a1a1a / hero-sub rgba(26,26,26,.75)
-   accent #e06d2c / highlight-text #fbc724
+/* BRIGHTEN — Laura's 5-colour palette (2026-05-16)
+   #ffea00 brightest yellow → main page / hero / card bg
+   #ffd000 golden yellow → accent
+   #ffc300 amber → circle hover
+   #ffa200 deep orange-amber → accent-deep (CTAs / hover states needing punch)
+   #000000 black → writing + bold accents (highlights, footer, CTA)
 */
 .theme-brighten {
-  --hero-bg: #c89311;
-  --footer-bg: #1f1611;
-  --hero-text: #ffffff;
-  --hero-sub: rgba(255,255,255,.85);
-  --accent: #ffd966;
-  --accent-deep: #b04a14;
-  --circle-hover: #F28500;
-  --highlight-bg: #1a1a1a;
-  --highlight-text: #ffd966;
-  --card-bg: #faf0d8;
+  --hero-bg: #ffea00;
+  --footer-bg: #000000;
+  --hero-text: #000000;
+  --hero-sub: rgba(0,0,0,.75);
+  --accent: #ffd000;
+  --accent-deep: #ffa200;
+  --circle-hover: #ffc300;
+  --circle-overlay-text: #000000;
+  --highlight-bg: #000000;
+  --highlight-text: #ffea00;
+  --card-bg: #ffea00;
   --product-side: #ffffff;
-  --product-text: #1a1a1a;
-  --cta-bg: #b04a14;
-  --decor-1: rgba(255,255,255,.30);
-  --decor-2: rgba(176,74,20,.20);
+  --product-text: #000000;
+  --cta-bg: #000000;
+  --cta-text: #ffea00;
+  --decor-1: rgba(255,162,0,.22);
+  --decor-2: rgba(0,0,0,.10);
 }
 /* MEN'S — HOCUS POCUS PALETTE
    Navy Blue #18121E / Gunmetal #233237 / Rusty Red #984B43 / Warm Yellow #EAC67A
@@ -120,7 +124,7 @@
   --circle-hover: #7a3a33;
   --highlight-bg: #7a3a33;
   --highlight-text: #ffffff;
-  --card-bg: #eac67a;
+  --card-bg: #7a3a33;
   --warm-yellow: #eac67a;
   --warm-yellow-deep: #c9a352;
   --product-side: #233237;
@@ -1677,14 +1681,15 @@ body.concern-page .collection-landing-title {
   display: flex; align-items: stretch; min-height: 0;
   gap: 0;
 }
-/* Banner-style rhythm: image side enforces a landscape aspect ratio so square
-   photos crop to a wide banner. Panel matches via align-items: stretch.
-   Result = every row reads as one horizontal advertising banner, no dead space. */
+/* Banner-style rhythm — mobile-first: image side enforces a landscape aspect ratio
+   so square photos crop to a wide banner. Panel matches via align-items: stretch.
+   Heights are HALVED vs the previous version so banners stay phone-friendly. */
+.checker-row > .checker-img { aspect-ratio: 5 / 4; }      /* mobile default — phone-tight */
 @media (min-width: 720px) {
-  .checker-row > .checker-img { aspect-ratio: 5 / 3; }
+  .checker-row > .checker-img { aspect-ratio: 16 / 9; }   /* tablet — wider banner */
 }
 @media (min-width: 1024px) {
-  .checker-row > .checker-img { aspect-ratio: 16 / 9; }
+  .checker-row > .checker-img { aspect-ratio: 21 / 9; }   /* desktop — cinematic banner */
 }
 .checker-section .checker-row:nth-of-type(odd)  { flex-direction: row !important; }
 .checker-section .checker-row:nth-of-type(even) { flex-direction: row-reverse !important; }
@@ -1720,10 +1725,10 @@ body.concern-page .collection-landing-title {
   padding: 28px 24px; gap: 0;
 }
 @media (min-width: 720px) {
-  .checker-panel { padding: 32px 40px; }
+  .checker-panel { padding: 24px 32px; }
 }
 @media (min-width: 1024px) {
-  .checker-panel { padding: 40px 56px; }
+  .checker-panel { padding: 32px 48px; }
 }
 .checker-panel.dark { background: var(--hero-bg); color: var(--hero-text); }
 .checker-panel.light { background: var(--ivory); color: var(--navy); }
