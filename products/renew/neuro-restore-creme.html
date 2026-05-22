@@ -110,10 +110,11 @@
 <section class="product-hero">
   <div class="product-image-side">
     <div class="product-thumbs">
-      <button class="thumb active" data-src="../../assets/images/product-main.jpg" data-annotations="false" aria-label="Open jar with botanicals" aria-selected="true"><span class="thumb-mini" style="background-image:url('../../assets/images/product-main.jpg')"></span></button>
-      <button class="thumb" data-src="../../assets/images/smeared-moisturiser.jpg" data-annotations="true" aria-label="Cream smudge with ingredient annotations" aria-selected="false"><span class="thumb-mini" style="background-image:url('../../assets/images/smeared-moisturiser.jpg')"></span></button>
-      <button class="thumb" data-src="../../assets/images/cream-swirl.jpg" data-annotations="false" aria-label="Cream texture close-up" aria-selected="false"><span class="thumb-mini" style="background-image:url('../../assets/images/cream-swirl.jpg')"></span></button>
-      <button class="thumb" data-src="../../assets/images/cream-application.jpg" data-annotations="false" aria-label="Lifestyle application" aria-selected="false"><span class="thumb-mini" style="background-image:url('../../assets/images/cream-application.jpg')"></span></button>
+      <button class="thumb active" data-src="../../assets/images/product-main.jpg" data-annotations="false" data-banner="" aria-label="Open jar with botanicals" aria-selected="true"><span class="thumb-mini" style="background-image:url('../../assets/images/product-main.jpg')"></span></button>
+      <button class="thumb" data-src="../../assets/images/smeared-moisturiser.jpg" data-annotations="true" data-banner="" aria-label="Cream smudge with ingredient annotations" aria-selected="false"><span class="thumb-mini" style="background-image:url('../../assets/images/smeared-moisturiser.jpg')"></span></button>
+      <button class="thumb" data-src="../../assets/images/oil-drop-yellow.jpg" data-annotations="false" data-banner="cacay" aria-label="Cacay oil — 3 times the natural retinol of rosehip" aria-selected="false"><span class="thumb-mini" style="background-image:url('../../assets/images/oil-drop-yellow.jpg')"></span></button>
+      <button class="thumb" data-src="../../assets/images/cream-swirl.jpg" data-annotations="false" data-banner="" aria-label="Cream texture close-up" aria-selected="false"><span class="thumb-mini" style="background-image:url('../../assets/images/cream-swirl.jpg')"></span></button>
+      <button class="thumb" data-src="../../assets/images/cream-application.jpg" data-annotations="false" data-banner="" aria-label="Lifestyle application" aria-selected="false"><span class="thumb-mini" style="background-image:url('../../assets/images/cream-application.jpg')"></span></button>
     </div>
     <div class="product-bottle-wrap">
       <div class="product-image-main">
@@ -138,6 +139,12 @@
             <span class="annotation-line"></span>
             <span class="annotation-dot"></span>
           </div>
+        </div>
+        <!-- Banner-style overlay (slide 3: Cacay) — poster headline over the oil image -->
+        <div class="image-banner image-banner-cacay" aria-hidden="true">
+          <div class="ib-eyebrow">CACAY OIL</div>
+          <h3 class="ib-headline">45% firmness<br>improvement<br>in 12 weeks.<sup class="ref">3</sup></h3>
+          <p class="ib-sub">Clinical results, naturally derived.</p>
         </div>
       </div>
     </div>
@@ -186,15 +193,38 @@
 
       <div class="acc-item">
         <button class="acc-trigger" aria-expanded="false">
-          <span>Key Actives</span>
+          <span>Ingredient Spotlight</span>
           <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="acc-body"><div class="acc-body-inner">
-          <ul>
-            <li><strong>Bakuchiol 1%</strong> — clinically equivalent to 0.5% retinol with significantly less stinging<sup class="ref">1</sup>.</li>
-            <li><strong>Neurophroline™ 2%</strong> — Givaudan-patented Tephrosia purpurea extract; ~70% cortisol reduction within hours<sup class="ref">2</sup>.</li>
-            <li><strong>Niacinamide 3%</strong> — increases ceramide synthesis 4–5× to strengthen the barrier<sup class="ref">4</sup>.</li>
-          </ul>
+          <p style="font-size:13px; color:var(--stone); margin:0 0 8px;">Real percentages. Clinically validated concentrations.</p>
+          <div class="spotlight-inline">
+            <div class="si-img"><img src="../../assets/images/bakuchiol-flower.png" alt="Bakuchiol — Psoralea corylifolia flower"></div>
+            <div>
+              <h4 class="si-h">Bakuchiol</h4>
+              <div class="si-pct">1%</div>
+              <p class="si-body">Smooths texture and reduces fine lines — retinol-equivalent activity without irritation or photosensitivity.<sup class="ref">1</sup></p>
+              <p class="si-evidence">Clinically shown to reduce fine lines by 19.6% after 12 weeks at 0.5–1%.</p>
+            </div>
+          </div>
+          <div class="spotlight-inline">
+            <div class="si-img"><img src="../../assets/images/neurophroline-indigo.png" alt="Neurophroline — Tephrosia purpurea wild indigo flower"></div>
+            <div>
+              <h4 class="si-h">Neurophroline™</h4>
+              <div class="si-pct">2%</div>
+              <p class="si-body">Reduces cortisol-driven inflammation and supports barrier recovery in stressed skin.<sup class="ref">2</sup></p>
+              <p class="si-evidence">Clinically shown to reduce skin reactivity markers after 28 days.</p>
+            </div>
+          </div>
+          <div class="spotlight-inline">
+            <div class="si-img"><img src="../../assets/images/niacinamide-powder.jpg" alt="Niacinamide — Vitamin B3 powder"></div>
+            <div>
+              <h4 class="si-h">Niacinamide</h4>
+              <div class="si-pct">3%</div>
+              <p class="si-body">Strengthens the barrier, evens tone, reduces redness and sebum production.<sup class="ref">4</sup></p>
+              <p class="si-evidence">Formulated within the clinically proven effective range of 2–5%.</p>
+            </div>
+          </div>
         </div></div>
       </div>
 
@@ -281,38 +311,6 @@
   </div>
 </section>
 
-<!-- INGREDIENT SPOTLIGHT -->
-<section class="ingredient-spotlight">
-  <h2>Ingredient Spotlight</h2>
-  <p class="spotlight-sub">Real percentages. Clinically validated concentrations.</p>
-  <div class="spotlight-grid">
-
-    <div class="spotlight-card" data-animate>
-      <div class="spotlight-img-wrap"><img src="../../assets/images/bakuchiol-flower.png" alt="Bakuchiol — Psoralea corylifolia flower"></div>
-      <span class="spotlight-percent">1%</span>
-      <h3>Bakuchiol</h3>
-      <p>Smooths texture and reduces fine lines — retinol-equivalent activity without irritation or photosensitivity.</p>
-      <p class="spotlight-evidence">Clinically shown to reduce fine lines by 19.6% after 12 weeks at 0.5–1%.</p>
-    </div>
-
-    <div class="spotlight-card" data-animate>
-      <div class="spotlight-img-wrap"><img src="../../assets/images/neurophroline-indigo.png" alt="Neurophroline — Tephrosia purpurea wild indigo flower"></div>
-      <span class="spotlight-percent">2%</span>
-      <h3>Neurophroline™</h3>
-      <p>Reduces cortisol-driven inflammation and supports barrier recovery in stressed skin.</p>
-      <p class="spotlight-evidence">Clinically shown to reduce skin reactivity markers after 28 days.</p>
-    </div>
-
-    <div class="spotlight-card" data-animate>
-      <div class="spotlight-img-wrap"><img src="../../assets/images/niacinamide-powder.jpg" alt="Niacinamide — Vitamin B3 powder"></div>
-      <span class="spotlight-percent">3%</span>
-      <h3>Niacinamide</h3>
-      <p>Strengthens the barrier, evens tone, reduces redness and sebum production.</p>
-      <p class="spotlight-evidence">Formulated within the clinically proven effective range of 2–5%.</p>
-    </div>
-
-  </div>
-</section>
 
 <!-- CHECKERBOARD PANELS -->
 <section class="checker-section">
@@ -355,12 +353,19 @@
 
 </section>
 
+<!-- SCIENCE (dropdown) -->
 <section class="science-section">
   <div class="science-inner">
-    <div class="science-eyebrow fu">The Science</div>
-    <h2 class="science-h fu">The Science Behind the Formula</h2>
-    <p class="science-sub fu">Beyond the headline actives — the choices that make this formula work.</p>
-    <div class="pillar-grid fu">
+    <div class="acc-list fu">
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">
+          <span>Why this Works</span>
+          <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">
+          <h3 class="science-why">The Science Behind the Formula</h3>
+          <p class="science-why-sub">Beyond the headline actives — the choices that make this formula work.</p>
+          <div class="pillar-grid">
       <div class="pillar">
         <span class="pillar-rule" aria-hidden="true"></span>
         <div class="pillar-num">01</div>
@@ -390,6 +395,9 @@
         <div class="pillar-num">05</div>
         <h3 class="pillar-h">Top NZ Supplier Ingredients</h3>
         <p class="pillar-body">COSMOS-aligned formulation. <strong>Natural and naturally-derived ingredients</strong> sourced through leading NZ suppliers. Synthetics where the formula demands them. <strong>Always disclosed. Never disguised.</strong></p>
+      </div>
+          </div>
+        </div></div>
       </div>
     </div>
   </div>
