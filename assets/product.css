@@ -83,7 +83,10 @@
   --decor-1: rgba(26,214,197,.18);
   --decor-2: rgba(26,214,197,.26);
 }
-/* BRIGHTEN — SOFT PEACH-ORANGE hero (#ffa56a) with navy text for AA contrast
+/* BRIGHTEN — SOFT PEACH-ORANGE hero (#ffa56a) + DARK NAVY accents for AA contrast.
+   --accent stays peach for places it sits on dark navy (footer slogan, etc.).
+   --accent-deep + --body-col flipped to navy so eyebrows/icons/body text on the
+   peach hero have high contrast (was rendering peach-on-peach = invisible).
    Previous deeper-amber values preserved for one-step undo:
    hero-bg #c89311 / hero-text #ffffff / accent #ffd966 / accent-deep #b04a14
 */
@@ -92,8 +95,9 @@
   --footer-bg: #1a2a3a;
   --hero-text: #1a2a3a;
   --hero-sub: rgba(26,42,58,.78);
-  --accent: #b04a14;
-  --accent-deep: #b04a14;
+  --accent: #ffa56a;             /* peach — for footer slogan + accents on dark bg */
+  --accent-deep: #1a2a3a;        /* navy — for eyebrows/icons/bold accents on peach hero */
+  --body-col: #1a2a3a;           /* navy body copy for max contrast on peach */
   --circle-hover: #F28500;
   --circle-overlay-text: #ffffff;
   --highlight-bg: #1a2a3a;
@@ -101,9 +105,10 @@
   --card-bg: #ffe7d2;
   --product-side: #ffffff;
   --product-text: #1a2a3a;
-  --cta-bg: #b04a14;
+  --cta-bg: #ffa56a;
+  --cta-text: #1a2a3a;
   --decor-1: rgba(255,255,255,.30);
-  --decor-2: rgba(176,74,20,.20);
+  --decor-2: rgba(255,165,106,.20);
 }
 /* MEN'S — HOCUS POCUS PALETTE
    Navy Blue #18121E / Gunmetal #233237 / Rusty Red #984B43 / Warm Yellow #EAC67A
@@ -1388,6 +1393,8 @@ body.concern-page .collection-landing-title {
   border: none; cursor: pointer; transition: all .2s;
 }
 .add-to-cart:hover { background: var(--accent-deep); filter: brightness(1.05); }
+/* Brighten: peach button flips to navy bg + peach text on hover (editorial flip) */
+.theme-brighten .add-to-cart:hover { background: #1a2a3a; color: #ffa56a; filter: none; }
 
 .product-desc {
   font-size: 18px; line-height: 1.7; color: var(--product-text); opacity: .88;
