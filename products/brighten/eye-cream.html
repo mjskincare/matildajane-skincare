@@ -110,14 +110,14 @@
 <section class="product-hero">
   <div class="product-image-side">
     <div class="product-thumbs">
-      <button class="thumb active" data-src="../../assets/images/cream-application.jpg" aria-label="Cream applied around eyes" aria-selected="true"><span class="thumb-mini" style="background-image:url('../../assets/images/cream-application.jpg')"></span></button>
+      <button class="thumb active" data-src="../../assets/images/eye-cream-hero.jpg" aria-label="Coffee Bean Eye Cream — open jar" aria-selected="true"><span class="thumb-mini" style="background-image:url('../../assets/images/eye-cream-hero.jpg')"></span></button>
+      <button class="thumb" data-src="../../assets/images/cream-application.jpg" aria-label="Cream applied around eyes" aria-selected="false"><span class="thumb-mini" style="background-image:url('../../assets/images/cream-application.jpg')"></span></button>
       <button class="thumb" data-src="../../assets/images/cream-swirl.jpg" aria-label="Cream texture" aria-selected="false"><span class="thumb-mini" style="background-image:url('../../assets/images/cream-swirl.jpg')"></span></button>
-      <button class="thumb" data-view="2" aria-label="View 3" aria-selected="false"><span class="thumb-mini view-2"></span></button>
       <button class="thumb" data-view="3" aria-label="View 4" aria-selected="false"><span class="thumb-mini view-3"></span></button>
     </div>
     <div class="product-bottle-wrap">
       <div class="product-image-main">
-        <img src="../../assets/images/cream-application.jpg" alt="Coffee Bean Eye Cream — applied around the eyes">
+        <img src="../../assets/images/eye-cream-hero.jpg" alt="Coffee Bean Eye Cream — open jar with coffee beans">
       </div>
     </div>
   </div>
@@ -184,7 +184,10 @@
         </button>
         <div class="acc-body"><div class="acc-body-inner">
           <p><strong>Daily, AM and PM.</strong></p>
-          <p>After cleansing, apply a small amount to the skin around the eyes morning and night. Allow to absorb before SPF or makeup. Always patch test first.</p>
+          <figure class="routine-diagram">
+            <img src="../../assets/images/eye-cream-how-to-use.png" alt="Daily routine order: Cleanser, Exfoliant, Toner, Coffee Bean Eye Cream (treatment/serum), Moisturiser. Use twice a day.">
+          </figure>
+          <p>Apply a small amount to the skin around the eyes. Allow to absorb before SPF or makeup. Always patch test first.</p>
           <p style="margin-top: 22px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent-deep); font-weight: 600;">Pro-Tips</p>
           <ul>
             <li><strong>Tap, don't rub —</strong> use your ring finger to gently press the cream into the skin around the eyes; the skin here is delicate and reacts well to a soft tap.</li>
@@ -303,82 +306,41 @@
   </div>
 </section>
 
-<!-- INGREDIENT SPOTLIGHT -->
+<!-- INGREDIENT SPOTLIGHT — Canva-style floating cards -->
 <section class="ingredient-spotlight">
   <h2>Ingredient Spotlight</h2>
   <p class="spotlight-sub">Four hero ingredients. One light formula.</p>
-  <div class="spotlight-grid spotlight-grid-4">
+  <div class="spotlight-grid spotlight-grid-floating">
 
-    <div class="spotlight-card" data-animate>
-      <div class="spotlight-img-wrap"><img src="../../assets/images/oil-drop-yellow.jpg" alt="Vitamin C — bright lemon-yellow drop"></div>
-      <span class="spotlight-percent">Vitamin C</span>
-      <h3>Sodium Ascorbyl Glucoside</h3>
-      <p>Antioxidant that brightens the skin, supports collagen production, and helps even out skin tone.</p>
+    <div class="spotlight-card spotlight-card-floating" data-animate>
+      <div class="spotlight-img-wrap"><img src="../../assets/images/spotlight-vitamin-c.jpg" alt="Vitamin C — Sodium Ascorbyl Glucoside"></div>
+      <h3>VITAMIN C</h3>
+      <p class="spotlight-inci">Sodium Ascorbyl Glucoside</p>
+      <p>Antioxidant that brightens skin, stimulates collagen production, and helps even out skin tone.</p>
     </div>
 
-    <div class="spotlight-card" data-animate>
-      <div class="spotlight-img-wrap"><img src="../../assets/images/oil-bubbles-gold.jpg" alt="Caffeine — coffee bean oil with caffeine bubbles"></div>
-      <span class="spotlight-percent">Caffeine</span>
-      <h3>Caffeine Powder 99% Pure</h3>
-      <p>Helps reduce the look of puffiness after application — gives the eye area a refreshed, awake feel.</p>
+    <div class="spotlight-card spotlight-card-floating" data-animate>
+      <div class="spotlight-img-wrap"><img src="../../assets/images/spotlight-caffeine.jpg" alt="Caffeine — Caffeine Powder 99% Pure"></div>
+      <h3>CAFFEINE</h3>
+      <p class="spotlight-inci">Caffeine Powder 99% Pure</p>
+      <p>Caffeine helps reduce the look of puffiness after application (temporary effect).</p>
     </div>
 
-    <div class="spotlight-card" data-animate>
-      <div class="spotlight-img-wrap"><img src="../../assets/images/niacinamide-powder.jpg" alt="Niacinamide Vitamin B3 powder"></div>
-      <span class="spotlight-percent">Niacinamide</span>
-      <h3>Vitamin B3</h3>
-      <p>Supports the appearance of more even skin tone and softens the look of pigmentation around the eyes.</p>
+    <div class="spotlight-card spotlight-card-floating" data-animate>
+      <div class="spotlight-img-wrap"><img src="../../assets/images/spotlight-niacinamide.jpg" alt="Niacinamide — Vitamin B3"></div>
+      <h3>NIACINAMIDE</h3>
+      <p class="spotlight-inci">Vitamin B3</p>
+      <p>Supports hyperpigmentation for a more even skin tone.</p>
     </div>
 
-    <div class="spotlight-card" data-animate>
-      <div class="spotlight-img-wrap"><img src="../../assets/images/cream-swirl.jpg" alt="Hyaluronic Acid — silky hydrating gel"></div>
-      <span class="spotlight-percent">Hyaluronic Acid</span>
-      <h3>High Molecular Weight HMW</h3>
-      <p>Hyaluronic acid + glycerin bind water for lasting surface hydration — plumping the skin and providing intense moisture.</p>
+    <div class="spotlight-card spotlight-card-floating" data-animate>
+      <div class="spotlight-img-wrap"><img src="../../assets/images/spotlight-hyaluronic-acid.jpg" alt="Hyaluronic Acid — High Molecular Weight HMW"></div>
+      <h3>HYALURONIC ACID</h3>
+      <p class="spotlight-inci">High Molecular Weight HMW</p>
+      <p>Hyaluronic acid + glycerin bind water for lasting surface hydration, plumping skin and providing intense hydration.</p>
     </div>
 
   </div>
-</section>
-
-<!-- CHECKERBOARD PANELS -->
-<section class="checker-section">
-
-  <div class="checker-row">
-    <div class="checker-panel dark fu">
-      <div class="checker-eyebrow">Coffee Bean Hero</div>
-      <h3 class="checker-h">Caffeine where you need it most.</h3>
-      <div class="checker-body">
-        <p>Caffeine helps constrict blood vessels in the delicate skin around the eyes — giving an instant de-puffing effect and a brighter, more awake appearance.</p>
-        <p><strong>Pure Coffee Bean Oil + 99% pure Caffeine Powder.</strong> Two forms, one job: refresh the eye area.</p>
-      </div>
-    </div>
-    <div class="checker-img has-photo"><img src="../../assets/images/oil-bubbles-gold.jpg" alt="Coffee bean oil — golden lipid detail"></div>
-  </div>
-
-  <div class="checker-row">
-    <div class="checker-panel light fu">
-      <div class="checker-eyebrow">Light, Fast-Absorbing</div>
-      <h3 class="checker-h">Lightweight enough to wear under makeup.</h3>
-      <div class="checker-body">
-        <p>The texture absorbs quickly and leaves no residue — no greasy slip, no migration into the eye, no interference with concealer.</p>
-        <p><strong>Hemisqualane and plant oils</strong> nourish without heaviness; <strong>Hyaluronic Acid + Glycerin</strong> deliver lasting hydration.</p>
-      </div>
-    </div>
-    <div class="checker-img has-photo"><img src="../../assets/images/cream-swirl.jpg" alt="Cream texture"></div>
-  </div>
-
-  <div class="checker-row">
-    <div class="checker-panel tint fu">
-      <div class="checker-eyebrow">100% Natural</div>
-      <h3 class="checker-h">COSMOS-aligned. No synthetic fragrances.</h3>
-      <div class="checker-body">
-        <p>Every ingredient is COSMOS-aligned for organic and natural cosmetics. No synthetic fragrance to irritate the eye area; no PEGs, sulphates, or compromise.</p>
-        <p><strong>Made for the most reactive skin on your face.</strong></p>
-      </div>
-    </div>
-    <div class="checker-img has-photo"><img src="../../assets/images/leaf-veins.jpg" alt="Botanical detail"></div>
-  </div>
-
 </section>
 
 <footer class="site-footer">

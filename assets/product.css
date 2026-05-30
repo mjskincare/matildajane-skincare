@@ -83,24 +83,24 @@
   --decor-1: rgba(26,214,197,.18);
   --decor-2: rgba(26,214,197,.26);
 }
-/* BRIGHTEN — DEEPER AMBER FOR WHITE-TEXT CONTRAST (restored from pre-fe381db palette)
-   Original sunny-yellow values preserved for one-step undo:
-   hero-bg #fbc724 / hero-text #1a1a1a / hero-sub rgba(26,26,26,.75)
-   accent #e06d2c / highlight-text #fbc724
+/* BRIGHTEN — SOFT PEACH-ORANGE hero (#ffa56a) with navy text for AA contrast
+   Previous deeper-amber values preserved for one-step undo:
+   hero-bg #c89311 / hero-text #ffffff / accent #ffd966 / accent-deep #b04a14
 */
 .theme-brighten {
-  --hero-bg: #c89311;
-  --footer-bg: #1f1611;
-  --hero-text: #ffffff;
-  --hero-sub: rgba(255,255,255,.85);
-  --accent: #ffd966;
+  --hero-bg: #ffa56a;
+  --footer-bg: #1a2a3a;
+  --hero-text: #1a2a3a;
+  --hero-sub: rgba(26,42,58,.78);
+  --accent: #b04a14;
   --accent-deep: #b04a14;
   --circle-hover: #F28500;
-  --highlight-bg: #1a1a1a;
-  --highlight-text: #ffd966;
-  --card-bg: #faf0d8;
+  --circle-overlay-text: #ffffff;
+  --highlight-bg: #1a2a3a;
+  --highlight-text: #ffa56a;
+  --card-bg: #ffe7d2;
   --product-side: #ffffff;
-  --product-text: #1a1a1a;
+  --product-text: #1a2a3a;
   --cta-bg: #b04a14;
   --decor-1: rgba(255,255,255,.30);
   --decor-2: rgba(176,74,20,.20);
@@ -1444,6 +1444,25 @@ body.concern-page .collection-landing-title {
 .home-hero strong {
   color: inherit; font-weight: 700;
 }
+/* Routine diagram (How to Use accordion) — full-width centred image, no border */
+.routine-diagram {
+  margin: 16px 0 18px;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+.routine-diagram img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+@media (min-width: 720px) {
+  .routine-diagram { margin: 20px 0 22px; }
+  .routine-diagram img { max-width: 600px; }
+}
 
 /* === SCIENCE SECTION — Ivory Stem with navy editorial type === */
 .science-section {
@@ -1883,9 +1902,82 @@ body.concern-page .collection-landing-title {
   grid-template-columns: repeat(2, 1fr);
   max-width: 880px;
 }
+/* Floating Canva-style spotlight grid — no card bg, no border, just image + text */
+.spotlight-grid.spotlight-grid-floating {
+  grid-template-columns: 1fr; /* mobile-first single column */
+  max-width: 1200px;
+  gap: 40px 24px;
+}
+@media (min-width: 720px) {
+  .spotlight-grid.spotlight-grid-floating { grid-template-columns: repeat(2, 1fr); gap: 48px 32px; }
+}
+@media (min-width: 1024px) {
+  .spotlight-grid.spotlight-grid-floating { grid-template-columns: repeat(4, 1fr); gap: 48px 28px; }
+}
 @media (max-width: 720px) {
   .spotlight-grid,
   .spotlight-grid.spotlight-grid-4 { grid-template-columns: 1fr; }
+}
+/* Floating spotlight cards — no background, no border, no shadow on the CARD */
+.spotlight-card.spotlight-card-floating {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  text-align: left;
+  cursor: default;
+}
+.spotlight-card.spotlight-card-floating:hover,
+.spotlight-card.spotlight-card-floating.tap-active {
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+.spotlight-card.spotlight-card-floating .spotlight-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0 0 20px;
+  background: transparent;
+  /* Subtle floating shadow on the IMAGE itself, not the card */
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+}
+.spotlight-card.spotlight-card-floating .spotlight-img-wrap img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  border-radius: 4px;
+  display: block;
+}
+.spotlight-card.spotlight-card-floating h3 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--navy, #1a2a3a);
+  margin: 0 0 4px;
+}
+.spotlight-card.spotlight-card-floating .spotlight-inci {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--navy, #1a2a3a);
+  margin: 0 0 12px;
+  letter-spacing: 0;
+}
+.spotlight-card.spotlight-card-floating p:not(.spotlight-inci) {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(26,42,58,.78);
+  font-style: italic;
+  margin: 0;
+}
+@media (min-width: 720px) {
+  .spotlight-card.spotlight-card-floating h3 { font-size: 16px; }
+  .spotlight-card.spotlight-card-floating .spotlight-inci { font-size: 15px; }
+  .spotlight-card.spotlight-card-floating p:not(.spotlight-inci) { font-size: 14px; }
 }
 /* Image-banner overlay (carousel slide turns into a poster-style banner) */
 .image-banner {
