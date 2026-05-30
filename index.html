@@ -132,47 +132,57 @@
   background: var(--ivory);
   padding: 96px 24px;
 }
+/* Mobile-first: horizontal scroll strip (~2 tiles visible) */
 .home-concern-grid {
-  display: flex; flex-wrap: wrap; justify-content: center;
-  gap: 16px;
-  max-width: 1100px; margin: 0 auto;
+  display: flex; flex-wrap: nowrap;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin: 0 -24px;
+  padding: 0 24px 8px;
 }
-.home-concern-tile { flex: 0 0 auto; width: 100%; }
+.home-concern-grid::-webkit-scrollbar { display: none; }
 .home-concern-tile {
-  background: var(--white);
-  border-radius: 14px;
-  padding: 28px 24px;
+  flex: 0 0 44%;
+  scroll-snap-align: start;
   text-decoration: none;
-  display: flex; align-items: center; gap: 18px;
+  display: block;
+}
+.home-concern-icon-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--white);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
   transition: transform .25s ease, box-shadow .25s ease;
 }
-.home-concern-tile:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgba(0,0,0,.06);
+.home-concern-tile:hover .home-concern-icon-box {
+  transform: scale(1.04);
+  box-shadow: 0 10px 28px rgba(0,0,0,.08);
 }
 .home-concern-icon {
-  width: 44px; height: 44px; flex-shrink: 0;
+  width: 44%; height: 44%;
   color: var(--peach-deep, #c4705e);
+  transition: color .25s ease;
 }
-.home-concern-text { flex: 1; min-width: 0; }
+.home-concern-tile:hover .home-concern-icon { color: var(--navy); }
+.home-concern-text { text-align: center; padding: 0 4px; }
 .home-concern-name {
   font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 700; font-size: 14px; letter-spacing: .12em;
+  font-weight: 700; font-size: 13px; letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--navy);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  line-height: 1.2;
 }
 .home-concern-tag {
   font-family: 'Outfit', system-ui, sans-serif;
-  font-size: 14px; line-height: 1.4;
+  font-size: 12px; line-height: 1.45;
   color: var(--body-col, #4a4a4a);
 }
-.home-concern-arrow {
-  font-size: 22px; color: var(--navy);
-  transition: transform .25s ease;
-  flex-shrink: 0;
-}
-.home-concern-tile:hover .home-concern-arrow { transform: translateX(4px); }
 
 /* === Section 4: Brand Statement === */
 .home-brand {
@@ -216,8 +226,17 @@
 }
   .home-coll-tile { width: calc((100% - 48px) / 3); }
   .home-coll-grid { gap: 40px 24px; }
-  .home-concern-grid { gap: 18px; }
-  .home-concern-tile { width: calc((100% - 18px) / 2); }
+  /* Tablet: drop horizontal scroll, switch to 4-up grid wrap */
+  .home-concern-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    overflow: visible; scroll-snap-type: none;
+    margin: 0 auto; padding: 0;
+    max-width: 1100px;
+  }
+  .home-concern-tile { flex: initial; width: auto; }
+  .home-concern-name { font-size: 14px; }
+  .home-concern-tag { font-size: 13px; }
 }
 /* Desktop */
 @media (min-width: 1024px) {
@@ -231,7 +250,14 @@
 }
   .home-coll-tile { width: calc((100% - 72px) / 4); }
   .home-coll-grid { gap: 48px 24px; }
-  .home-concern-tile { width: calc((100% - 36px) / 3); }
+  /* Desktop: all 7 tiles across in a single row */
+  .home-concern-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 16px;
+    max-width: 1400px;
+  }
+  .home-concern-name { font-size: 12px; letter-spacing: .14em; }
+  .home-concern-tag { font-size: 11px; line-height: 1.4; }
   .home-coll-circle { width: 220px; height: 220px; }
 }
 
@@ -356,66 +382,73 @@
   </div>
 </section>
 
-<!-- SECTION 3 — WHAT'S YOUR CONCERN? -->
+<!-- SECTION 3 — SHOP BY CONCERNS (Paula's Choice style — large icon tiles, text underneath) -->
 <section class="home-concerns" id="concerns">
-  <div class="home-section-eyebrow fu">Shop by Concern</div>
-  <h2 class="home-section-h2 fu">What's your concern?</h2>
+  <div class="home-section-eyebrow fu">Concerns</div>
+  <h2 class="home-section-h2 fu">Shop by Concerns</h2>
   <div class="home-concern-grid">
     <a class="home-concern-tile fu" href="concerns/dryness-and-dehydration.html">
-      <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s-7 8-7 13a7 7 0 0 0 14 0c0-5-7-13-7-13z"/></svg>
+      <div class="home-concern-icon-box">
+        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s-7 8-7 13a7 7 0 0 0 14 0c0-5-7-13-7-13z"/></svg>
+      </div>
       <div class="home-concern-text">
         <div class="home-concern-name">Dryness &amp; Dehydration</div>
         <div class="home-concern-tag">Lasting hydration. Replenished barrier.</div>
       </div>
-      <span class="home-concern-arrow">›</span>
     </a>
     <a class="home-concern-tile fu" href="concerns/redness-and-reactivity.html">
-      <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12h6"/></svg>
+      <div class="home-concern-icon-box">
+        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12h6"/></svg>
+      </div>
       <div class="home-concern-text">
         <div class="home-concern-name">Sensitive Skin</div>
         <div class="home-concern-tag">Soothing actives for sensitised skin.</div>
       </div>
-      <span class="home-concern-arrow">›</span>
     </a>
     <a class="home-concern-tile fu" href="concerns/blemishes-and-congestion.html">
-      <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1"/><circle cx="14" cy="13" r="1"/><circle cx="11" cy="15" r="1"/></svg>
+      <div class="home-concern-icon-box">
+        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1"/><circle cx="14" cy="13" r="1"/><circle cx="11" cy="15" r="1"/></svg>
+      </div>
       <div class="home-concern-text">
         <div class="home-concern-name">Acne-Prone</div>
         <div class="home-concern-tag">Clear pores without stripping the skin.</div>
       </div>
-      <span class="home-concern-arrow">›</span>
     </a>
     <a class="home-concern-tile fu" href="concerns/dullness.html">
-      <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
+      <div class="home-concern-icon-box">
+        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
+      </div>
       <div class="home-concern-text">
         <div class="home-concern-name">Dullness</div>
         <div class="home-concern-tag">Restore visible radiance.</div>
       </div>
-      <span class="home-concern-arrow">›</span>
     </a>
     <a class="home-concern-tile fu" href="concerns/uneven-skin-tone.html">
-      <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12c4-3 6-3 9 0s5 3 9 0"/></svg>
+      <div class="home-concern-icon-box">
+        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12c4-3 6-3 9 0s5 3 9 0"/></svg>
+      </div>
       <div class="home-concern-text">
         <div class="home-concern-name">Uneven Skin Tone</div>
         <div class="home-concern-tag">Even tone. Visible clarity.</div>
       </div>
-      <span class="home-concern-arrow">›</span>
     </a>
     <a class="home-concern-tile fu" href="concerns/ageing-and-loss-of-firmness.html">
-      <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l7-7 7 7M5 19l7-7 7 7"/></svg>
+      <div class="home-concern-icon-box">
+        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l7-7 7 7M5 19l7-7 7 7"/></svg>
+      </div>
       <div class="home-concern-text">
         <div class="home-concern-name">Ageing Skin</div>
         <div class="home-concern-tag">Renewal without sensitisation.</div>
       </div>
-      <span class="home-concern-arrow">›</span>
     </a>
     <a class="home-concern-tile fu" href="concerns/dark-circles.html">
-      <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+      <div class="home-concern-icon-box">
+        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
       <div class="home-concern-text">
         <div class="home-concern-name">Dark Circles</div>
         <div class="home-concern-tag">De-puff. Brighten. Hydrate.</div>
       </div>
-      <span class="home-concern-arrow">›</span>
     </a>
   </div>
 </section>
