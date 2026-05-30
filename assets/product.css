@@ -1444,6 +1444,25 @@ body.concern-page .collection-landing-title {
 .home-hero strong {
   color: inherit; font-weight: 700;
 }
+/* Routine diagram (How to Use accordion) — full-width centred image, no border */
+.routine-diagram {
+  margin: 16px 0 18px;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+.routine-diagram img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+@media (min-width: 720px) {
+  .routine-diagram { margin: 20px 0 22px; }
+  .routine-diagram img { max-width: 600px; }
+}
 
 /* === SCIENCE SECTION — Ivory Stem with navy editorial type === */
 .science-section {
