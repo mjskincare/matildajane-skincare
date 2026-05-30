@@ -110,6 +110,8 @@
       if (src && main) {
         const mainImg = main.querySelector('img');
         const showAnnotations = t.dataset.annotations === 'true';
+        const bannerKey = t.dataset.banner || '';
+        const showBanner = bannerKey !== '';
         if (mainImg && mainImg.src.indexOf(src.split('/').pop()) === -1) {
           main.classList.add('swapping');
           setTimeout(function () {
@@ -117,9 +119,18 @@
             mainImg.alt = t.getAttribute('aria-label') || '';
             main.classList.remove('swapping');
             main.classList.toggle('show-annotations', showAnnotations);
+            main.classList.toggle('show-banner', showBanner);
+            // Hide all banners, show only the matching one
+            main.querySelectorAll('.image-banner').forEach(function (b) {
+              b.style.display = (showBanner && b.classList.contains('image-banner-' + bannerKey)) ? '' : 'none';
+            });
           }, 180);
         } else {
           main.classList.toggle('show-annotations', showAnnotations);
+          main.classList.toggle('show-banner', showBanner);
+          main.querySelectorAll('.image-banner').forEach(function (b) {
+            b.style.display = (showBanner && b.classList.contains('image-banner-' + bannerKey)) ? '' : 'none';
+          });
         }
         return;
       }

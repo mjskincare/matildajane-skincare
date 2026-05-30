@@ -83,31 +83,27 @@
   --decor-1: rgba(26,214,197,.18);
   --decor-2: rgba(26,214,197,.26);
 }
-/* BRIGHTEN — Laura's 5-colour palette (2026-05-16)
-   #ffea00 brightest yellow → main page / hero / card bg
-   #ffd000 golden yellow → accent
-   #ffc300 amber → circle hover
-   #ffa200 deep orange-amber → accent-deep (CTAs / hover states needing punch)
-   #000000 black → writing + bold accents (highlights, footer, CTA)
+/* BRIGHTEN — DEEPER AMBER FOR WHITE-TEXT CONTRAST (restored from pre-fe381db palette)
+   Original sunny-yellow values preserved for one-step undo:
+   hero-bg #fbc724 / hero-text #1a1a1a / hero-sub rgba(26,26,26,.75)
+   accent #e06d2c / highlight-text #fbc724
 */
 .theme-brighten {
-  --hero-bg: #ffea00;
-  --footer-bg: #000000;
-  --hero-text: #000000;
-  --hero-sub: rgba(0,0,0,.75);
-  --accent: #ffd000;
-  --accent-deep: #ffa200;
-  --circle-hover: #ffc300;
-  --circle-overlay-text: #000000;
-  --highlight-bg: #000000;
-  --highlight-text: #ffea00;
-  --card-bg: #ffea00;
+  --hero-bg: #c89311;
+  --footer-bg: #1f1611;
+  --hero-text: #ffffff;
+  --hero-sub: rgba(255,255,255,.85);
+  --accent: #ffd966;
+  --accent-deep: #b04a14;
+  --circle-hover: #F28500;
+  --highlight-bg: #1a1a1a;
+  --highlight-text: #ffd966;
+  --card-bg: #faf0d8;
   --product-side: #ffffff;
-  --product-text: #000000;
-  --cta-bg: #000000;
-  --cta-text: #ffea00;
-  --decor-1: rgba(255,162,0,.22);
-  --decor-2: rgba(0,0,0,.10);
+  --product-text: #1a1a1a;
+  --cta-bg: #b04a14;
+  --decor-1: rgba(255,255,255,.30);
+  --decor-2: rgba(176,74,20,.20);
 }
 /* MEN'S — HOCUS POCUS PALETTE
    Navy Blue #18121E / Gunmetal #233237 / Rusty Red #984B43 / Warm Yellow #EAC67A
@@ -511,23 +507,20 @@ body.concern-page .collection-landing-title {
   z-index: 2;
 }
 .product-card-tag.coming { color: var(--stone); }
+/* Square product cards — image fills a 1:1 frame, no circle clip */
 .product-card-img {
   aspect-ratio: 1 / 1; width: 100%;
   background: var(--card-bg);
-  border-radius: 50%;
+  border-radius: 6px;
   margin-bottom: 16px;
   display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden;
   transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1);
 }
-.product-card:hover .product-card-img { transform: scale(1.04); }
-.product-card-img::after {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 55%);
-}
+.product-card:hover .product-card-img { transform: scale(1.02); }
 .product-card-img img {
-  width: 70%; height: 70%; object-fit: contain;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,.18));
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  display: block;
   position: relative; z-index: 1;
 }
 .product-card-name {
@@ -993,8 +986,8 @@ body.concern-page .collection-landing-title {
    Text uses clamp() font sizing and a subtle text-shadow for legibility on cream. */
 .product-card-img.has-hover .pc-hook {
   position: relative; z-index: 2;
-  max-width: 80%;
-  padding: 1rem;
+  max-width: 70%;
+  padding: 0.5rem 0.75rem;
   text-align: center;
   opacity: 0;
   transition: opacity .35s ease .05s;
@@ -1005,23 +998,24 @@ body.concern-page .collection-landing-title {
 .pc-hook-headline {
   display: block;
   font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 600;
-  font-size: clamp(1.25rem, 3.6vw, 2rem);
-  line-height: 1.2; letter-spacing: 0.02em;
+  font-weight: 800;
+  font-size: clamp(1rem, 2.6vw, 1.5rem);
+  line-height: 1.05; letter-spacing: 0.02em;
   color: var(--navy); text-transform: uppercase;
-  text-shadow: 0 1px 8px rgba(255,255,255,.55);
+  white-space: nowrap;
+  text-shadow: 0 1px 10px rgba(255,255,255,.7);
 }
 .pc-hook-sub {
   display: block;
   font-family: 'Outfit', system-ui, sans-serif;
   font-weight: 400;
-  font-size: clamp(0.75rem, 1.4vw, 0.9rem);
+  font-size: clamp(0.7rem, 1.2vw, 0.82rem);
   line-height: 1.4; letter-spacing: 0.02em;
   color: var(--navy);
-  margin-top: 0.6rem;
-  text-shadow: 0 1px 6px rgba(255,255,255,.55);
+  margin-top: 0.45rem;
+  text-shadow: 0 1px 8px rgba(255,255,255,.7);
 }
-.pc-hook-sub strong { font-weight: 600; }
+.pc-hook-sub strong { font-weight: 700; }
 
 /* === SHOP ALL [COLLECTION] heading === */
 .shop-all-section {
@@ -1893,6 +1887,123 @@ body.concern-page .collection-landing-title {
   .spotlight-grid,
   .spotlight-grid.spotlight-grid-4 { grid-template-columns: 1fr; }
 }
+/* Image-banner overlay (carousel slide turns into a poster-style banner) */
+.image-banner {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+  padding: 32px 28px;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.05) 55%, rgba(0,0,0,.45) 100%);
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+.product-image-main.show-banner .image-banner { opacity: 1; }
+.image-banner .ib-eyebrow {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(255,255,255,.92);
+  margin: 0 0 12px;
+}
+.image-banner .ib-headline {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: 34px; font-weight: 800;
+  line-height: 1.02; letter-spacing: -.01em;
+  color: #ffffff;
+  margin: 0 0 14px;
+  text-shadow: 0 1px 24px rgba(0,0,0,.25);
+}
+.image-banner .ib-sub {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 14px; font-weight: 500;
+  color: rgba(255,255,255,.92);
+  margin: 0;
+  max-width: 80%;
+}
+@media (min-width: 720px) {
+  .image-banner { padding: 44px 40px; }
+  .image-banner .ib-headline { font-size: 44px; }
+  .image-banner .ib-sub { font-size: 15px; }
+}
+
+/* Science accordion — "Why this Works" intro inside collapsed dropdown */
+.science-why {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 20px; font-weight: 800;
+  color: var(--navy); letter-spacing: -.01em;
+  margin: 4px 0 6px;
+}
+.science-why-sub {
+  font-size: 14px; color: var(--stone);
+  font-style: italic; line-height: 1.5;
+  margin: 0 0 20px;
+}
+@media (min-width: 720px) {
+  .science-why { font-size: 22px; }
+}
+
+/* Inline ingredient spotlight (inside Key Actives accordion) */
+.spotlight-inline {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.spotlight-inline:last-child { border-bottom: 0; padding-bottom: 4px; }
+.spotlight-inline:first-child { padding-top: 4px; }
+.spotlight-inline .si-img {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  clip-path: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
+  background: #f0eee9;
+  flex-shrink: 0;
+}
+.spotlight-inline .si-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  border-radius: 50%;
+}
+/* Niacinamide inline image — zoom to fill (same logic as standalone spotlight) */
+.spotlight-inline .si-img img[src*="niacinamide"] {
+  transform: scale(1.9);
+  transform-origin: center 52%;
+}
+.spotlight-inline .si-h {
+  margin: 0 0 2px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 15px; font-weight: 700;
+  color: var(--navy); letter-spacing: 0;
+  line-height: 1.2;
+}
+.spotlight-inline .si-pct {
+  display: inline-block;
+  font-size: 11px; font-weight: 700;
+  color: var(--accent-deep);
+  letter-spacing: .12em; text-transform: uppercase;
+  margin: 0 0 8px;
+}
+.spotlight-inline .si-body {
+  font-size: 14px; line-height: 1.55;
+  color: var(--body-col);
+  margin: 0 0 4px;
+}
+.spotlight-inline .si-evidence {
+  font-size: 13px; font-style: italic;
+  color: var(--stone); line-height: 1.45;
+  margin: 0;
+}
+@media (min-width: 720px) {
+  .spotlight-inline { grid-template-columns: 88px 1fr; gap: 20px; padding: 20px 0; }
+  .spotlight-inline .si-img { width: 88px; height: 88px; }
+  .spotlight-inline .si-h { font-size: 16px; }
+}
+
 .spotlight-card {
   background: #fff;
   border-radius: 16px;
