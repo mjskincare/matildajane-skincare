@@ -153,15 +153,18 @@
 .home-concern-icon-box {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: var(--white);
-  border-radius: 8px;
+  /* Soft warm peach tile bg — visible against the ivory page bg */
+  background: #ffe7d2;
+  border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
-  margin-bottom: 16px;
-  transition: transform .25s ease, box-shadow .25s ease;
+  margin-bottom: 14px;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,.04);
 }
 .home-concern-tile:hover .home-concern-icon-box {
   transform: scale(1.04);
-  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+  box-shadow: 0 12px 32px rgba(0,0,0,.10);
+  background: #ffd4b0;
 }
 .home-concern-icon {
   width: 44%; height: 44%;
@@ -169,19 +172,14 @@
   transition: color .25s ease;
 }
 .home-concern-tile:hover .home-concern-icon { color: var(--navy); }
-.home-concern-text { text-align: center; padding: 0 4px; }
 .home-concern-name {
   font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 700; font-size: 13px; letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--navy);
-  margin-bottom: 6px;
   line-height: 1.2;
-}
-.home-concern-tag {
-  font-family: 'Outfit', system-ui, sans-serif;
-  font-size: 12px; line-height: 1.45;
-  color: var(--body-col, #4a4a4a);
+  text-align: center;
+  padding: 0 4px;
 }
 
 /* === Section 4: Brand Statement === */
@@ -226,17 +224,16 @@
 }
   .home-coll-tile { width: calc((100% - 48px) / 3); }
   .home-coll-grid { gap: 40px 24px; }
-  /* Tablet: drop horizontal scroll, switch to 4-up grid wrap */
+  /* Tablet: drop horizontal scroll, switch to 3-up grid wrap (3+3 even rows) */
   .home-concern-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
+    display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     overflow: visible; scroll-snap-type: none;
     margin: 0 auto; padding: 0;
-    max-width: 1100px;
+    max-width: 900px;
   }
   .home-concern-tile { flex: initial; width: auto; }
   .home-concern-name { font-size: 14px; }
-  .home-concern-tag { font-size: 13px; }
 }
 /* Desktop */
 @media (min-width: 1024px) {
@@ -250,14 +247,13 @@
 }
   .home-coll-tile { width: calc((100% - 72px) / 4); }
   .home-coll-grid { gap: 48px 24px; }
-  /* Desktop: all 7 tiles across in a single row */
+  /* Desktop: all 6 tiles across in a single row */
   .home-concern-grid {
-    grid-template-columns: repeat(7, 1fr);
-    gap: 16px;
-    max-width: 1400px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 1300px;
   }
-  .home-concern-name { font-size: 12px; letter-spacing: .14em; }
-  .home-concern-tag { font-size: 11px; line-height: 1.4; }
+  .home-concern-name { font-size: 13px; letter-spacing: .14em; }
   .home-coll-circle { width: 220px; height: 220px; }
 }
 
@@ -382,73 +378,46 @@
   </div>
 </section>
 
-<!-- SECTION 3 — SHOP BY CONCERNS (Paula's Choice style — large icon tiles, text underneath) -->
+<!-- SECTION 3 — SHOP BY CONCERNS (6 titles, icon tiles with visible bg, title underneath) -->
 <section class="home-concerns" id="concerns">
   <div class="home-section-eyebrow fu">Concerns</div>
   <h2 class="home-section-h2 fu">Shop by Concerns</h2>
   <div class="home-concern-grid">
+    <a class="home-concern-tile fu" href="concerns/ageing-and-loss-of-firmness.html">
+      <div class="home-concern-icon-box">
+        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l7-7 7 7M5 19l7-7 7 7"/></svg>
+      </div>
+      <div class="home-concern-name">Anti-Ageing</div>
+    </a>
     <a class="home-concern-tile fu" href="concerns/dryness-and-dehydration.html">
       <div class="home-concern-icon-box">
         <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s-7 8-7 13a7 7 0 0 0 14 0c0-5-7-13-7-13z"/></svg>
       </div>
-      <div class="home-concern-text">
-        <div class="home-concern-name">Dryness &amp; Dehydration</div>
-        <div class="home-concern-tag">Lasting hydration. Replenished barrier.</div>
-      </div>
+      <div class="home-concern-name">Dry Skin</div>
     </a>
-    <a class="home-concern-tile fu" href="concerns/redness-and-reactivity.html">
+    <a class="home-concern-tile fu" href="concerns/uneven-skin-tone.html">
       <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12h6"/></svg>
+        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><circle cx="7" cy="8" r="1.2"/><circle cx="17" cy="9" r="1"/><circle cx="6" cy="16" r=".8"/><circle cx="18" cy="15" r="1.1"/></svg>
       </div>
-      <div class="home-concern-text">
-        <div class="home-concern-name">Sensitive Skin</div>
-        <div class="home-concern-tag">Soothing actives for sensitised skin.</div>
-      </div>
+      <div class="home-concern-name">Dark Spots</div>
     </a>
     <a class="home-concern-tile fu" href="concerns/blemishes-and-congestion.html">
       <div class="home-concern-icon-box">
         <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1"/><circle cx="14" cy="13" r="1"/><circle cx="11" cy="15" r="1"/></svg>
       </div>
-      <div class="home-concern-text">
-        <div class="home-concern-name">Acne-Prone</div>
-        <div class="home-concern-tag">Clear pores without stripping the skin.</div>
-      </div>
-    </a>
-    <a class="home-concern-tile fu" href="concerns/dullness.html">
-      <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
-      </div>
-      <div class="home-concern-text">
-        <div class="home-concern-name">Dullness</div>
-        <div class="home-concern-tag">Restore visible radiance.</div>
-      </div>
+      <div class="home-concern-name">Blemishes</div>
     </a>
     <a class="home-concern-tile fu" href="concerns/uneven-skin-tone.html">
       <div class="home-concern-icon-box">
         <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12c4-3 6-3 9 0s5 3 9 0"/></svg>
       </div>
-      <div class="home-concern-text">
-        <div class="home-concern-name">Uneven Skin Tone</div>
-        <div class="home-concern-tag">Even tone. Visible clarity.</div>
-      </div>
-    </a>
-    <a class="home-concern-tile fu" href="concerns/ageing-and-loss-of-firmness.html">
-      <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l7-7 7 7M5 19l7-7 7 7"/></svg>
-      </div>
-      <div class="home-concern-text">
-        <div class="home-concern-name">Ageing Skin</div>
-        <div class="home-concern-tag">Renewal without sensitisation.</div>
-      </div>
+      <div class="home-concern-name">Uneven Skin Tone</div>
     </a>
     <a class="home-concern-tile fu" href="concerns/dark-circles.html">
       <div class="home-concern-icon-box">
         <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
       </div>
-      <div class="home-concern-text">
-        <div class="home-concern-name">Dark Circles</div>
-        <div class="home-concern-tag">De-puff. Brighten. Hydrate.</div>
-      </div>
+      <div class="home-concern-name">Under Eyes</div>
     </a>
   </div>
 </section>
