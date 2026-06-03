@@ -364,9 +364,10 @@ body.concern-page .collection-landing-title {
   transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1);
 }
 .collection-circle-card:hover { transform: translateY(-4px); }
+/* Collection product cards — squares (no longer circles) */
 .collection-circle {
   width: 220px; height: 220px;
-  border-radius: 50%;
+  border-radius: 8px;
   background: var(--card-bg);
   display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden;
@@ -376,9 +377,9 @@ body.concern-page .collection-landing-title {
 .collection-circle-card:hover .collection-circle { transform: scale(1.04); }
 .collection-circle.has-photo img {
   width: 100%; height: 100%; object-fit: cover; display: block;
-  border-radius: 50%;
+  border-radius: 8px;
 }
-/* Hover overlay: solid collection hover colour + theme-aware text colour */
+/* Hover overlay: solid collection hover colour + theme-aware text colour (square to match) */
 .collection-circle .circle-overlay {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
@@ -392,7 +393,7 @@ body.concern-page .collection-landing-title {
   text-align: center; padding: 0 28px;
   opacity: 0;
   transition: opacity .3s ease;
-  border-radius: 50%;
+  border-radius: 8px;
   pointer-events: none;
   z-index: 2;
 }
@@ -1120,6 +1121,11 @@ body.concern-page .collection-landing-title {
   display: flex; flex-direction: column; align-items: center; gap: 12px;
 }
 .fi svg { color: var(--accent); width: 36px; height: 36px; }
+/* Brighten hero is peach — peach SVG would be invisible. Use navy (--accent-deep) instead. */
+.theme-brighten .collection-hero .fi svg,
+.theme-brighten .collection-landing-hero .fi svg { color: var(--accent-deep); }
+.theme-brighten .collection-hero .fi span,
+.theme-brighten .collection-landing-hero .fi span { color: var(--accent-deep); }
 .fi span {
   font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--hero-text); font-weight: 500;
@@ -1940,19 +1946,33 @@ body.concern-page .collection-landing-title {
   transform: translateY(-2px);
   box-shadow: none !important;
 }
-.spotlight-card.spotlight-card-floating .spotlight-img-wrap {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 4px;
+/* Floating spotlight card image — force square, override the later 120px circle rule */
+.ingredient-spotlight .spotlight-grid.spotlight-grid-floating .spotlight-card.spotlight-card-floating .spotlight-img-wrap {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 6px !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
   overflow: hidden;
-  margin: 0 0 20px;
-  background: transparent;
-  /* Subtle floating shadow on the IMAGE itself, not the card */
+  margin: 0 0 20px !important;
+  background: transparent !important;
   box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1), box-shadow .35s ease;
+  display: block;
+  isolation: auto;
 }
-.spotlight-card.spotlight-card-floating .spotlight-img-wrap img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center;
-  border-radius: 4px;
+.ingredient-spotlight .spotlight-grid.spotlight-grid-floating .spotlight-card.spotlight-card-floating:hover .spotlight-img-wrap,
+.ingredient-spotlight .spotlight-grid.spotlight-grid-floating .spotlight-card.spotlight-card-floating.tap-active .spotlight-img-wrap {
+  transform: scale(1.05);
+  box-shadow: 0 18px 42px rgba(0,0,0,.14);
+}
+.ingredient-spotlight .spotlight-grid.spotlight-grid-floating .spotlight-card.spotlight-card-floating .spotlight-img-wrap img {
+  width: 100% !important; height: 100% !important;
+  object-fit: cover; object-position: center;
+  border-radius: 6px !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
   display: block;
 }
 .spotlight-card.spotlight-card-floating h3 {
@@ -2056,17 +2076,15 @@ body.concern-page .collection-landing-title {
 .spotlight-inline:first-child { padding-top: 4px; }
 .spotlight-inline .si-img {
   width: 72px; height: 72px;
-  border-radius: 50%;
+  border-radius: 6px;
   overflow: hidden;
-  clip-path: circle(50% at 50% 50%);
-  -webkit-clip-path: circle(50% at 50% 50%);
   background: #f0eee9;
   flex-shrink: 0;
 }
 .spotlight-inline .si-img img {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center;
-  border-radius: 50%;
+  border-radius: 6px;
 }
 /* Niacinamide inline image — zoom to fill (same logic as standalone spotlight) */
 .spotlight-inline .si-img img[src*="niacinamide"] {
@@ -2142,26 +2160,26 @@ body.concern-page .collection-landing-title {
 .spotlight-card:nth-child(3) { transition-delay: 0.3s; }
 .spotlight-card.visible:hover,
 .spotlight-card.visible.tap-active { transition-delay: 0s; }
-/* Mobile-first: small round image, contain-fit so subjects aren't cropped */
+/* Mobile-first: square spotlight image — no circles anywhere, hover scale-up */
 .spotlight-img-wrap {
   width: 120px; height: 120px;
   margin: 0 auto 18px;
-  border-radius: 50%;
-  /* clip-path is a stronger clip than overflow:hidden when child has transform/will-change */
-  clip-path: circle(50% at 50% 50%);
-  -webkit-clip-path: circle(50% at 50% 50%);
+  border-radius: 8px;
   overflow: hidden;
   background: #eee;
   display: flex; align-items: center; justify-content: center;
   isolation: isolate;
+  transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1), box-shadow .35s ease;
+}
+.spotlight-card:hover .spotlight-img-wrap,
+.spotlight-card.tap-active .spotlight-img-wrap {
+  transform: scale(1.06);
+  box-shadow: 0 14px 36px rgba(0,0,0,.12);
 }
 .spotlight-img-wrap img {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center center;
-  /* Belt-and-braces: image itself is a circle too */
-  border-radius: 50%;
-  clip-path: circle(50% at 50% 50%);
-  -webkit-clip-path: circle(50% at 50% 50%);
+  border-radius: 8px;
 }
 /* Niacinamide image has a small bowl centred on a vast white background — zoom in
    so the bowl fills the circle and matches the visual weight of the other spotlight images */
@@ -2307,4 +2325,170 @@ sup.ref {
 @media (max-width: 560px) {
   .footer-inner { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; }
+}
+
+/* =========================================================================
+   CLEAR COLLECTION LANDING — 3 toner intro, comparison, layering routine
+   Mobile-first; theme-aware via existing --hero-bg / --accent / --accent-deep
+   ========================================================================= */
+.collection-intro {
+  background: var(--ivory);
+  padding: 64px 24px 32px;
+}
+.collection-intro-inner {
+  max-width: 720px; margin: 0 auto;
+  text-align: center;
+}
+.collection-intro .ci-body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 400; font-size: 16px; line-height: 1.65;
+  color: var(--navy, #1a2a3a);
+  margin: 0 0 18px;
+}
+.collection-intro .ci-body strong { font-weight: 700; color: var(--accent-deep); }
+
+/* Which one is for me — 3 compare cards */
+.collection-compare {
+  background: var(--ivory);
+  padding: 32px 24px 64px;
+}
+.collection-compare-inner { max-width: 1200px; margin: 0 auto; }
+.cc-h2 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800; font-size: 28px; line-height: 1.15;
+  letter-spacing: .04em; text-transform: uppercase;
+  color: var(--navy, #1a2a3a);
+  text-align: center;
+  margin: 0 0 32px;
+}
+.cc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+.cc-card {
+  background: var(--white, #fff);
+  border-radius: 10px;
+  padding: 28px 22px;
+  display: flex; flex-direction: column;
+  box-shadow: 0 6px 22px rgba(0,0,0,.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.cc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0,0,0,.10);
+}
+.cc-card .cc-eyebrow {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent-deep);
+  margin: 0 0 10px;
+}
+.cc-card .cc-name {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800; font-size: 19px; line-height: 1.25;
+  color: var(--navy, #1a2a3a);
+  margin: 0 0 14px;
+}
+.cc-card .cc-when {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 400; font-size: 14px; line-height: 1.55;
+  color: var(--navy, #1a2a3a);
+  margin: 0 0 6px;
+}
+.cc-card .cc-when strong { font-weight: 700; }
+.cc-card .cc-link {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 700; font-size: 13px;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--accent-deep);
+  text-decoration: none;
+  margin-top: auto; padding-top: 16px;
+  transition: color .2s ease;
+}
+.cc-card .cc-link:hover { color: var(--navy, #1a2a3a); }
+
+@media (min-width: 720px) {
+  .cc-h2 { font-size: 32px; }
+  .cc-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .cc-card { padding: 32px 26px; }
+}
+
+/* How to layer routine block */
+.collection-layer {
+  background: var(--hero-bg);
+  color: var(--hero-text, #fff);
+  padding: 64px 24px;
+}
+.collection-layer-inner {
+  max-width: 760px; margin: 0 auto;
+}
+.cl-eyebrow {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 11px; letter-spacing: .28em; text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 12px;
+}
+.cl-h2 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800; font-size: 28px; line-height: 1.15;
+  letter-spacing: .02em; text-transform: uppercase;
+  color: var(--hero-text, #fff);
+  margin: 0 0 18px;
+}
+.cl-body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 400; font-size: 16px; line-height: 1.65;
+  color: var(--hero-sub, rgba(255,255,255,.85));
+  margin: 0 0 28px;
+}
+.cl-routine {
+  background: rgba(255,255,255,.06);
+  border-radius: 10px;
+  padding: 22px 24px;
+  margin-bottom: 22px;
+}
+.cl-routine-h {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 700; font-size: 13px;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 14px;
+}
+.cl-routine ul {
+  list-style: none; padding: 0; margin: 0;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 14px; line-height: 1.7;
+  color: var(--hero-sub, rgba(255,255,255,.85));
+}
+.cl-routine ul li {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.cl-routine ul li:last-child { border-bottom: 0; }
+.cl-routine ul li strong { color: var(--hero-text, #fff); font-weight: 700; }
+.cl-foot {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 500; font-size: 14px; line-height: 1.6;
+  color: var(--hero-sub, rgba(255,255,255,.85));
+  font-style: italic;
+  margin: 0;
+}
+@media (min-width: 720px) {
+  .collection-layer { padding: 80px 32px; }
+  .cl-h2 { font-size: 36px; }
+  .cl-body { font-size: 17px; }
+  .cl-routine { padding: 28px 32px; }
+  .cl-routine ul { font-size: 15px; }
+}
+
+/* Clear landing — landing-sub typography (sits below H1) */
+.collection-landing-sub {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 500; font-size: 15px; line-height: 1.55;
+  color: var(--hero-sub, rgba(255,255,255,.85));
+  max-width: 560px; margin: 0 auto 18px;
+  text-align: center;
 }

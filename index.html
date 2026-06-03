@@ -215,13 +215,19 @@
 @media (min-width: 720px) {
   .home-hero { padding: 128px 32px 96px; }
   .home-hero-h1 { font-size: 64px; }
-  .home-section-h2, .home-brand-h2 {
-  font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 800; font-size: 36px; line-height: 1.1;
-  color: var(--white);
-  letter-spacing: .04em; text-transform: uppercase;
-  margin-bottom: 28px;
-}
+  /* Section h2 — bump size only, keep navy from base rule */
+  .home-section-h2 {
+    font-size: 36px;
+    margin-bottom: 28px;
+  }
+  /* Brand statement h2 — white only because it sits on dark navy bg */
+  .home-brand-h2 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 800; font-size: 36px; line-height: 1.1;
+    color: var(--white);
+    letter-spacing: .04em; text-transform: uppercase;
+    margin-bottom: 28px;
+  }
   .home-coll-tile { width: calc((100% - 48px) / 3); }
   .home-coll-grid { gap: 40px 24px; }
   /* Tablet: drop horizontal scroll, switch to 3-up grid wrap (3+3 even rows) */
@@ -238,13 +244,19 @@
 /* Desktop */
 @media (min-width: 1024px) {
   .home-hero-h1 { font-size: 80px; }
-  .home-section-h2, .home-brand-h2 {
-  font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 800; font-size: 36px; line-height: 1.1;
-  color: var(--white);
-  letter-spacing: .04em; text-transform: uppercase;
-  margin-bottom: 28px;
-}
+  /* Section h2 — size only at desktop, keep navy from base rule */
+  .home-section-h2 {
+    font-size: 36px;
+    margin-bottom: 28px;
+  }
+  /* Brand statement h2 — white only because it sits on dark navy bg */
+  .home-brand-h2 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 800; font-size: 36px; line-height: 1.1;
+    color: var(--white);
+    letter-spacing: .04em; text-transform: uppercase;
+    margin-bottom: 28px;
+  }
   .home-coll-tile { width: calc((100% - 72px) / 4); }
   .home-coll-grid { gap: 48px 24px; }
   /* Desktop: all 6 tiles across in a single row */
