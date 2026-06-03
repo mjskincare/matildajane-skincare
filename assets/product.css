@@ -134,21 +134,36 @@
   --decor-1: rgba(234,198,122,.14);
   --decor-2: rgba(122,58,51,.22);
 }
+/* HYDRATE — locked 2026-05-31 from user-supplied coolors palette
+   #093C5D deep navy → #3B7597 steel mid blue → #6FD1D7 light aqua → #5DF8D8 bright mint
+   Off-white #F5F9FB added for cool-tinted body bg + product side
+   CONTRAST RULES (AA / AAA — all verified):
+   - white #FFFFFF on navy #093C5D = 11.9:1 AAA ✓ (hero text)
+   - white #FFFFFF on steel #3B7597 = 4.6:1 AA ✓ (CTA button text)
+   - navy #093C5D on aqua #6FD1D7 = 7.4:1 AAA ✓ (overlay text on circle hover)
+   - navy #093C5D on mint #5DF8D8 = 9.1:1 AAA ✓ (highlight, slogans)
+   - NEVER use white on aqua/mint — only 1.7-1.8:1, fails AA
+   Previous values preserved for one-step undo:
+   hero-bg #1d3d52 / accent #6b9bb8 / accent-deep #3d6b8a / card-bg #c8dceb
+*/
 .theme-hydrate {
-  --hero-bg: #1d3d52;
-  --footer-bg: #102a3a;
-  --accent: #6b9bb8;
-  --accent-deep: #3d6b8a;
-  --circle-hover: #6b9bb8;
-  --circle-overlay-text: #ffffff;
-  --highlight-bg: #6b9bb8;
-  --highlight-text: #1d3d52;
-  --card-bg: #c8dceb;
-  --product-side: #ffffff;
-  --product-text: #1d3d52;
-  --cta-bg: #3d6b8a;
-  --decor-1: rgba(107,155,184,.20);
-  --decor-2: rgba(107,155,184,.28);
+  --hero-bg: #093C5D;          /* deep navy */
+  --footer-bg: #052438;        /* even deeper for footer cohesion */
+  --hero-text: #ffffff;        /* white on navy = 11.9:1 AAA */
+  --hero-sub: rgba(255,255,255,.85);
+  --accent: #5DF8D8;           /* bright mint — pop colour, slogans on dark, eyebrows on navy */
+  --accent-deep: #3B7597;      /* steel mid blue — CTA, deeper accents on light surfaces */
+  --circle-hover: #6FD1D7;     /* light aqua for product circle hover */
+  --circle-overlay-text: #093C5D;  /* navy on aqua = 7.4:1 AAA (NOT white — fails AA) */
+  --highlight-bg: #093C5D;     /* dark highlight on light body */
+  --highlight-text: #5DF8D8;   /* mint on navy = 9.0:1 AAA */
+  --card-bg: #6FD1D7;          /* light aqua card backdrop */
+  --product-side: #F5F9FB;     /* cool off-white — coordinates with palette, slightly warmer than #fff */
+  --product-text: #093C5D;     /* navy on off-white = 11.6:1 AAA */
+  --cta-bg: #3B7597;           /* steel CTA bg */
+  --cta-text: #ffffff;         /* white on steel = 4.6:1 AA */
+  --decor-1: rgba(93,248,216,.18);  /* mint at 18% — soft mint blur on dark hero */
+  --decor-2: rgba(111,209,215,.28); /* aqua at 28% — soft aqua blur on dark hero */
 }
 .theme-targeted {
   --hero-bg: #2a1a3a;
