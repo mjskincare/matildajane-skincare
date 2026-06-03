@@ -1121,6 +1121,11 @@ body.concern-page .collection-landing-title {
   display: flex; flex-direction: column; align-items: center; gap: 12px;
 }
 .fi svg { color: var(--accent); width: 36px; height: 36px; }
+/* Brighten hero is peach — peach SVG would be invisible. Use navy (--accent-deep) instead. */
+.theme-brighten .collection-hero .fi svg,
+.theme-brighten .collection-landing-hero .fi svg { color: var(--accent-deep); }
+.theme-brighten .collection-hero .fi span,
+.theme-brighten .collection-landing-hero .fi span { color: var(--accent-deep); }
 .fi span {
   font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--hero-text); font-weight: 500;
@@ -1941,25 +1946,33 @@ body.concern-page .collection-landing-title {
   transform: translateY(-2px);
   box-shadow: none !important;
 }
-.spotlight-card.spotlight-card-floating .spotlight-img-wrap {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 6px;
+/* Floating spotlight card image — force square, override the later 120px circle rule */
+.ingredient-spotlight .spotlight-grid.spotlight-grid-floating .spotlight-card.spotlight-card-floating .spotlight-img-wrap {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 6px !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
   overflow: hidden;
-  margin: 0 0 20px;
-  background: transparent;
-  /* Subtle floating shadow on the IMAGE itself, not the card */
+  margin: 0 0 20px !important;
+  background: transparent !important;
   box-shadow: 0 6px 20px rgba(0,0,0,.08);
   transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1), box-shadow .35s ease;
+  display: block;
+  isolation: auto;
 }
-.spotlight-card.spotlight-card-floating:hover .spotlight-img-wrap,
-.spotlight-card.spotlight-card-floating.tap-active .spotlight-img-wrap {
+.ingredient-spotlight .spotlight-grid.spotlight-grid-floating .spotlight-card.spotlight-card-floating:hover .spotlight-img-wrap,
+.ingredient-spotlight .spotlight-grid.spotlight-grid-floating .spotlight-card.spotlight-card-floating.tap-active .spotlight-img-wrap {
   transform: scale(1.05);
   box-shadow: 0 18px 42px rgba(0,0,0,.14);
 }
-.spotlight-card.spotlight-card-floating .spotlight-img-wrap img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center;
-  border-radius: 6px;
+.ingredient-spotlight .spotlight-grid.spotlight-grid-floating .spotlight-card.spotlight-card-floating .spotlight-img-wrap img {
+  width: 100% !important; height: 100% !important;
+  object-fit: cover; object-position: center;
+  border-radius: 6px !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
   display: block;
 }
 .spotlight-card.spotlight-card-floating h3 {
