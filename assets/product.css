@@ -2160,14 +2160,16 @@ body.concern-page .collection-landing-title {
 .spotlight-card:nth-child(3) { transition-delay: 0.3s; }
 .spotlight-card.visible:hover,
 .spotlight-card.visible.tap-active { transition-delay: 0s; }
-/* Mobile-first: square spotlight image — no circles anywhere, hover scale-up */
+/* Universal spotlight image — square, hover scale-up (works for both standalone
+   and .spotlight-card-floating variants). Hard square, no clip-path. */
 .spotlight-img-wrap {
-  width: 120px; height: 120px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   margin: 0 auto 18px;
   border-radius: 8px;
   overflow: hidden;
   background: #eee;
-  display: flex; align-items: center; justify-content: center;
+  display: block;
   isolation: isolate;
   transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1), box-shadow .35s ease;
 }
@@ -2180,6 +2182,7 @@ body.concern-page .collection-landing-title {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center center;
   border-radius: 8px;
+  display: block;
 }
 /* Niacinamide image has a small bowl centred on a vast white background — zoom in
    so the bowl fills the circle and matches the visual weight of the other spotlight images */
@@ -2198,7 +2201,7 @@ body.concern-page .collection-landing-title {
 .spotlight-card:nth-child(4) .spotlight-img-wrap { background: #e6dfd2; }
 .spotlight-card { overflow: hidden; }
 @media (min-width: 720px) {
-  .spotlight-img-wrap { width: 180px; height: 180px; margin-bottom: 24px; }
+  .spotlight-img-wrap { margin-bottom: 24px; }
 }
 .spotlight-percent {
   display: block;
