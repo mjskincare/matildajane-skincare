@@ -364,9 +364,10 @@ body.concern-page .collection-landing-title {
   transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1);
 }
 .collection-circle-card:hover { transform: translateY(-4px); }
+/* Collection product cards — squares (no longer circles) */
 .collection-circle {
   width: 220px; height: 220px;
-  border-radius: 50%;
+  border-radius: 8px;
   background: var(--card-bg);
   display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden;
@@ -376,9 +377,9 @@ body.concern-page .collection-landing-title {
 .collection-circle-card:hover .collection-circle { transform: scale(1.04); }
 .collection-circle.has-photo img {
   width: 100%; height: 100%; object-fit: cover; display: block;
-  border-radius: 50%;
+  border-radius: 8px;
 }
-/* Hover overlay: solid collection hover colour + theme-aware text colour */
+/* Hover overlay: solid collection hover colour + theme-aware text colour (square to match) */
 .collection-circle .circle-overlay {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
@@ -392,7 +393,7 @@ body.concern-page .collection-landing-title {
   text-align: center; padding: 0 28px;
   opacity: 0;
   transition: opacity .3s ease;
-  border-radius: 50%;
+  border-radius: 8px;
   pointer-events: none;
   z-index: 2;
 }
@@ -1943,16 +1944,22 @@ body.concern-page .collection-landing-title {
 .spotlight-card.spotlight-card-floating .spotlight-img-wrap {
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
   margin: 0 0 20px;
   background: transparent;
   /* Subtle floating shadow on the IMAGE itself, not the card */
   box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1), box-shadow .35s ease;
+}
+.spotlight-card.spotlight-card-floating:hover .spotlight-img-wrap,
+.spotlight-card.spotlight-card-floating.tap-active .spotlight-img-wrap {
+  transform: scale(1.05);
+  box-shadow: 0 18px 42px rgba(0,0,0,.14);
 }
 .spotlight-card.spotlight-card-floating .spotlight-img-wrap img {
   width: 100%; height: 100%; object-fit: cover; object-position: center;
-  border-radius: 4px;
+  border-radius: 6px;
   display: block;
 }
 .spotlight-card.spotlight-card-floating h3 {
@@ -2056,17 +2063,15 @@ body.concern-page .collection-landing-title {
 .spotlight-inline:first-child { padding-top: 4px; }
 .spotlight-inline .si-img {
   width: 72px; height: 72px;
-  border-radius: 50%;
+  border-radius: 6px;
   overflow: hidden;
-  clip-path: circle(50% at 50% 50%);
-  -webkit-clip-path: circle(50% at 50% 50%);
   background: #f0eee9;
   flex-shrink: 0;
 }
 .spotlight-inline .si-img img {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center;
-  border-radius: 50%;
+  border-radius: 6px;
 }
 /* Niacinamide inline image — zoom to fill (same logic as standalone spotlight) */
 .spotlight-inline .si-img img[src*="niacinamide"] {
@@ -2142,26 +2147,26 @@ body.concern-page .collection-landing-title {
 .spotlight-card:nth-child(3) { transition-delay: 0.3s; }
 .spotlight-card.visible:hover,
 .spotlight-card.visible.tap-active { transition-delay: 0s; }
-/* Mobile-first: small round image, contain-fit so subjects aren't cropped */
+/* Mobile-first: square spotlight image — no circles anywhere, hover scale-up */
 .spotlight-img-wrap {
   width: 120px; height: 120px;
   margin: 0 auto 18px;
-  border-radius: 50%;
-  /* clip-path is a stronger clip than overflow:hidden when child has transform/will-change */
-  clip-path: circle(50% at 50% 50%);
-  -webkit-clip-path: circle(50% at 50% 50%);
+  border-radius: 8px;
   overflow: hidden;
   background: #eee;
   display: flex; align-items: center; justify-content: center;
   isolation: isolate;
+  transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1), box-shadow .35s ease;
+}
+.spotlight-card:hover .spotlight-img-wrap,
+.spotlight-card.tap-active .spotlight-img-wrap {
+  transform: scale(1.06);
+  box-shadow: 0 14px 36px rgba(0,0,0,.12);
 }
 .spotlight-img-wrap img {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center center;
-  /* Belt-and-braces: image itself is a circle too */
-  border-radius: 50%;
-  clip-path: circle(50% at 50% 50%);
-  -webkit-clip-path: circle(50% at 50% 50%);
+  border-radius: 8px;
 }
 /* Niacinamide image has a small bowl centred on a vast white background — zoom in
    so the bowl fills the circle and matches the visual weight of the other spotlight images */
