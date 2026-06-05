@@ -11,11 +11,13 @@ matildajane/
 ├── assets/
 │   └── product.css              Shared styles for all product pages
 └── products/
-    ├── calming-barrier.html      Calm collection product
-    ├── clarifying-bha.html       Clarify collection product
+    ├── hydrate.html              Hydrate collection landing
+    ├── clear.html                Clear collection landing (was "Clarify")
     ├── neuro-restore.html        Renew collection (flagship)
-    ├── brightening-vitamin-c.html  Brighten collection product
-    └── daily-defence.html        Men's collection product
+    ├── brightening-vitamin-c.html  Brighten collection landing
+    ├── daily-defence.html        Men's collection landing
+    ├── targeted.html             Targeted Treatments landing
+    └── calming-barrier.html      Calm — UNPUBLISHED (hidden from nav, no products yet)
 ```
 
 ## How to Deploy

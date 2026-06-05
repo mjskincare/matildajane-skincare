@@ -61,6 +61,40 @@
   background: var(--peach-deep, #c4705e);
   transform: translateY(-2px);
 }
+.home-hero-ctas {
+  display: flex; flex-direction: column; gap: 14px;
+  align-items: center; max-width: 340px; margin: 0 auto;
+}
+.home-hero-cta.primary,
+.home-hero-cta.secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%;
+  padding: 18px 28px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 13px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  text-decoration: none; text-align: center;
+  border: 1.5px solid var(--navy-deep, #111c27);
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+  cursor: pointer;
+}
+.home-hero-cta.primary {
+  background: var(--navy-deep, #111c27); color: var(--white);
+}
+.home-hero-cta.primary:hover {
+  background: var(--peach-deep, #c4705e);
+  border-color: var(--peach-deep, #c4705e);
+  transform: translateY(-2px);
+}
+.home-hero-cta.secondary {
+  background: transparent; color: var(--navy-deep, #111c27);
+}
+.home-hero-cta.secondary:hover {
+  background: var(--navy-deep, #111c27); color: var(--white);
+  transform: translateY(-2px);
+}
+@media (min-width: 720px) {
+  .home-hero-ctas { flex-direction: row; max-width: 520px; gap: 16px; }
+}
 
 /* === Section 2: Shop by Collection === */
 .home-collections {
@@ -280,12 +314,10 @@
   <div class="site-nav-v2-inner">
     <a class="nav-logo" href="index.html">Matilda Jane</a>
     <ul class="nav-v2-links">
-      <li><a class="nav-v2-link" href="start-here.html">Start Here</a></li>
       <li>
         <button class="nav-v2-trigger" type="button">Collections <span class="chev">▾</span></button>
         <ul class="nav-v2-dropdown">
           <li><a href="products/hydrate.html">Hydrate</a></li>
-          <li><a href="products/calming-barrier.html">Calm</a></li>
           <li><a href="products/clear.html">Clear</a></li>
           <li><a href="products/neuro-restore.html">Renew</a></li>
           <li><a href="products/brightening-vitamin-c.html">Brighten</a></li>
@@ -318,13 +350,9 @@
 <aside class="nav-v2-mobile" id="mj-mobile-nav" aria-hidden="true">
   <button class="nav-v2-mobile-close" type="button" id="mj-mobile-close" aria-label="Close menu">×</button>
   <div class="nav-v2-mobile-section">
-    <a href="start-here.html">Start Here</a>
-  </div>
-  <div class="nav-v2-mobile-section">
     <span class="label">Collections</span>
     <ul class="nav-v2-mobile-sublist">
       <li><a href="products/hydrate.html">Hydrate</a></li>
-      <li><a href="products/calming-barrier.html">Calm</a></li>
       <li><a href="products/clear.html">Clear</a></li>
       <li><a href="products/neuro-restore.html">Renew</a></li>
       <li><a href="products/brightening-vitamin-c.html">Brighten</a></li>
@@ -351,7 +379,11 @@
   <div class="home-hero-eyebrow fu">Matilda Jane Skincare</div>
   <h1 class="home-hero-h1 fu">The best of nature, <em>refined.</em></h1>
   <p class="home-hero-sub fu">Evidence-based formulations. Clinical concentrations. Every active is chosen for what it does — not how it sounds.</p>
-  <a href="start-here.html" class="home-hero-cta fu">Start Here</a>
+  <p class="home-hero-sub fu" style="margin-top: -16px; margin-bottom: 32px; font-size: 15px;">Two ways in: by what your skin needs, or by formula family. Pick whichever feels right — both lead to the same evidence-led range.</p>
+  <div class="home-hero-ctas fu">
+    <a href="#concerns" class="home-hero-cta primary">Shop by Concern</a>
+    <a href="#collections" class="home-hero-cta secondary">Shop by Collection</a>
+  </div>
 </section>
 
 <!-- SECTION 2 — SHOP BY COLLECTION -->
@@ -362,10 +394,6 @@
     <a class="home-coll-tile fu" href="products/hydrate.html">
       <div class="home-coll-circle c-hydrate"></div>
       <div class="home-coll-name">Hydrate</div>
-    </a>
-    <a class="home-coll-tile fu" href="products/calming-barrier.html">
-      <div class="home-coll-circle c-calm"></div>
-      <div class="home-coll-name">Calm</div>
     </a>
     <a class="home-coll-tile fu" href="products/clear.html">
       <div class="home-coll-circle c-clarify"></div>
@@ -455,7 +483,6 @@
       <h4>Collections</h4>
       <ul>
         <li><a href="products/hydrate.html">Hydrate</a></li>
-        <li><a href="products/calming-barrier.html">Calm</a></li>
         <li><a href="products/clear.html">Clear</a></li>
         <li><a href="products/neuro-restore.html">Renew</a></li>
         <li><a href="products/brightening-vitamin-c.html">Brighten</a></li>
@@ -478,7 +505,6 @@
     <div class="footer-col">
       <h4>Support</h4>
       <ul>
-        <li><a href="start-here.html">Start Here</a></li>
         <li><a href="mailto:laura@matildajanenz.com">Contact</a></li>
         <li><a href="#">FAQ</a></li>
       </ul>
