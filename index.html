@@ -179,50 +179,50 @@
 }
 .coll-icon-tile {
   position: relative;
-  width: 200px; height: 200px;
-  display: flex; align-items: flex-end; justify-content: center;
+  width: 220px; height: 240px;
   margin-bottom: 22px;
 }
 .coll-icon-circle {
-  position: absolute; left: 50%; bottom: 0;
-  transform: translateX(-50%);
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
   width: 180px; height: 180px;
   border-radius: 50%;
   transition: transform .4s cubic-bezier(0.32, 0.72, 0, 1);
   box-shadow: 0 6px 18px rgba(9, 60, 93, .15);
 }
 .home-coll-tile.coll-icon-v2:hover .coll-icon-circle {
-  transform: translateX(-50%) scale(1.04);
+  transform: translate(-50%, -50%) scale(1.04);
 }
 .coll-icon-bottles {
-  position: relative;
-  width: 100%; height: 100%;
-  display: flex; align-items: flex-start; justify-content: center;
+  position: absolute; inset: 0;
   pointer-events: none;
 }
 .coll-icon-bottle {
   position: absolute;
-  top: -18px;
-  height: 230px;
+  top: 0;
+  bottom: 0;
+  height: 220px;
   width: auto;
+  margin: auto 0;
   transition: transform .4s cubic-bezier(0.32, 0.72, 0, 1);
   filter: drop-shadow(0 8px 14px rgba(0, 0, 0, .22));
+  transform-origin: center;
 }
 .coll-icon-bottle.bottle-back {
-  left: 22%;
-  transform: rotate(-8deg);
+  left: 12%;
+  transform: translateY(-8px) rotate(-8deg);
   z-index: 1;
 }
 .coll-icon-bottle.bottle-front {
-  right: 18%;
-  transform: rotate(6deg);
+  right: 10%;
+  transform: translateY(-8px) rotate(6deg);
   z-index: 2;
 }
 .home-coll-tile.coll-icon-v2:hover .coll-icon-bottle.bottle-back {
-  transform: rotate(-10deg) translateY(-3px);
+  transform: translateY(-12px) rotate(-10deg);
 }
 .home-coll-tile.coll-icon-v2:hover .coll-icon-bottle.bottle-front {
-  transform: rotate(8deg) translateY(-3px);
+  transform: translateY(-12px) rotate(8deg);
 }
 .coll-icon-name {
   font-family: 'Montserrat', system-ui, sans-serif;
@@ -234,9 +234,9 @@
   text-align: center;
 }
 @media (min-width: 720px) {
-  .coll-icon-tile { width: 240px; height: 240px; }
+  .coll-icon-tile { width: 260px; height: 280px; }
   .coll-icon-circle { width: 220px; height: 220px; }
-  .coll-icon-bottle { height: 275px; top: -22px; }
+  .coll-icon-bottle { height: 260px; }
   .coll-icon-name { font-size: 26px; }
 }
 
