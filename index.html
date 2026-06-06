@@ -96,7 +96,55 @@
   .home-hero-ctas { flex-direction: row; max-width: 520px; gap: 16px; }
 }
 
-/* === Section 2: Shop by Collection === */
+/* === Big bold list (Hourglass-style) — used by Shop by Collection + Shop by Concern === */
+.home-collections-list,
+.home-concerns-list {
+  background: var(--ivory);
+  padding: 72px 24px 88px;
+}
+.home-collections-list { background: var(--white); }
+.big-list {
+  list-style: none;
+  max-width: 720px;
+  margin: 40px auto 0;
+  padding: 0;
+}
+.big-list li {
+  border-bottom: 1px solid rgba(9, 60, 93, .12);
+}
+.big-list li:first-child {
+  border-top: 1px solid rgba(9, 60, 93, .12);
+}
+.big-list a {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 4px;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 26px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  transition: color .2s ease, padding .25s ease;
+}
+.big-list a::after {
+  content: '›';
+  font-size: 28px; font-weight: 500;
+  color: var(--peach-deep, #c4705e);
+  transition: transform .25s ease;
+}
+.big-list a:hover { color: var(--peach-deep, #c4705e); padding-left: 10px; }
+.big-list a:hover::after { transform: translateX(6px); }
+@media (min-width: 720px) {
+  .home-collections-list,
+  .home-concerns-list { padding: 96px 24px 112px; }
+  .big-list a { font-size: 34px; padding: 28px 4px; }
+}
+@media (min-width: 1024px) {
+  .big-list a { font-size: 40px; }
+}
+
+/* === Section 2: Shop by Collection (legacy circles — no longer used) === */
 .home-collections {
   padding: 96px 24px 80px;
   background: var(--white);
@@ -161,25 +209,27 @@
 }
 .home-coll-tile:hover .home-coll-name::after { transform: translateX(4px); }
 
-/* === Collection Icon V2 — Paula's Choice-on-hover === */
+/* === Collection Icon V2 — bottles pop out of circle, label below === */
 .home-coll-tile.coll-icon-v2 {
   display: flex; flex-direction: column; align-items: center;
   text-decoration: none;
-  padding: 18px;
-  border-radius: 18px;
+  padding: 0;
   background: transparent;
   border: 1px solid transparent;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 200px;
   transition: background .35s ease, border-color .35s ease, box-shadow .35s ease, transform .35s cubic-bezier(0.32, 0.72, 0, 1);
 }
 .home-coll-tile.coll-icon-v2:hover {
   background: #f5f9fb;
   border-color: rgba(9, 60, 93, .08);
-  box-shadow: 0 18px 38px rgba(9, 60, 93, .12);
+  box-shadow: 0 14px 30px rgba(9, 60, 93, .10);
   transform: translateY(-4px);
 }
 .coll-icon-tile {
   position: relative;
-  width: 220px; height: 240px;
+  width: 200px; height: 200px;
   margin-bottom: 22px;
 }
 .coll-icon-circle {
@@ -201,7 +251,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  height: 220px;
+  height: 175px;
   width: auto;
   margin: auto 0;
   transition: transform .4s cubic-bezier(0.32, 0.72, 0, 1);
@@ -209,36 +259,36 @@
   transform-origin: center;
 }
 .coll-icon-bottle.bottle-back {
-  left: 12%;
-  transform: translateY(-8px) rotate(-8deg);
+  left: 16%;
+  transform: translateY(-6px) rotate(-8deg);
   z-index: 1;
 }
 .coll-icon-bottle.bottle-front {
-  right: 10%;
-  transform: translateY(-8px) rotate(6deg);
+  right: 14%;
+  transform: translateY(-6px) rotate(6deg);
   z-index: 2;
 }
 .home-coll-tile.coll-icon-v2:hover .coll-icon-bottle.bottle-back {
-  transform: translateY(-12px) rotate(-10deg);
+  transform: translateY(-10px) rotate(-10deg);
 }
 .home-coll-tile.coll-icon-v2:hover .coll-icon-bottle.bottle-front {
-  transform: translateY(-12px) rotate(8deg);
+  transform: translateY(-10px) rotate(8deg);
 }
 .coll-icon-name {
   font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 900;
-  font-size: 22px;
+  font-weight: 700;
+  font-size: 16px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--navy);
   text-align: center;
+  display: inline-flex; align-items: center; gap: 6px;
 }
-@media (min-width: 720px) {
-  .coll-icon-tile { width: 260px; height: 280px; }
-  .coll-icon-circle { width: 220px; height: 220px; }
-  .coll-icon-bottle { height: 260px; }
-  .coll-icon-name { font-size: 26px; }
+.coll-icon-name::after {
+  content: '›'; font-size: 22px; font-weight: 500;
+  transition: transform .25s ease;
 }
+.home-coll-tile.coll-icon-v2:hover .coll-icon-name::after { transform: translateX(4px); }
 
 /* === Section 3: Concerns === */
 .home-concerns {
@@ -463,82 +513,32 @@
   </div>
 </section>
 
-<!-- SECTION 2 — SHOP BY COLLECTION -->
-<section class="home-collections" id="collections">
+<!-- SECTION 2 — SHOP BY COLLECTION (Hourglass-style big bold list, mobile-first) -->
+<section class="home-collections-list" id="collections">
   <div class="home-section-eyebrow fu">The Collections</div>
   <h2 class="home-section-h2 fu">Shop by Collection</h2>
-  <div class="home-coll-grid">
-    <a class="home-coll-tile fu coll-icon-v2" href="products/hydrate.html">
-      <div class="coll-icon-tile">
-        <div class="coll-icon-circle" style="background:#093C5D;"></div>
-        <div class="coll-icon-bottles">
-          <img class="coll-icon-bottle bottle-back" src="assets/images/collections/hydrate-pm.png" alt="">
-          <img class="coll-icon-bottle bottle-front" src="assets/images/collections/hydrate-am.png" alt="">
-        </div>
-      </div>
-      <div class="coll-icon-name">HYDRATE</div>
-    </a>
-    <a class="home-coll-tile fu" href="products/clear.html">
-      <div class="home-coll-circle c-clarify"></div>
-      <div class="home-coll-name">Clear</div>
-    </a>
-    <a class="home-coll-tile fu" href="products/neuro-restore.html">
-      <div class="home-coll-circle c-renew"></div>
-      <div class="home-coll-name">Renew</div>
-    </a>
-    <a class="home-coll-tile fu" href="products/brightening-vitamin-c.html">
-      <div class="home-coll-circle c-brighten"></div>
-      <div class="home-coll-name">Brighten</div>
-    </a>
-    <a class="home-coll-tile fu" href="products/daily-defence.html">
-      <div class="home-coll-circle c-mens"></div>
-      <div class="home-coll-name">Men's</div>
-    </a>
-  </div>
+  <ul class="big-list">
+    <li><a href="products/hydrate.html">Hydrate</a></li>
+    <li><a href="products/clear.html">Clear</a></li>
+    <li><a href="products/neuro-restore.html">Renew</a></li>
+    <li><a href="products/brightening-vitamin-c.html">Brighten</a></li>
+    <li><a href="products/daily-defence.html">Men's</a></li>
+  </ul>
 </section>
 
-<!-- SECTION 3 — SHOP BY CONCERNS (6 titles, icon tiles with visible bg, title underneath) -->
-<section class="home-concerns" id="concerns">
+<!-- SECTION 3 — SHOP BY CONCERN (Hourglass-style big bold list, mobile-first) -->
+<section class="home-concerns-list" id="concerns">
   <div class="home-section-eyebrow fu">Concerns</div>
-  <h2 class="home-section-h2 fu">Shop by Concerns</h2>
-  <div class="home-concern-grid">
-    <a class="home-concern-tile fu" href="concerns/ageing-and-loss-of-firmness.html">
-      <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l7-7 7 7M5 19l7-7 7 7"/></svg>
-      </div>
-      <div class="home-concern-name">Anti-Ageing</div>
-    </a>
-    <a class="home-concern-tile fu" href="concerns/dryness-and-dehydration.html">
-      <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s-7 8-7 13a7 7 0 0 0 14 0c0-5-7-13-7-13z"/></svg>
-      </div>
-      <div class="home-concern-name">Dry Skin</div>
-    </a>
-    <a class="home-concern-tile fu" href="concerns/uneven-skin-tone.html">
-      <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><circle cx="7" cy="8" r="1.2"/><circle cx="17" cy="9" r="1"/><circle cx="6" cy="16" r=".8"/><circle cx="18" cy="15" r="1.1"/></svg>
-      </div>
-      <div class="home-concern-name">Dark Spots</div>
-    </a>
-    <a class="home-concern-tile fu" href="concerns/blemishes-and-congestion.html">
-      <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1"/><circle cx="14" cy="13" r="1"/><circle cx="11" cy="15" r="1"/></svg>
-      </div>
-      <div class="home-concern-name">Blemishes</div>
-    </a>
-    <a class="home-concern-tile fu" href="concerns/uneven-skin-tone.html">
-      <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12c4-3 6-3 9 0s5 3 9 0"/></svg>
-      </div>
-      <div class="home-concern-name">Uneven Skin Tone</div>
-    </a>
-    <a class="home-concern-tile fu" href="concerns/dark-circles.html">
-      <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-      </div>
-      <div class="home-concern-name">Under Eyes</div>
-    </a>
-  </div>
+  <h2 class="home-section-h2 fu">Shop by Concern</h2>
+  <ul class="big-list">
+    <li><a href="concerns/ageing-and-loss-of-firmness.html">Anti-Ageing</a></li>
+    <li><a href="concerns/dryness-and-dehydration.html">Dry Skin</a></li>
+    <li><a href="concerns/uneven-skin-tone.html">Uneven Skin Tone</a></li>
+    <li><a href="concerns/blemishes-and-congestion.html">Blemishes</a></li>
+    <li><a href="concerns/dullness.html">Dullness</a></li>
+    <li><a href="concerns/redness-and-reactivity.html">Sensitive Skin</a></li>
+    <li><a href="concerns/dark-circles.html">Under Eyes</a></li>
+  </ul>
 </section>
 
 <!-- SECTION 4 — BRAND STATEMENT -->
