@@ -539,6 +539,17 @@ body.concern-page .collection-landing-title {
   transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1);
 }
 .product-card:hover .product-card-img { transform: scale(1.02); }
+/* Cream tile background for transparent-bg product shots (single bottles on white) */
+.product-card-img.product-card-tile-cream {
+  background: #f4ece0;
+}
+.product-card-img.product-card-tile-cream img {
+  object-fit: contain;
+  padding: 14%;
+}
+.product-card-img .img-flip-h {
+  transform: scaleX(-1);
+}
 .product-card-img img {
   width: 100%; height: 100%; object-fit: cover; object-position: center;
   display: block;
