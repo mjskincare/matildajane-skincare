@@ -354,20 +354,66 @@
 </section>
 
 <section class="why-cleanse-banner">
-  <img src="../../assets/images/products/cleansing-foam/why-cleanse-gently.jpg" alt="Why cleanse gently? Every cleanse removes a little of the skin's own moisture — even a gentle one. Harsh cleansers go further, stripping barrier lipids and raising water loss, leaving skin tight and, over time, less resilient. A good cleanser clears what needs to go and gives that moisture back.">
+  <div class="why-cleanse-banner-text">
+    <h2 class="why-cleanse-banner-h2 fu">Why cleanse gently?</h2>
+    <p class="why-cleanse-banner-body fu">Every cleanse removes a little of the skin's own moisture — even a gentle one.<sup>4</sup> Harsh cleansers go further, stripping barrier lipids and raising water loss, leaving skin tight and, over time, less resilient. A good cleanser clears what needs to go and gives that moisture back.</p>
+  </div>
+  <div class="why-cleanse-banner-image">
+    <img src="../../assets/images/products/cleansing-foam/foam-pink.jpg" alt="Hands lathered with soft amino acid cleansing foam">
+  </div>
 </section>
 
 <style>
 .why-cleanse-banner {
   width: 100%;
-  background: #000;
+  background: #0e0e0e;
+  color: #f4ece0;
   margin: 0;
-  padding: 0;
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr;
 }
-.why-cleanse-banner img {
-  width: 100%; height: auto;
+.why-cleanse-banner-text {
+  padding: 56px 28px;
+  display: flex; flex-direction: column; justify-content: center;
+  order: 1;
+}
+.why-cleanse-banner-image { order: 2; }
+.why-cleanse-banner-image img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
   display: block;
+  aspect-ratio: 1 / 1;
+}
+.why-cleanse-banner-h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400; font-style: italic;
+  font-size: clamp(36px, 8vw, 56px);
+  line-height: 1.05;
+  color: #f4ece0;
+  margin: 0 0 22px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.why-cleanse-banner-body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 15px; line-height: 1.7;
+  color: rgba(244, 236, 224, .85);
+  margin: 0;
+  max-width: 480px;
+}
+.why-cleanse-banner-body sup { color: rgba(244, 236, 224, .85); font-size: 11px; }
+@media (min-width: 720px) {
+  .why-cleanse-banner { grid-template-columns: 1fr 1fr; min-height: 480px; }
+  .why-cleanse-banner-text { padding: 64px 56px; }
+  .why-cleanse-banner-image img { aspect-ratio: auto; height: 100%; min-height: 480px; }
+  .why-cleanse-banner-body { font-size: 16px; }
+}
+@media (min-width: 1024px) {
+  .why-cleanse-banner { min-height: 560px; }
+  .why-cleanse-banner-text { padding: 80px 88px; }
+  .why-cleanse-banner-image img { min-height: 560px; }
+  .why-cleanse-banner-body { font-size: 17px; }
 }
 </style>
 
