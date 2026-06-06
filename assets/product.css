@@ -183,7 +183,7 @@
 
 /* === BASE === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
 body {
   font-family: 'Outfit', system-ui, sans-serif;
   font-weight: 500;
@@ -191,7 +191,11 @@ body {
   letter-spacing: 0.03em;
   background: var(--ivory); color: var(--navy);
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
+img, video { max-width: 100%; height: auto; }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', system-ui, sans-serif;
 }
@@ -900,12 +904,11 @@ body.concern-page .collection-landing-title {
 
 /* Mobile slide-out menu */
 .nav-v2-mobile {
-  position: fixed; top: 0; right: 0; bottom: 0;
-  width: 320px; max-width: 90vw;
-  background: var(--white);
-  border-left: 1px solid rgba(26,42,58,.10);
-  padding: 80px 28px 32px;
-  transform: translateX(100%);
+  position: fixed; top: 0; left: 0; bottom: 0;
+  width: 100%; max-width: 100%;
+  background: var(--ivory);
+  padding: 96px 28px 40px;
+  transform: translateX(-100%);
   transition: transform .3s cubic-bezier(0.32, 0.72, 0, 1);
   z-index: 80;
   overflow-y: auto;
@@ -920,36 +923,43 @@ body.concern-page .collection-landing-title {
 }
 .nav-v2-mobile-overlay.open { opacity: 1; pointer-events: auto; }
 .nav-v2-mobile-close {
-  position: absolute; top: 24px; right: 24px;
+  position: absolute; top: 22px; right: 22px;
   background: none; border: none; cursor: pointer;
-  font-size: 28px; color: var(--navy); line-height: 1;
+  font-size: 36px; color: var(--navy); line-height: 1;
+  font-weight: 300;
 }
 .nav-v2-mobile-section {
-  margin-bottom: 24px;
-  border-bottom: 1px solid rgba(26,42,58,.08);
-  padding-bottom: 16px;
+  margin-bottom: 20px;
 }
-.nav-v2-mobile-section:last-child { border-bottom: 0; }
-.nav-v2-mobile-section > a, .nav-v2-mobile-section > .label {
-  display: block;
-  font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 700; font-size: 18px;
-  color: var(--navy);
-  padding: 12px 0;
-  letter-spacing: -.005em;
-}
-.nav-v2-mobile-sublist {
-  list-style: none; padding: 0 0 0 0; margin: 4px 0 0 0;
-}
-.nav-v2-mobile-sublist li { list-style: none; }
-.nav-v2-mobile-sublist a {
+.nav-v2-mobile-section > .label {
   display: block;
   font-family: 'Outfit', system-ui, sans-serif;
-  font-size: 14px; font-weight: 500;
-  color: var(--body-col, #4a4a4a);
-  padding: 8px 0;
+  font-weight: 600; font-size: 12px;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--peach-deep, #c4705e);
+  padding: 8px 0 4px;
 }
-.nav-v2-mobile-sublist a:hover { color: var(--navy); }
+.nav-v2-mobile-sublist {
+  list-style: none; padding: 0; margin: 0;
+}
+.nav-v2-mobile-sublist li { list-style: none; border-bottom: 1px solid rgba(9, 60, 93, .10); }
+.nav-v2-mobile-sublist li:last-child { border-bottom: 0; }
+.nav-v2-mobile-sublist a {
+  display: flex; align-items: center; justify-content: space-between;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: 24px; font-weight: 900;
+  letter-spacing: .04em; text-transform: uppercase;
+  color: var(--navy);
+  padding: 18px 0;
+}
+.nav-v2-mobile-sublist a::after {
+  content: '›';
+  font-size: 24px; font-weight: 500;
+  color: var(--peach-deep, #c4705e);
+  transition: transform .25s ease;
+}
+.nav-v2-mobile-sublist a:hover { color: var(--peach-deep, #c4705e); }
+.nav-v2-mobile-sublist a:hover::after { transform: translateX(4px); }
 
 @media (min-width: 900px) {
   .nav-v2-links { display: flex; }
@@ -1394,14 +1404,19 @@ body.concern-page .collection-landing-title {
   margin-bottom: 12px;
 }
 .theme-mens .size-label { color: rgba(255,255,255,.85); opacity: 1; }
-.size-options { display: flex; gap: 8px; }
+.size-options { display: flex; gap: 8px; flex-wrap: wrap; }
 .size-btn {
-  padding: 10px 24px;
+  padding: 10px 20px;
   font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
   font-family: 'Outfit', system-ui, sans-serif; font-weight: 500;
   cursor: pointer; border: none; transition: all .2s;
   background: var(--ivory); color: var(--stone);
   border: 0.5px solid rgba(0,0,0,.12);
+  text-decoration: none;
+  text-align: center;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex: 0 1 auto;
+  white-space: nowrap;
 }
 .theme-mens .size-btn {
   background: var(--warm-yellow); color: #1a1a1a; border: 0.5px solid var(--warm-yellow-deep);
