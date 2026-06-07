@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Matilda Jane Skincare — Science-led skincare. The best of nature, refined.</title>
-<meta name="description" content="Science-led skincare from New Zealand. Research-backed actives at percentages that actually work. The best of nature, refined.">
+<title>Matilda Jane Skincare — Science-led skincare. Formulated to perform.</title>
+<meta name="description" content="Science-led skincare made in small batches. Research-backed actives at percentages that work, transparent ingredient choices, and formulas built around skin function.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Outfit:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -208,6 +208,125 @@
   transition: transform .25s ease;
 }
 .home-coll-tile:hover .home-coll-name::after { transform: translateX(4px); }
+.home-coll-blurb {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 13px; line-height: 1.5;
+  color: var(--body-col, #4a4a4a);
+  text-align: center;
+  margin-top: 6px;
+  max-width: 200px;
+}
+
+/* === Editorial content sections (Natural, Built differently, Not sure, Label, Find right) === */
+.home-editorial {
+  background: var(--ivory);
+  padding: 80px 24px;
+}
+.home-editorial.alt { background: var(--white); }
+.home-editorial-inner {
+  max-width: 760px; margin: 0 auto;
+  text-align: center;
+}
+.home-editorial-eyebrow {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: .28em; text-transform: uppercase;
+  color: var(--peach-deep, #c4705e);
+  margin-bottom: 18px;
+}
+.home-editorial-h2 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800; font-size: 30px; line-height: 1.15;
+  letter-spacing: .03em; text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 22px;
+}
+.home-editorial-lede {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400; font-style: italic;
+  font-size: 22px; line-height: 1.4;
+  color: var(--navy);
+  margin: 0 0 22px;
+}
+.home-editorial-body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 16px; line-height: 1.75;
+  color: var(--body-col, #4a4a4a);
+  margin-bottom: 18px;
+}
+.home-editorial-body:last-of-type { margin-bottom: 0; }
+.home-editorial-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-top: 32px;
+  padding: 16px 32px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 13px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  background: var(--navy-deep, #111c27); color: #ffffff;
+  border: 1.5px solid var(--navy-deep, #111c27);
+  text-decoration: none;
+  transition: background .25s ease, transform .25s ease;
+}
+.home-editorial-cta:hover {
+  background: var(--peach-deep, #c4705e);
+  border-color: var(--peach-deep, #c4705e);
+  transform: translateY(-2px);
+}
+.home-editorial-ctas {
+  display: flex; flex-direction: column; gap: 12px;
+  align-items: center;
+  margin-top: 32px;
+}
+.home-editorial-cta.secondary {
+  background: transparent; color: var(--navy-deep, #111c27);
+}
+.home-editorial-cta.secondary:hover {
+  background: var(--navy-deep, #111c27); color: #ffffff;
+}
+@media (min-width: 720px) {
+  .home-editorial { padding: 112px 24px; }
+  .home-editorial-h2 { font-size: 38px; }
+  .home-editorial-lede { font-size: 26px; }
+  .home-editorial-body { font-size: 17px; }
+  .home-editorial-ctas { flex-direction: row; gap: 16px; }
+}
+
+/* === Built differently 3-pillar grid === */
+.home-pillars {
+  background: var(--white);
+  padding: 80px 24px;
+}
+.home-pillars-inner { max-width: 1100px; margin: 0 auto; }
+.home-pillars-header {
+  text-align: center; max-width: 640px; margin: 0 auto 48px;
+}
+.home-pillars-grid {
+  display: grid; grid-template-columns: 1fr; gap: 32px;
+  text-align: left;
+}
+.home-pillar {
+  padding: 28px 24px;
+  background: var(--ivory);
+  border-radius: 10px;
+  border-left: 3px solid var(--peach-deep, #c4705e);
+}
+.home-pillar h3 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 700; font-size: 18px; letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.home-pillar p {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 15px; line-height: 1.7;
+  color: var(--body-col, #4a4a4a);
+  margin: 0;
+}
+@media (min-width: 720px) {
+  .home-pillars { padding: 112px 24px; }
+  .home-pillars-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .home-pillar { padding: 32px 28px; }
+}
 
 /* === Collection Icon V2 — bottles pop out of circle, label below === */
 .home-coll-tile.coll-icon-v2 {
@@ -503,41 +622,49 @@
 
 <!-- SECTION 1 — HERO -->
 <section class="home-hero">
-  <div class="home-hero-eyebrow fu">Matilda Jane Skincare</div>
-  <h1 class="home-hero-h1 fu">The best of nature, <em>refined.</em></h1>
-  <p class="home-hero-sub fu">Science-led skincare. Research-backed actives, at percentages that actually work.</p>
-  <p class="home-hero-sub fu" style="margin-top: -16px; margin-bottom: 32px; font-size: 15px;">Two ways in: by what your skin needs, or by formula family. Pick whichever feels right — both lead to the same evidence-led range.</p>
+  <div class="home-hero-eyebrow fu">Matilda Jane</div>
+  <h1 class="home-hero-h1 fu">Science-led skincare.<br><em>Formulated to perform.</em></h1>
+  <p class="home-hero-sub fu">Research-backed actives at percentages that work.</p>
+  <p class="home-hero-sub fu" style="margin-top: -16px; margin-bottom: 32px; font-size: 15px;">Small-batch skincare built around skin function, purposeful ingredients, and transparent formulation.</p>
   <div class="home-hero-ctas fu">
-    <a href="#concerns" class="home-hero-cta primary">Shop by Concern</a>
-    <a href="#collections" class="home-hero-cta secondary">Shop by Collection</a>
+    <a href="#concerns" class="home-hero-cta primary">Shop the Range</a>
+    <a href="mailto:laura@matildajanenz.com?subject=Personalised%20skincare%20recommendation" class="home-hero-cta secondary">Get a Personalised Recommendation</a>
   </div>
 </section>
 
-<!-- SECTION 2 — SHOP BY COLLECTION -->
+<!-- SECTION 2 — SHOP BY SKIN NEED (Collections) -->
 <section class="home-collections" id="collections">
   <div class="home-section-eyebrow fu">The Collections</div>
-  <h2 class="home-section-h2 fu">Shop by Collection</h2>
+  <h2 class="home-section-h2 fu">Shop by skin need.</h2>
   <div class="home-coll-grid">
     <a class="home-coll-tile fu" href="products/hydrate.html">
       <div class="home-coll-circle c-hydrate"></div>
       <div class="home-coll-name">Hydrate</div>
+      <div class="home-coll-blurb">For dry, tight, or dehydrated skin.</div>
     </a>
     <a class="home-coll-tile fu" href="products/clear.html">
       <div class="home-coll-circle c-clarify"></div>
       <div class="home-coll-name">Clear</div>
-    </a>
-    <a class="home-coll-tile fu" href="products/neuro-restore.html">
-      <div class="home-coll-circle c-renew"></div>
-      <div class="home-coll-name">Renew</div>
+      <div class="home-coll-blurb">For oily, congested, or blemish-prone skin.</div>
     </a>
     <a class="home-coll-tile fu" href="products/brightening-vitamin-c.html">
       <div class="home-coll-circle c-brighten"></div>
       <div class="home-coll-name">Brighten</div>
+      <div class="home-coll-blurb">For dullness and uneven-looking tone.</div>
+    </a>
+    <a class="home-coll-tile fu" href="products/neuro-restore.html">
+      <div class="home-coll-circle c-renew"></div>
+      <div class="home-coll-name">Renew</div>
+      <div class="home-coll-blurb">For fine lines, texture, and mature skin.</div>
     </a>
     <a class="home-coll-tile fu" href="products/daily-defence.html">
       <div class="home-coll-circle c-mens"></div>
       <div class="home-coll-name">Men's</div>
+      <div class="home-coll-blurb">For men's skin, shaving, hydration, and barrier support.</div>
     </a>
+  </div>
+  <div style="text-align: center; margin-top: 56px;">
+    <a href="#collections" class="home-editorial-cta">Shop All Products</a>
   </div>
 </section>
 
@@ -585,12 +712,84 @@
   </div>
 </section>
 
-<!-- SECTION 4 — BRAND STATEMENT -->
+<!-- SECTION 4 — BRAND STATEMENT — The science is in the formula -->
 <section class="home-brand">
   <div class="home-brand-inner">
     <div class="home-brand-eyebrow fu">Formulation Philosophy</div>
     <h2 class="home-brand-h2 fu">The science is in the formula.</h2>
-    <p class="home-brand-body fu">Misleading marketing claims are everywhere in skincare. Hero ingredients listed at percentages too low to do anything meaningful for the skin. Every Matilda Jane formula is built differently — <strong>science-led, quality ingredients at effective percentages</strong>. Natural where possible. What's on the label is in the bottle. No marketing spin. Just results.</p>
+    <p class="home-brand-body fu">Skincare does not need louder claims. It needs better formulation.</p>
+    <p class="home-brand-body fu" style="margin-top: 18px;">At Matilda Jane, every ingredient has a clear role. Each formula is built around <strong>skin function, ingredient compatibility, and research-backed actives used at percentages that work</strong> — not just to look good on a label.</p>
+    <p class="home-brand-body fu" style="margin-top: 18px;">If a synthetic ingredient is used, it is there for a clear reason — such as stability, preservation, skin feel, or formula performance — and it is clearly disclosed.</p>
+  </div>
+</section>
+
+<!-- SECTION 5 — NATURAL WHERE IT MAKES SENSE -->
+<section class="home-editorial">
+  <div class="home-editorial-inner">
+    <div class="home-editorial-eyebrow fu">Ingredients</div>
+    <h2 class="home-editorial-h2 fu">Natural where it makes sense.</h2>
+    <p class="home-editorial-lede fu">Natural does not automatically mean better.</p>
+    <p class="home-editorial-body fu">At Matilda Jane, natural and naturally derived ingredients are prioritised where they genuinely support the formula. Every ingredient is chosen for function, compatibility, safety, and performance — not just because it sounds good on a label.</p>
+    <p class="home-editorial-body fu">If a synthetic ingredient is used, it is there for a clear reason, such as stability, preservation, skin feel, or formula performance, and it is clearly disclosed.</p>
+  </div>
+</section>
+
+<!-- SECTION 6 — BUILT DIFFERENTLY (3 pillars) -->
+<section class="home-pillars">
+  <div class="home-pillars-inner">
+    <div class="home-pillars-header">
+      <div class="home-editorial-eyebrow fu">How we formulate</div>
+      <h2 class="home-editorial-h2 fu">Built differently.</h2>
+    </div>
+    <div class="home-pillars-grid">
+      <div class="home-pillar fu">
+        <h3>Function-first formulas</h3>
+        <p>Every ingredient is selected for a reason — whether it supports hydration, barrier comfort, texture, stability, preservation, or the delivery of key actives.</p>
+      </div>
+      <div class="home-pillar fu">
+        <h3>Designed around skin biology</h3>
+        <p>Formulas are developed with the skin barrier, pH, moisture balance, and skin feel in mind.</p>
+      </div>
+      <div class="home-pillar fu">
+        <h3>No token actives</h3>
+        <p>Hero ingredients are not added just to look good on a label. Actives are chosen for their purpose, evidence, compatibility, and role within the complete formula.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7 — NOT SURE WHERE TO START -->
+<section class="home-editorial alt">
+  <div class="home-editorial-inner">
+    <div class="home-editorial-eyebrow fu">Personalised guidance</div>
+    <h2 class="home-editorial-h2 fu">Not sure where to start?</h2>
+    <p class="home-editorial-body fu">Your skin is shaped by more than skin type. Climate, routine, sensitivity, age, hormones, work environment, and the products you already use can all affect what your skin needs.</p>
+    <p class="home-editorial-body fu">Get a personalised recommendation based on your skin type, environment, current routine, and main skin concerns.</p>
+    <a href="mailto:laura@matildajanenz.com?subject=Personalised%20skincare%20recommendation" class="home-editorial-cta">Get a Personalised Recommendation</a>
+  </div>
+</section>
+
+<!-- SECTION 8 — WHAT'S ON THE LABEL IS IN THE FORMULA -->
+<section class="home-editorial">
+  <div class="home-editorial-inner">
+    <div class="home-editorial-eyebrow fu">Transparency</div>
+    <h2 class="home-editorial-h2 fu">What's on the label is in the formula.</h2>
+    <p class="home-editorial-body fu">Matilda Jane uses clear ingredient choices and transparent formulation logic.</p>
+    <p class="home-editorial-body fu">That means every ingredient is selected for a purpose. Actives are chosen for their role in the formula, botanicals are used where they genuinely support the product, and natural or naturally derived ingredients are prioritised where they make sense.</p>
+    <p class="home-editorial-body fu">Synthetic ingredients are always disclosed clearly, with their function explained where useful. Preservative systems are chosen for product safety, stability, and suitability.</p>
+  </div>
+</section>
+
+<!-- SECTION 9 — FIND THE RIGHT FORMULA (closing) -->
+<section class="home-editorial alt">
+  <div class="home-editorial-inner">
+    <div class="home-editorial-eyebrow fu">Get started</div>
+    <h2 class="home-editorial-h2 fu">Find the right formula for your skin.</h2>
+    <p class="home-editorial-body fu">Explore the range by skin need, product type, or routine step — or get a personalised recommendation if you are not sure where to start.</p>
+    <div class="home-editorial-ctas">
+      <a href="#collections" class="home-editorial-cta">Shop the Range</a>
+      <a href="mailto:laura@matildajanenz.com?subject=Personalised%20skincare%20recommendation" class="home-editorial-cta secondary">Get a Personalised Recommendation</a>
+    </div>
   </div>
 </section>
 
