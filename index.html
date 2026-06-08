@@ -42,7 +42,7 @@ body { background: var(--mj-offwhite); }
   font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 400;
   font-size: clamp(34px, 7vw, 72px);
-  line-height: 0.9;
+  line-height: 1;
   letter-spacing: .06em;
   text-transform: uppercase;
   color: #ffffff;
@@ -62,9 +62,12 @@ body { background: var(--mj-offwhite); }
   padding-left: .56em;
   text-transform: uppercase;
   color: #ffffff;
-  margin-top: 0;
+  margin-top: 10px;
   line-height: 1;
   opacity: .9;
+}
+@media (min-width: 720px) {
+  .brand-banner-sub { margin-top: 12px; }
 }
 @media (min-width: 720px) {
   .brand-banner { padding: 44px 24px 32px; }
@@ -776,6 +779,8 @@ body.is-home .site-nav-v2-inner { justify-content: center; }
     <div class="brand-banner-sub">Skincare</div>
   </div>
 </section>
+<!-- Sentinel for IntersectionObserver — when this scrolls out of view the nav locks to top -->
+<div id="nav-sentinel" aria-hidden="true" style="height:1px;"></div>
 
 <!-- SHARED NAV -->
 <nav class="site-nav-v2">
@@ -1059,41 +1064,37 @@ body.is-home .site-nav-v2-inner { justify-content: center; }
 
 <script src="assets/product.js"></script>
 <script>
-  /* Bulletproof sticky nav — JS-driven fixed positioning.
-     When you scroll past the black banner, the nav locks to the top of the viewport.
-     A spacer element fills the gap so content doesn't jump up. */
+  /* Bulletproof sticky nav using IntersectionObserver.
+     Fires reliably during iOS Safari momentum scrolling (scroll events don't).
+     When the sentinel below the banner scrolls out of viewport: nav locks to top.
+     When sentinel re-enters viewport: nav goes back to natural position. */
   (function () {
     const nav = document.querySelector('.site-nav-v2');
     const spacer = document.getElementById('nav-spacer');
-    const banner = document.querySelector('.brand-banner');
-    if (!nav || !spacer || !banner) return;
+    const sentinel = document.getElementById('nav-sentinel');
+    if (!nav || !spacer || !sentinel) return;
 
-    let bannerHeight = banner.offsetHeight;
-    let navHeight = nav.offsetHeight;
-
-    const recalc = () => {
-      bannerHeight = banner.offsetHeight;
-      navHeight = nav.offsetHeight;
-      spacer.style.height = navHeight + 'px';
+    const recalcSpacer = () => {
+      spacer.style.height = nav.offsetHeight + 'px';
     };
-    recalc();
-    window.addEventListener('resize', recalc, { passive: true });
+    recalcSpacer();
+    window.addEventListener('resize', recalcSpacer, { passive: true });
 
-    const onScroll = () => {
-      if (window.scrollY >= bannerHeight) {
-        if (!nav.classList.contains('is-fixed')) {
+    // Watch the sentinel — when it's no longer intersecting the viewport, nav is fixed
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (!entry.isIntersecting) {
           nav.classList.add('is-fixed');
           spacer.classList.add('active');
-        }
-      } else {
-        if (nav.classList.contains('is-fixed')) {
+        } else {
           nav.classList.remove('is-fixed');
           spacer.classList.remove('active');
         }
-      }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+      },
+      { rootMargin: '0px', threshold: 0 }
+    );
+    observer.observe(sentinel);
   })();
 </script>
 </body>
