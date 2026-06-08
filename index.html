@@ -30,58 +30,62 @@
 /* === Homepage palette V2 — base bg === */
 body { background: var(--mj-offwhite); }
 
-/* === BLACK BRAND BANNER === */
+/* === BLACK BRAND BANNER (thinner) === */
 .brand-banner {
   background: var(--mj-black);
   color: #ffffff;
-  padding: 40px 24px 36px;
+  padding: 22px 24px 18px;
   text-align: center;
 }
 .brand-banner-inner { max-width: 1100px; margin: 0 auto; }
 .brand-banner-h1 {
   font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 400;
-  font-size: clamp(38px, 8vw, 88px);
+  font-size: clamp(30px, 6.4vw, 64px);
   line-height: 1;
-  letter-spacing: .08em;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: #ffffff;
   margin: 0;
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: .32em;
+  gap: .28em;
 }
 .brand-banner-h1 .bb-reg { font-weight: 400; }
 .brand-banner-h1 .bb-thin { font-weight: 200; }
 .brand-banner-sub {
   font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 400;
-  font-size: clamp(14px, 2.4vw, 24px);
-  letter-spacing: .68em;
-  padding-left: .68em; /* offset visual centring caused by tracking */
+  font-size: clamp(11px, 1.6vw, 16px);
+  letter-spacing: .56em;
+  padding-left: .56em;
   text-transform: uppercase;
   color: #ffffff;
-  margin-top: 14px;
-  opacity: .95;
+  margin-top: 4px;
+  opacity: .9;
 }
 @media (min-width: 720px) {
-  .brand-banner { padding: 56px 24px 48px; }
-  .brand-banner-sub { margin-top: 12px; }
+  .brand-banner { padding: 28px 24px 22px; }
+  .brand-banner-sub { margin-top: 6px; }
 }
 
-/* === STICKY NAV === */
+/* === STICKY NAV (force sticky in all browsers, hide redundant logo on homepage) === */
 .site-nav-v2 {
-  position: sticky;
-  top: 0;
-  z-index: 60;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 90 !important;
   background: #ffffff;
   border-bottom: 1px solid rgba(0,0,0,.08);
   transition: box-shadow .25s ease;
+  will-change: transform;
 }
 .site-nav-v2.scrolled {
   box-shadow: 0 4px 16px rgba(0,0,0,.06);
 }
+body.is-home .nav-logo { display: none; }
+body.is-home .site-nav-v2-inner { justify-content: center; }
 
 .home-hero {
   background: var(--ivory);
@@ -623,12 +627,38 @@ body { background: var(--mj-offwhite); }
    All colour pairs are WCAG AA/AAA verified.
    ========================================================================= */
 
-/* HERO — offwhite bg, charcoal type, sage-deep accent eyebrow */
-.home-hero { background: var(--mj-offwhite); }
-.home-hero-eyebrow { color: var(--mj-sage-deep); }                /* 7.3:1 AAA */
-.home-hero-h1 { color: var(--mj-black); }                          /* 15.9:1 AAA */
-.home-hero-h1 em { color: var(--mj-sage-deep); font-style: italic; } /* 7.3:1 AAA */
-.home-hero-sub { color: var(--mj-black); opacity: .85; }
+/* HERO — offwhite bg, charcoal type, sage-deep accent — lighter + more elegant */
+.home-hero { background: var(--mj-offwhite); padding-top: 64px; padding-bottom: 64px; }
+.home-hero-eyebrow { display: none; }                              /* redundant w/ banner */
+.home-hero-h1 {
+  color: var(--mj-black);
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.15;
+  letter-spacing: .015em;
+  text-transform: none;
+  max-width: 760px;
+  margin-left: auto; margin-right: auto;
+  margin-bottom: 18px;
+}
+.home-hero-h1 em {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--mj-sage-deep);
+  font-size: 1.06em;
+}
+.home-hero-sub {
+  color: var(--mj-black);
+  opacity: .82;
+  font-size: 16px;
+  max-width: 560px;
+}
+@media (min-width: 720px) {
+  .home-hero { padding-top: 88px; padding-bottom: 88px; }
+  .home-hero-sub { font-size: 17px; }
+}
 
 /* HERO CTAs — make both buttons identical width */
 .home-hero-ctas { gap: 14px; max-width: 360px; }
@@ -726,7 +756,7 @@ body { background: var(--mj-offwhite); }
 .home-pillar p { color: var(--mj-black); opacity: .82; }
 </style>
 </head>
-<body>
+<body class="is-home">
 
 <!-- BLACK BRAND BANNER -->
 <section class="brand-banner">
