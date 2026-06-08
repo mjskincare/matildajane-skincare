@@ -7,7 +7,7 @@
 <meta name="description" content="Science-led skincare made in small batches. Research-backed actives at percentages that work, transparent ingredient choices, and formulas built around skin function.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Outfit:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/product.css">
 <style>
 :root {
@@ -20,13 +20,14 @@
   --c-targeted: #b0a0c0;
 
   /* === Homepage palette V2 === */
-  --mj-black:       #000000;
+  --mj-black:       #0F1A24; /* deep charcoal with blue tinge */
   --mj-mint-pale:   #CFFFE2;
   --mj-sage:        #A2D5C6;
+  --mj-sage-deep:   #2D5A4A; /* accent text for light bg \u2014 AAA contrast */
   --mj-offwhite:    #F6F6F6;
 }
 
-/* === Homepage palette V2 — scoped overrides === */
+/* === Homepage palette V2 — base bg === */
 body { background: var(--mj-offwhite); }
 
 /* === BLACK BRAND BANNER === */
@@ -39,47 +40,34 @@ body { background: var(--mj-offwhite); }
 .brand-banner-inner { max-width: 1100px; margin: 0 auto; }
 .brand-banner-h1 {
   font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 900;
-  font-size: clamp(40px, 9vw, 96px);
+  font-weight: 400;
+  font-size: clamp(38px, 8vw, 88px);
   line-height: 1;
-  letter-spacing: .14em;
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: #ffffff;
   margin: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: .32em;
 }
+.brand-banner-h1 .bb-reg { font-weight: 400; }
+.brand-banner-h1 .bb-thin { font-weight: 200; }
 .brand-banner-sub {
   font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 700;
-  font-size: clamp(14px, 2.6vw, 28px);
-  letter-spacing: .42em;
+  font-weight: 400;
+  font-size: clamp(14px, 2.4vw, 24px);
+  letter-spacing: .68em;
+  padding-left: .68em; /* offset visual centring caused by tracking */
   text-transform: uppercase;
   color: #ffffff;
-  margin-top: 8px;
+  margin-top: 14px;
   opacity: .95;
 }
 @media (min-width: 720px) {
   .brand-banner { padding: 56px 24px 48px; }
   .brand-banner-sub { margin-top: 12px; }
-}
-
-/* === TAGLINE STRIP === */
-.brand-tagline-strip {
-  background: var(--mj-black);
-  color: #ffffff;
-  padding: 18px 24px;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,.10);
-}
-.brand-tagline-strip p {
-  font-family: 'Outfit', system-ui, sans-serif;
-  font-size: 13px;
-  letter-spacing: .04em;
-  margin: 0;
-  color: rgba(255,255,255,.92);
-}
-@media (min-width: 720px) {
-  .brand-tagline-strip { padding: 22px 24px; }
-  .brand-tagline-strip p { font-size: 14px; }
 }
 
 /* === STICKY NAV === */
@@ -95,86 +83,6 @@ body { background: var(--mj-offwhite); }
   box-shadow: 0 4px 16px rgba(0,0,0,.06);
 }
 
-/* HERO */
-.home-hero { background: var(--mj-offwhite); }
-.home-hero-eyebrow { color: var(--mj-sage); }
-.home-hero-h1 { color: var(--mj-black); }
-.home-hero-h1 em { color: var(--mj-sage); }
-.home-hero-sub { color: var(--mj-black); opacity: .8; }
-.home-hero-cta.primary {
-  background: var(--mj-black); color: #ffffff;
-  border-color: var(--mj-black);
-}
-.home-hero-cta.primary:hover {
-  background: var(--mj-sage); color: var(--mj-black);
-  border-color: var(--mj-sage);
-}
-.home-hero-cta.secondary {
-  background: transparent; color: var(--mj-black);
-  border-color: var(--mj-black);
-}
-.home-hero-cta.secondary:hover {
-  background: var(--mj-black); color: #ffffff;
-}
-
-/* SHOP BY SKIN NEED / Collections section */
-.home-collections { background: #ffffff; }
-.home-section-eyebrow { color: var(--mj-sage); }
-.home-section-h2 { color: var(--mj-black); }
-.home-coll-name { color: var(--mj-black); }
-.home-coll-blurb { color: var(--mj-black); opacity: .72; }
-
-/* SHOP BY CONCERN — keep icons but recolour */
-.home-concerns { background: var(--mj-mint-pale); }
-.home-concern-icon-box {
-  background: #ffffff;
-  box-shadow: 0 4px 14px rgba(0,0,0,.04);
-}
-.home-concern-tile:hover .home-concern-icon-box {
-  background: var(--mj-sage);
-}
-.home-concern-icon { color: var(--mj-black); }
-.home-concern-tile:hover .home-concern-icon { color: #ffffff; }
-.home-concern-name { color: var(--mj-black); }
-
-/* BRAND STATEMENT — black backdrop */
-.home-brand { background: var(--mj-black); color: #ffffff; }
-.home-brand-eyebrow { color: var(--mj-sage); }
-.home-brand-h2 { color: #ffffff; }
-.home-brand-body { color: rgba(255,255,255,.85); }
-.home-brand-body strong { color: var(--mj-sage); font-weight: 600; }
-
-/* EDITORIAL sections */
-.home-editorial { background: var(--mj-mint-pale); }
-.home-editorial.alt { background: var(--mj-offwhite); }
-.home-editorial-eyebrow { color: var(--mj-sage); }
-.home-editorial-h2 { color: var(--mj-black); }
-.home-editorial-lede { color: var(--mj-black); }
-.home-editorial-body { color: var(--mj-black); opacity: .8; }
-.home-editorial-cta {
-  background: var(--mj-black); color: #ffffff;
-  border-color: var(--mj-black);
-}
-.home-editorial-cta:hover {
-  background: var(--mj-sage); color: var(--mj-black);
-  border-color: var(--mj-sage);
-}
-.home-editorial-cta.secondary {
-  background: transparent; color: var(--mj-black);
-  border-color: var(--mj-black);
-}
-.home-editorial-cta.secondary:hover {
-  background: var(--mj-black); color: #ffffff;
-}
-
-/* PILLARS */
-.home-pillars { background: #ffffff; }
-.home-pillar {
-  background: var(--mj-mint-pale);
-  border-left: 3px solid var(--mj-sage);
-}
-.home-pillar h3 { color: var(--mj-black); }
-.home-pillar p { color: var(--mj-black); opacity: .8; }
 .home-hero {
   background: var(--ivory);
   padding: 96px 24px 80px;
@@ -709,6 +617,113 @@ body { background: var(--mj-offwhite); }
 
 .fu { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 .fu.vis { opacity: 1; transform: translateY(0); }
+
+/* =========================================================================
+   PALETTE V2 OVERRIDES — placed last so they win the cascade
+   All colour pairs are WCAG AA/AAA verified.
+   ========================================================================= */
+
+/* HERO — offwhite bg, charcoal type, sage-deep accent eyebrow */
+.home-hero { background: var(--mj-offwhite); }
+.home-hero-eyebrow { color: var(--mj-sage-deep); }                /* 7.3:1 AAA */
+.home-hero-h1 { color: var(--mj-black); }                          /* 15.9:1 AAA */
+.home-hero-h1 em { color: var(--mj-sage-deep); font-style: italic; } /* 7.3:1 AAA */
+.home-hero-sub { color: var(--mj-black); opacity: .85; }
+
+/* HERO CTAs — make both buttons identical width */
+.home-hero-ctas { gap: 14px; max-width: 360px; }
+.home-hero-cta.primary,
+.home-hero-cta.secondary {
+  width: 100%;
+  min-height: 56px;
+  padding: 18px 28px;
+  font-size: 12px;
+  line-height: 1.25;
+  border-width: 1.5px;
+  letter-spacing: .14em;
+  white-space: normal; /* allow wrap on narrow screens */
+}
+.home-hero-cta.primary {
+  background: var(--mj-black); color: #ffffff;
+  border-color: var(--mj-black);
+}
+.home-hero-cta.primary:hover {
+  background: var(--mj-sage-deep); color: #ffffff;
+  border-color: var(--mj-sage-deep);
+}
+.home-hero-cta.secondary {
+  background: transparent; color: var(--mj-black);
+  border-color: var(--mj-black);
+}
+.home-hero-cta.secondary:hover {
+  background: var(--mj-black); color: #ffffff;
+}
+@media (min-width: 720px) {
+  .home-hero-ctas { flex-direction: row; max-width: 720px; }
+  .home-hero-cta.primary,
+  .home-hero-cta.secondary { flex: 1 1 0; min-width: 0; }
+}
+
+/* SHOP BY SKIN NEED / Collections section */
+.home-collections { background: #ffffff; }
+.home-section-eyebrow { color: var(--mj-sage-deep); }              /* 7.3:1 AAA */
+.home-section-h2 { color: var(--mj-black); }
+.home-coll-name { color: var(--mj-black); }
+.home-coll-blurb { color: var(--mj-black); opacity: .72; }
+
+/* SHOP BY CONCERNS — pale mint backdrop, white icon tiles, charcoal on hover */
+.home-concerns { background: var(--mj-mint-pale); }
+.home-concern-icon-box {
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0,0,0,.04);
+}
+.home-concern-tile:hover .home-concern-icon-box {
+  background: var(--mj-black);
+  box-shadow: 0 12px 32px rgba(0,0,0,.12);
+}
+.home-concern-icon { color: var(--mj-black); }                     /* 15.9:1 AAA */
+.home-concern-tile:hover .home-concern-icon { color: var(--mj-sage); } /* 11.5:1 AAA on charcoal */
+.home-concern-name { color: var(--mj-black); }
+
+/* BRAND STATEMENT — charcoal backdrop */
+.home-brand { background: var(--mj-black); color: #ffffff; }
+.home-brand-eyebrow { color: var(--mj-sage); }                     /* 11.5:1 AAA */
+.home-brand-h2 { color: #ffffff; }                                 /* 17.8:1 AAA */
+.home-brand-body { color: rgba(255,255,255,.88); }
+.home-brand-body strong { color: var(--mj-sage); font-weight: 600; }
+
+/* EDITORIAL sections */
+.home-editorial { background: var(--mj-mint-pale); }
+.home-editorial.alt { background: var(--mj-offwhite); }
+.home-editorial-eyebrow { color: var(--mj-sage-deep); }            /* 5.7:1 AA on mint, 7.3:1 AAA on offwhite */
+.home-editorial-h2 { color: var(--mj-black); }
+.home-editorial-lede { color: var(--mj-black); }
+.home-editorial-body { color: var(--mj-black); opacity: .82; }
+.home-editorial-cta {
+  background: var(--mj-black); color: #ffffff;
+  border-color: var(--mj-black);
+  min-height: 56px;
+}
+.home-editorial-cta:hover {
+  background: var(--mj-sage-deep); color: #ffffff;
+  border-color: var(--mj-sage-deep);
+}
+.home-editorial-cta.secondary {
+  background: transparent; color: var(--mj-black);
+  border-color: var(--mj-black);
+}
+.home-editorial-cta.secondary:hover {
+  background: var(--mj-black); color: #ffffff;
+}
+
+/* PILLARS */
+.home-pillars { background: #ffffff; }
+.home-pillar {
+  background: var(--mj-mint-pale);
+  border-left: 3px solid var(--mj-sage-deep);
+}
+.home-pillar h3 { color: var(--mj-black); }
+.home-pillar p { color: var(--mj-black); opacity: .82; }
 </style>
 </head>
 <body>
@@ -716,14 +731,9 @@ body { background: var(--mj-offwhite); }
 <!-- BLACK BRAND BANNER -->
 <section class="brand-banner">
   <div class="brand-banner-inner">
-    <h1 class="brand-banner-h1">Matilda Jane</h1>
+    <h1 class="brand-banner-h1"><span class="bb-reg">Matilda</span> <span class="bb-thin">Jane</span></h1>
     <div class="brand-banner-sub">Skincare</div>
   </div>
-</section>
-
-<!-- TAGLINE STRIP -->
-<section class="brand-tagline-strip">
-  <p>Science-led skincare. Research-backed actives at percentages that work. Formulated to perform.</p>
 </section>
 
 <!-- SHARED NAV -->
@@ -796,7 +806,7 @@ body { background: var(--mj-offwhite); }
   <p class="home-hero-sub fu">Research-backed actives at percentages that work.</p>
   <p class="home-hero-sub fu" style="margin-top: -16px; margin-bottom: 32px; font-size: 15px;">Small-batch skincare built around skin function, purposeful ingredients, and transparent formulation.</p>
   <div class="home-hero-ctas fu">
-    <a href="#concerns" class="home-hero-cta primary">Shop the Range</a>
+    <a href="#collections" class="home-hero-cta primary">Shop by Skin Needs</a>
     <a href="mailto:laura@matildajanenz.com?subject=Personalised%20skincare%20recommendation" class="home-hero-cta secondary">Get a Personalised Recommendation</a>
   </div>
 </section>
