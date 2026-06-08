@@ -18,7 +18,163 @@
   --c-brighten: #c89311;
   --c-mens:     #233237;
   --c-targeted: #b0a0c0;
+
+  /* === Homepage palette V2 === */
+  --mj-black:       #000000;
+  --mj-mint-pale:   #CFFFE2;
+  --mj-sage:        #A2D5C6;
+  --mj-offwhite:    #F6F6F6;
 }
+
+/* === Homepage palette V2 — scoped overrides === */
+body { background: var(--mj-offwhite); }
+
+/* === BLACK BRAND BANNER === */
+.brand-banner {
+  background: var(--mj-black);
+  color: #ffffff;
+  padding: 40px 24px 36px;
+  text-align: center;
+}
+.brand-banner-inner { max-width: 1100px; margin: 0 auto; }
+.brand-banner-h1 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 9vw, 96px);
+  line-height: 1;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+}
+.brand-banner-sub {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(14px, 2.6vw, 28px);
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-top: 8px;
+  opacity: .95;
+}
+@media (min-width: 720px) {
+  .brand-banner { padding: 56px 24px 48px; }
+  .brand-banner-sub { margin-top: 12px; }
+}
+
+/* === TAGLINE STRIP === */
+.brand-tagline-strip {
+  background: var(--mj-black);
+  color: #ffffff;
+  padding: 18px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+.brand-tagline-strip p {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 13px;
+  letter-spacing: .04em;
+  margin: 0;
+  color: rgba(255,255,255,.92);
+}
+@media (min-width: 720px) {
+  .brand-tagline-strip { padding: 22px 24px; }
+  .brand-tagline-strip p { font-size: 14px; }
+}
+
+/* === STICKY NAV === */
+.site-nav-v2 {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  transition: box-shadow .25s ease;
+}
+.site-nav-v2.scrolled {
+  box-shadow: 0 4px 16px rgba(0,0,0,.06);
+}
+
+/* HERO */
+.home-hero { background: var(--mj-offwhite); }
+.home-hero-eyebrow { color: var(--mj-sage); }
+.home-hero-h1 { color: var(--mj-black); }
+.home-hero-h1 em { color: var(--mj-sage); }
+.home-hero-sub { color: var(--mj-black); opacity: .8; }
+.home-hero-cta.primary {
+  background: var(--mj-black); color: #ffffff;
+  border-color: var(--mj-black);
+}
+.home-hero-cta.primary:hover {
+  background: var(--mj-sage); color: var(--mj-black);
+  border-color: var(--mj-sage);
+}
+.home-hero-cta.secondary {
+  background: transparent; color: var(--mj-black);
+  border-color: var(--mj-black);
+}
+.home-hero-cta.secondary:hover {
+  background: var(--mj-black); color: #ffffff;
+}
+
+/* SHOP BY SKIN NEED / Collections section */
+.home-collections { background: #ffffff; }
+.home-section-eyebrow { color: var(--mj-sage); }
+.home-section-h2 { color: var(--mj-black); }
+.home-coll-name { color: var(--mj-black); }
+.home-coll-blurb { color: var(--mj-black); opacity: .72; }
+
+/* SHOP BY CONCERN — keep icons but recolour */
+.home-concerns { background: var(--mj-mint-pale); }
+.home-concern-icon-box {
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0,0,0,.04);
+}
+.home-concern-tile:hover .home-concern-icon-box {
+  background: var(--mj-sage);
+}
+.home-concern-icon { color: var(--mj-black); }
+.home-concern-tile:hover .home-concern-icon { color: #ffffff; }
+.home-concern-name { color: var(--mj-black); }
+
+/* BRAND STATEMENT — black backdrop */
+.home-brand { background: var(--mj-black); color: #ffffff; }
+.home-brand-eyebrow { color: var(--mj-sage); }
+.home-brand-h2 { color: #ffffff; }
+.home-brand-body { color: rgba(255,255,255,.85); }
+.home-brand-body strong { color: var(--mj-sage); font-weight: 600; }
+
+/* EDITORIAL sections */
+.home-editorial { background: var(--mj-mint-pale); }
+.home-editorial.alt { background: var(--mj-offwhite); }
+.home-editorial-eyebrow { color: var(--mj-sage); }
+.home-editorial-h2 { color: var(--mj-black); }
+.home-editorial-lede { color: var(--mj-black); }
+.home-editorial-body { color: var(--mj-black); opacity: .8; }
+.home-editorial-cta {
+  background: var(--mj-black); color: #ffffff;
+  border-color: var(--mj-black);
+}
+.home-editorial-cta:hover {
+  background: var(--mj-sage); color: var(--mj-black);
+  border-color: var(--mj-sage);
+}
+.home-editorial-cta.secondary {
+  background: transparent; color: var(--mj-black);
+  border-color: var(--mj-black);
+}
+.home-editorial-cta.secondary:hover {
+  background: var(--mj-black); color: #ffffff;
+}
+
+/* PILLARS */
+.home-pillars { background: #ffffff; }
+.home-pillar {
+  background: var(--mj-mint-pale);
+  border-left: 3px solid var(--mj-sage);
+}
+.home-pillar h3 { color: var(--mj-black); }
+.home-pillar p { color: var(--mj-black); opacity: .8; }
 .home-hero {
   background: var(--ivory);
   padding: 96px 24px 80px;
@@ -557,6 +713,19 @@
 </head>
 <body>
 
+<!-- BLACK BRAND BANNER -->
+<section class="brand-banner">
+  <div class="brand-banner-inner">
+    <h1 class="brand-banner-h1">Matilda Jane</h1>
+    <div class="brand-banner-sub">Skincare</div>
+  </div>
+</section>
+
+<!-- TAGLINE STRIP -->
+<section class="brand-tagline-strip">
+  <p>Science-led skincare. Research-backed actives at percentages that work. Formulated to perform.</p>
+</section>
+
 <!-- SHARED NAV -->
 <nav class="site-nav-v2">
   <div class="site-nav-v2-inner">
@@ -837,5 +1006,17 @@
 </footer>
 
 <script src="assets/product.js"></script>
+<script>
+  // Add .scrolled to sticky nav once you scroll past the brand banner
+  (function () {
+    const nav = document.querySelector('.site-nav-v2');
+    if (!nav) return;
+    const onScroll = () => {
+      nav.classList.toggle('scrolled', window.scrollY > 12);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
 </body>
 </html>
