@@ -2547,3 +2547,50 @@ sup.ref {
   max-width: 560px; margin: 0 auto 18px;
   text-align: center;
 }
+
+/* =========================================================================
+   MOBILE IMAGE SIZE CAPS — keep images proportionate on phone screens
+   ========================================================================= */
+@media (max-width: 720px) {
+  /* Product cards (grid) — smaller squares so a row fits on screen */
+  .product-card-img {
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .product-grid {
+    gap: 28px;
+  }
+
+  /* Product hero main image (PDP) — cap height so the buy box is reachable */
+  .product-image-main {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .product-image-main img {
+    max-height: 360px;
+    object-fit: contain;
+  }
+
+  /* Thumb strip — keep thumbs compact */
+  .product-thumbs .thumb { width: 48px; height: 48px; }
+
+  /* Ingredient spotlight cards — smaller image wrap */
+  .spotlight-img-wrap {
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Why-cleanse banner image — capped on mobile */
+  .why-cleanse-banner-image {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* Collection landing hero circle products */
+  .collection-circle { max-width: 180px; max-height: 180px; }
+
+  /* Homepage collection circles */
+  .home-coll-circle { width: 150px; height: 150px; }
+}

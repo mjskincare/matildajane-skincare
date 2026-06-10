@@ -99,7 +99,8 @@ body { background: var(--mj-offwhite); }
 .nav-spacer { display: none; }
 .nav-spacer.active { display: block; }
 body.is-home .nav-logo { display: none; }
-body.is-home .site-nav-v2-inner { justify-content: center; }
+body.is-home .site-nav-v2-inner { justify-content: flex-end; }
+body.is-home .nav-v2-links { margin-right: auto; }
 
 .home-hero {
   background: var(--ivory);
@@ -894,49 +895,7 @@ body.is-home .site-nav-v2-inner { justify-content: center; }
   </div>
 </section>
 
-<!-- SECTION 3 — SHOP BY CONCERNS (6 titles, icon tiles with visible bg, title underneath) -->
-<section class="home-concerns" id="concerns">
-  <div class="home-section-eyebrow fu">Concerns</div>
-  <h2 class="home-section-h2 fu">Shop by Concerns</h2>
-  <div class="home-concern-grid">
-    <a class="home-concern-tile fu" href="concerns/ageing-and-loss-of-firmness.html">
-      <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l7-7 7 7M5 19l7-7 7 7"/></svg>
-      </div>
-      <div class="home-concern-name">Anti-Ageing</div>
-    </a>
-    <a class="home-concern-tile fu" href="concerns/dryness-and-dehydration.html">
-      <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s-7 8-7 13a7 7 0 0 0 14 0c0-5-7-13-7-13z"/></svg>
-      </div>
-      <div class="home-concern-name">Dry Skin</div>
-    </a>
-    <a class="home-concern-tile fu" href="concerns/uneven-skin-tone.html">
-      <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><circle cx="7" cy="8" r="1.2"/><circle cx="17" cy="9" r="1"/><circle cx="6" cy="16" r=".8"/><circle cx="18" cy="15" r="1.1"/></svg>
-      </div>
-      <div class="home-concern-name">Dark Spots</div>
-    </a>
-    <a class="home-concern-tile fu" href="concerns/blemishes-and-congestion.html">
-      <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1"/><circle cx="14" cy="13" r="1"/><circle cx="11" cy="15" r="1"/></svg>
-      </div>
-      <div class="home-concern-name">Blemishes</div>
-    </a>
-    <a class="home-concern-tile fu" href="concerns/uneven-skin-tone.html">
-      <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12c4-3 6-3 9 0s5 3 9 0"/></svg>
-      </div>
-      <div class="home-concern-name">Uneven Skin Tone</div>
-    </a>
-    <a class="home-concern-tile fu" href="concerns/dark-circles.html">
-      <div class="home-concern-icon-box">
-        <svg class="home-concern-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-      </div>
-      <div class="home-concern-name">Under Eyes</div>
-    </a>
-  </div>
-</section>
+<!-- SECTION 3 — removed (Shop by Concerns was redundant with Shop by Skin Need; concerns still in nav dropdown) -->
 
 <!-- SECTION 4 — BRAND STATEMENT — The science is in the formula -->
 <section class="home-brand">
