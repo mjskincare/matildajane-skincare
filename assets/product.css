@@ -367,12 +367,13 @@ body.concern-page .collection-landing-title {
   font-size: 13px; line-height: 1.5;
   color: var(--body-col);
 }
-/* On phones the three benefits sit side by side — drop the descriptions so
-   the columns stay clean (icon + title only). */
+/* On phones the three benefits sit side by side; keep the descriptions but
+   shrink them so they wrap neatly under each icon + title. */
 @media (max-width: 719px) {
-  .collection-benefit-sub { display: none; }
+  .collection-benefit { gap: 6px; }
   .collection-benefit svg { width: 28px; height: 28px; }
   .collection-benefit-title { font-size: 13px; }
+  .collection-benefit-sub { font-size: 11px; line-height: 1.35; }
 }
 
 /* Three product circles row */
