@@ -919,6 +919,7 @@ body.concern-page .collection-landing-title {
   transition: transform .3s cubic-bezier(0.32, 0.72, 0, 1);
   z-index: 80;
   overflow-y: auto;
+  display: flex; flex-direction: column;
 }
 .nav-v2-mobile.open { transform: translateX(0); }
 .nav-v2-mobile-overlay {
@@ -943,7 +944,7 @@ body.concern-page .collection-landing-title {
 .nav-v2-mobile-section > a, .nav-v2-mobile-section > .label {
   display: block;
   font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 800; font-size: 18px;
+  font-weight: 900; font-size: 19px;
   color: var(--navy);
   padding: 12px 0;
   letter-spacing: -.005em;
@@ -955,16 +956,43 @@ body.concern-page .collection-landing-title {
 .nav-v2-mobile-sublist a {
   display: block;
   font-family: 'Outfit', system-ui, sans-serif;
-  font-size: 14px; font-weight: 600;
+  font-size: 15px; font-weight: 700;
   color: var(--body-col, #4a4a4a);
   padding: 8px 0;
 }
 .nav-v2-mobile-sublist a:hover { color: var(--navy); }
 
+/* Branded panel across the bottom of the drawer — Matilda Jane on black */
+.nav-v2-mobile-brand {
+  margin: auto -28px -32px;        /* push to the bottom, full-bleed past the panel padding */
+  background: #111c27;
+  color: #ffffff;
+  text-align: center;
+  padding: 38px 24px;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
 @media (min-width: 900px) {
   .nav-v2-links { display: flex; }
   .nav-v2-hamburger { display: none; }
   .nav-v2-mobile, .nav-v2-mobile-overlay { display: none; }
+}
+
+/* Mobile top bar — Hourglass layout: menu button left, brand centred, cart right */
+@media (max-width: 899px) {
+  .site-nav-v2-inner { justify-content: flex-end; }
+  .nav-v2-hamburger {
+    position: absolute; left: 24px; top: 50%;
+    transform: translateY(-50%); margin: 0;
+  }
+  body:not(.is-home) .nav-logo {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%); margin: 0;
+  }
 }
 
 /* === MURAD-STYLE PRODUCT CARD HOVER === */
