@@ -548,8 +548,8 @@ body.concern-page .collection-landing-title {
   background: #f4ece0;
 }
 .product-card-img.product-card-tile-cream img {
-  object-fit: contain;
-  padding: 14%;
+  object-fit: cover;
+  padding: 0;
 }
 .product-card-img .img-flip-h {
   transform: scaleX(-1);
