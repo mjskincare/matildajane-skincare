@@ -938,9 +938,9 @@ body.concern-page .collection-landing-title {
   display: flex; flex-direction: column;
 }
 .nav-v2-mobile.open { transform: translateX(0); }
-/* Scrollable list area so the brand panel can stay pinned to the bottom */
+/* Scrollable list area; takes natural height so the brand can fill the rest */
 .nav-v2-mobile-scroll {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   min-height: 0;
   overflow-y: auto;
 }
@@ -988,17 +988,20 @@ body.concern-page .collection-landing-title {
 }
 .nav-v2-mobile-sublist a:hover { color: var(--accent-deep, #c4705e); }
 
-/* Branded panel pinned across the bottom of the drawer — Matilda Jane on black */
+/* Branded block fills the bottom of the drawer — large Matilda Jane on black */
 .nav-v2-mobile-brand {
-  flex-shrink: 0;
-  margin: 0 -24px;                 /* full-bleed past the panel side padding */
+  flex: 1 0 auto;
+  min-height: 240px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 20px -24px 0;            /* gap above; full-bleed to the panel edges */
   background: #111c27;
   color: #ffffff;
   text-align: center;
-  padding: 30px 24px;
+  padding: 24px;
   font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 800;
-  font-size: 20px;
+  font-size: 28px;
+  line-height: 1.15;
   letter-spacing: .16em;
   text-transform: uppercase;
 }
