@@ -565,6 +565,14 @@ body.concern-page .collection-landing-title {
   object-fit: cover;
   padding: 0;
 }
+/* Black tile background for dark product shots (bottle on black) */
+.product-card-img.product-card-tile-black {
+  background: #000000;
+}
+.product-card-img.product-card-tile-black img {
+  object-fit: contain;
+  padding: 0;
+}
 .product-card-img .img-flip-h {
   transform: scaleX(-1);
 }
