@@ -344,8 +344,8 @@ body.concern-page .collection-landing-title {
   max-width: 480px; margin: 0 auto 36px;
 }
 .collection-benefits {
-  display: grid; grid-template-columns: 1fr;
-  gap: 28px; max-width: 880px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 12px; max-width: 880px; margin: 0 auto;
   border-top: 1px solid rgba(26,42,58,.08);
   padding-top: 32px;
 }
@@ -366,6 +366,13 @@ body.concern-page .collection-landing-title {
   font-family: 'Outfit', system-ui, sans-serif;
   font-size: 13px; line-height: 1.5;
   color: var(--body-col);
+}
+/* On phones the three benefits sit side by side — drop the descriptions so
+   the columns stay clean (icon + title only). */
+@media (max-width: 719px) {
+  .collection-benefit-sub { display: none; }
+  .collection-benefit svg { width: 28px; height: 28px; }
+  .collection-benefit-title { font-size: 13px; }
 }
 
 /* Three product circles row */
