@@ -532,9 +532,13 @@ body.concern-page .collection-landing-title {
   z-index: 2;
 }
 .product-card-tag.coming { color: var(--stone); }
-/* Square product cards — image fills a 1:1 frame, no circle clip */
+/* Square product cards — image fills a 1:1 frame, no circle clip.
+   Capped to the same size as the collection-landing tiles (180 / 260 / 320)
+   so cards never blow up to full width on mobile. */
 .product-card-img {
   aspect-ratio: 1 / 1; width: 100%;
+  max-width: 180px;
+  margin-left: auto; margin-right: auto;
   background: var(--card-bg);
   border-radius: 6px;
   margin-bottom: 16px;
@@ -542,6 +546,8 @@ body.concern-page .collection-landing-title {
   position: relative; overflow: hidden;
   transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1);
 }
+@media (min-width: 720px)  { .product-card-img { max-width: 260px; } }
+@media (min-width: 1024px) { .product-card-img { max-width: 320px; } }
 .product-card:hover .product-card-img { transform: scale(1.02); }
 /* Cream tile background for transparent-bg product shots (single bottles on white) */
 .product-card-img.product-card-tile-cream {
@@ -2552,9 +2558,9 @@ sup.ref {
    MOBILE IMAGE SIZE CAPS — keep images proportionate on phone screens
    ========================================================================= */
 @media (max-width: 720px) {
-  /* Product cards (grid) — smaller squares so a row fits on screen */
+  /* Product cards (grid) — match the small collection-landing tile size */
   .product-card-img {
-    max-width: 280px;
+    max-width: 180px;
     margin-left: auto;
     margin-right: auto;
   }
