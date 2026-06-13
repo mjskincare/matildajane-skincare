@@ -988,12 +988,12 @@ body.concern-page .collection-landing-title {
 }
 .nav-v2-mobile-sublist a:hover { color: var(--accent-deep, #c4705e); }
 
-/* Branded block fills the bottom of the drawer — large Matilda Jane on black */
+/* Branded square block at the bottom of the drawer — large Matilda Jane on black */
 .nav-v2-mobile-brand {
-  flex: 1 0 auto;
-  min-height: 240px;
+  flex: 0 0 auto;
+  aspect-ratio: 1 / 1;            /* square — height matches the drawer width */
   display: flex; align-items: center; justify-content: center;
-  margin: 20px -24px 0;            /* gap above; full-bleed to the panel edges */
+  margin: auto -24px 0;           /* pin to the bottom; full-bleed to the panel edges */
   background: #111c27;
   color: #ffffff;
   text-align: center;
