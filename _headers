@@ -1,0 +1,5 @@
+# Cloudflare Pages cache rules.
+# Make browsers re-check for the latest version of each file on every visit,
+# so site updates appear immediately instead of serving a stale cached page.
+/*
+  Cache-Control: public, max-age=0, must-revalidate
