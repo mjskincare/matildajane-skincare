@@ -287,22 +287,27 @@ body.is-home .site-nav-v2.is-fixed .nav-logo {
   transition: transform .4s cubic-bezier(0.32, 0.72, 0, 1);
 }
 .home-coll-icon {
-  width: 78px; height: 78px;
-  color: #ffffff;
+  width: 76px; height: 82px;
   position: relative; z-index: 1;
 }
 .home-coll-tile:hover .home-coll-circle { transform: scale(1.04); }
 .home-coll-circle::after {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.20), transparent 55%);
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.12), transparent 55%);
 }
-.home-coll-circle.c-hydrate  { background: linear-gradient(160deg, var(--c-hydrate), #3d6b8a); }
-.home-coll-circle.c-calm     { background: linear-gradient(160deg, var(--c-calm), #6f60ad); }
-.home-coll-circle.c-clarify  { background: linear-gradient(160deg, var(--c-clarify), #0a8c80); }
-.home-coll-circle.c-renew    { background: linear-gradient(160deg, var(--c-renew), var(--peach-deep, #c4705e)); }
-.home-coll-circle.c-brighten { background: linear-gradient(160deg, #eac67a, var(--c-brighten)); }
-.home-coll-circle.c-mens     { background: linear-gradient(160deg, #4a5560, var(--c-mens)); }
-.home-coll-circle.c-targeted { background: linear-gradient(160deg, var(--c-targeted), #6e5c8e); }
+.home-coll-circle.c-hydrate,
+.home-coll-circle.c-clarify,
+.home-coll-circle.c-brighten,
+.home-coll-circle.c-renew,
+.home-coll-circle.c-mens,
+.home-coll-circle.c-calm,
+.home-coll-circle.c-targeted { background: linear-gradient(160deg, #1b2b39, #0F1A24); }
+/* Icon colour per collection — Men's stays white so it doesn't read like Renew */
+.home-coll-circle.c-hydrate  .home-coll-icon { color: #7fb0cc; }
+.home-coll-circle.c-clarify  .home-coll-icon { color: #2fd3c4; }
+.home-coll-circle.c-brighten .home-coll-icon { color: #e9c074; }
+.home-coll-circle.c-renew    .home-coll-icon { color: #ef9e86; }
+.home-coll-circle.c-mens     .home-coll-icon { color: #ffffff; }
 .home-coll-name {
   font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 700; font-size: 16px; letter-spacing: .12em;
@@ -880,27 +885,27 @@ body.is-home .site-nav-v2.is-fixed .nav-logo {
   <h2 class="home-section-h2 fu">Shop by skin need.</h2>
   <div class="home-coll-grid">
     <a class="home-coll-tile fu" href="products/hydrate.html">
-      <div class="home-coll-circle c-hydrate"><svg class="home-coll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2s6 6.3 6 10.8a6 6 0 0 1-12 0c0-4.5 6-10.8 6-10.8z"/></svg></div>
+      <div class="home-coll-circle c-hydrate"><svg class="home-coll-icon" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s5.2 5.4 5.2 9.3a5.2 5.2 0 0 1-10.4 0C6.8 7.9 12 2.5 12 2.5z"/><path d="M5 23.6q3.5-2.4 7 0t7 0"/></svg></div>
       <div class="home-coll-name">Hydrate</div>
       <div class="home-coll-blurb">For dry, tight, or dehydrated skin.</div>
     </a>
     <a class="home-coll-tile fu" href="products/clear.html">
-      <div class="home-coll-circle c-clarify"><svg class="home-coll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.6c.2.6.7 1.1 1.3 1.3L21 12l-5.8 2.1c-.6.2-1.1.7-1.3 1.3L12 21l-1.9-5.6c-.2-.6-.7-1.1-1.3-1.3L3 12l5.8-2.1c.6-.2 1.1-.7 1.3-1.3L12 3z"/></svg></div>
+      <div class="home-coll-circle c-clarify"><svg class="home-coll-icon" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9.5" cy="11.5" r="4.2"/><circle cx="16" cy="6.8" r="2.5"/><circle cx="15.6" cy="13.6" r="1.6"/><path d="M5 23.6q3.5-2.4 7 0t7 0"/></svg></div>
       <div class="home-coll-name">Clear</div>
       <div class="home-coll-blurb">For oily, congested, or blemish-prone skin.</div>
     </a>
     <a class="home-coll-tile fu" href="products/brightening-vitamin-c.html">
-      <div class="home-coll-circle c-brighten"><svg class="home-coll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.2 5.2l1.8 1.8M17 17l1.8 1.8M5.2 18.8l1.8-1.8M17 7l1.8-1.8"/></svg></div>
+      <div class="home-coll-circle c-brighten"><svg class="home-coll-icon" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10.3" r="3.8"/><path d="M12 2.2v2.2M3.7 10.3h2.2M18.1 10.3h2.2M6.1 4.4l1.6 1.6M16.3 14.6l1.6 1.6M6.1 16.2l1.6-1.6M16.3 6l1.6-1.6"/><path d="M5 23.6q3.5-2.4 7 0t7 0"/></svg></div>
       <div class="home-coll-name">Brighten</div>
       <div class="home-coll-blurb">For dullness and uneven-looking tone.</div>
     </a>
     <a class="home-coll-tile fu" href="products/neuro-restore.html">
-      <div class="home-coll-circle c-renew"><svg class="home-coll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 12a8.5 8.5 0 1 1-2.4-5.9"/><path d="M20.7 4.5v4.2h-4.2"/></svg></div>
+      <div class="home-coll-circle c-renew"><svg class="home-coll-icon" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 10.5a7 7 0 1 1-2-4.9"/><path d="M19.2 3.8v3.6h-3.6"/><path d="M5 23.6q3.5-2.4 7 0t7 0"/></svg></div>
       <div class="home-coll-name">Renew</div>
       <div class="home-coll-blurb">For fine lines, texture, and mature skin.</div>
     </a>
     <a class="home-coll-tile fu" href="products/daily-defence.html">
-      <div class="home-coll-circle c-mens"><svg class="home-coll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.2c0 4.6-3.1 7.9-7 9.2-3.9-1.3-7-4.6-7-9.2V5.8L12 3z"/></svg></div>
+      <div class="home-coll-circle c-mens"><svg class="home-coll-icon" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.4l6 2.4v4.6c0 4-2.7 6.9-6 8.1-3.3-1.2-6-4.1-6-8.1V4.8L12 2.4z"/><path d="M5 23.6q3.5-2.4 7 0t7 0"/></svg></div>
       <div class="home-coll-name">Men's</div>
       <div class="home-coll-blurb">For men's skin, shaving, hydration, and barrier support.</div>
     </a>
