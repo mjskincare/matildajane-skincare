@@ -924,13 +924,12 @@ body.concern-page .collection-landing-title {
 .nav-v2-hamburger span::before { top: -7px; }
 .nav-v2-hamburger span::after { top: 7px; }
 
-/* Mobile slide-out menu */
+/* Mobile slide-out menu — full-width overlay */
 .nav-v2-mobile {
   position: fixed; top: 0; left: 0; bottom: 0;
-  width: 320px; max-width: 90vw;
+  width: 100%; max-width: 100%;
   background: var(--white);
-  border-right: 1px solid rgba(26,42,58,.10);
-  padding: 60px 24px 0;
+  padding: 60px 28px 0;
   transform: translateX(-100%);
   transition: transform .3s cubic-bezier(0.32, 0.72, 0, 1);
   z-index: 100;
@@ -977,33 +976,45 @@ body.concern-page .collection-landing-title {
   list-style: none; padding: 0; margin: 0;
 }
 .nav-v2-mobile-sublist li { list-style: none; }
-/* Menu items — bold, uppercase, tightly spaced (Hourglass style) */
+/* Menu items — big, bold, uppercase (Hourglass style) */
 .nav-v2-mobile-sublist a {
   display: block;
   font-family: 'Montserrat', system-ui, sans-serif;
-  font-size: 16px; font-weight: 800;
+  font-size: 26px; font-weight: 800;
   text-transform: uppercase; letter-spacing: .03em;
   color: var(--navy);
-  padding: 6px 0;
+  padding: 10px 0;
 }
 .nav-v2-mobile-sublist a:hover { color: var(--accent-deep, #c4705e); }
 
-/* Branded square block at the bottom of the drawer — large Matilda Jane on black */
+/* Branded block across the bottom of the full-width menu — Matilda Jane on black */
 .nav-v2-mobile-brand {
   flex: 0 0 auto;
-  aspect-ratio: 1 / 1;            /* square — height matches the drawer width */
-  display: flex; align-items: center; justify-content: center;
-  margin: auto -24px 0;           /* pin to the bottom; full-bleed to the panel edges */
+  min-height: 240px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 12px;
+  margin: auto -28px 0;            /* pin to the bottom; full-bleed to the panel edges */
   background: #111c27;
   color: #ffffff;
   text-align: center;
-  padding: 24px;
+  padding: 32px 24px;
   font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 800;
-  font-size: 28px;
-  line-height: 1.15;
-  letter-spacing: .16em;
   text-transform: uppercase;
+}
+.nav-v2-mobile-brand .mj-brand-title {
+  font-weight: 800;
+  font-size: clamp(28px, 8vw, 36px);
+  letter-spacing: .14em;
+  white-space: nowrap;            /* keep "Matilda Jane" on one line */
+  line-height: 1;
+}
+.nav-v2-mobile-brand .mj-brand-sub {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .42em;
+  padding-left: .42em;            /* offset trailing letter-spacing to stay centred */
+  opacity: .8;
 }
 
 @media (min-width: 900px) {
