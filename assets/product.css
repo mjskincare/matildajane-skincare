@@ -937,11 +937,15 @@ body.concern-page .collection-landing-title {
   display: flex; flex-direction: column;
 }
 .nav-v2-mobile.open { transform: translateX(0); }
-/* Scrollable list area; takes natural height so the brand can fill the rest */
+/* Scrollable list area; takes natural height so the brand can fill the rest.
+   Top divider line separates the header (brand + close) from the menu. */
 .nav-v2-mobile-scroll {
   flex: 0 1 auto;
   min-height: 0;
   overflow-y: auto;
+  border-top: 1px solid rgba(26,42,58,.14);
+  margin: 0 -28px;                 /* full-bleed so the line spans edge to edge */
+  padding: 30px 28px 0;            /* push the menu words down below the line */
 }
 .nav-v2-mobile-overlay {
   position: fixed; inset: 0;
