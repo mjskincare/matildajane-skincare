@@ -28,14 +28,11 @@
     transform: scale(1.03);
   }
   .product-card-img.product-card-img-circle img {
-    width: 92%;
-    height: 92%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
-  }
-  /* When the source is a transparent PNG bottle shot, sit it slightly higher */
-  .product-card-img.product-card-img-circle img[src$=".png"] {
-    object-position: center 55%;
   }
   @media (min-width: 720px) {
     .product-card-img.product-card-img-circle { max-width: 240px; }
