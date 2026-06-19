@@ -199,13 +199,14 @@
   });
 })();
 
-/* === Nav turns charcoal + translucent once you scroll === */
+/* === Nav scroll stages: top -> clear -> frosted === */
 (function () {
   var nav = document.querySelector('.site-nav-v2');
   if (!nav) return;
   var onScroll = function () {
-    if (window.scrollY > 8) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    nav.classList.toggle('nav-clear', y > 6 && y < 130);
+    nav.classList.toggle('nav-frosted', y >= 130);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();

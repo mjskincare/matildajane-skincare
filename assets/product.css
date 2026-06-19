@@ -817,23 +817,30 @@ body.concern-page .collection-landing-title {
 .site-nav-v2 .nav-v2-hamburger span,
 .site-nav-v2 .nav-v2-hamburger span::before,
 .site-nav-v2 .nav-v2-hamburger span::after { transition: background .35s ease; }
-body:not(.is-home) .site-nav-v2.scrolled {
+/* Stage 1 — clear: the bar goes see-through and slides thinner; writing stays
+   dark on the cream page. Text size unchanged so the transition is seamless. */
+body:not(.is-home) .site-nav-v2.nav-clear {
+  background: rgba(255,255,255,.22);
+  border-bottom-color: transparent;
+}
+body:not(.is-home) .site-nav-v2.nav-clear .site-nav-v2-inner,
+body:not(.is-home) .site-nav-v2.nav-frosted .site-nav-v2-inner {
+  padding-top: 9px; padding-bottom: 9px;
+}
+/* Stage 2 — frosted: deep, translucent charcoal; writing flips white */
+body:not(.is-home) .site-nav-v2.nav-frosted {
   background: rgba(13,21,30,.4);
   -webkit-backdrop-filter: blur(22px) saturate(1.2) brightness(.5);
   backdrop-filter: blur(22px) saturate(1.2) brightness(.5);
   border-bottom-color: rgba(255,255,255,.1);
 }
-/* Bar slides thinner once scrolled (text stays the same size) */
-body:not(.is-home) .site-nav-v2.scrolled .site-nav-v2-inner {
-  padding-top: 9px; padding-bottom: 9px;
-}
-body:not(.is-home) .site-nav-v2.scrolled .nav-logo,
-body:not(.is-home) .site-nav-v2.scrolled .nav-v2-cart,
-body:not(.is-home) .site-nav-v2.scrolled .nav-v2-trigger,
-body:not(.is-home) .site-nav-v2.scrolled .nav-v2-link { color: #ffffff; }
-body:not(.is-home) .site-nav-v2.scrolled .nav-v2-hamburger span,
-body:not(.is-home) .site-nav-v2.scrolled .nav-v2-hamburger span::before,
-body:not(.is-home) .site-nav-v2.scrolled .nav-v2-hamburger span::after { background: #ffffff; }
+body:not(.is-home) .site-nav-v2.nav-frosted .nav-logo,
+body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-cart,
+body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-trigger,
+body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-link { color: #ffffff; }
+body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span,
+body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::before,
+body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::after { background: #ffffff; }
 .site-nav-v2-inner {
   display: flex; align-items: center; justify-content: space-between;
   max-width: 1400px; margin: 0 auto;
@@ -843,9 +850,9 @@ body:not(.is-home) .site-nav-v2.scrolled .nav-v2-hamburger span::after { backgro
 }
 .site-nav-v2 .nav-logo {
   font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 800;
+  font-weight: 400;
   font-size: 18px;
-  letter-spacing: .04em;
+  letter-spacing: .14em;
   color: var(--navy);
   flex-shrink: 0;
 }
@@ -1002,8 +1009,8 @@ body:not(.is-home) .site-nav-v2.scrolled .nav-v2-hamburger span::after { backgro
   transform: translateX(-50%);
   z-index: 2;
   font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 700; font-size: 17px;
-  letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 400; font-size: 17px;
+  letter-spacing: .16em; text-transform: uppercase;
   color: var(--navy); white-space: nowrap;
 }
 .nav-v2-mobile-section {
