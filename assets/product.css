@@ -992,19 +992,20 @@ body.concern-page .collection-landing-title {
   flex: 0 0 auto;
   min-height: 240px;
   display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 12px;
+  align-items: center; justify-content: center; gap: 5px;
   margin: auto -28px 0;            /* pin to the bottom; full-bleed to the panel edges */
-  background: #111c27;
+  /* black fades in from the top into solid at the bottom */
+  background: linear-gradient(to bottom, rgba(17,28,39,0) 0%, rgba(17,28,39,.85) 42%, #111c27 100%);
   color: #ffffff;
   text-align: center;
-  padding: 32px 24px;
+  padding: 40px 24px 32px;
   font-family: 'Montserrat', system-ui, sans-serif;
   text-transform: uppercase;
 }
 .nav-v2-mobile-brand .mj-brand-title {
-  font-weight: 800;
+  font-weight: 400;
   font-size: clamp(28px, 8vw, 36px);
-  letter-spacing: .14em;
+  letter-spacing: .16em;
   white-space: nowrap;            /* keep "Matilda Jane" on one line */
   line-height: 1;
 }
