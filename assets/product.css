@@ -957,6 +957,16 @@ body.concern-page .collection-landing-title {
   font-size: 28px; color: var(--navy); line-height: 1;
   z-index: 2;
 }
+/* Brand stays stuck across the top of the open menu (Hourglass-style) */
+.nav-v2-mobile-topbrand {
+  position: absolute; top: 26px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 700; font-size: 17px;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--navy); white-space: nowrap;
+}
 .nav-v2-mobile-section {
   margin-bottom: 14px;
   border-bottom: 1px solid rgba(26,42,58,.08);
@@ -992,19 +1002,20 @@ body.concern-page .collection-landing-title {
   flex: 0 0 auto;
   min-height: 240px;
   display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 12px;
+  align-items: center; justify-content: center; gap: 5px;
   margin: auto -28px 0;            /* pin to the bottom; full-bleed to the panel edges */
-  background: #111c27;
+  /* black fades in from the top into solid at the bottom */
+  background: linear-gradient(to bottom, rgba(17,28,39,0) 0%, rgba(17,28,39,.85) 42%, #111c27 100%);
   color: #ffffff;
   text-align: center;
-  padding: 32px 24px;
+  padding: 40px 24px 32px;
   font-family: 'Montserrat', system-ui, sans-serif;
   text-transform: uppercase;
 }
 .nav-v2-mobile-brand .mj-brand-title {
-  font-weight: 800;
+  font-weight: 400;
   font-size: clamp(28px, 8vw, 36px);
-  letter-spacing: .14em;
+  letter-spacing: .16em;
   white-space: nowrap;            /* keep "Matilda Jane" on one line */
   line-height: 1;
 }
