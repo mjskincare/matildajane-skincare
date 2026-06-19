@@ -957,6 +957,16 @@ body.concern-page .collection-landing-title {
   font-size: 28px; color: var(--navy); line-height: 1;
   z-index: 2;
 }
+/* Brand stays stuck across the top of the open menu (Hourglass-style) */
+.nav-v2-mobile-topbrand {
+  position: absolute; top: 26px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 700; font-size: 17px;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--navy); white-space: nowrap;
+}
 .nav-v2-mobile-section {
   margin-bottom: 14px;
   border-bottom: 1px solid rgba(26,42,58,.08);
