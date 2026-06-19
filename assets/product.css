@@ -818,8 +818,14 @@ body.concern-page .collection-landing-title {
 .site-nav-v2 .nav-v2-hamburger span::before,
 .site-nav-v2 .nav-v2-hamburger span::after { transition: background .35s ease; }
 body:not(.is-home) .site-nav-v2.scrolled {
-  background: rgba(15,26,36,.72);
-  border-bottom-color: rgba(255,255,255,.14);
+  background: rgba(13,21,30,.4);
+  -webkit-backdrop-filter: blur(22px) saturate(1.2) brightness(.5);
+  backdrop-filter: blur(22px) saturate(1.2) brightness(.5);
+  border-bottom-color: rgba(255,255,255,.1);
+}
+/* Bar slides thinner once scrolled (text stays the same size) */
+body:not(.is-home) .site-nav-v2.scrolled .site-nav-v2-inner {
+  padding-top: 9px; padding-bottom: 9px;
 }
 body:not(.is-home) .site-nav-v2.scrolled .nav-logo,
 body:not(.is-home) .site-nav-v2.scrolled .nav-v2-cart,
@@ -833,6 +839,7 @@ body:not(.is-home) .site-nav-v2.scrolled .nav-v2-hamburger span::after { backgro
   max-width: 1400px; margin: 0 auto;
   padding: 18px 24px;
   position: relative;
+  transition: padding .3s ease;
 }
 .site-nav-v2 .nav-logo {
   font-family: 'Montserrat', system-ui, sans-serif;
