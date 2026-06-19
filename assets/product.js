@@ -198,3 +198,15 @@
     }, 120);
   });
 })();
+
+/* === Nav turns charcoal + translucent once you scroll === */
+(function () {
+  var nav = document.querySelector('.site-nav-v2');
+  if (!nav) return;
+  var onScroll = function () {
+    if (window.scrollY > 8) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
