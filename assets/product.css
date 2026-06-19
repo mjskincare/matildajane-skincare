@@ -573,6 +573,16 @@ body.concern-page .collection-landing-title {
   object-fit: contain;
   padding: 0;
 }
+/* Circular product image variant — used across the collection landing pages.
+   Lifestyle photos fill the circle (cover); bottle-on-tile shots stay
+   contained with padding so the bottle isn't cropped by the round crop. */
+.product-card-img.product-card-img-circle,
+.product-card-img.product-card-img-circle img { border-radius: 50%; }
+.product-card-img.product-card-img-circle.product-card-tile-black img,
+.product-card-img.product-card-img-circle.product-card-tile-cream img {
+  object-fit: contain;
+  padding: 11%;
+}
 .product-card-img .img-flip-h {
   transform: scaleX(-1);
 }
