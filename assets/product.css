@@ -1050,8 +1050,7 @@ body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::after { back
   display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 5px;
   margin: auto -28px 0;            /* pin to the bottom; full-bleed to the panel edges */
-  /* black fades in from the top into solid at the bottom */
-  background: linear-gradient(to bottom, rgba(17,28,39,0) 0%, rgba(17,28,39,.85) 42%, #111c27 100%);
+  background: #111c27;             /* solid block — no fade */
   color: #ffffff;
   text-align: center;
   padding: 40px 24px 32px;
@@ -2105,7 +2104,7 @@ body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::after { back
   box-shadow: none !important;
   padding: 0 !important;
   border-radius: 0 !important;
-  text-align: left;
+  text-align: center;
   cursor: default;
 }
 .spotlight-card.spotlight-card-floating:hover,
@@ -2116,13 +2115,14 @@ body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::after { back
 /* Floating spotlight card image — force square, override the later 120px circle rule */
 .ingredient-spotlight .spotlight-grid.spotlight-grid-floating .spotlight-card.spotlight-card-floating .spotlight-img-wrap {
   width: 100% !important;
+  max-width: 180px !important;
   height: auto !important;
   aspect-ratio: 1 / 1 !important;
-  border-radius: 6px !important;
+  border-radius: 50% !important;
   clip-path: none !important;
   -webkit-clip-path: none !important;
   overflow: hidden;
-  margin: 0 0 20px !important;
+  margin: 0 auto 18px !important;
   background: transparent !important;
   box-shadow: 0 6px 20px rgba(0,0,0,.08);
   transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1), box-shadow .35s ease;
@@ -2143,7 +2143,7 @@ body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::after { back
 .ingredient-spotlight .spotlight-grid.spotlight-grid-floating .spotlight-card.spotlight-card-floating .spotlight-img-wrap img {
   width: 100% !important; height: 100% !important;
   object-fit: cover; object-position: center;
-  border-radius: 6px !important;
+  border-radius: 50% !important;
   clip-path: none !important;
   -webkit-clip-path: none !important;
   display: block;
@@ -2298,6 +2298,7 @@ body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::after { back
   background: #fff;
   border-radius: 16px;
   padding: 36px 28px;
+  text-align: center;
   opacity: 0;
   transform: translateY(30px);
   /* All hover/visible transitions share one slow ease so nothing clashes */
@@ -2341,9 +2342,10 @@ body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::after { back
    and .spotlight-card-floating variants). Hard square, no clip-path. */
 .spotlight-img-wrap {
   width: 100%;
+  max-width: 180px;
   aspect-ratio: 1 / 1;
   margin: 0 auto 18px;
-  border-radius: 8px;
+  border-radius: 50%;
   overflow: hidden;
   background: #eee;
   display: block;
@@ -2365,7 +2367,7 @@ body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::after { back
 .spotlight-img-wrap img {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center center;
-  border-radius: 8px;
+  border-radius: 50%;
   display: block;
 }
 /* Niacinamide image has a small bowl centred on a vast white background — zoom in
@@ -2696,11 +2698,13 @@ sup.ref {
 
   /* Product hero main image (PDP) — cap height so the buy box is reachable */
   .product-image-main {
-    max-width: 360px;
+    max-width: 320px;
     margin: 0 auto;
+    aspect-ratio: 1 / 1;
   }
   .product-image-main img {
-    max-height: 360px;
+    width: 100%; height: 100%;
+    max-height: none;
     object-fit: contain;
   }
 
@@ -2709,7 +2713,7 @@ sup.ref {
 
   /* Ingredient spotlight cards — smaller image wrap */
   .spotlight-img-wrap {
-    max-width: 260px;
+    max-width: 180px;
     margin-left: auto;
     margin-right: auto;
   }
