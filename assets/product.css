@@ -975,7 +975,7 @@ body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::after { back
   position: fixed; top: 0; left: 0; bottom: 0;
   width: 100%; max-width: 100%;
   background: var(--white);
-  padding: 60px 28px 0;
+  padding: 92px 28px 0;
   transform: translateX(-100%);
   transition: transform .3s cubic-bezier(0.32, 0.72, 0, 1);
   z-index: 100;
