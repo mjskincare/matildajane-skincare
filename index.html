@@ -88,24 +88,14 @@ body { background: var(--mj-offwhite); }
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(13,21,30,.4);
-  -webkit-backdrop-filter: blur(22px) saturate(1.2) brightness(.5);
-  backdrop-filter: blur(22px) saturate(1.2) brightness(.5);
-  border-bottom-color: rgba(255,255,255,.1);
-  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
   animation: navSlideDown .25s ease-out;
 }
 body.is-home .site-nav-v2.is-fixed .site-nav-v2-inner {
   padding-top: 9px; padding-bottom: 9px;
 }
-/* White text on the charcoal scrolled bar (home) */
-body.is-home .site-nav-v2.is-fixed .nav-logo,
-body.is-home .site-nav-v2.is-fixed .nav-v2-cart,
-body.is-home .site-nav-v2.is-fixed .nav-v2-trigger,
-body.is-home .site-nav-v2.is-fixed .nav-v2-link { color: #ffffff; }
-body.is-home .site-nav-v2.is-fixed .nav-v2-hamburger span,
-body.is-home .site-nav-v2.is-fixed .nav-v2-hamburger span::before,
-body.is-home .site-nav-v2.is-fixed .nav-v2-hamburger span::after { background: #ffffff; }
 @keyframes navSlideDown {
   from { transform: translateY(-100%); }
   to   { transform: translateY(0); }
