@@ -33,6 +33,7 @@
 }
 
 .theme-renew {
+  --nav-scroll-bg: rgba(120,62,50,.78);   /* themed scrolled-nav tint */
   --hero-bg: #1a2a3a;
   --footer-bg: #111c27;
   --accent: #f4a896;
@@ -52,6 +53,7 @@
    Original: cta-bg #9989d4
 */
 .theme-calm {
+  --nav-scroll-bg: rgba(26,29,58,.8);   /* themed scrolled-nav tint */
   --hero-bg: #1a1d3a;
   --footer-bg: #14172e;
   --accent: #9989d4;
@@ -68,6 +70,7 @@
   --decor-2: rgba(153,137,212,.30);
 }
 .theme-clarify {
+  --nav-scroll-bg: rgba(13,61,58,.76);   /* themed scrolled-nav tint */
   --hero-bg: #0d3d3a;
   --footer-bg: #062623;
   --accent: #1ad6c5;
@@ -91,6 +94,7 @@
    hero-bg #c89311 / hero-text #ffffff / accent #ffd966 / accent-deep #b04a14
 */
 .theme-brighten {
+  --nav-scroll-bg: rgba(120,76,26,.78);   /* themed scrolled-nav tint */
   --hero-bg: #ffa56a;
   --footer-bg: #1a2a3a;
   --hero-text: #1a2a3a;
@@ -118,6 +122,7 @@
    hero-bg #2c2a32 / footer-bg #19171e / accent #b85d54
 */
 .theme-mens {
+  --nav-scroll-bg: rgba(35,50,55,.8);   /* themed scrolled-nav tint */
   --hero-bg: #233237;
   --footer-bg: #18121e;
   --accent: #eac67a;
@@ -147,6 +152,7 @@
    hero-bg #1d3d52 / accent #6b9bb8 / accent-deep #3d6b8a / card-bg #c8dceb
 */
 .theme-hydrate {
+  --nav-scroll-bg: rgba(9,60,93,.74);   /* themed scrolled-nav tint */
   --hero-bg: #093C5D;          /* deep navy */
   --footer-bg: #052438;        /* even deeper for footer cohesion */
   --hero-text: #ffffff;        /* white on navy = 11.9:1 AAA */
@@ -848,9 +854,9 @@ body:not(.is-home) .site-nav-v2.nav-frosted .site-nav-v2-inner {
 }
 /* Stage 2 — frosted: deep, translucent charcoal; writing flips white */
 body:not(.is-home) .site-nav-v2.nav-frosted {
-  background: rgba(13,21,30,.4);
-  -webkit-backdrop-filter: blur(22px) saturate(1.2) brightness(.5);
-  backdrop-filter: blur(22px) saturate(1.2) brightness(.5);
+  background: var(--nav-scroll-bg, rgba(13,21,30,.4));
+  -webkit-backdrop-filter: blur(22px) saturate(1.4) brightness(.72);
+  backdrop-filter: blur(22px) saturate(1.4) brightness(.72);
   border-bottom-color: rgba(255,255,255,.1);
 }
 body:not(.is-home) .site-nav-v2.nav-frosted .nav-logo,
