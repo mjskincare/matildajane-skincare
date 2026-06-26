@@ -288,6 +288,24 @@ a { color: inherit; text-decoration: none; }
   color: var(--navy); text-transform: uppercase;
   margin-bottom: 10px;
 }
+/* Sticky collection-name bar — slides in under the nav once the big title
+   scrolls out of view (built/toggled in product.js). */
+.collection-sticky-bar {
+  position: fixed; left: 0; right: 0; top: 0;
+  z-index: 50;
+  background: var(--ivory);
+  border-bottom: 1px solid rgba(26,42,58,.08);
+  text-align: center;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 900; font-size: 19px;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--navy);
+  padding: 11px 16px;
+  transform: translateY(-100%);
+  opacity: 0; pointer-events: none;
+  transition: transform .28s ease, opacity .28s ease;
+}
+.collection-sticky-bar.show { transform: translateY(0); opacity: 1; }
 /* Concern pages — title case, NOT uppercase, slightly looser tracking */
 body.concern-page .collection-landing-title {
   font-weight: 800;
@@ -363,9 +381,7 @@ body.concern-page .collection-landing-title {
   color: var(--navy);
 }
 .collection-benefit-sub {
-  font-family: 'Outfit', system-ui, sans-serif;
-  font-size: 13px; line-height: 1.5;
-  color: var(--body-col);
+  display: none;   /* keep just the bold word (Hydrates / Plumps / Repairs) */
 }
 /* On phones the three benefits sit side by side; keep the descriptions but
    shrink them so they wrap neatly under each icon + title. */

@@ -211,3 +211,23 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
+
+/* === Sticky collection-name bar: shows the collection title (e.g. HYDRATE)
+   under the nav once the big hero title scrolls out of view === */
+(function () {
+  var title = document.querySelector('.collection-landing-title');
+  var nav = document.querySelector('.site-nav-v2');
+  if (!title || !nav) return;
+  var bar = document.createElement('div');
+  bar.className = 'collection-sticky-bar';
+  bar.textContent = (title.textContent || '').trim();
+  document.body.appendChild(bar);
+  var onScroll = function () {
+    var navH = nav.offsetHeight || 64;
+    bar.style.top = navH + 'px';
+    bar.classList.toggle('show', title.getBoundingClientRect().bottom <= navH + 2);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  onScroll();
+})();
