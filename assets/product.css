@@ -33,7 +33,7 @@
 }
 
 .theme-renew {
-  --nav-scroll-bg: rgba(120,62,50,.78);   /* themed scrolled-nav tint */
+  --nav-scroll-bg: rgba(243,167,143,.9);   /* bright peach — dark text */
   --hero-bg: #1a2a3a;
   --footer-bg: #111c27;
   --accent: #f4a896;
@@ -94,7 +94,7 @@
    hero-bg #c89311 / hero-text #ffffff / accent #ffd966 / accent-deep #b04a14
 */
 .theme-brighten {
-  --nav-scroll-bg: rgba(120,76,26,.78);   /* themed scrolled-nav tint */
+  --nav-scroll-bg: rgba(234,166,58,.9);   /* bright gold — dark text */
   --hero-bg: #ffa56a;
   --footer-bg: #1a2a3a;
   --hero-text: #1a2a3a;
@@ -866,6 +866,26 @@ body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-link { color: #ffffff; }
 body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span,
 body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::before,
 body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::after { background: #ffffff; }
+/* Brighten + Renew use bright (peach/gold) nav tints, so flip text to navy */
+body.theme-brighten .site-nav-v2.nav-frosted .nav-logo,
+body.theme-brighten .site-nav-v2.nav-frosted .nav-v2-cart,
+body.theme-brighten .site-nav-v2.nav-frosted .nav-v2-trigger,
+body.theme-brighten .site-nav-v2.nav-frosted .nav-v2-link,
+body.theme-renew .site-nav-v2.nav-frosted .nav-logo,
+body.theme-renew .site-nav-v2.nav-frosted .nav-v2-cart,
+body.theme-renew .site-nav-v2.nav-frosted .nav-v2-trigger,
+body.theme-renew .site-nav-v2.nav-frosted .nav-v2-link { color: #16242f; }
+body.theme-brighten .site-nav-v2.nav-frosted .nav-v2-hamburger span,
+body.theme-brighten .site-nav-v2.nav-frosted .nav-v2-hamburger span::before,
+body.theme-brighten .site-nav-v2.nav-frosted .nav-v2-hamburger span::after,
+body.theme-renew .site-nav-v2.nav-frosted .nav-v2-hamburger span,
+body.theme-renew .site-nav-v2.nav-frosted .nav-v2-hamburger span::before,
+body.theme-renew .site-nav-v2.nav-frosted .nav-v2-hamburger span::after { background: #16242f; }
+body.theme-brighten .site-nav-v2.nav-frosted,
+body.theme-renew .site-nav-v2.nav-frosted {
+  -webkit-backdrop-filter: blur(22px) saturate(1.25);
+  backdrop-filter: blur(22px) saturate(1.25);
+}
 .site-nav-v2-inner {
   display: flex; align-items: center; justify-content: space-between;
   max-width: 1400px; margin: 0 auto;
