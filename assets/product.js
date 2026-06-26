@@ -251,4 +251,11 @@
       // already revealed -> let the tap navigate
     });
   });
+  // Revert to the image on scroll, too
+  var clearRevealed = function () {
+    document.querySelectorAll('.collection-circle-card.revealed').forEach(function (c) {
+      c.classList.remove('revealed');
+    });
+  };
+  window.addEventListener('scroll', clearRevealed, { passive: true });
 })();
