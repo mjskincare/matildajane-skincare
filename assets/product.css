@@ -399,9 +399,7 @@ body.concern-page .collection-landing-title {
 }
 /* Collapse the cream block when there are no product circles in it
    (e.g. Hydrate / Men's) so it doesn't hang low under the hero. */
-.collection-circles:not(:has(.collection-circle-card)) {
-  display: none;
-}
+.collection-circles:not(:has(.collection-circle-card)) { display: none; }
 .collection-circles-inner {
   display: flex; flex-wrap: wrap; justify-content: center;
   gap: 32px; max-width: 1200px; margin: 0 auto;
@@ -1208,7 +1206,7 @@ body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::after { back
 /* === SHOP ALL [COLLECTION] heading === */
 .shop-all-section {
   background: var(--white);
-  padding: 64px 24px 80px;
+  padding: 44px 24px 80px;
 }
 .shop-all-inner { max-width: 1200px; margin: 0 auto; }
 .shop-all-heading {
