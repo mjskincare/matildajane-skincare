@@ -231,3 +231,24 @@
   window.addEventListener('resize', onScroll, { passive: true });
   onScroll();
 })();
+
+/* === Product circle on touch: first tap reveals the words (for 5s), second
+   tap follows the link === */
+(function () {
+  if (window.matchMedia('(hover: hover)').matches) return; // desktop uses hover
+  document.querySelectorAll('.collection-circle-card').forEach(function (card) {
+    var timer;
+    card.addEventListener('click', function (e) {
+      if (!card.classList.contains('revealed')) {
+        e.preventDefault();
+        document.querySelectorAll('.collection-circle-card.revealed').forEach(function (c) {
+          if (c !== card) c.classList.remove('revealed');
+        });
+        card.classList.add('revealed');
+        clearTimeout(timer);
+        timer = setTimeout(function () { card.classList.remove('revealed'); }, 5000);
+      }
+      // already revealed -> let the tap navigate
+    });
+  });
+})();
