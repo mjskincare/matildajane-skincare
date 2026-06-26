@@ -422,7 +422,7 @@ body.concern-page .collection-landing-title {
   text-decoration: none;
   transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1);
 }
-.collection-circle-card:hover { transform: translateY(-4px); }
+@media (hover: hover) { .collection-circle-card:hover { transform: translateY(-4px); } }
 /* Collection product cards — squares (no longer circles) */
 .collection-circle {
   width: 220px; height: 220px;
@@ -433,7 +433,7 @@ body.concern-page .collection-landing-title {
   margin-bottom: 18px;
   transition: transform .4s cubic-bezier(0.32, 0.72, 0, 1);
 }
-.collection-circle-card:hover .collection-circle { transform: scale(1.04); }
+@media (hover: hover) { .collection-circle-card:hover .collection-circle { transform: scale(1.04); } }
 .collection-circle.has-photo img {
   width: 100%; height: 100%; object-fit: cover; display: block;
   border-radius: 50%;
@@ -462,9 +462,11 @@ body.concern-page .collection-landing-title {
 @media (min-width: 1024px) {
   .collection-circle .circle-overlay { font-size: 25px; padding: 0 42px; }
 }
-.collection-circle-card:hover .circle-overlay,
 .collection-circle-card.revealed .circle-overlay { opacity: 1; }
 .collection-circle-card.revealed .collection-circle { transform: scale(1.04); }
+@media (hover: hover) {
+  .collection-circle-card:hover .circle-overlay { opacity: 1; }
+}
 /* Inner block so the flex parent only centres one child — text inside flows
    normally as a paragraph instead of becoming separate flex items per node */
 .circle-overlay .overlay-text {
