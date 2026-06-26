@@ -272,22 +272,40 @@ a { color: inherit; text-decoration: none; }
 */
 .collection-landing-hero {
   background: var(--ivory);
-  padding: 40px 20px 32px;
+  padding: 22px 20px 22px;
   text-align: center;
 }
 .collection-landing-eyebrow {
   font-family: 'Outfit', system-ui, sans-serif;
   font-size: 13px; font-weight: 600;
   letter-spacing: .28em; text-transform: uppercase;
-  color: var(--navy); margin-bottom: 18px;
+  color: var(--navy); margin-bottom: 10px;
 }
 .collection-landing-title {
   font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 900;
   font-size: 48px; line-height: 1.05; letter-spacing: .06em;
   color: var(--navy); text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
+/* Sticky collection-name bar — slides in under the nav once the big title
+   scrolls out of view (built/toggled in product.js). */
+.collection-sticky-bar {
+  position: fixed; left: 0; right: 0; top: 0;
+  z-index: 50;
+  background: var(--ivory);
+  border-bottom: 1px solid rgba(26,42,58,.08);
+  text-align: center;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 900; font-size: 19px;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--navy);
+  padding: 11px 16px;
+  transform: translateY(-100%);
+  opacity: 0; pointer-events: none;
+  transition: transform .28s ease, opacity .28s ease;
+}
+.collection-sticky-bar.show { transform: translateY(0); opacity: 1; }
 /* Concern pages — title case, NOT uppercase, slightly looser tracking */
 body.concern-page .collection-landing-title {
   font-weight: 800;
@@ -347,7 +365,7 @@ body.concern-page .collection-landing-title {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 12px; max-width: 880px; margin: 0 auto;
   border-top: 1px solid rgba(26,42,58,.08);
-  padding-top: 32px;
+  padding-top: 18px;
 }
 .collection-benefit {
   display: flex; flex-direction: column; align-items: center; gap: 10px;
@@ -363,9 +381,7 @@ body.concern-page .collection-landing-title {
   color: var(--navy);
 }
 .collection-benefit-sub {
-  font-family: 'Outfit', system-ui, sans-serif;
-  font-size: 13px; line-height: 1.5;
-  color: var(--body-col);
+  display: none;   /* keep just the bold word (Hydrates / Plumps / Repairs) */
 }
 /* On phones the three benefits sit side by side; keep the descriptions but
    shrink them so they wrap neatly under each icon + title. */
@@ -381,7 +397,8 @@ body.concern-page .collection-landing-title {
   background: var(--ivory);
   padding: 24px 20px 64px;
 }
-/* When a collection page has no circle products, don't leave an empty band of space */
+/* Collapse the cream block when there are no product circles in it
+   (e.g. Hydrate / Men's) so it doesn't hang low under the hero. */
 .collection-circles:not(:has(.collection-circle-card)) { display: none; }
 .collection-circles-inner {
   display: flex; flex-wrap: wrap; justify-content: center;
@@ -613,7 +630,7 @@ body.concern-page .collection-landing-title {
 
 /* Tablet ≥720 */
 @media (min-width: 720px) {
-  .collection-landing-hero { padding: 56px 32px 40px; }
+  .collection-landing-hero { padding: 34px 32px 28px; }
   .collection-landing-sub { font-size: 17px; }
   .collection-benefits {
     grid-template-columns: repeat(3, 1fr); gap: 32px;
@@ -628,7 +645,7 @@ body.concern-page .collection-landing-title {
 
 /* Desktop ≥1024 */
 @media (min-width: 1024px) {
-  .collection-landing-hero { padding: 72px 40px 48px; }
+  .collection-landing-hero { padding: 44px 40px 34px; }
   .collection-circle { width: 320px; height: 320px; }
   .product-grid { grid-template-columns: repeat(3, 1fr); }
 }
@@ -1210,8 +1227,8 @@ body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::after { back
 /* === BREADCRUMB === */
 .breadcrumb {
   background: var(--ivory);
-  padding: 18px 60px 0;
-  margin-top: 56px;
+  padding: 14px 60px 0;
+  margin-top: 0;
   font-family: 'Outfit', system-ui, sans-serif;
 }
 .breadcrumb-link {
