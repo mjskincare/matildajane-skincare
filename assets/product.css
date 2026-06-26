@@ -1213,8 +1213,8 @@ body:not(.is-home) .site-nav-v2.nav-frosted .nav-v2-hamburger span::after { back
 /* === BREADCRUMB === */
 .breadcrumb {
   background: var(--ivory);
-  padding: 18px 60px 0;
-  margin-top: 56px;
+  padding: 14px 60px 0;
+  margin-top: 0;
   font-family: 'Outfit', system-ui, sans-serif;
 }
 .breadcrumb-link {
