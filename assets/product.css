@@ -102,8 +102,8 @@
   --accent: #ffa56a;             /* peach — for footer slogan + accents on dark bg */
   --accent-deep: #1a2a3a;        /* navy — for eyebrows/icons/bold accents on peach hero */
   --body-col: #1a2a3a;           /* navy body copy for max contrast on peach */
-  --circle-hover: #F28500;
-  --circle-overlay-text: #ffffff;
+  --circle-hover: #eaa63a;          /* gold — matches the scrolled nav/sticky bar */
+  --circle-overlay-text: #16242f;   /* navy text on gold */
   --highlight-bg: #1a2a3a;
   --highlight-text: #ffa56a;
   --card-bg: #ffe7d2;
@@ -447,9 +447,9 @@ body.concern-page .collection-landing-title {
   font-family: 'Outfit', system-ui, sans-serif;
   /* Poster-style: heavy weight, uppercase, tight line-height, generous letter-spacing
      for clear thick/thin contrast and confident advertising rhythm */
-  font-weight: 800; font-size: 22px; line-height: 1.05;
+  font-weight: 800; font-size: 17px; line-height: 1.1;
   letter-spacing: .02em; text-transform: uppercase;
-  text-align: center; padding: 0 28px;
+  text-align: center; padding: 0 26px;
   opacity: 0;
   transition: opacity .3s ease;
   border-radius: 8px;
@@ -457,12 +457,14 @@ body.concern-page .collection-landing-title {
   z-index: 2;
 }
 @media (min-width: 720px) {
-  .collection-circle .circle-overlay { font-size: 28px; padding: 0 36px; }
+  .collection-circle .circle-overlay { font-size: 21px; padding: 0 34px; }
 }
 @media (min-width: 1024px) {
-  .collection-circle .circle-overlay { font-size: 34px; padding: 0 44px; }
+  .collection-circle .circle-overlay { font-size: 25px; padding: 0 42px; }
 }
-.collection-circle-card:hover .circle-overlay { opacity: 1; }
+.collection-circle-card:hover .circle-overlay,
+.collection-circle-card.revealed .circle-overlay { opacity: 1; }
+.collection-circle-card.revealed .collection-circle { transform: scale(1.04); }
 /* Inner block so the flex parent only centres one child — text inside flows
    normally as a paragraph instead of becoming separate flex items per node */
 .circle-overlay .overlay-text {
