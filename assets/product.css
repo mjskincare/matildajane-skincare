@@ -312,6 +312,13 @@ a { color: inherit; text-decoration: none; }
   transition: transform .28s ease, opacity .28s ease;
 }
 .collection-sticky-bar.show { transform: translateY(0); opacity: 1; }
+/* Sticky bar coordinates with each collection's colour (instead of the same cream) */
+body.theme-hydrate  .collection-sticky-bar { background: #093c5d; color: #fff; border-bottom-color: rgba(255,255,255,.12); }
+body.theme-clarify  .collection-sticky-bar { background: #0d3d3a; color: #fff; border-bottom-color: rgba(255,255,255,.12); }
+body.theme-mens     .collection-sticky-bar { background: #233237; color: #fff; border-bottom-color: rgba(255,255,255,.12); }
+body.theme-calm     .collection-sticky-bar { background: #1a1d3a; color: #fff; border-bottom-color: rgba(255,255,255,.12); }
+body.theme-renew    .collection-sticky-bar { background: #f3a78f; color: #16242f; border-bottom-color: rgba(22,36,47,.14); }
+body.theme-brighten .collection-sticky-bar { background: #eaa63a; color: #16242f; border-bottom-color: rgba(22,36,47,.14); }
 /* Concern pages — title case, NOT uppercase, slightly looser tracking */
 body.concern-page .collection-landing-title {
   font-weight: 800;
