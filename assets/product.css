@@ -94,7 +94,7 @@
    hero-bg #c89311 / hero-text #ffffff / accent #ffd966 / accent-deep #b04a14
 */
 .theme-brighten {
-  --nav-scroll-bg: rgba(234,166,58,.9);   /* bright gold — dark text */
+  --nav-scroll-bg: rgba(249,221,96,.92);   /* bright yellow — dark text */
   --hero-bg: #ffa56a;
   --footer-bg: #1a2a3a;
   --hero-text: #1a2a3a;
@@ -102,7 +102,7 @@
   --accent: #ffa56a;             /* peach — for footer slogan + accents on dark bg */
   --accent-deep: #1a2a3a;        /* navy — for eyebrows/icons/bold accents on peach hero */
   --body-col: #1a2a3a;           /* navy body copy for max contrast on peach */
-  --circle-hover: #eaa63a;          /* gold — matches the scrolled nav/sticky bar */
+  --circle-hover: #F9DD60;          /* yellow — matches the scrolled nav/sticky bar */
   --circle-overlay-text: #16242f;   /* navy text on gold */
   --highlight-bg: #1a2a3a;
   --highlight-text: #ffa56a;
@@ -318,7 +318,7 @@ body.theme-clarify  .collection-sticky-bar { background: #0d3d3a; color: #fff; b
 body.theme-mens     .collection-sticky-bar { background: #233237; color: #fff; border-bottom-color: rgba(255,255,255,.12); }
 body.theme-calm     .collection-sticky-bar { background: #1a1d3a; color: #fff; border-bottom-color: rgba(255,255,255,.12); }
 body.theme-renew    .collection-sticky-bar { background: #f3a78f; color: #16242f; border-bottom-color: rgba(22,36,47,.14); }
-body.theme-brighten .collection-sticky-bar { background: #eaa63a; color: #16242f; border-bottom-color: rgba(22,36,47,.14); }
+body.theme-brighten .collection-sticky-bar { background: #F9DD60; color: #16242f; border-bottom-color: rgba(22,36,47,.14); }
 /* Concern pages — title case, NOT uppercase, slightly looser tracking */
 body.concern-page .collection-landing-title {
   font-weight: 800;
