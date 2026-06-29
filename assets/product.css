@@ -1392,7 +1392,7 @@ body.theme-renew .site-nav-v2.nav-frosted {
 .product-image-main {
   position: relative; z-index: 1;
   width: 100%; max-width: 460px; aspect-ratio: 1 / 1;
-  border-radius: 16px; overflow: hidden;
+  border-radius: 0; overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,.12);
   background: var(--ivory);
 }
@@ -2754,7 +2754,7 @@ sup.ref {
 
   /* Product hero main image (PDP) — cap height so the buy box is reachable */
   .product-image-main {
-    max-width: 235px;
+    max-width: 210px;
     margin: 0 auto;
     aspect-ratio: 1 / 1;
   }
