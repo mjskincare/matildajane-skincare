@@ -2761,7 +2761,7 @@ sup.ref {
   .product-image-main img {
     width: 100%; height: 100%;
     max-height: none;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   /* Thumb strip — keep thumbs compact */
