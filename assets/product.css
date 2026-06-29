@@ -2535,8 +2535,8 @@ sup.ref {
   .feature-icons { gap: 28px; }
   .product-hero { grid-template-columns: 1fr; }
   .product-image-side {
-    position: static; min-height: 380px; padding: 32px;
-    flex-direction: column; gap: 18px;
+    position: static; min-height: 0; padding: 40px 32px;
+    flex-direction: column; gap: 22px;
   }
   .product-thumbs { flex-direction: row; order: 2; gap: 8px; }
   .thumb { width: 54px; height: 54px; }
