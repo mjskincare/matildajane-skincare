@@ -2754,7 +2754,7 @@ sup.ref {
 
   /* Product hero main image (PDP) — cap height so the buy box is reachable */
   .product-image-main {
-    max-width: 320px;
+    max-width: 260px;
     margin: 0 auto;
     aspect-ratio: 1 / 1;
   }
@@ -2774,10 +2774,10 @@ sup.ref {
     margin-right: auto;
   }
 
-  /* Why-cleanse banner image — capped on mobile */
+  /* Why-cleanse banner image — full-width on mobile (no floating box in the black band) */
   .why-cleanse-banner-image {
-    max-width: 320px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
   }
 
   /* Collection landing hero circle products */
