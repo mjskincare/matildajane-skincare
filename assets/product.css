@@ -2754,7 +2754,7 @@ sup.ref {
 
   /* Product hero main image (PDP) — cap height so the buy box is reachable */
   .product-image-main {
-    max-width: 210px;
+    max-width: 150px;
     margin: 0 auto;
     aspect-ratio: 1 / 1;
   }
