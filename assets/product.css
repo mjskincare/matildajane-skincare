@@ -1028,11 +1028,11 @@ body.theme-renew .site-nav-v2.nav-frosted {
 
 /* Mobile slide-out menu — full-width overlay */
 .nav-v2-mobile {
-  position: fixed; top: 0; left: 0; bottom: 0;
+  position: fixed; top: 0; right: 0; bottom: 0;
   width: 100%; max-width: 100%;
   background: var(--white);
   padding: 92px 28px 0;
-  transform: translateX(-100%);
+  transform: translateX(100%);
   transition: transform .3s cubic-bezier(0.32, 0.72, 0, 1);
   z-index: 100;
   overflow: hidden;
@@ -1054,7 +1054,7 @@ body.theme-renew .site-nav-v2.nav-frosted {
 }
 .nav-v2-mobile-overlay.open { opacity: 1; pointer-events: auto; }
 .nav-v2-mobile-close {
-  position: absolute; top: 22px; left: 24px;
+  position: absolute; top: 22px; right: 24px;
   background: none; border: none; cursor: pointer;
   font-size: 28px; color: var(--navy); line-height: 1;
   z-index: 2;
@@ -1139,6 +1139,10 @@ body.theme-renew .site-nav-v2.nav-frosted {
 @media (max-width: 899px) {
   .site-nav-v2-inner { justify-content: flex-end; }
   .nav-v2-hamburger {
+    position: absolute; right: 24px; top: 50%;
+    transform: translateY(-50%); margin: 0;
+  }
+  .nav-v2-cart {
     position: absolute; left: 24px; top: 50%;
     transform: translateY(-50%); margin: 0;
   }
