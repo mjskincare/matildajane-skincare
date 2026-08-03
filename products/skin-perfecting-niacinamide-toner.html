@@ -4,369 +4,372 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>Skin Perfecting 5% Niacinamide Multi-Active Toner — Matilda Jane Skincare</title>
-<meta name="description" content="A water-light toner that brightens without drying. 5% niacinamide and 2% alpha arbutin work on uneven tone and dark spots, while Natural Moisturising Factors and two weights of hyaluronic acid replace the hydration most toners strip away.">
+<title>Skin Perfecting 5% Niacinamide Multi-Active Toner — Matilda Jane</title>
+<meta name="description" content="A water-light toner that brightens and evens tone without stripping hydration. 5% niacinamide and 2% alpha arbutin, with Natural Moisturising Factors and dual-weight hyaluronic acid. $42 NZD / 100ml.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --navy:#16242f;
-    --navy-deep:#0f1a24;
-    --ivory:#faf8f5;
-    --cream:#f4efe6;
-    --paper:#ffffff;
-    --gold:#c89311;
-    --gold-bright:#f9dd60;
-    --gold-soft:#fbe6a6;
-    --body:#4b4b4b;
-    --muted:#8a857c;
-    --line:rgba(22,36,47,.1);
-    --line-soft:rgba(22,36,47,.06);
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0; background:var(--ivory); color:var(--navy);
-    font-family:'Outfit',system-ui,sans-serif; font-size:16px; line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-  }
-  img{max-width:100%; display:block;}
-  a{color:inherit;}
-  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
-  .eyebrow{
-    font-family:'Outfit',sans-serif; font-size:12px; font-weight:600;
-    letter-spacing:.28em; text-transform:uppercase; color:var(--gold);
-    margin:0 0 14px;
-  }
-
-  /* ===== Brand banner (no links — standalone) ===== */
-  .brand-banner{ background:var(--navy-deep); color:#fff; text-align:center; padding:26px 24px 22px; }
-  .brand-banner .bb-name{
-    font-family:'Montserrat',sans-serif; font-weight:400; letter-spacing:.24em;
-    text-transform:uppercase; font-size:clamp(22px,5.5vw,34px); line-height:1; margin:0;
-  }
-  .brand-banner .bb-sub{
-    font-family:'Outfit',sans-serif; font-weight:400; letter-spacing:.42em; padding-left:.42em;
-    text-transform:uppercase; font-size:12px; opacity:.85; margin-top:10px;
-  }
-
-  /* ===== Hero ===== */
-  .hero{ background:var(--paper); border-bottom:1px solid var(--line-soft); }
-  .hero-inner{ max-width:1080px; margin:0 auto; padding:40px 24px 48px; display:grid; gap:34px; grid-template-columns:1fr; }
-  @media(min-width:860px){ .hero-inner{ grid-template-columns:1fr 1fr; align-items:center; gap:52px; padding:64px 40px; } }
-  .hero-figure{
-    aspect-ratio:1/1; border-radius:14px; overflow:hidden; position:relative;
-    background:radial-gradient(circle at 32% 30%, #fdf6df 0%, #f6e9b8 42%, #ead98f 100%);
-    display:flex; align-items:center; justify-content:center;
-  }
-  .hero-figure .bottle{ width:34%; color:var(--navy); opacity:.9; }
-  .hero-figure .ph-note{
-    position:absolute; bottom:14px; left:0; right:0; text-align:center;
-    font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:rgba(22,36,47,.5);
-  }
-  .hero-h1{
-    font-family:'Montserrat',sans-serif; font-weight:800; font-size:clamp(28px,4.6vw,40px);
-    line-height:1.08; letter-spacing:.01em; margin:0 0 12px; color:var(--navy);
-  }
-  .hero-with{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:20px; color:var(--body); margin:0 0 18px; }
-  .hero-tags{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 20px; }
-  .tag{ font-size:11px; letter-spacing:.12em; text-transform:uppercase; font-weight:600; color:var(--navy);
-    background:var(--gold-soft); border-radius:999px; padding:6px 12px; }
-  .hero-price{ font-family:'Montserrat',sans-serif; font-weight:700; font-size:24px; color:var(--navy); margin:6px 0 4px; }
-  .hero-price span{ font-family:'Outfit',sans-serif; font-weight:400; font-size:14px; color:var(--muted); letter-spacing:.04em; }
-  .price-note{ font-size:12px; color:var(--muted); margin:0 0 22px; }
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:8px; width:100%;
-    font-family:'Outfit',sans-serif; font-weight:600; font-size:13px; letter-spacing:.18em; text-transform:uppercase;
-    padding:17px 28px; border:1.5px solid var(--navy); background:var(--navy); color:#fff;
-    text-decoration:none; cursor:pointer; transition:background .25s, color .25s, transform .2s;
-  }
-  .btn:hover{ background:var(--gold); border-color:var(--gold); color:var(--navy); transform:translateY(-2px); }
-  .btn.ghost{ background:transparent; color:var(--navy); }
-  .btn.ghost:hover{ background:var(--navy); color:#fff; }
-  .actives-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:26px; }
-  .active-pill{ text-align:center; border:1px solid var(--line); border-radius:10px; padding:14px 8px; }
-  .active-pill .big{ font-family:'Montserrat',sans-serif; font-weight:800; font-size:15px; color:var(--gold); }
-  .active-pill .small{ font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-top:4px; }
-
-  /* ===== Sections ===== */
-  section.block{ padding:52px 0; border-bottom:1px solid var(--line-soft); }
-  section.block.alt{ background:var(--paper); }
-  h2.h2{ font-family:'Montserrat',sans-serif; font-weight:800; font-size:clamp(24px,3.6vw,32px); line-height:1.12; margin:0 0 20px; color:var(--navy); }
-  h3.h3{ font-family:'Montserrat',sans-serif; font-weight:700; font-size:18px; margin:26px 0 8px; color:var(--navy); }
-  .block p{ color:var(--body); margin:0 0 16px; }
-  .block p strong{ color:var(--navy); }
-  .lede{ font-size:18px; }
-
-  /* Details table */
-  .spec{ list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
-  .spec li{ display:flex; gap:14px; padding:12px 0; border-bottom:1px solid var(--line-soft); font-size:15px; }
-  .spec li .k{ flex:0 0 132px; font-weight:600; color:var(--navy); text-transform:uppercase; letter-spacing:.08em; font-size:12px; padding-top:2px; }
-  .spec li .v{ color:var(--body); }
-
-  /* Key actives table */
-  .actives-table{ width:100%; border-collapse:collapse; margin-top:8px; }
-  .actives-table td{ padding:14px 12px; border-bottom:1px solid var(--line-soft); vertical-align:top; }
-  .actives-table td:first-child{ font-family:'Montserrat',sans-serif; font-weight:800; color:var(--navy); white-space:nowrap; }
-  .actives-table td:last-child{ color:var(--body); font-size:14px; }
-
-  /* Spotlight cards */
-  .spot-grid{ display:grid; gap:18px; grid-template-columns:1fr; margin-top:26px; }
-  @media(min-width:720px){ .spot-grid{ grid-template-columns:repeat(3,1fr); } }
-  .spot-card{ background:var(--ivory); border:1px solid var(--line-soft); border-radius:14px; padding:24px 22px; }
-  .spot-card .num{ font-family:'Cormorant Garamond',serif; font-size:30px; color:var(--gold); line-height:1; }
-  .spot-card h4{ font-family:'Montserrat',sans-serif; font-weight:800; font-size:15px; letter-spacing:.04em; margin:12px 0 4px; color:var(--navy); }
-  .spot-card .inci{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:15px; color:var(--muted); margin:0 0 10px; }
-  .spot-card p{ font-size:14px; margin:0; }
-
-  /* CTA band */
-  .cta-band{ background:var(--navy-deep); color:#fff; text-align:center; padding:56px 24px; }
-  .cta-band .eyebrow{ color:var(--gold-bright); }
-  .cta-band h2{ font-family:'Montserrat',sans-serif; font-weight:800; font-size:clamp(24px,4vw,32px); margin:0 0 14px; color:#fff; }
-  .cta-band p{ color:rgba(255,255,255,.82); max-width:560px; margin:0 auto 26px; }
-  .cta-band .btn{ width:auto; }
-
-  /* Accordion via <details> */
-  details.acc{ border-bottom:1px solid var(--line); }
-  details.acc summary{
-    list-style:none; cursor:pointer; padding:18px 4px; display:flex; justify-content:space-between; align-items:center;
-    font-family:'Montserrat',sans-serif; font-weight:700; font-size:16px; color:var(--navy);
-  }
-  details.acc summary::-webkit-details-marker{ display:none; }
-  details.acc summary .chev{ transition:transform .25s; color:var(--gold); font-size:18px; }
-  details.acc[open] summary .chev{ transform:rotate(180deg); }
-  details.acc .acc-in{ padding:2px 4px 22px; }
-  details.acc .acc-in p{ font-size:15px; }
-  details.acc .acc-in p:last-child{ margin-bottom:0; }
-
-  /* Pro tip / caution callouts */
-  .callout{ background:var(--ivory); border-left:3px solid var(--gold); border-radius:6px; padding:14px 18px; margin:0 0 12px; font-size:14px; }
-  .callout.warn{ border-left-color:#b04a14; background:rgba(176,74,20,.06); }
-  ul.tidy{ padding-left:20px; color:var(--body); }
-  ul.tidy li{ margin-bottom:8px; }
-
-  /* Ingredient buckets */
-  .inci-buckets p{ font-size:14px; }
-  .inci-full{ font-size:14px; line-height:1.75; color:var(--body); background:var(--ivory); border:1px solid var(--line-soft); border-radius:10px; padding:18px 20px; }
-
-  /* Research */
-  ol.refs{ font-size:12.5px; color:var(--muted); line-height:1.6; padding-left:20px; }
-  ol.refs li{ margin-bottom:10px; }
-  ol.refs em{ color:var(--body); }
-
-  /* Footer */
-  .foot{ background:var(--navy-deep); color:rgba(255,255,255,.75); text-align:center; padding:44px 24px; }
-  .foot .fname{ font-family:'Montserrat',sans-serif; font-weight:400; letter-spacing:.2em; text-transform:uppercase; color:#fff; font-size:18px; }
-  .foot .ftag{ font-size:12px; letter-spacing:.06em; margin-top:10px; opacity:.7; }
-  .foot a{ color:var(--gold-bright); text-decoration:none; }
-  .foot .fbottom{ margin-top:22px; font-size:11px; opacity:.55; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/product.css?v=20260613-4">
 </head>
-<body>
+<body class="theme-brighten">
 
-<!-- Brand banner (standalone — no navigation) -->
-<header class="brand-banner">
-  <p class="bb-name">Matilda Jane</p>
-  <div class="bb-sub">Skincare</div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-figure">
-      <svg class="bottle" viewBox="0 0 60 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round">
-        <rect x="14" y="6" width="32" height="12" rx="2"/>
-        <path d="M18 18h24v10c8 4 12 12 12 22v56a6 6 0 0 1-6 6H12a6 6 0 0 1-6-6V50c0-10 4-18 12-22z"/>
-        <line x1="6" y1="66" x2="54" y2="66"/>
-      </svg>
-      <span class="ph-note">Product photo to come</span>
-    </div>
-    <div class="hero-info">
-      <p class="eyebrow">Multi-Active Toner · Step 2</p>
-      <h1 class="hero-h1">Skin Perfecting 5% Niacinamide Multi-Active Toner</h1>
-      <p class="hero-with">with Alpha Arbutin, Natural Moisturising Factors &amp; Hibiscus</p>
-      <div class="hero-tags">
-        <span class="tag">Uneven tone</span>
-        <span class="tag">Dark spots</span>
-        <span class="tag">Dullness</span>
-        <span class="tag">Dehydration</span>
-        <span class="tag">All skin types</span>
-      </div>
-      <div class="hero-price">$42.00 <span>NZD · 100 ml</span></div>
-      <p class="price-note">Water-light toner · absorbs immediately · natural lemon-myrtle scent</p>
-      <button class="btn" type="button">Add to Cart</button>
-      <div class="actives-row">
-        <div class="active-pill"><div class="big">5%</div><div class="small">Niacinamide</div></div>
-        <div class="active-pill"><div class="big">2%</div><div class="small">Alpha Arbutin</div></div>
-        <div class="active-pill"><div class="big">NMF</div><div class="small">+ Dual-weight HA</div></div>
-      </div>
+<nav class="site-nav-v2">
+  <div class="site-nav-v2-inner">
+    <a class="nav-logo" href="../index.html">Matilda Jane</a>
+    <ul class="nav-v2-links">
+      <li>
+        <button class="nav-v2-trigger active" type="button">Collections <span class="chev">▾</span></button>
+        <ul class="nav-v2-dropdown">
+          <li><a href="hydrate.html">Hydrate</a></li>
+          <li><a href="clear.html">Clear</a></li>
+          <li><a href="neuro-restore.html">Renew</a></li>
+          <li><a href="brightening-vitamin-c.html">Brighten</a></li>
+          <li><a href="daily-defence.html">Men&#39;s</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="nav-v2-trigger" type="button">Concerns <span class="chev">▾</span></button>
+        <ul class="nav-v2-dropdown">
+          <li><a href="../concerns/dryness-and-dehydration.html">Dryness &amp; Dehydration</a></li>
+          <li><a href="../concerns/redness-and-reactivity.html">Sensitive Skin</a></li>
+          <li><a href="../concerns/blemishes-and-congestion.html">Acne-Prone</a></li>
+          <li><a href="../concerns/dullness.html">Dullness</a></li>
+          <li><a href="../concerns/uneven-skin-tone.html">Uneven Skin Tone</a></li>
+          <li><a href="../concerns/ageing-and-loss-of-firmness.html">Ageing Skin</a></li>
+          <li><a href="../concerns/dark-circles.html">Dark Circles</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-v2-actions">
+      <span class="nav-v2-cart">Cart (0)</span>
+      <button class="nav-v2-hamburger" type="button" aria-label="Open menu" id="mj-hamburger"><span></span></button>
     </div>
   </div>
-</section>
-
-<!-- WHAT IS IT -->
-<section class="block">
-  <div class="wrap">
-    <p class="eyebrow">What is it?</p>
-    <h2 class="h2">A hydrating step with active percentages that do something.</h2>
-    <p class="lede">A water-light toner that goes on after cleansing and before your serum.</p>
-    <p>It is not a stripping, astringent-heavy toner. It is a hydrating step with active percentages that do something — <strong>5% niacinamide and 2% alpha arbutin</strong> in a base of witch hazel and lemon myrtle hydrosols, with skin's own moisture factors built back in.</p>
+</nav>
+<div class="nav-v2-mobile-overlay" id="mj-mobile-overlay"></div>
+<aside class="nav-v2-mobile" id="mj-mobile-nav" aria-hidden="true">
+  <button class="nav-v2-mobile-close" type="button" id="mj-mobile-close" aria-label="Close menu">×</button>
+  <span class="nav-v2-mobile-topbrand">Matilda Jane</span>
+  <div class="nav-v2-mobile-scroll">
+  <div class="nav-v2-mobile-section">
+    <span class="label">Collections</span>
+    <ul class="nav-v2-mobile-sublist">
+      <li><a href="hydrate.html">Hydrate</a></li>
+      <li><a href="clear.html">Clear</a></li>
+      <li><a href="neuro-restore.html">Renew</a></li>
+      <li><a href="brightening-vitamin-c.html">Brighten</a></li>
+      <li><a href="daily-defence.html">Men&#39;s</a></li>
+    </ul>
   </div>
-</section>
-
-<!-- WHAT DOES IT DO -->
-<section class="block alt">
-  <div class="wrap">
-    <p class="eyebrow">What does it do?</p>
-    <h2 class="h2">Corrects tone in a hydrating base — not a drying one.</h2>
-    <p><strong>Helps improve the appearance of uneven tone and dark spots.</strong> Niacinamide at 5% is the concentration used in published clinical work on skin tone and texture.<sup>1&nbsp;2</sup> Alpha arbutin supports this by slowing the enzyme that drives melanin production.<sup>3</sup></p>
-    <p>Because the formula corrects tone in a hydrating base rather than a drying one, two things follow:</p>
-    <h3 class="h3">Skin holds hydration better</h3>
-    <p>Sodium PCA and betaine are Natural Moisturising Factors — the water-binding compounds your skin already makes, and makes less of over time. Adding them back helps skin feel supple rather than tight.</p>
-    <h3 class="h3">The surface looks smoother and less dull</h3>
-    <p>Two molecular weights of hyaluronic acid work at different depths: the larger sits on the surface for immediate cushion, the smaller draws hydration further in.<sup>4</sup></p>
   </div>
-</section>
+  <div class="nav-v2-mobile-brand"><span class="mj-brand-title">Matilda Jane</span><span class="mj-brand-sub">Skincare</span></div>
+</aside>
 
-<!-- WHO IT'S FOR -->
-<section class="block">
-  <div class="wrap">
-    <p class="eyebrow">Who it's for</p>
-    <h2 class="h2">Brightening without the drying.</h2>
-    <p>Anyone working on uneven tone, dark spots or dullness who does not want a drying toner to get there.</p>
-    <p>It suits oily and combination skin — niacinamide helps with the look of pores and shine — and equally suits drier or mature skin, where natural moisture factors decline and hydration matters more.</p>
-    <p>If your skin is highly sensitive or reactive, patch test first. This formula contains citral, which occurs naturally in lemon myrtle. Or contact Matilda Jane for individual product guidance.</p>
-  </div>
-</section>
+<div class="breadcrumb">
+  <a class="breadcrumb-link" href="../index.html#collections">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to Collections
+  </a>
+</div>
 
-<!-- CTA -->
-<section class="cta-band">
-  <p class="eyebrow">Get a Personalised Recommendation</p>
-  <h2>Not sure which product is right for your skin?</h2>
-  <p>Get a personalised recommendation based on your skin type, environment, current routine, and main skin concerns.</p>
-  <a class="btn" href="mailto:laura@matildajanenz.com?subject=Personalised%20skincare%20recommendation">Get a Personalised Recommendation</a>
-</section>
-
-<!-- WHAT'S IN IT -->
-<section class="block">
-  <div class="wrap">
-    <p class="eyebrow">What's in it?</p>
-    <h2 class="h2">Ingredient spotlight</h2>
-    <div class="spot-grid">
-      <div class="spot-card">
-        <div class="num">01</div>
-        <h4>NIACINAMIDE 5%</h4>
-        <p class="inci">Vitamin B3 — the hero</p>
-        <p>Supports the skin barrier, helps refine the look of pores, and helps even the appearance of skin tone. Used at 5% because that is the level published research has actually tested — not a token inclusion.<sup>1&nbsp;2</sup></p>
+<section class="collection-hero">
+  <div class="collection-hero-inner">
+    <div class="collection-eyebrow fu">Skin Perfecting</div>
+    <h1 class="collection-h1 fu"><span class="hl">5% Niacinamide</span><span class="product-line-2">Multi-Active Toner</span></h1>
+    <p class="collection-sub fu">With 2% Alpha Arbutin · Natural Moisturising Factors · Dual-Weight Hyaluronic Acid. A water-light toner that brightens and evens tone without stripping the hydration most toners take away.</p>
+    <div class="feature-icons fu">
+      <div class="fi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
+        <span>Brightens</span>
       </div>
-      <div class="spot-card">
-        <div class="num">02</div>
-        <h4>ALPHA ARBUTIN 2%</h4>
-        <p class="inci">Tyrosinase inhibitor</p>
-        <p>Works on pigment at the source by inhibiting tyrosinase, the enzyme that triggers melanin production. A gentler, more stable route to brightening than many alternatives.<sup>3</sup></p>
+      <div class="fi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg>
+        <span>Hydrates</span>
       </div>
-      <div class="spot-card">
-        <div class="num">03</div>
-        <h4>NATURAL MOISTURISING FACTORS</h4>
-        <p class="inci">Sodium PCA + Betaine</p>
-        <p>Your skin makes its own humectants to hold water in the outer layers. Production drops with age, sun exposure and over-cleansing — these replace them with the same compounds skin uses itself.</p>
+      <div class="fi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 10 15 10"/></svg>
+        <span>Restores</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-hero">
+  <div class="product-image-side">
+    <div class="product-thumbs">
+      <button class="thumb active" data-src="../assets/images/product-main.jpg" data-annotations="false" aria-label="Skin Perfecting Toner bottle" aria-selected="true"><span class="thumb-mini" style="background-image:url('../assets/images/product-main.jpg')"></span></button>
+      <button class="thumb" data-src="../assets/images/smeared-moisturiser.jpg" data-annotations="true" aria-label="Toner with ingredient annotations" aria-selected="false"><span class="thumb-mini" style="background-image:url('../assets/images/smeared-moisturiser.jpg')"></span></button>
+      <button class="thumb" data-src="../assets/images/cream-swirl.jpg" data-annotations="false" aria-label="Toner texture close-up" aria-selected="false"><span class="thumb-mini" style="background-image:url('../assets/images/cream-swirl.jpg')"></span></button>
+      <button class="thumb" data-src="../assets/images/cream-application.jpg" data-annotations="false" aria-label="Application to damp skin" aria-selected="false"><span class="thumb-mini" style="background-image:url('../assets/images/cream-application.jpg')"></span></button>
+    </div>
+    <div class="product-bottle-wrap">
+      <div class="product-image-main">
+        <img src="../assets/images/product-main.jpg" alt="Skin Perfecting 5% Niacinamide Multi-Active Toner — bottle">
+        <div class="ingredient-annotations" aria-hidden="true">
+          <div class="annotation annotation-1">
+            <div class="annotation-name">NIACINAMIDE 5%</div>
+            <div class="annotation-body">vitamin B3, barrier and tone</div>
+            <span class="annotation-line"></span>
+            <span class="annotation-dot"></span>
+          </div>
+          <div class="annotation annotation-2">
+            <div class="annotation-name">ALPHA ARBUTIN 2%</div>
+            <div class="annotation-body">targets dark spots at the source</div>
+            <span class="annotation-line"></span>
+            <span class="annotation-dot"></span>
+          </div>
+          <div class="annotation annotation-3">
+            <div class="annotation-name">DUAL-WEIGHT HA</div>
+            <div class="annotation-body">hydration at two depths</div>
+            <span class="annotation-line"></span>
+            <span class="annotation-dot"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-info-side">
+    <div class="product-eyebrow fu">5% Niacinamide<br>Multi-Active Toner</div>
+    <div class="product-key-actives fu">With 2% Alpha Arbutin · NMF · Dual-Weight Hyaluronic Acid</div>
+    <div class="product-price fu" id="price-display">$42.00 <span>NZD / 100ml</span></div>
+    <div class="product-divider"></div>
+    <div class="fu">
+      <div class="size-label">Size</div>
+      <div class="size-options">
+        <button class="size-btn on" data-size="100">100ml</button>
+      </div>
+    </div>
+    <button class="add-to-cart fu">Add to Cart</button>
+    <div class="feature-icons fu">
+      <div class="fi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
+        <span>Brightens</span>
+      </div>
+      <div class="fi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg>
+        <span>Hydrates</span>
+      </div>
+      <div class="fi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 10 15 10"/></svg>
+        <span>Restores</span>
       </div>
     </div>
 
-    <h3 class="h3" style="margin-top:36px;">Key actives</h3>
-    <table class="actives-table">
-      <tr><td>5% Niacinamide</td><td>Tone · pores · barrier</td></tr>
-      <tr><td>2% Alpha Arbutin</td><td>Dark spots</td></tr>
-      <tr><td>NMF + Dual-weight HA</td><td>Layered hydration</td></tr>
-    </table>
+    <!-- INLINE ACCORDION -->
+    <div class="acc-list fu">
 
-    <h3 class="h3" style="margin-top:36px;">What's in the bottle?</h3>
-    <div class="inci-buckets">
-      <p><strong>COSMOS-aligned / natural:</strong> water, lemon myrtle hydrosol (<em>Backhousia citriodora</em>), witch hazel hydrosol, hibiscus flower extract, betaine, allantoin, sodium phytate, lactic acid.</p>
-      <p><strong>Naturally derived:</strong> propanediol, sodium PCA, panthenol, sodium hyaluronate.</p>
-      <p><strong>Synthetic:</strong> niacinamide, alpha-arbutin.</p>
-      <p>Preserved with a COSMOS-aligned preservative system, used within its recommended range. No essential oils are used in this formula — the scent comes from lemon myrtle hydrosol.</p>
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">
+          <span>Details</span>
+          <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">
+          <p style="font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent-deep); font-weight: 600; margin-bottom: 8px;">At a Glance</p>
+          <ul>
+            <li><strong>Skin concerns:</strong> uneven tone, dark spots, dullness, dehydration.</li>
+            <li><strong>Skin type:</strong> all skin types, including oily, combination, dry and mature (patch test if your skin is sensitive or reactive).</li>
+            <li><strong>Scent:</strong> natural lemon-myrtle scent — no added fragrance, no essential oil.</li>
+            <li><strong>Texture:</strong> water-light toner that absorbs immediately.</li>
+          </ul>
+          <p style="margin-top: 18px;"><strong>What is it?</strong></p>
+          <p>A water-light toner that goes on after cleansing and before your serum. Not a stripping, astringent-heavy toner — a hydrating step with active percentages that actually do something. <strong>5% niacinamide and 2% alpha arbutin</strong> sit in a base of witch hazel and lemon myrtle hydrosols, with skin's own moisture factors built back in.</p>
+          <p style="margin-top: 14px;"><strong>What does it do?</strong></p>
+          <p>Helps improve the appearance of uneven tone and dark spots. <strong>Niacinamide at 5%</strong> is the concentration used in published clinical work on skin tone and texture, and alpha arbutin supports it by slowing the enzyme that drives melanin production. Because it corrects tone in a hydrating base rather than a drying one, Natural Moisturising Factors and two weights of hyaluronic acid leave skin feeling supple rather than tight, and the surface looking smoother and less dull.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">
+          <span>Key Actives</span>
+          <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">
+          <p><strong>Niacinamide 5%</strong></p>
+          <p>Vitamin B3 — the hero of the formula. Supports the skin barrier, helps refine the look of pores, and helps even the appearance of skin tone. <strong>Used at 5% because that is the level published research has actually tested</strong> — not a token inclusion.</p>
+          <p style="margin-top: 14px;"><strong>Alpha Arbutin 2%</strong></p>
+          <p>Works on pigment at the source by inhibiting tyrosinase, the enzyme that triggers melanin production. A gentler, more stable route to brightening than many alternatives. <strong>Helps fade the look of dark spots over time.</strong></p>
+          <p style="margin-top: 14px;"><strong>Natural Moisturising Factors + Dual-Weight HA</strong></p>
+          <p>Sodium PCA and betaine are the water-binding compounds your skin already makes, and makes less of over time. Two molecular weights of hyaluronic acid then work at different depths — the larger cushions the surface, the smaller draws hydration further in.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">
+          <span>How to Use</span>
+          <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">
+          <p><strong>Step 2 — after cleansing, before serum. Use morning and night.</strong></p>
+          <p style="margin-top: 12px;"><strong>Routine order:</strong><br>Cleanse → Skin Perfecting Toner → Serum → Moisturiser</p>
+          <p style="margin-top: 12px;">Dispense <strong>3–4 drops</strong> into clean hands and pat evenly over damp skin. Do not use a cotton pad — patting keeps the actives on your skin rather than on the pad. Follow with serum and moisturiser while skin is still slightly damp. <strong>Leave on — do not rinse.</strong></p>
+          <p style="margin-top: 22px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent-deep); font-weight: 600;">Pro Tips</p>
+          <ul>
+            <li><strong>Apply to damp skin —</strong> humectants pull water from whatever is nearest, so damp skin gives them something to work with.</li>
+            <li><strong>Always follow with moisturiser</strong> to seal the hydration in, particularly if your skin is dry.</li>
+            <li><strong>Wear SPF daily —</strong> any work on dark spots is undone by unprotected sun exposure.</li>
+          </ul>
+          <p style="margin-top: 22px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent-deep); font-weight: 600;">Storage</p>
+          <p>Store cool and out of direct sunlight. Keep the cap closed and use clean hands each time. Best within 12 months of opening.</p>
+          <p style="margin-top: 22px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent-deep); font-weight: 600;">Cautions</p>
+          <p>For external use only. Patch test before use. Avoid direct contact with eyes. Discontinue use if irritation occurs. Keep out of reach of children. <strong>Contains citral, naturally present in lemon myrtle</strong> — patch test if your skin is sensitive or reactive.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">
+          <span>Full Ingredients</span>
+          <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">
+          <p style="font-size:14px; line-height:1.7;">Aqua, <em>Backhousia Citriodora</em> Distillate, <em>Hamamelis Virginiana</em> Water, Niacinamide, Sodium PCA, Propanediol, <em>Hibiscus Sabdariffa</em> Flower Extract, Panthenol, Alpha-Arbutin, Betaine, Allantoin, Sodium Hyaluronate, Sodium Benzoate, Potassium Sorbate, Sodium Phytate, Lactic Acid, Citral.</p>
+          <p style="margin-top: 18px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent-deep); font-weight: 600;">What's not in it</p>
+          <ul style="font-size: 13px;">
+            <li>No added fragrance</li>
+            <li>No alcohol</li>
+            <li>No parabens</li>
+            <li>No silicones</li>
+            <li>No essential oils</li>
+            <li>No phenoxyethanol</li>
+          </ul>
+          <p style="font-size:13px; color:var(--stone); margin-top: 10px;">Made in New Zealand with COSMOS-aligned ingredients. 100ml. PAO 12M.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">
+          <span>FAQs</span>
+          <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner faq-nest">
+          <div class="faq-list">
+
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                <span>Will this dry my skin out like other toners?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-body"><div class="faq-body-inner">
+                <p><strong>No.</strong> There is no alcohol added, and the formula is built around hydration. Witch hazel provides a light astringent effect without the stripping.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                <span>Can I use it with vitamin C?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-body"><div class="faq-body-inner">
+                <p>Yes — apply vitamin C first, then this. They work on pigment through different pathways.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                <span>Can I use it with retinol or exfoliating acids?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-body"><div class="faq-body-inner">
+                <p>Yes. Use this toner first. If your skin is new to actives, alternate nights rather than layering everything at once.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                <span>How long until I see a difference?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-body"><div class="faq-body-inner">
+                <p>Tone and dark spots respond slowly — published trials on these actives run <strong>8–12 weeks</strong>. Hydration you should feel immediately.</p>
+              </div></div>
+            </div>
+
+          </div>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENT SPOTLIGHT -->
+<section class="ingredient-spotlight">
+  <h2>Ingredient Spotlight</h2>
+  <p class="spotlight-sub">Niacinamide 5% · Alpha Arbutin 2% · Natural Moisturising Factors</p>
+  <div class="spotlight-grid spotlight-grid-floating">
+
+    <div class="spotlight-card spotlight-card-floating" data-animate>
+      <div class="spotlight-img-wrap"><img src="../assets/images/spotlight-niacinamide.jpg" alt="Niacinamide 5%"></div>
+      <h3>NIACINAMIDE 5%</h3>
+      <p class="spotlight-inci">Vitamin B3 — the hero</p>
+      <p>Supports the skin barrier, helps refine the look of pores, and helps even the appearance of skin tone. Used at 5% because that is the level published research has actually tested.</p>
     </div>
 
-    <h3 class="h3" style="margin-top:30px;">Full ingredient list</h3>
-    <p class="inci-full">Aqua, Backhousia Citriodora Distillate, Hamamelis Virginiana Water, Niacinamide, Sodium PCA, Propanediol, Hibiscus Sabdariffa Flower Extract, Panthenol, Alpha-Arbutin, Betaine, Allantoin, Sodium Hyaluronate, Sodium Benzoate, Potassium Sorbate, Sodium Phytate, Lactic Acid, Citral.</p>
+    <div class="spotlight-card spotlight-card-floating" data-animate>
+      <div class="spotlight-img-wrap"><img src="../assets/images/spotlight-vitamin-c.jpg" alt="Alpha Arbutin 2%"></div>
+      <h3>ALPHA ARBUTIN 2%</h3>
+      <p class="spotlight-inci">Tyrosinase inhibitor</p>
+      <p>Works on pigment at the source by inhibiting tyrosinase, the enzyme that triggers melanin production. A gentler, more stable route to brightening than many alternatives.</p>
+    </div>
+
+    <div class="spotlight-card spotlight-card-floating" data-animate>
+      <div class="spotlight-img-wrap"><img src="../assets/images/spotlight-caffeine.jpg" alt="Natural Moisturising Factors + Dual-Weight Hyaluronic Acid"></div>
+      <h3>NMF + DUAL-WEIGHT HA</h3>
+      <p class="spotlight-inci">Sodium PCA · Betaine · Hyaluronic Acid</p>
+      <p>Replaces the water-binding compounds skin makes less of over time, while two weights of hyaluronic acid hydrate at different depths for immediate cushion and lasting comfort.</p>
+    </div>
+
   </div>
 </section>
 
-<!-- HOW TO USE -->
-<section class="block alt">
-  <div class="wrap">
-    <p class="eyebrow">How to use · Step 2</p>
-    <h2 class="h2">After cleansing, before serum.</h2>
-    <p>Dispense <strong>3–4 drops</strong> into clean hands and pat evenly over damp skin. Do not use a cotton pad; patting keeps the actives on your skin rather than on the pad.</p>
-    <p>Follow with serum and moisturiser while skin is still slightly damp. <strong>AM and PM. Leave on — do not rinse.</strong></p>
-    <h3 class="h3">Pro tips</h3>
-    <div class="callout"><strong>Apply to damp skin.</strong> Humectants like hyaluronic acid and sodium PCA pull water from whatever is nearest. Damp skin gives them something to work with.</div>
-    <div class="callout"><strong>Follow with moisturiser.</strong> A toner this light needs something over it to seal the hydration in, particularly if your skin is dry.</div>
-    <div class="callout"><strong>Wear SPF daily.</strong> Any work you do on dark spots is undone by unprotected sun exposure. This matters more than the product itself.</div>
-  </div>
-</section>
-
-<!-- FAQs + STORAGE + CAUTIONS (accordions) -->
-<section class="block">
-  <div class="wrap">
-    <p class="eyebrow">Good to know</p>
-    <h2 class="h2">FAQs</h2>
-
-    <details class="acc"><summary>Will this dry my skin out like other toners? <span class="chev">▾</span></summary>
-      <div class="acc-in"><p>No. There is no alcohol added, and the formula is built around hydration. Witch hazel provides a light astringent effect without the stripping.</p></div>
-    </details>
-    <details class="acc"><summary>Can I use it with vitamin C? <span class="chev">▾</span></summary>
-      <div class="acc-in"><p>Yes — apply vitamin C first, then this. They work on pigment through different pathways.</p></div>
-    </details>
-    <details class="acc"><summary>Can I use it with retinol or exfoliating acids? <span class="chev">▾</span></summary>
-      <div class="acc-in"><p>Yes. Use this toner first. If your skin is new to actives, alternate nights rather than layering everything at once.</p></div>
-    </details>
-    <details class="acc"><summary>Why does it smell lemony? <span class="chev">▾</span></summary>
-      <div class="acc-in"><p>Lemon myrtle hydrosol. There is no added fragrance and no essential oil.</p></div>
-    </details>
-    <details class="acc"><summary>How long until I see a difference? <span class="chev">▾</span></summary>
-      <div class="acc-in"><p>Tone and dark spots respond slowly. Published trials on these actives run 8–12 weeks. Hydration you should feel immediately.</p></div>
-    </details>
-    <details class="acc"><summary>Storage <span class="chev">▾</span></summary>
-      <div class="acc-in"><p>Store cool and out of direct sunlight. Keep the cap closed. Use clean hands each time. Best within 12 months of opening.</p></div>
-    </details>
-
-    <h3 class="h3" style="margin-top:34px;">Cautions</h3>
-    <div class="callout warn">
-      <ul class="tidy" style="margin:0;">
-        <li>For external use only.</li>
-        <li>Patch test before use.</li>
-        <li>Avoid direct contact with eyes.</li>
-        <li>Discontinue use if irritation occurs.</li>
-        <li>Keep out of reach of children.</li>
-        <li>Contains citral, naturally present in lemon myrtle. Patch test if your skin is sensitive or reactive.</li>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand-block">
+      Matilda Jane <em>Skincare</em>
+      <div class="footer-tagline">Science-led skincare.<br>Research-backed actives.</div>
+      <div class="footer-slogan">Matilda Jane Skincare —<br>The best of nature, refined.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="../index.html#collections">All Collections</a></li>
+        <li><a href="brightening-vitamin-c.html">Brighten</a></li>
+        <li><a href="hydrate.html">Hydrate</a></li>
+        <li><a href="clear.html">Clear</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Brand</h4>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">The Science</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="mailto:laura@matildajanenz.com">Contact</a></li>
+        <li><a href="mailto:laura@matildajanenz.com?subject=Personalised%20skincare%20recommendation">Personal Formulations</a></li>
+        <li><a href="#">FAQ</a></li>
       </ul>
     </div>
   </div>
-</section>
-
-<!-- RESEARCH -->
-<section class="block alt">
-  <div class="wrap">
-    <p class="eyebrow">Research</p>
-    <h2 class="h2">The evidence</h2>
-    <ol class="refs">
-      <li>Bissett DL, Oblong JE, Berge CA. Niacinamide: a B vitamin that improves aging facial skin appearance. <em>Dermatol Surg.</em> 2005;31(7 Pt 2):860-5. PMID: 16029679.</li>
-      <li>Bissett DL, Miyamoto K, Sun P, Li J, Berge CA. Topical niacinamide reduces yellowing, wrinkling, red blotchiness and hyperpigmented spots in aging facial skin. <em>Int J Cosmet Sci.</em> 2004;26(5):231-8. PMID: 18492135.</li>
-      <li>Gabhane M, et al. Efficacy and Safety of a Topical Formulation Containing Trihydroxybenzoic Acid Glucoside and α-Arbutin, Applied Along With a Sunscreen. <em>J Cosmet Dermatol.</em> 2025. PMC11822242. <em>Note: this trial used 2% alpha-arbutin in combination with 10% trihydroxybenzoic acid glucoside plus sunscreen; the result cannot be attributed to alpha-arbutin alone.</em></li>
-      <li>Essendoubi M, Gobinet C, Reynaud R, Angiboust JF, Manfait M, Piot O. Human skin penetration of hyaluronic acid of different molecular weights as probed by Raman spectroscopy. <em>Skin Res Technol.</em> 2016;22(1):55-62. PMID: 25877232.</li>
-    </ol>
+  <div class="footer-bottom">
+    <span>© 2026 Matilda Jane Skincare. All rights reserved.</span>
   </div>
-</section>
-
-<!-- Footer (standalone) -->
-<footer class="foot">
-  <div class="fname">Matilda Jane Skincare</div>
-  <div class="ftag">Science-led skincare. The best of nature, refined.</div>
-  <div class="fbottom">100 ml · Made with COSMOS-aligned ingredients · <a href="mailto:laura@matildajanenz.com">laura@matildajanenz.com</a></div>
 </footer>
 
+<script src="../assets/product.js"></script>
+<script>
+  const cards = document.querySelectorAll('.spotlight-card[data-animate]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+  cards.forEach(card => observer.observe(card));
+</script>
 </body>
 </html>
